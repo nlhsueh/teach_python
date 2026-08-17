@@ -8,7 +8,7 @@ Ch07 Object oriented programming
 這一節跟大家來介紹物件設計，物件設計是目前程式設計的主流，因為隨著系統越來越大，我們必須要有一些機制來解決這個問題。我們有所謂的**功能導向**跟**物件導向設計**的方式降低程式的複雜度。功能導向就是說把一個大系統切割成小的問題，每一個問題用一個函式來去解決它。之後再把它組裝起來，來符合一開始的這個系統需求。物件導向設計它最小單元是一個個的**物件**，每一個物件內封裝了和這個物件觀念相關的資料，還有上面可以執行的功能或者是函式，所以一般來講物件導向如果設計得宜，它更能夠來解決程式的複雜性。
 
 ### 類別的宣告
-```python=
+```python
 # 類別的宣告
 class class_name():
    def __init__(self, x, y):
@@ -103,7 +103,7 @@ class BankAccount {
 }
 ```
 
-```python=
+```python
 class BankAccount():
     '銀行帳號類別，可以存款與扣款'
 
@@ -217,7 +217,7 @@ weight 70
 
 下面的例子，`car_id` 是物件變數，`kind` 是類別變數。
 
-```python=
+```python
 class Car:
    kind = '燃油車'             # 類別變數
 
@@ -257,7 +257,7 @@ nick.balance = nick.balance - 100000
 
 Python 宣告私有屬性的方式：加上雙底線，如以下程式中的 `__balance`:
 
-```python=
+```python
 # 用 __ 來宣告私有變數
 class BankAccount():
     def __init__(self, uname, money):       
@@ -294,7 +294,7 @@ print ('{} 的帳戶有 {} 元'.format(nick.name, nick.get_balance()))
 可以透過 `@property` 的標記來更快設定 `getter` 與 `setter`, 以下我們設定一個新的屬性 `riskLevel`, 來講解 `@property` 的使用：
 
 
-```python=
+```python
 # 沒有使用 @property 的版本
 
 class BankAccount():
@@ -345,7 +345,7 @@ print ('Risk level: ', nick.riskLevel)
 
 改用 `@property` 語法來做：
 
-```python=
+```python
 # property 的使用: 透過裝飾品 @ 來撰寫 property
 class BankAccount():
     def __init__(self, uname, money):       
@@ -398,7 +398,7 @@ print ('Risk level: ', nick.riskLevel)
 
 當我們用 `物件.類別屬性` 來設定值時，要注意該屬性是否是可修改的 (immutable) 的。若是不可修改 (如 `str`)，則會建立一個物件屬性給該物件專用。
 
-```python=
+```python
 class Car:
 
     kind = '燃油車'                 # 類別變數
@@ -450,7 +450,7 @@ c2 油電混合車 ['車架', '旅行支架']
 
 在 runtime 的時候宣告物件的屬性稱之為董太屬性。注意動態屬性只屬於該物件，其他同類別的物件並不會同時有該動態屬性。
 
-```python=
+```python
 class Book:
    pass
    
@@ -467,7 +467,7 @@ b1.title 設定了一個動態屬性，b2 是沒有此屬性的。
 ## 方法
 
 ### 建構子
-```python=
+```python
 # 多重建構子
 # 定義一個類別 Person
 class Person():
@@ -520,7 +520,7 @@ print(Jack.name,' ',Jack.father)
 這些特殊方法允許您自定義類的行為，以便更好地與 Python 的內置操作和函數進行交互。您可以根據需要實現這些方法，以創建具有自定義行為的對象。
 
 
-```python=
+```python
 class C():
    def __init()__:
       # 物件建立時會呼叫
@@ -537,7 +537,7 @@ class C():
 
 範例：Rational 是一個有理數的物件，主要由分子與分母構成，設計如下：
       
-```python=
+```python
 class Rational:
     'Rational 有理數物件，主要由分子與分母構成'
     
@@ -570,7 +570,7 @@ class Rational:
 
 我們可以對有理數物件進行 + - * / ，因為在上面的類別中我們有定義了。
 
-```python=
+```python
 print (Rational.__doc__)
 x = Rational(1, 2)
 y = Rational(2, 3)
@@ -587,7 +587,7 @@ print(y == z)  # True
 
 再來看 Currency 的例子
 
-```python=
+```python
 class Currency:
     def __init__(self, symbol, amount):
         self.symbol = symbol
@@ -623,7 +623,7 @@ print ('Total is',  (b + a))
 
 看看錢包的例子，因為裡面我們有宣告 `__iter__`, 就可以用 `for ... in` 來走訪。
 
-```python=
+```python
 class Wallet:
     def __init__(self):
         self.currencies = []
@@ -674,7 +674,7 @@ class Manager {
 
 ```
 
-```python=
+```python
 class Person():
     def __init__(self, name, id):
         self.name = name
@@ -730,7 +730,7 @@ abstract class GuessGame {
 }
 ```
 
-```python=
+```python
 import random
 from abc import ABCMeta, abstractmethod
 
@@ -768,7 +768,7 @@ GuessGame <|- ConsoleGame
 
 `ConsoleGame` 不是以視窗的方式呈現，是命令列的互動方式，所以印出訊息是用 `print()` 的方式。下方第九行 `message()` 的實作說明了 `ConsoleGame` 印出訊息的方法。注意 `GuessGame` 中已經定義 `message()` 是一個抽象方法，`ConsoleGame` 既然已經繼承了，就必須將之實做出來。同理 `guess()` 也是在基礎類別中的抽象方法，`ConsoleGame` 也必須將之時做。下方第13行的實作表明 `guess()` 的運作是留給使用者輸入，系統會給予一個提示字：`輸入數字：`。
 
-```python=
+```python
 class ConsoleGame(GuessGame):
     def __init__(self):
         self.welcome = "歡迎"

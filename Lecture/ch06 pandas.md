@@ -41,7 +41,7 @@ Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼�
 
 我們就來先介紹怎麼產生一個這樣的資料表。產生 Pandas 資料有很多種方式，第一個比較簡單的是透過一個 dict 來建立這個資料表。
 
-```python=
+```python
 import pandas as pd
 
 f = {"name": ['Apple', 'Banana', 'Cherry', 'Durian'],
@@ -68,7 +68,7 @@ See [Code](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFC
 
 #### 建立索引
 
-```python=
+```python
 df = pd.DataFrame(f, index=f['name'])
 print (df)
 print ('---')
@@ -103,7 +103,7 @@ Name: Apple, dtype: object
 
 另外一個方式是依照它的順序位置 (position)，第一筆資料是 0, 接下來是 1, 2, 等。在 Python 中是用 iloc 來存取這個資料。注意索引和順序位置是不同的 -- 雖然我們沒有指定特別索引時，其值和 position 是一樣的。
 
-```python=
+```python
 df = pd.DataFrame(f, index=f['name'])
 print(df.loc[ ['Apple', 'Banana'] ])
 print(df.iloc[ [0,1] ])
@@ -132,7 +132,7 @@ print(df.iloc[ [0,1] ])
 接下來介紹資料過濾，我們經常會對資料的欄位做一些篩選。例如 c1 欄位代表價格，如果要找價格大於十塊錢，用 [code_filter](#code_filter) 的方式就能把欄位 c1 大於十的找出來。
 
 #### code_filter
-```python=
+```python
 g = df.c1>10
 df[g] # df[過濾條件]
 
@@ -149,7 +149,7 @@ df[df.c1>10]
 
 假設我們有一筆資料如下：
 
-```python=
+```python
 df = pd.DataFrame({
     'c1': ['A', 'A', 'B', 'Z', 'D', 'C'],
     'c2': [2, 1, 9, 8, 7, 4],
@@ -180,7 +180,7 @@ print(df2)
 ```
 
 更多的參數：
-```python=
+```python
 df.sort_values(by='c1',             # 排序依據
                ascending=False)     # 遞減排序
                na_position='first') # 把NaN 的資料排在前面
@@ -194,7 +194,7 @@ df.sort_values(by='c1',             # 排序依據
 
 範例如下：
 
-```python=
+```python
 df.mean()           # 所有的欄位都做平均
 df['c1'].mean()     # 平均
 df['c1'].median()   # 中位數
@@ -205,7 +205,7 @@ df['c1'].std()      # 標準差
 
 還有一個非常方便的一個 function 叫做 describe()。df.describe() 會把資料表內可以統計的資料一次算好，包含 count 數量、mean 平均、std 標準差、min 最小值、25%、50%（也就是中位數）、75%、最大值都呈現出來。不過須注意該方法只能針對數值型的資料，如果資料欄位的內容是字串就不會呈現出來。如下面這個例子。
 
-```python=
+```python
 analysis = df.describe()
 print (analysis)
 ```
@@ -235,7 +235,7 @@ max    30.000000  90.000000
 首先一樣是 import pandas，然後宣告一個 dictionary，再來透過 .dataframe 來產生資料表，然後把這個資料印出來。那我們要取欄位資料的時候就可以透過 df[欄位的名稱]，把這一個欄位的所有資料秀出來。
 那我們可以看到前面的 0 1 2 3，這個就是系統預設的索引值，從 0 開始遞增。
 
-```python=
+```python
 import pandas as pd
 
 f = {"name": ['Apple', 'Banana', 'Cherry', 'Durian'],
@@ -256,7 +256,7 @@ print(df)
 
 如果使用 loc 就是代表是要用資料的索引值取出某一筆資料，若索引值是 0 的時候這一筆資料剛好是 apple，然後就把 10 90 這筆資料取出來。
 
-```python=
+```python
 df = pd.DataFrame(f, index=f['name'])
 print(df)
 print ('---')
@@ -276,7 +276,7 @@ Name: Apple, dtype: object
 ```
 
 先前有提過資料是可以取某個欄位裡面的第幾筆資料，所以水果這個欄位的第 0 筆資料的結果就是 apple。當然也可以取第 0 筆資料裡面的某一個欄位，跑出來的結果事實上一樣也是 apple。
-```python=
+```python
 df.loc[0]['name']
 ```
 ```
@@ -286,7 +286,7 @@ df.loc[0]['name']
 
 那真實應用的時候，其實比較少透過 dict 來新增資料，大多是從資料庫或是某一個檔案讀取資料。所以我們這個地方介紹 `read_csv`，就是從 csv 檔讀取資料。如果資料量太大，我們只是想要看看資料的長相，那我們就可以用 sample 或是 head，這樣它就會秀十筆出來。
 
-```python=
+```python
 house = pd.read_csv('house.csv')
 house.head(10)
 ```
@@ -299,7 +299,7 @@ house.head(10)
 
 前面提到 index 系統預定給的話是用 0 1 2 3 來做，可是這些 0 1 2 3 有時候對我們來講沒有什麼意義，所以我們想要用另外一個 list 來做為我們的 index，那我們就用水果這個欄位的 list 當成是我們的索引值。結果就不再是 0 1 2 3，而是 apple banana 等等。這樣子在抓資料的時候就可以比較容易理解要抓哪筆資料。例如抓 apple 的那筆資料。
 
-```python=
+```python
 f = {"水果": ['Apple', 'Banana', 'Cherry', 'Durian'],
     "價格": [10, 12, 20, 30],
     "數量": [90, 87, 23, 45]
@@ -328,7 +328,7 @@ Name: Apple, dtype: object
 
 如下例子，各位可以發現一樣是三個欄位，但水果這個欄位直接拿來當成索引值。原來的方法是額外再做一個欄位當成索引值，只是它的內容剛好跟水果這個地方的內容是一樣。那透過 set index 就可以少掉一個欄位。
 
-```python=
+```python
 # 和上面有一點不一樣，這一次用 set_index() 來設定索引值
 # 你會發現有不同，這一次沒有水果欄位了，因為直接變成索引
 
@@ -346,7 +346,7 @@ Durian	    30	  45
 
 那我們也可以做一個客製化的 index，就是宣告一個 list，然後用這個 list 當成 index。就可以變成比較簡潔的 a b c d。事實上 a 就代表 apple，b 的話就代表 banana。
 
-```python=
+```python
 # 你也可以使用 客製化的索引值
 
 fn = ['a', 'b', 'c', 'd']
@@ -365,7 +365,7 @@ df
 由於有一些動作可能會對這個資料表造成一些修改，。所以這個地方寫了一個 function 叫做`reset_data`，就是資料修改了以後再執行這一個 function，它會 return(df) 的這一筆資料去做一個 reset。此處程式碼可到 [Colab](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=Rk9QPg4-LFyf&line=9&uniqifier=1) 進行執行。
 
 
-```python=
+```python
 # 定義 reset_data() 這個函式只是方便等一下 demo 時資料比較乾淨。
 # 請按左方的 執行鍵（或 control + Enter）。
 
@@ -392,7 +392,7 @@ def reset_data2():
 
 那如果要把所有的欄位清成是一樣的值的話，可以直接點後面一個數字，而不是一個 list。那我們看一下執行完了以後，所有的價格都會變成是 10。
 
-```python=
+```python
 df.價格 = 10 # 全部都是 10
 df
 ```
@@ -408,7 +408,7 @@ df
 
 如果要算平均也很簡單，價格的平均(`df['價格'].mean()`)就是 18 塊，數量(`df['數量'].mean()`) 就是61.25，當然也可以去算標準差等等。用 describe 的話就會把這兩個數值相關的值，如數量、平均數等等全部都秀出來。
 
-```python=
+```python
 df.describe()
 ```
 ```
@@ -425,7 +425,7 @@ max	10.0	90.000000
 
 接下來如果在抓取資料的時候，我只想要抓取部分的欄位，那我可以在 DataFrame 加上一個 columns 是我要抓取的欄位。例如我只要抓價格跟數量這個兩個欄位，執行一下就會發現沒有水果名稱的欄位，抓出來就只有這兩個欄位而已。
 
-```python=
+```python
 df2 = pd.DataFrame(f, columns=['價格', '數量'])
 df2
 ```
@@ -439,7 +439,7 @@ df2
 
 另外一種方式就是說假設 dataframe 的物件已經產生的話，就透過篩選的方式，只要這兩個屬性這也是可以的。這樣跑出來效果是一樣的。
 
-```python=
+```python
 df3 = df[['價格', '數量']]
 df3
 ```
@@ -455,7 +455,7 @@ df3
 
 原來的資料只有價格數量跟水果名稱，所以在這個地方，多加了一個品質這樣的一個欄位。新增的 Apple 品質是 -1，也就是說這一批的品質不太好，那 banana 品質還不錯是 2 等等。
 
-```python=
+```python
 q = [-1, 2, 0, -2]
 df['品質'] = q # 把品質一欄添加到資料表中
 df
@@ -470,7 +470,7 @@ df
 
 當然也可以多加一個欄位，而這個欄位是從其他的欄位所計算出來的。比方說有一個叫累計的欄位，各位看到這個累計是 90 就等於 Apple 的數量，下一筆則是 Apple 的數量再加 Banana 的數量，等於 177 200 以此類推。
 
-```python=
+```python
 df['累計'] = df['數量'].cumsum()
 df
 ```
@@ -484,7 +484,7 @@ df
 
 那一樣可以多加一個產地。
 
-```python=
+```python
 loc = ['tw', 'usa', 'jpn', 'eu']
 df['產地'] = pd.Series(loc)
 df
@@ -500,7 +500,7 @@ df
 
 當然也可以去增加資料的內容，例如這裡多加一個 dictionary，那它一樣是水果，這個水果有兩個，一個是李子跟桃子，然後價格分別是 10 跟 12 等等。那我們就可以透過 `df.append`，append 是再多加上一個 dataframe的資料。後面這個 dataframe 是透過 f2 這一個的 dictionary 所產生的。我們給它的 index 一個是 l 一個是 k，增加完了以後，就可以看到我們本來只有 4 筆資料，現在又多增加這兩筆資料了。
 
-```python=
+```python
 df = reset_data()
 
 f2 = {"水果": ['李子', '桃子'],
@@ -522,7 +522,7 @@ l    桃子         12     87
 
 接下來這個地方其實都已經有提過了，就是只想要選擇部分的資料的話，就是通過 loc。如果說資料本身的索引很多，可以用一個 list 來做表示。也可以先選擇欄位，這些欄位可以是多欄位的，然後再選擇哪一筆資料。這些資料一樣是多資料的，所以一樣用 loc，再用一個 list 來做包裝。
 
-```python=
+```python
 df = reset_data2()
 df
 ```
@@ -534,7 +534,7 @@ c	Cherry	20	23
 d	Durian	30	45
 ```
 
-```python=
+```python
 print (df.loc['a'])
 print ("---")
 print (df.loc[['a', 'b']])
@@ -570,7 +570,7 @@ b  12  87
 
 我們用 condition 來做資料的篩選，首先價格大於 20 這個條件它會回傳一個資料表，裡面都是一些布林值，這樣的一個布林值並不是真正我要的這個資料，所以必須要再把這個 condition 放到資料表裡面，這樣子印出來的結果才會是符合這一個條件的資料表。
 
-```python=
+```python
 # select by condition
 print (df.價格 > 20)
 print("---")
@@ -589,7 +589,7 @@ d  Durian  30  45
 
 接下來是對資料去做排序，用的 function 就是 `sort_values`。ascending=False 表示不要遞增。
 
-```python=
+```python
 print (df.sort_values(by='價格', ascending=False))
 ```
 ```
@@ -607,7 +607,7 @@ a   Apple  10  90
 
 這一小節介紹一些比較偏向資料前置處理的方法。我們的資料常常並不會一開始就太整齊，中間可能會穿插著一些 missing data，就是資料是有殘缺的。例如說像這一個水果的這個例子，我有 A B C D E 總共 5 個水果，但是 E 的這個水果它的價格目前是不明的，然後 D 它的數量也是不明的。所以這個資料集並不是一個完整的資料。那怎麼辦？我們有幾種處理的方式，第一個就是因為這一筆資料不完整就把它刪除，那當然也可以就把這筆資料用另外的資料來頂替。這個地方大家看到的是 None，這個是 python 用來代表一個空值的一個符號。
 
-```python=
+```python
 import pandas as pd
 import numpy as np
 
@@ -638,7 +638,7 @@ E	    E	NaN	    20.0
 
 可是在 Pandas 它代表的空值是 NaN，所以這個大家要記一下。那我們來看第一個策略，就是把只要是含有 NaN 的資料刪除，這個就叫做 dropna，這個 na 代表就是空值的意思。那我們看一下，C 跟 E 的這一筆資料現在都被刪除了。
 
-```python=
+```python
 # 把有空值的資料刪除
 df2 = df.dropna(axis=0)
 df2
@@ -658,7 +658,7 @@ D	    D	30.0	45.0
 那我們這裡宣告了一個 dict，price 是 10、quantily 是 40，這個意思就是如果在價格上面有 NaN 的話就用 10 來頂替，數量就用四十來做頂替。
 執行一下你會發現，這時候這一筆 E 的資料，它已經用 10 來頂替了，而 C 這筆資料它用 40 來頂替。
 
-```python=
+```python
 # fill in specified values
 d = {'price': 10, 'quantity': 40}
 print (df.fillna(d))
@@ -674,7 +674,7 @@ E    E   10.0      20.0
 
 下面是我從 10 到 20 之間，或者是說從 20 到 90 之去取一個隨機的值來去做一個填值，所以你可能兩次執行跑出來的結果其實是不太一樣的。
 
-```python=
+```python
 # fill in an specified random value
 r1 = np.random.randint(10, 30, 1)[0]
 r2 = np.random.randint(20, 90, 1)[0]
@@ -694,7 +694,7 @@ E	    E	22.0	20.0
 接下來最後一種方法是可以往前參考或者是往後參考，這個通常是用在資料有一個連續性，舉個例子來講，這個欄位代表是一個時間，
 那雖然這個時間這一筆資料它是 missing data，但是跟前一筆資料其實是差不了多少，可能差個 5 秒還是幾秒。所以我等於你的秒數，其實對整個資料的運算不會有很大的影響。所以可以讓後面的值就等於前面的值，執行一下後這一筆資料它就會 follow 前面的這筆，所以就變成是 30。這一筆資料的話，它就 follow 前面一筆，就變成是 87。你如果把它改成是往後參考的話，這時候，這一筆就變成是後面的這個 45。這一筆因為後面已經沒資料，所以它還是保持原來的這個 NaN。
 
-```python=
+```python
 # 把有空值的資料刪除
 print (df)
 print (df.dropna(axis=0))
@@ -735,7 +735,7 @@ print (df.fillna(method = 'bfill'))
 
 
 #### 成績的 Merge
-```python=
+```python
 import pandas as pd
 
 f1 = {'ID': ['s001','s002','s003','s004'],
@@ -765,7 +765,7 @@ df4 = pd.DataFrame(f4)
 
 我們明確的來看一個例子，我們還是用成績的例子來做解說。這裡有一個 df1 的表格，那它包含學號、英文、數學還有物理的成績。第一張表是有學號 001 一直到 004，第二張表的話是 005 到 007，那它資料的結構都是一樣的。所以我們這時候是想要做一個縱向的整併把資料拉長，所以這個整併以後，就會變成是 001 到 007。可以看到前面的四筆都是來自於 df1，後面三筆是來自於 df2。
 
-```python=
+```python
 # 兩筆資料結構都一樣，預整併資料列表
 r12 = df1.append(df2)
 r12
@@ -783,7 +783,7 @@ r12
 
 接下來是 merge，一樣是 df1，跟上面的那張表是一樣的，那 df3 的話有一點不一樣，它這個地方有學號，但另外加了兩個科目，一個是 cs 電腦的課，另外這個是資料結構的課，所以它多了兩個不同的欄位。這時候我們要把它整併起來產生一個新的表，這個新的表總共就會有這個 6 個欄位，包含了學號等等。所以各位可以看到它一樣是學號 001 到 004，但欄位變多了。這個就叫做inner 的 merge，事實上就是一種交集的觀念。
 
-```python=
+```python
 # merge
 r13 = df1.merge(df3)
 r13
@@ -800,7 +800,7 @@ r13
 #### Outer merge
 
 df1 還是保持剛剛的那一張表格，就是一個學號和三個欄位。那 df4 它是有一個學號，然後它有一個 cs、英文跟數學成績欄位，那英文跟數學還有學號是在 df1 共同有的欄位，但是 cs 它是多出來的這個欄位，而且資料的這個內容也有一些重疊、新增，像有一個 001、然後又有一個 008 跟 009。008 跟 009 是 df1 沒有的學生資料，001 是共同有的資料，這時候我們把這筆資料做 merge 會產生什麼結果？這時候它預設會去做一個交集，因為這兩筆資料共同有的都是 001 這個學生，那 001 的英文、數學然後物理還有 cs 的成績全部都會呈現在這個地方。因為我們在做 merge 的時候它會去看欄位，欄位名稱一樣都是 id，然後 df1 的 eng 會跟 df4 的 eng 做比較，然後 df1 的 math 會跟 df4 的 math 去做比較，這三筆資料都一樣它就會放進來，然後把 phy 跟 cs 這兩個是個別在 table 裡面有的再去把它去做一個整併。所以出來的這個表格，就會變成是這個樣子。那有交集就有所謂的聯集，聯集就是叫做 outer 的 merge 或者是 outer 的 join。
-```python=
+```python
 # 採用 inner, 做交集
 r14 = df1.merge(df4) # default is inner
 r14_inner = df1.merge(df4, how='inner')
@@ -813,7 +813,7 @@ r14_inner
 
 那我們再來看一下這兩個表，但是如果說我們採取的是一種 outer 的 merge 的話，會把所有的資料全部呈現出來，也就是 001 到 004 以及 008 跟 009，這 5 個資料全部都呈現出來。但是這一些資料裡面有一些欄位就會沒有值。例如說 002 的這筆資料，它並沒有 cs 的成績，所以它整併起來以後這個地方就不曉得要填什麼，我們就會填上一個 nan，就是空值的意思。那同理 003 跟 004 也都是填上 nan。那對 008 的這一筆資料來講它是有 cs 資料的，它沒有的是 phy，所以這個地方它就填這樣的一個值。所以我們採取 outer merge 的，記得資料全部它都會呈現。
 
-```python=
+```python
 # 採用 outer, 做聯集
 r14_outer = df1.merge(df4, how='outer')
 r14_outer
@@ -832,7 +832,7 @@ r14_outer
 
 我們再來看另外一種叫做 left outer merge，它的合併方式是，我左邊的資料都一定要保有，所以左邊 df1 有 1 到 4 ，所以 1 到 4 全部都有。那右邊的這個 8 跟 9 我就不呈現出來。所以這個跟聯集跟交集是不一樣的，左邊的就是我主體的資料，我要它都呈現出來，即便有一些資料是有空值的。有 left outer merge，就會有 right outer merge。同理就是，我要把右邊的資料全部都呈現出來，所以這個地方有 1 8 9，一樣 phy 這個地方，它就會填上空值。
 
-```python=
+```python
 r14_right = df1.merge(df4, how='right')
 r14_right
 ```
@@ -902,7 +902,7 @@ Matplotlib 預設無法顯示中文，若想顯示中文，只要去修改 matpl
 
 可以先使用以下程式碼去尋找設定檔路徑：
 
-```python=
+```python
 #find matplotlibrc path
 import matplotlib 
 print(matplotlib.matplotlib_fname())
@@ -929,7 +929,7 @@ C:\\Users\\使用者名稱\\Anaconda3\\Lib\\site-packages\\matplotlib\\mpl-data\
 ```
 - 最後在 python 中使用 rcParams 參數指定字體，即可顯示中文。
 
-```python=
+```python
 import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei'] 
 plt.rcParams['axes.unicode_minus'] = False
@@ -946,7 +946,7 @@ Mac 設定：(與 Win10 同理)
 此章節程式碼可至 [colab](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=eNekZb0wH9hJ) 參考
 
 產生數據:
-```python=
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 import random as r
@@ -988,7 +988,7 @@ c3    30   20
 sg 這張表是代表三個班級 C1 C2 C3 男生跟女生的數量，
 用這兩張表來跟大家做說明。
 第一張圖用 plot 畫折線圖，只要一行的指令，就可以把這一個看起來滿複雜的折線圖畫出來。
-```python=
+```python
 # 折線圖
 s.plot()
 ```
@@ -996,7 +996,7 @@ s.plot()
 
 s 是一個 dataframe 的物件，使用 `s.plot()` 方法後如果 title 後面的參數沒有寫其實也沒關係，它就不會呈現 title，有寫 title 這個地方就會呈現出來，而且預設把圖例的說明放在右上角。如果不要用dataframe.plot 來做，想要用 matplotlib 來做也是可以。首先先 import matplotlib，然後設定它的 title，就直接用這個 plt ，plt 它等於是一個 pyplot 的物件去 .title 去設定這個 title，然後去設定它的 x 軸跟 y 軸，再透過 plot 把 s 這一筆資料印出來如 Code。
 
-```python=
+```python
 import matplotlib.pyplot as plt
 plt.title('Student Grade')
 plt.ylabel('Grade')
@@ -1031,7 +1031,7 @@ plt.plot(s)
 
 接下來看 pie chart 如下圖，pie chart 一樣先呼叫 plot 再呼叫 pie，如 
 
-```python=
+```python
 sg.plot.pie(y='boy', autopct='\%.2f',figsize=(5,5))
 ```
 
@@ -1085,7 +1085,7 @@ sg.plot.pie(y='boy', autopct='\%.2f',figsize=(5,5))
 ) 執行操作。
 
 
-```python=
+```python
 import pandas as pd
 
 def setupFont_mac():
@@ -1131,7 +1131,7 @@ df = init_data()
 這三個 function 的含義應該很容易了解，所以就進入到主程式，首先設定一下字型，然後接下來把檔案讀進來放在 dataframe 的 df 中。那讀完了以後就能看到該 df 的資料，我們先來看一下 df 的資料，sno 就是我們剛剛提到的站亭代碼、然後是站點的名稱、total 是多少個車位、sbi 目前還有多少車輛可被借用、sarea 站點是在哪一個區域等等。這個 sarea 等一下我們會用到，所以我們花一點時間來看一下資料。透過排序後，可以看到三峽區這個地方其實本身擁有蠻多的 station，接下來是三重區等等。`dataframe.read_csv` 事實上幫我們做了很智慧的判讀，看到數字就自動當成是一個數字，其實呈現出來是比較方便的。
 
 
-```python=
+```python
 #
 # 以長條圖呈現每一區的數量
 # 一行就可以解決
@@ -1161,7 +1161,7 @@ stationCount['Count'].plot.bar(title='新北各區 Youbike 車站數量', figsiz
 
 有了這樣的資料後，接下來要畫 bar chart 就容易了，跟剛剛的程式碼一樣執行完就是由小而大的這樣的一筆資料。
 
-```python=
+```python
 #
 # 以 pie chart 呈現比例
 #
@@ -1218,7 +1218,7 @@ df2.plot.scatter(x='lng', y='lat',
 ### 大專院校學生
 此單元 [colab 連結](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=ZXAwnxGSeFp8&line=2&uniqifier=1)。
 
-```python=
+```python
 def init_data():
     ''' 讀入檔案，轉型態
     '''
@@ -1247,7 +1247,7 @@ def init_data():
 
 #### 學校人數分析
 
-```python=
+```python
 df = df107.groupby(by = '學校名稱').sum()
 df['tot'] = df[df.columns[0:]].sum(axis=1)
 df = df.sort_values('tot')
@@ -1261,7 +1261,7 @@ df.tail(10)['tot']
 
 #### 國立，私立學校數量
 
-```python=
+```python
 def national(df):
     ''' 回傳國立和私立兩張資料表
       * 依據前面有沒有國立兩個字
@@ -1279,7 +1279,7 @@ def national(df):
 df107 = init_data()
 ```
 
-```python=
+```python
 df = df107.groupby(by = '學校名稱', as_index = False).sum()
 df['學校名稱'].str.contains('國立')
 df_n = df[df['學校名稱'].str.contains('國立')]
@@ -1294,7 +1294,7 @@ print ('國立：{}, 私立：{}, 共：{}'.format(n, p, n+p))
 
 #### 男女比例
 
-```python=
+```python
 def gender(df):
    ''' 建立一個新表，有男女生人數
    '''
@@ -1318,7 +1318,7 @@ def gender(df):
 
 當然 boy 裡面的第一個就是一年級男生，所以等一下跑迴圈的時候這一個 `gender_df[0]` 就會抓到一年級男生的這一筆資料，以此類推，所以迴圈跑完的話就可以知道所有男生的人數。同理，女生就寫在 female 這一個欄位裡面。
 
-```python=
+```python
 df_gender = gender(df107)
 df_gender = df_gender.groupby(by='學校名稱').sum()
 df_gender['Rate'] = (df_gender.Male / df_gender.Female).round(2)
@@ -1346,7 +1346,7 @@ df_rate[['Rate']].boxplot()
 
 #### 每個縣市有多少大學？
 
-```python=
+```python
 # group by 兩個欄位，才會都保留
 df_city_u = df107.groupby(by = ['縣市名稱', '學校名稱'],
                           as_index = False).sum()
@@ -1365,7 +1365,7 @@ df_city.plot.bar()
 執行完了以後存在 `df_city`，這樣子就會看到用縣市的名稱當成 index，然後後面這個地方會變成數量。因為包含後面男生女生的欄位全部都會有，我們其實只需要學校名稱，所以產生一個新的表再把這個表塞給 `df_city`，我們就只抓學校的名稱，那當然學校名稱對於我們這一個表的意義又不太一樣，事實上應該代表的是學校的個數，所以我再透過 .columns 等於學校個數。這樣子把這個名稱做修訂，執行後一樣看 `df_city`，就可以看到前面是縣市的名稱，接下來是學校的個數。
 那我們可以畫出 bar chart，一樣這個地方看到台北市最多，金門的學校個數就少一點。
 
-```python=
+```python
 #
 # Exercise: 在六都讀書的學生，佔全國多少比例？
 #

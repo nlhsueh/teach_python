@@ -6,7 +6,7 @@ Ch02 程式結構
 
 我們先來看一個典型的程式處理架構，包含輸入、處理、輸出：
 
-```python=
+```python
 name = input("What is your name: ") 
 helloToYou = "Hello " + name
 print (helloToYou)
@@ -38,7 +38,7 @@ print (name + "'s BMI is", BMI)
 * 注意變數的型態、命名規則、命名慣例
 
 
-```python=
+```python
 ## 變數的命名與宣告
 x = 100
 y = 200
@@ -65,7 +65,7 @@ name, eng, math, phy = "Nick", 92, 88, 32
 
 以下變數命名都錯誤：
 
-```python=
+```python
 and = 1     # Error, and 是保留字
 @employ = 1 # Error, 不可包含 @ 特殊字
 ```
@@ -73,7 +73,7 @@ and = 1     # Error, and 是保留字
 
 有意義的命名很重要：
 
-```python=
+```python
 grade = 100
 temperature = 8.9
 name = "John"
@@ -235,7 +235,7 @@ Python 中常見的變數型態：
 
 以上表格提供了每種變數型態的描述和示例，以幫助你理解它們的不同用途。
 
-```python=
+```python
 a = 100       # int 型態
 b = 8.9       # float 型態
 c = "John"    # str 字串型態
@@ -264,7 +264,7 @@ print (x/y)   # Error
 
 透過 `type()` 來檢查型態：
 
-```python=
+```python
 grade = 89
 temperate = 32.5
 name = 'Nick'
@@ -289,7 +289,7 @@ isinstance(2==2, bool)   # True
 
 #### 型態轉換
 
-```python=
+```python
 # 將一個物件轉換為指定的型態
 float(2)   # 將整數 2 轉換為浮點數 2.0
 int(2.9)   # 將浮點數 2.9 轉換為整數 2 (無條件捨去小數)
@@ -388,15 +388,14 @@ print(f"'{current_char}' 的下一個字母是 '{next_char}'")
 ```
 
 
-:::success
-:football: 寫一個程式，利用 ord() 及 chr() 和迴圈印出 a-z 26 個字母。
+> [!NOTE]
+> :football: 寫一個程式，利用 ord() 及 chr() 和迴圈印出 a-z 26 個字母。
+>
+> 輸出如下：
+> > The ASCII code of a is  97
+> > a b c d e f g h i j k l m n o p q r s t u v w x y z
 
-輸出如下：
-> The ASCII code of a is  97
-> a b c d e f g h i j k l m n o p q r s t u v w x y z
-:::
-
-```python=
+```python
 a_code = ord('a')
 print ('The ASCII code of a is ', str(a_code))
 for i in range(a_code, a_code+26):
@@ -436,7 +435,7 @@ for i in range(a_code, a_code+26):
 這些運算子用於執行基本的數學運算，並且可以用於不同的變數和數值。舉例說明了每個運算子的用法和效果。請注意，Python中的除法（`/`）通常返回浮點數結果，即使操作數是整數。如果需要整數結果，可以使用整數除法（`//`）。
 
 
-```python=
+```python
 # 數值運算
 10 + 4        # 14    
 10 - 4        # 6  
@@ -537,7 +536,7 @@ print ('共需 {} 天 {} 小時 {} 分 {} 秒 '.format(days, h, m, s))
 
 這些運算子和方法用於操作字串，可以實現字串的結合、提取、切片、測試包含等操作。舉例說明了每個運算子或方法的用法和效果。請注意，Python中的字串索引是從0開始的，而切片包括左側的索引但不包括右側的索引。
 
-```python=
+```python
 # 字串運算
 hello = "Hello" + ", " + "World"
 print (hello)
@@ -561,7 +560,7 @@ False
 
 #### 字串函式
 
-```python=
+```python
 hello = "Hello, Nick"
 print ('hello: ', hello)
 h1 = hello.upper()
@@ -607,7 +606,7 @@ hello 的值並沒有變, 依然是： Hello, Nick
 
 | 運算子  | 說明                     | 舉例              |
 |---------|--------------------------|-------------------|
-| `==`    | 等於                     | `3 == 3` -> `True`    |
+| `**`    | 等於                     | `3 ** 3` -> `True`    |
 | `!=`    | 不等於                   | `4 != 3` -> `True`    |
 | `<`     | 小於                     | `2 < 5` -> `True`     |
 | `>`     | 大於                     | `5 > 3` -> `True`     |
@@ -616,7 +615,7 @@ hello 的值並沒有變, 依然是： Hello, Nick
 
 這些運算子用於比較兩個值的關係，並返回布林（Boolean）結果（True或False）。舉例說明了每個運算子的用法和效果。你可以使用這些運算子來構建條件語句，進行條件判斷和流程控制。
 
-```python=
+```python
 # 關係運算
 11 > 2            # True
 11 >= 11          # True
@@ -625,7 +624,7 @@ a, b = 11, 12
 a >= b            # False
 ```
 
-```python=
+```python
 ## 邏輯運算
 a = 11 > 2        # True
 b = 1 > 9         # False
@@ -634,7 +633,7 @@ Y = a or b        # True or False => True
 Z = not a         # False
 ```
 
-```python=
+```python
 isStudent = True
 isKid = False
 print (isStudent and isKid)  # False
@@ -645,7 +644,7 @@ print (isStudent or isKid)   # True
 
 ### 2.4.1 input 輸入
 
-```python=
+```python
 # input 輸入
 name = input("你的姓名? ")
 print (name, type(name))
@@ -675,7 +674,7 @@ TypeError: unsupported operand type(s) for -: 'int' and 'str'
 
 這是因為我們忘了將 year 轉換為 int，以下做修改：
 
-```python=
+```python
 # input 輸入
 name = input("你的姓名? ")
 print (name, type(name))
@@ -698,14 +697,14 @@ Nick的年齡是23歲
 
 如果我們要讀入一群數字，就需要將這個字串先切割（split），再轉成 int
 
-```python=
+```python
 ages = input("輸入你和你哥哥的年齡，用 , 分隔")
 ```
 > 12,23
 
 這是後 ages 的值是 "12,23" 沒有辦法直接轉為整數，我們可以透過 `split()` 來做切割：
 
-```python=
+```python
 a1, a2 = ages.split(",")
 print (a1, a2)
 age1 = int(a1)
@@ -723,7 +722,7 @@ print ('你們相差', (age2-age1), '歲')
 
 `eval()` 是一個更方便解析輸入數字的方法。我們不需要透過 split() 與 int 兩道程序：
 
-```python=
+```python
 age1, age2 = eval(input("輸入你和你哥哥的年齡，用 , 分隔"))
 print (age1, age2, type(age1))
 ```
@@ -744,7 +743,7 @@ print (age1, age2, type(age1))
 - `format()`
 
 如下例：
-```python=
+```python
 # 簡單的輸出
 name = 'Nick'; age = 20
 
@@ -768,7 +767,7 @@ print (a2)
 #### 排版
 
 如果我們要印出多個浮點數字，
-```python=
+```python
 a = [3.14159, 13.597, 4.12]
 
 for x in a:
@@ -783,7 +782,7 @@ The number is 4.12 is that ok?
 ```
 排版有點凌亂，我們想取小數點下兩位就好：
 
-```python=
+```python
 a = [3.14159, 13.597, 4.12]
 
 for x in a:
@@ -798,7 +797,7 @@ The number is 4.12, is that ok?
 ```
 
 小數點並沒有對齊，我們想要固定整數部分一定有兩個空間，可以修改如下：
-```python=
+```python
 a = [3.14159, 13.597, 4.12]
 
 for x in a:
@@ -840,7 +839,7 @@ message = "Hello,\nWorld!"
 這樣的設置將使`message`變數包含一個換行，將"Hello,"和"World!"分成兩行。
 
 
-```python=
+```python
 # escape code
 c1 = "he doesn't like apple"
 c2 = 'he doesn\'t like apple'
@@ -875,7 +874,7 @@ first line\nsecond line
 
 以下範例，注意 s 本身的值不會改變，這些函式呼叫後會回傳一個新的值。
 
-```python=
+```python
 s = "I like Python"
 r1 = s.lower()
 r2 = s.upper()
@@ -903,7 +902,7 @@ x3 = s.split(',')
 * w+ 表示是要覆寫 (write; w) 到檔案中，如果沒有檔案，就建立一個; 
 * print (“要輸出的字”, file = f) 表示要輸出到檔案，不是螢幕。
 
-```python=
+```python
 with open("grade.txt", 'w+') as f:
   print ('張三', file=f)
   print ('100, 20, 50', file=f)
@@ -926,7 +925,7 @@ with open("grade.txt", 'w+') as f:
 
 `readline()` 會讀一行，因為也會把句末的換行 (\n) 也讀進來，所以這裡用 replace 將之置換掉。
 
-```python=
+```python
 with open("grade.txt", "r") as f2:
    # st1 表示 student1  
    st1 = f2.readline().replace('\n', '')    # 張三  
@@ -958,7 +957,7 @@ with open("grade.txt", "r") as f2:
 
 這個表格提供了對每種錯誤類型的簡要說明，並提供了相應的示例。這有助於開發者更容易地理解不同錯誤的性質和可能的原因。
 
-```python=
+```python
 # syntax error
 radius = int(input("The radius? ")
 area = radius ** radius * 3.14
@@ -967,7 +966,7 @@ print (area)
 
 `input` 右邊少了一個 `)`, Python 就不認得這樣的語法了，是個語法錯誤。
 
-```python=
+```python
 # run time error if you input 1.1
 radius = int(input("The radius? "))
 area = radius ** radius * 3.14
@@ -976,7 +975,7 @@ print (area)
 
 上面的程式沒有錯誤，但是如果我們輸入 "1.1", int() 並沒有辦法把字串的 1.1 轉換為 int, 所以發生執行上的錯誤。我們改用 float() 來轉換：
 
-```python=
+```python
 # logic error
 # if you input 1 or 2, you'll not find it
 radius = float(input("The radius? "))
@@ -987,7 +986,7 @@ print (area)
 上面的程式雖然不會有執行的錯誤了，但有語法的錯誤：`**` 代表的是次方，我們本來要寫的是 `radius*radius`。如果測試時 radius 的值是 1或2, 還不會發現錯誤呢。修改如下：
 
 
-```python=
+```python
 # bad code: not easy to maintain
 radius = float(input("The radius? "))
 area = radius * radius * 3.14
@@ -996,7 +995,7 @@ print (area)
 
 上面的程式雖然對了，但可以改得更好，我們用 PI 來代表 3.14, 這樣以後如果我們想要更精準的計算面積，想用 3.14159 來代表 PI，就不用改太多。
 
-```python=
+```python
 # much better
 PI = 3.14159
 radius = float(input("The radius? "))
@@ -1020,7 +1019,7 @@ print (area)
 | 多行註解（Multi-Line Comment） | `'''` 或 `"""` 包裹  | 使用三引號 `'''` 或 `"""` 包裹多行註解，通常用於多行說明。 |
 
 
-```python=
+```python
 '''
 本程式用來排序一群資料
 這群資料的產生是隨機產生的
@@ -1055,80 +1054,79 @@ for i in range(1, r+1):
 
 ## 2.7 程式練習
 
-:::success
-:basketball: Ex01 OJ 面積與周長
-描述：
-輸入直徑，計算出面積與周長，並輸出至小數點下兩位。注意 pi 請用 3.14 來計算。
+> [!NOTE]
+> :basketball: Ex01 OJ 面積與周長
+> 描述：
+> 輸入直徑，計算出面積與周長，並輸出至小數點下兩位。注意 pi 請用 3.14 來計算。
+>
+>
+> | 資料           | 範例 1        | 範例 2        |
+> |----------------|--------------|--------------|
+> | 輸入-直徑     | 2            | 10           |
+> | 輸出-面積     | 3.14         | 78.5         |
+> | 輸出-周長     | 6.28         | 31.4         |
+>
+>
+> Code:
+> ```python
+> d = int(input('')) # 此行勿改。d 為直徑
+> a =  # 面積
+> p =  # 周長
+> print (a) # 此行勿改
+> print (p) # 此行勿改
+> ```
 
+<details>
+<summary>Solution</summary>
 
-| 資料           | 範例 1        | 範例 2        |
-|----------------|--------------|--------------|
-| 輸入-直徑     | 2            | 10           |
-| 輸出-面積     | 3.14         | 78.5         |
-| 輸出-周長     | 6.28         | 31.4         |
-
-
-Code:
-```python=
-d = int(input('')) # 此行勿改。d 為直徑
-a =  # 面積
-p =  # 周長
-print (a) # 此行勿改
-print (p) # 此行勿改
-```
-:::
-
-:::spoiler "Solution"
 Solution
-```python=
+```python
 d = int(input('')) # 此行勿改。d 為直徑
 a =  round((d/2) **2 * 3.14, 2)  # 面積
 p =  round(d * 3.14, 2)  # 周長
 print (a) # 此行勿改
 print (p) # 此行勿改
 ```
-:::
+
+</details>
 
 
-:::success
-OJ 星期幾
-已知某個月的一號是星期1, 輸入該月的日期，請回答是星期幾。注意若為星期日，則為星期 7，也就是答案落在1,2,... 7 其中一個值。
-:::
+> [!NOTE]
+> OJ 星期幾
+> 已知某個月的一號是星期1, 輸入該月的日期，請回答是星期幾。注意若為星期日，則為星期 7，也就是答案落在1,2,... 7 其中一個值。
 
 
-:::success
-OJ 溫度轉換
-
-設計攝氏溫度和華氏溫度的轉換。輸入攝氏輸出華氏。
-華氏溫度 = 攝氏溫度 * ( 9 / 5 ) + 32 (取小數點下兩位)
-
-
-```
-Code:
-c = int(input('')) # 此行勿改。c 為攝氏
-
-# write your code here
-
-print (f) # 此行勿改。f 為輸出之華氏
-```
-:::
-
-
-:::success
-OJ 計算距離
-
-兩個座標的距離，是各自 x, y 的座標差的平方和再開根號，如下圖：
+> [!NOTE]
+> OJ 溫度轉換
+>
+> 設計攝氏溫度和華氏溫度的轉換。輸入攝氏輸出華氏。
+> 華氏溫度 = 攝氏溫度 * ( 9 / 5 ) + 32 (取小數點下兩位)
+>
+>
+> ```
+> Code:
+> c = int(input('')) # 此行勿改。c 為攝氏
+>
+> # write your code here
+>
+> print (f) # 此行勿改。f 為輸出之華氏
+> ```
 
 
-```python
-Hint：開根號，可使用 ** 0.5 來做
-
-Code:
-x1, y1 = eval(input('')) # 此行勿改。x1, y1 是第一個座標
-x2, y2 = eval(input('')) # 此行勿改。x2, y2 是第二個座標
-
-d  # d 為兩個座標的距離
-
-print (d) # 此行勿改
-```
-:::
+> [!NOTE]
+> OJ 計算距離
+>
+> 兩個座標的距離，是各自 x, y 的座標差的平方和再開根號，如下圖：
+>
+>
+> ```python
+> Hint：開根號，可使用 ** 0.5 來做
+>
+> Code:
+> x1, y1 = eval(input('')) # 此行勿改。x1, y1 是第一個座標
+> x2, y2 = eval(input('')) # 此行勿改。x2, y2 是第二個座標
+>
+> d  # d 為兩個座標的距離
+>
+> print (d) # 此行勿改
+> ```

@@ -31,7 +31,7 @@ List 是最常被使用的集合物件，其特色是
 
 在第三個 List中(line 8)，第一筆資料是一個字串，第二筆資料也是一個字串，第三筆資料則是一個List的型態，所以我們說 List 它是可以放各種不同資料型態的。這筆資料它的意義是什麼？我們必須在程式設計的時候賦予它這樣子的意義，例如，第0筆資料是學生的姓名，第1筆代表的是他的學號，接下來是他一群成績的資料，這個在我們規劃的時候必須要去做很明確的定義。
 
-```python=
+```python
 # 放一群人的姓名，型態都是字串
 students = ['nick', 'albert', 'jie']
 
@@ -55,7 +55,7 @@ empty_list = list()
 - 修改：直接指定要修改資料的索引值，例如 `aList[0]=100`，本來 0 的位置所放的資料是1，修改後，它就會變成是 100。
 - 資料擷取：直接給定一個索引值就可以得到這一筆資料，或者用`：`來做資料切片，例如我們寫上 `1:`，代表從 1 到它最後的資料，所以就會回傳 `[2,'a','b']`。
 
-```python=
+```python
 aList = [1,2,'a','b']
 
 # 新增    
@@ -84,7 +84,7 @@ aList[1:]               # [2, 'b', 'd']
 - `extend(d)`: d 應該也是一個 list; 擴充 list 使之涵蓋 d 的元素。
 - `insert(i, d)`: 將 d 插入到 list 位置 i 的地方。
 
-```python=
+```python
 students = ['01-nick', '02-albert', '03-jie']
 print ('Original data: ', students)
 st = ['04-jason', '05-allen']
@@ -132,7 +132,7 @@ after insert st at loc 1:  ['01-nick', ['04-jason', '05-allen'], '02-albert', '0
 - `r = pop()`: 回傳並移除最後一個;
 - `r = pop(index)`: 回傳並移除 `index` 的元素
 
-```python=
+```python
 # 刪
 students = ['nick', 'albert', 'jie']
 print ('original data: ', students)
@@ -167,7 +167,7 @@ after pop 0, the result and list are:  nick , ['albert', 'jie']
 
 ### 資料的排序
 
-```python=
+```python
 d = [1,4,5,2,9,8,7,7,2,6]
 dc = d.copy()
 print ('original data d=\t', d)
@@ -197,7 +197,7 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 
 排序是我們經常會使用到的一種資料修改，語法很簡單，我們只要用 `data.sort` 就可以把資料作由小到大的做排序。如果今天是想要由大到小的排序的話們可以加上一個參數，`reverse=True`。
 
-另一個函式 `sorted(d)` 並==不會==改變 `d` 的內部資料排序，它會產生另一個 list 來儲存排序後的結果。如上述程式中的 r。
+另一個函式 `sorted(d)` 並**不會**改變 `d` 的內部資料排序，它會產生另一個 list 來儲存排序後的結果。如上述程式中的 r。
 
 ### 資料的擷取
 
@@ -209,7 +209,7 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 
 ![list index](https://hackmd.io/_uploads/S1Zk9d1-a.png)
 
-```python=
+```python
 grade = [11, 22, 99, 35, 59]
 print ('original grade: ', grade)
 
@@ -247,7 +247,7 @@ grade[-2:-1]  [35]
 
 舉個例子來說，`students=['nick','albert','jie']` 這三個人，我們如果要印出所有學生的名字，我們只要寫 `for st in student`，進入到迴圈以後，每一次去抓取這個 `st`，代表這個 list 中的每一個元素，第一次進到這個迴圈，`st` 指的是第 0 個值 `'nick'`，第2次再進到迴圈就是 `'albert'`，以此類推第 3 次就是 `'jie'`，這個對於我們在做整體資料的運算十分方便，
 
-```python=
+```python
 students = ['nick', 'albert', 'jie']
 
 # for list
@@ -264,7 +264,7 @@ jie
 
 例如我們現在要加總 `grade` 這個 `list` 裡面的所有成績的平均等於多少，就可以用 `for loop` 來走訪所有的成績，透過 `sum` 做加總，加總完了以後，再去除以這個資料它的個數就可以得到平均值，而前面我們這個地方看到一個 `len`，可以回傳 List 裡面有多少個元素。
 
-```python=
+```python
 # 整體資料的運算
 grade = [11, 22, 99, 35, 59]
 total = 0
@@ -285,7 +285,7 @@ print ('平均分數：', total//len(grade))
 上述的程式中，可以發現它並沒有索引值 `i`，但有時候還是需要這個索引值，這時候我們就可以用 `enumerate` 這個函式，在 list 前面加上一個 `enumerate` 就會回傳索引值以及這個元素，所以我們進入迴圈以後，每一次去抓取 `i` 跟元素的時候就會依序地印出它的索引值，以及這一個索引值所對應到的資料。以下程式中的 `grade` 紀錄一群成績，我們想要把低於 60 分的調整為 60 分。
 
 
-```python=
+```python
 grade = [11, 22, 99, 35, 59, 78]
 print ('original grade = ', grade)
 for i, g in enumerate(grade):
@@ -316,7 +316,7 @@ after update =  [60, 60, 99, 60, 60, 78]
 
 list 內有許多的函式可以來幫助我們做一些查詢，例如我們可以使用 `count(e)` 來找出這一組資料裡面有多少個元素它的值是 `e`，使用 `index(e)` 可以回傳第一個 `e` 的索引值。例如 `count('nick')`，就是要計算有多少個同學的名字是 `nick`，所以回傳是 `2`。 `index('albert')` 第一個名字為 `albert` 的，它的位置會回傳為 `1`。
 
-```python=
+```python
 students = ['nick', 'albert', 'jie']
 age =[12, 56, 40]
 
@@ -349,7 +349,7 @@ albert 在 資料 ['nick', 'albert', 'jie'] 中的位置是 1
 
 如果要進一步的獲取 `學生2` 的英文成績的話，我們就可以用 `grade[2][0]` 就可以抓取到 `77` 的這個成績。在 `grade` 內部的結構中，`grade` 可以視為一維陣列，只不過它裡面儲存的是一個位置的參考，這個位置的參考會指向另外一個 list。
 
-```python=
+```python
 # List of List
 grade = [[11, 22, 33], [44, 55, 66], 
          [77, 88, 99], [90, 91, 92]]
@@ -362,10 +362,10 @@ print (grade[2][0])   # 77
 [77, 88, 99]
 77
 ```
-如果我們想要走訪整個資料的話，就可以用一個==雙重迴圈==，`for row in grade`，進到迴圈了以後，每一個 `row` 代表著就是一個學生的所有成績，這時候再去執行一個 `for element in row`，進來以後，每一個 `element` 就代表某一個人某一個科目的成績，所以第一次的 `element` 是 `11`，接下來依次是 `22`、`33`等等，等到這一個迴圈走完，我們印出一個換行的鍵再進到下一筆資料，所以第二筆資料，`row` 就代表的是`學生1` 的這群資料。
+如果我們想要走訪整個資料的話，就可以用一個**雙重迴圈**，`for row in grade`，進到迴圈了以後，每一個 `row` 代表著就是一個學生的所有成績，這時候再去執行一個 `for element in row`，進來以後，每一個 `element` 就代表某一個人某一個科目的成績，所以第一次的 `element` 是 `11`，接下來依次是 `22`、`33`等等，等到這一個迴圈走完，我們印出一個換行的鍵再進到下一筆資料，所以第二筆資料，`row` 就代表的是`學生1` 的這群資料。
 
 
-```python=
+```python
 # 透過兩個迴圈把二維 list 哪的元素都印出來
 grade = [[11, 22, 33], [44, 55, 66], 
          [77, 88, 99], [90, 91, 92]]
@@ -384,7 +384,7 @@ for row in grade:
 90 91 92 
 ```
 
-```python=
+```python
 for i, row in enumerate(grade):
     for j, element in enumerate(row):
         print ('grade[{}][{}]={}'.format(i,j,element), end='; ')
@@ -399,14 +399,14 @@ grade[3][0]=90; grade[3][1]=91; grade[3][2]=92;
 ```
 
 
-接著來看二維list 的運算的方法，假設我們想要加總每一個學生的成績，並且把它儲存在一個一維陣列裡，我們一開始可以宣告，一個==一維陣列==，叫做 `st_sum`，接下來用一個 `for迴圈` 去走訪每一個學生的成績，所以 `for st in grade`，進到這個迴圈以後，`st` 代表的是一個學生的所有科目的list，在前面加上一個 `sum`，就可以把他的所有的成績加總起來，加總後把它儲存在 `st_sum`，index 為 `i`，在第一次時，這個 `i` 的值是為 `0`，所以第一個學生的成績就會儲存在 0 的位置，接下來把`i+1`，進到下一個迴圈，去加總第二個學生的成績，並儲存在 `i` 為 `1` 的這一個位置，以此類推。
+接著來看二維list 的運算的方法，假設我們想要加總每一個學生的成績，並且把它儲存在一個一維陣列裡，我們一開始可以宣告，一個**一維陣列**，叫做 `st_sum`，接下來用一個 `for迴圈` 去走訪每一個學生的成績，所以 `for st in grade`，進到這個迴圈以後，`st` 代表的是一個學生的所有科目的list，在前面加上一個 `sum`，就可以把他的所有的成績加總起來，加總後把它儲存在 `st_sum`，index 為 `i`，在第一次時，這個 `i` 的值是為 `0`，所以第一個學生的成績就會儲存在 0 的位置，接下來把`i+1`，進到下一個迴圈，去加總第二個學生的成績，並儲存在 `i` 為 `1` 的這一個位置，以此類推。
 
 如果要去計算每一個科目總合，就會稍微複雜一點，因為變成縱向的方式做加總。首先，我們先宣告一個一維陣列，`subj_sum`，然後走訪這整個陣列，`for st in grade`，進來 `st` 代表的是一個學生的成績，透過 `enumerate` 獲取它的索引值 `i` 跟 `g`，`i` 代表的是目前的索引，第一次的時候是為 `0`，所以這個 `subj_sum[0] += g`， `g` 就是第一次的成績 11，下一個迴圈再進來的時候是 `22`，這時候的 `i` 值已經變成 `1` 了，所以它就會把 `11` 儲存在這裡，`22` 儲存在 `i=1` 的位置; `33` 則儲存在 `i=2` 的位置。
 
 下一個迴圈，在外部迴圈進來的時候，`st` 代表的是第二筆資料，也就是 `[44,55,66]` 的這筆資料，這時候它會跟上面的地方做加總，也就是 `44` 會加上 `11`；等到在進到第三筆資料的時候，`77` 會被抓取出來，接著是第四筆的 `90`。
 
 
-```python=
+```python
 # 計算每個學生的各科總和，儲存在 st_sum 中    
 st_sum = [0,0,0,0];
 i = 0
@@ -423,7 +423,7 @@ print ('四個學生的各科總分分別為：', st_sum)
 
 我們也可以只算科目的總和：
 
-```python=
+```python
 # 計算每科目的總和
 subj_sum = [0,0,0]
 for st in grade:
@@ -444,7 +444,7 @@ print ('每個科目的總和分別為：', subj_sum)
 
 List Comprehension 翻譯為 列表推導式，在`中括號`內放的不是資料，而是一個運算，通過這個運算來代表資料本身。下列程式中的 `a` 是由一個 `for range` 的列表推導式所產生的，程式碼相當的簡潔。如果不用推導式也可以用一般的 `append` 來建構，如 `b` 的產生方法。
 
-```python=
+```python
 a = [i for i in range(10)]        # 用列表推導式
 print (a)
 
@@ -468,7 +468,7 @@ print (c)
 
 當我們對一個二維陣列做排序，會依據每一個的`第一個元素`來做排序。例如在下列的程式中，會依據 `11, 90, 77, 44` 來排序。
 
-```python=
+```python
 grade = [[11, 22, 33], [90, 91, 92], 
          [77, 88, 99], [44, 55, 66]]
 
@@ -479,7 +479,7 @@ print (g1)
 
 如果我們想用分數的總合來排序呢？這時候可以用 lambda 的運算：
 
-```python=
+```python
 # 依據每一個人的成績加總排序
 grade = [[11, 22, 33], [90, 91, 92], 
          [77, 88, 99], [44, 55, 66]]
@@ -499,7 +499,7 @@ lambda 表示一個簡潔的運算，其指定的 `sum()` 會把陣列內的元�
 
 又或者我們想依據最後一筆資料來排序，可以用 `x[-1]` 來做排序，結果如下：
 
-```python=
+```python
 # 依據物理成績（最後一科) 排序
 g3 = sorted(grade, key=lambda x: x[-1])
 print (g3)
@@ -519,7 +519,7 @@ Result:
 - 透過 is 比較兩個 list 是否 **參考** 相同。
 - 透過 == 比較兩個 list 是否 **內容** 相同。
 
-```python=
+```python
 grade = [11, 22, 99, 35, 59]
 g  = grade          # 相同參考; g 和 grade 都指到同樣的資料
 gc = grade.copy()   # 複製一份給 gc; g 和 gc 指到不同的資料，只是內容一樣
@@ -561,7 +561,7 @@ grade is gc:  False
 
 以下我們自己寫一個氣泡排序法，藉此更認識 List 的應用。
 
-```python=
+```python
 """
 Bubble Sort
 """
@@ -591,7 +591,7 @@ for i in range(1, r+1):
 
 `json.loads()` 可以讀入一個「list 字串」，將之轉為 list 來處理。
 
-```python=
+```python
 gStr = "[60, 78, 100]" # list 字串
 
 import json
@@ -611,7 +611,7 @@ print (type(gList))
 
 `split` 可以把字串依據所指定的拆解，`join` 則可以做連結。
 
-```python=
+```python
 city = "Taichung Taipei Kaoshiung"
 cityList = city.split()
 
@@ -640,7 +640,7 @@ Taichung * Taipei * Kaoshiung
 
 如何宣告一個 `Tuple`？ List 是用一個 `[中括號]` 框起我們的元素，而 `Tuple` 則是用 **(小括號)** 來做表示。
 
-```python=
+```python
 # 建立 tuple
 tup1 = ('Nick', 'FCU', 172, 75)
 tup2 = (1, 2, 3, 4, 5 )
@@ -651,7 +651,7 @@ tup2.append(12)                # ERROR!
 ```
 
 `Tuple` 資料的切片與取得和 `list` 完全一樣：
-```python=
+```python
 t = ('a', 'b', 'c', 'd', 'e', 'f')
 print (t[0])        # 'a'
 print (t(1:4))      # ERROR, 要用中括號
@@ -665,7 +665,7 @@ print (t[-1])       # 'f'
 - `.index(x)`: x 在 tuple 中出現的位置;
 - `len()`: 計算 tuple 的長度
 
-```python=
+```python
 dices = (5, 6, 1, 1, 2, 4, 3, 2)
 dices.count(1)
 # return 2 (2 出現兩次)
@@ -680,7 +680,7 @@ len(dices)
 `Tuple` 比較省空間，我們就實際的來執行一下，首先 `import sys`，然後透過它的一個函式 `getsizeof` 去獲得 `li_grade` 跟 `tu_grade` 的大小。
 
 Tuple 比較省
-```python=[caption={}, label={}]
+```python
 li_grade = [11, 22, 99, 35, 59] # list
 tu_grade = (11, 22, 99, 35, 59) # tuple
 
@@ -696,7 +696,7 @@ tuple size:  80
 
 再來，`Tuple` 的執行會比較快，這裡又引用了另外一個模組叫做 `timeit`，它可以重複的執行某一個敘述句多次，`stmt` 是它要執行的動作，`number` 是它要執行幾次。這裡我們故意用一個很大的數據來檢驗它執行需要多少的時間。執行過後可以看到，時間的差距很大，相差了六倍之多。
 
-```python=
+```python
 import timeit
 do_list = timeit.timeit(stmt = '[1,2,3,4,5]',
                         number = 10000000)
@@ -717,7 +717,7 @@ time for doing tuple:  0.07525055899168365
 
 `Tuple` 的一個常用技巧，是把一些資料打包成一個資料，方便傳遞與理解。例如我們把 person 定義為 sex, age 與 name，變數的應用上更方便。
 
-```python=
+```python
 # Tuple unpacking
 person = ('male', 10, 'nick')   # 打包 (pack)
 (sex, age, name) = person       # 開箱 (unpack)
@@ -736,7 +736,7 @@ sex, age = person               # 錯誤！數量不同
 - 可以做數學上集合的運算，包含聯集、交集、差集等。 
 
 在某些時候 Set 很好用，例如我們有三筆 `list` 分別紀錄棒球社和鋼琴社的人，還有成績高於 `90` 分的人：
-```python=
+```python
 baseball = ['Nick', 'Albert', 'Jie']
 piano = ['Nick', 'Doris']
 highGrade = ['Nick', 'Doris', 'Anna']
@@ -748,7 +748,7 @@ highGrade = ['Nick', 'Doris', 'Anna']
 - 交集：&
 - 差集：-
 
-```python=
+```python
 baseballSet = set(baseball)
 pianoSet = set(piano)
 community = baseballSet | pianoSet                 # 聯集
@@ -762,14 +762,14 @@ print (communityAndHighGrade)
 ```
 
 高分但沒有參加社團者：
-```python=
+```python
 print (set(highGrade) - community) # 差集
 # Result: {'Anna'}
 ```
 
 ### Set 的 增修刪查
 
-```python=
+```python
 # 增
 basketball.add('Alex')  
 basketball.add('Alex')  # 重複=>不會再新增，不會有錯誤訊息
@@ -796,7 +796,7 @@ for player in basketball:
 
 `dict` 是由 `(key, value)` 所構成的，給定一個 `key` 就可以找到相對應的 `value`-- 就像字典查字一樣。如果我們宣告一個簡易字典如下：
 
-```python=
+```python
 simpleDict = {'book': '書籍', 'pen': '筆'}
 eng = input('Please input the English word: ')
 print ('{} 的中文是：{}'.format(eng, simpleDict[eng]))
@@ -812,7 +812,7 @@ book 的中文是：書籍
 
 `key` 也可能是一個複雜的型態，例如 `tuple`。`class_avg` 中我們用班級加上科目來代表 key 值，它的值表示該班在該科目下的平均分數。
 
-```python=
+```python
 std_grade = {1: 12, 2:100, 3:90}
 name_grade = {"Nick":90, "Jack":50}
 class_avg = {('A', 'Math'):23, ('B', 'eng'):89 }
@@ -821,7 +821,7 @@ class_avg = {('A', 'Math'):23, ('B', 'eng'):89 }
 ### dict 建立與設定
 宣告空的 dict: 使用 `{}` 或是`dict()` 都可以。如下述的 2, 3 行。
 
-```python=
+```python
 # create an empty dictionary
 empty_dict = {}
 empty_dict = dict()
@@ -842,7 +842,7 @@ family = {'dad':'Jack',
 #### 新增資料
 透過 data[key]=value 的方式就可以為 data 這個 dict 新增一筆 (key, value)的資料。例如下面的程式，我們新增了一筆 4 號的成績 30 分。
 
-```python=
+```python
 grade = {1:12, 2:100, 3:90}  # 學號, 成績
 grade[4] = 30  # 新增一筆 {4: 30}
 print (grade)
@@ -851,7 +851,7 @@ print (grade)
 #### 刪除資料
 透過 `del data[key]` 的方式可以刪除一筆資料; 透過 `data.pop(key)` 的方式會回傳該筆資料的值，並且刪除該資料。
 
-```python=
+```python
 grade = {1:12, 2:100, 3:90, 4:50}
 
 del grade[3]      # 移除 {3:} 這一筆
@@ -872,7 +872,7 @@ Return value g = 50
 
 和新增的方法是一樣的：`data[key]=value`。因為 `dict` 的 `key` 不能重複，所以當 `key` 相對應的值有改變時，他會覆蓋原有的。
 
-```python=
+```python
 grade = {1:12, 2:100, 3:90, 4:50}
 
 grade[3] = 100
@@ -896,7 +896,7 @@ grade[3] = 100
 - `len()` 回傳該 dict 的長度（數量）
 
 例如針對一筆資料 `simpleDict` 的內容如下，
-```python=
+```python
 simpleDict = {'book': '書籍', 'pen': '筆'}
 print (simpleDict.keys())
 print (simpleDict.values())
@@ -914,7 +914,7 @@ dict_items([('book', '書籍'), ('pen', '筆')])
 
 我們可以透過 `list()` 來轉型，如此就可以應用在許多的查詢上：
 
-```python=
+```python
 eng = input('Please input the English word: ')
 if (eng in list(simpleDict.keys())):
    print ("{} --> {}".format(eng, simpleDict(eng)))
@@ -923,7 +923,7 @@ else:
 ```
 
 上述的判斷句寫法可以更簡單些：
-```python=
+```python
 if (eng in simpleDict):
 ```
 
@@ -931,7 +931,7 @@ if (eng in simpleDict):
 
 如果我們要走訪整個字典，做一些排版輸出：
 
-```python=
+```python
 for (eng,ch) in simpleDict.items():
    print ("{} --> {}".format(eng, ch))
 ```
@@ -947,7 +947,7 @@ pen --> 筆
 
 和 list comprehension 一樣，字典也有 dictionary comprehension，其作用是用簡短的語法來建立一個 dict。舉例來說，我們想要建立一個 dict, 來記錄每個單字的長度-- 其中 `key` 是單字，`value` 是長度。我們可以如此寫：
 
-```python=
+```python
 words = ['development', 'engineer', 'python']
 word_len = {}
 for w in words:
@@ -961,7 +961,7 @@ print (word_len)
 
 但這樣一句用推導式來寫，只需要一行：
 
-```python=
+```python
 word_len = {w: len(w) for w in words}
 ```
 
@@ -969,7 +969,7 @@ word_len = {w: len(w) for w in words}
 
 如果我們有兩個 `list`, 現在想把他們對應的組成一個 `dict`，可以用一個方便的技巧-- 先壓縮在轉型：
 
-```python=
+```python
 # zip
 std = ['nick','john','mac']
 grade = [100, 90, 80]
@@ -981,7 +981,7 @@ print(std_grade)
 `zip` 後會產出的結構為 `('nick', 100) ('john', 90) ('mac', 80)`, 再透過 `dict` 後會以第一個元素作為索引。
 
 我們也可以先用 list 轉型，再透過解析式來組合：
-```python=
+```python
 std = ['nick','john','mac']
 grade = [100, 90, 80]
 std_grade = {k:v for (k,v) in list(zip(std, grade))}
@@ -992,7 +992,7 @@ std_grade = {k:v for (k,v) in list(zip(std, grade))}
 
 `json.loads()` 可以讀入一個 dict string，將之轉為 `dict` 來處理。
 
-```python=
+```python
 gStr = '{"eng": 60, "math": 78, "phy": 100}'
 
 import json
@@ -1005,7 +1005,7 @@ print (gDict)
 
 `json.dumps()` 則可以把一個 `dict` 輸出為字串。
 
-```python=
+```python
 g = {'eng': 60, 'math': 78, 'phy': 100}
 
 import json
@@ -1054,7 +1054,7 @@ act: 場站是否暫停營運
 
 透過 `json.loads()` 把資料讀入。記得要先將下載的檔案放在程式碼目錄下的 `data` 下。我們透過 `pprint()` 印出資料來看看是否正確。
 
-```python=
+```python
 import json
 from pprint import pprint
 
@@ -1074,7 +1074,7 @@ ps. `pprint` 是一個 pretty print; 印出格式會比較好看; 使用前要�
 
 因為欄位很多，我們挑選站名，位址，緯度就好。之後進行排序，排序的依據是第三個欄位，也就是 `line11` 的 `x[2]`。
 
-```python=
+```python
 station=[]
 for st in d:
     # 站名，位址，緯度
@@ -1096,7 +1096,7 @@ with open('data/ibikeSorted.txt', 'w') as f:
 
 我們來計算一下每個區域的 iBike 數量，並且排序。我們宣告一個 `area` 的 `dict` 型態，其中 `key` 是區域的代碼 (sareaen)，我們透過 `if` 判斷新讀出來的資料是否已經有在 `dict` 中，如果有就 `+1`, 否則就設定一個初始值 `1`。程式碼如下：
 
-```python=
+```python
 # 每個區域 iBike station 的數量
 area = {} # {area_name: count}
 for st in d:
@@ -1115,7 +1115,7 @@ pprint(sortedArea)
 
 以下是完整的程式碼：
 
-```python=
+```python
 import json
 from pprint import pprint
 

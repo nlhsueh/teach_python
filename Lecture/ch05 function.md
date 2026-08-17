@@ -29,10 +29,10 @@ Ch05 Function
 
 ### 函式的定義
 
-定義函式用的保留字是 ==def==，後面的部分是「函式名稱()」。冒號（`:`）內的程式碼，是這個函式要做的指令，記得這個部分要做內縮，所有內縮的部份都是屬於函式它定義的範圍。我們先定義一個簡單的功能叫做 `hello`，它做的事情是印出一個 `"Hello, python"` 這樣的動作。注意「定義」和「呼叫執行」是不同的。下列程式碼中，line 1-2 是定義，line 4,5 分別是兩次的呼叫執行，所以共會印出兩次。
+定義函式用的保留字是 **def**，後面的部分是「函式名稱()」。冒號（`:`）內的程式碼，是這個函式要做的指令，記得這個部分要做內縮，所有內縮的部份都是屬於函式它定義的範圍。我們先定義一個簡單的功能叫做 `hello`，它做的事情是印出一個 `"Hello, python"` 這樣的動作。注意「定義」和「呼叫執行」是不同的。下列程式碼中，line 1-2 是定義，line 4,5 分別是兩次的呼叫執行，所以共會印出兩次。
 
 
-```python=
+```python
 def hello():                # 函式的名稱
     print('Hello, python')  # 函式程式內容
     
@@ -52,7 +52,7 @@ Hello, python
 
 上面的函式比較簡單，每一次呼叫它的時候它印出來都是這幾個字，但是如果給它參數的話那就不一樣了，它會依據你代入的參數是什麼，表現出不同的行為出來。比方說下面的 `hello2()`，帶入的參數是 `"java"`，那它印出來的結果會是 `"hello, java"`; 如果說我們帶進給它的是 `"python"` 的話，它印出來的結果就是 `"hello, python"`。請注意第二行中的 `p` 是我們帶入的參數。
 
-```python=
+```python
 def hello2(p): 
     print('Hello', p)
     
@@ -63,7 +63,7 @@ hello2("Python")
 下面程式碼定義了一個函式 `max`，裡面帶入三個參數，希望找出這三個參數最大的一個值，最後做回傳。
 函式的最後一行執行 `return m` 則為回傳 `m` 的值給呼叫者。
 
-```python= [caption={有回傳值的函式}, label={code:def_return}]
+```python
 def max(a, b, c):
     ''' get max value'''
     if (a>b):
@@ -90,7 +90,7 @@ help(max)
 我們再來看 BMI 的例子，那這個例子我們要依據一個人的身高跟體重，來算它們的 BMI，BMI 如果太高或是太低，就代表這個人的身體可能有些狀況，所以我們要控制在一定的範圍。我們一樣建立函式註解的解說。以這個例子來講的話，特別說明說他的身高必須以公尺為單位，體重是以公斤為單位，BMI 的值就是等於體重去除以身高的平方，得到了以後再把這個值把它回傳回去，呼叫端我們就透過 `get_bmi(1.72, 80)` 來呼叫引用。 
 
 
-```python=
+```python
 def get_bmi(tall, weight):
     """ 
     基於傳入的身高與體重計算人體的 BMI 並回傳。
@@ -110,7 +110,7 @@ print(bmi)
 不過我們可以透過 `keyword` 參數的方式來指名，例如下述第五行，我們有指名 `msg` 和 `name`，即便順序不同也是沒關係的。這種情況我們稱之為 `keyword 參數`（指名 keyword, value）。
 
 
-```python= 
+```python
 def hello1(name, msg):
   print ("Hi, {}, {}".format(name, msg))
 
@@ -123,7 +123,7 @@ hello1('Good morning', 'Nick')          # 含義上的錯誤
 
 使用 `keyword` 來指定參數時，必須放在後面，下述 line 9 就是一個錯誤的情況, 因為 `Nick` 沒有放在第一個參數。Line 10 是另一個錯誤的範例 -- 因為 `name` 並沒有宣告預設的參數值，所以呼叫的時候一定要給值。`name` 因為沒有預設值所以稱之為必要參數 (required parameter)。
 
-```python= 
+```python
 def hello2(name, msg = "Hello"):
   print ("Hi, {}, {}".format(name, msg))
 
@@ -138,7 +138,7 @@ hello2('Nick', msg = 'Hello')
 
 注意宣告端必要參數必須要預設參數之前。下述 `hello2a()` 就是一個錯誤的宣告：`name` 必須在 `msg` 之前。`hello2b()` 是修正後正確的方式。
 
-```python= 
+```python
 def hello2a(msg = "Hello", name):     # ERROR
    print (name, msg)
 
@@ -149,7 +149,7 @@ def hello2b(name, msg = "Hello"):     # Correct
 
 `hello3()` 是一個所有參數都有預設值的案例，這時候我們呼叫 `hello3()` 時不帶任何參數也是可以的。
 
-```python= 
+```python
 print ('-- hello3: name and msg has default values --')
 def hello3(name = "Nick", msg = "Hello"):
   print ("Hi, {}, {}".format(name, msg))
@@ -163,7 +163,7 @@ hello3(msg = 'Good night', name = 'John')   # 正確
 ### prime() example
 
 以下 prime(n) 會印出不大於 n 的所有質數。
-```python=
+```python
 def prime1(n):
     "print the prime numbers below n"
     for x in range(2, n+1):
@@ -178,7 +178,7 @@ prime1(10)
 
 多加一個參數 `start` 來指定起算的數，印出 `start` 到 `n` 的所有質數。`start` 是預設參數，如果沒有指定，就印出 `2~n` 的質數。
 
-```python=
+```python
 def prime2(n, start=2):
     "print the prime numbers between start and n"
     if start < 2: start = 2
@@ -200,7 +200,7 @@ prime2(start=5, 10) # incorrect
 
 prime3() 則把兩個參數都宣告為預設參數：
 
-```python=
+```python
 def prime3(pStart=2, pEnd=20):
     "print the prime numbers between s and n"
     if pStart < 2: pStart = 2
@@ -219,7 +219,7 @@ prime3(2, 10)                 # correct
 
 有時候我們不確定會有多少個參數，就可以用 `變動` 參數來「收納」。在變數的前面加上 `*` 就形成了變動參數。
 
-```python=
+```python
 def avg(name, *grade): # grade 是變動參數
    sum = 0
    print ("Type of grade: {}, values are: {}".format(type(grade), grade))
@@ -236,7 +236,7 @@ avg('Jerry')
 ```
 
 輸出：
-```python= 
+```python
 Type of grade: <class 'tuple'>, values are: (100, 50, 20)
 nick, avg is： 56
 Type of grade: <class 'tuple'>, values are: (100, 50, 20, 90)
@@ -249,7 +249,7 @@ jerry has no grade
 
 下面的程式中我們宣告了 `plus1`, `plus2` 分別處理一個整數和一個 list。看起來兩個函式都對傳進的資料做了一些變動。那們在呼叫之後，他們的值有所改變嗎？
 
-```python= 
+```python
 def plus1(aNumber):
   aNumber += 1
 
@@ -269,7 +269,7 @@ print (a, m)
 
 可以看得到，傳入整數 (`plus1()`)，`a` 的值不會變動，傳入List 則會。這和 Python 對於不同資料型態的處理方式不同及傳遞機制有關係。
 
-```python= 
+```python
 --- Before Calling function ---
 1 [1, 2]
 --- After Calling function ---
@@ -287,7 +287,7 @@ print (a, m)
 
 接著我們今天下一個指令，讓 `a = 2` 的時候，大家可能會想像它運作的方式是把原來 `@760` 這個空間的值，由 `1` 把它改成 `2`，但是實際上的運作並非如此，因為 int 是一個`不可變動物件`，所以 `@760` 這筆資料，它本來放這個整數是不可以做修改。系統額外再增加一個空間叫 `@799`，然後這個地方放的值是 `2`。
 
-```python=
+```python
 # 不可變物件 (Immutable object)
 a = 1
 a = 2
@@ -295,7 +295,7 @@ a = 2
 
 我們來驗證一下。`id(a)` 會印出 `a` 的記憶體位置，以下觀察記憶體位置：
 
-```python=
+```python
 a = 1
 print('a 的位置：', id(a), 'a 的值：', a)
 a = 2
@@ -320,7 +320,7 @@ c 的位置： 140683034198288 b 的值： 2
 
 字串也是一個不可變物件，大家可以試試以下的程式。
 
-```python= 
+```python
 # string 是不可變動的
 name = 'nick'
 print(id(name))
@@ -341,7 +341,7 @@ print (id(x))
 
 相較於 `int`, `str` 是不可變, list 是可變物件，看下面的實驗：
 
-```python= 
+```python
 m = [1,2]
 print ('m 的內容為', m)
 print ('m 的位址：', id(m))
@@ -365,7 +365,7 @@ m 的位址： 140681763103552
 
 可以看到 `m` 的內容物有改變了，但 `m` 的位置仍然一樣。所謂的可變物件指的是其內容物可改變，如果我們將 m 指定到另一個 list, 當然他的位置也會改變，如下：
 
-```python=
+```python
 m = [1, 2]
 id1 = id(m)
 m = [3, 4]
@@ -386,7 +386,7 @@ id2 = id(m)
 
 我們回到一開始的例子： 
 
-```python= 
+```python
 def plus1(aNumber):
   aNumber += 1
 
@@ -412,7 +412,7 @@ print (a, m)
 
 如果要將 list 傳入 函式去執行，但又不想要呼叫端的內容受到影響，這種情形該怎麼辦呢? 這時候我們可以做`複製後傳 (copy and pass)` 的動作，也就是說在呼叫這個函式之前先建立一個副本，傳遞過去的內容是副本，而不是它真正的參考位置。這樣即使對內容做修改，都是副本而已，不是原本的資料。
 
-```python=
+```python
 def plus2(aList):
     for i in range(len(aList)):
       aList[i] += 1
@@ -431,13 +431,13 @@ print (m)
 
 lambda 函式是一個可以沒有名稱，而且也非常簡短只有一行的函式。目前沒有特別的中文譯名，或許可以稱之為「小函式」。
 
-```python= 
+```python
 fname = lambda arguments : expression
 ```
 
 其中 `fname` 是 lambda 的函式名稱，`arguments` 是參數, `expression` 是程式敘述指令。
 
-```python= 
+```python
 def avg(a, b, c):
     return round((a+b+c)/3,2)
 
@@ -445,21 +445,21 @@ print(avg(12, 23, 34)
 ```
 
 可以簡化為：
-```python= 
+```python
 avg = lambda a, b, c: round((a+b+c)/3,2)
 
 print(avg(12, 23, 34)
 ```
 
 下面是一個 `hello` 的例子。
-```python= 
+```python
 hello = lambda n, msg: print('Hello, {}, {}'.format(n, msg))
 hello('Nick', 'Good morning')
 ```
 
 記得我們之前用 lambda 來指定排序的欄位嗎？ 
 
-```python= 
+```python
 grades = [[12,23,43],
           [9,4,10],
           [100,22,1]]
@@ -475,7 +475,7 @@ print (sortedGrade)
 
 如果我們想依據總分來排序，而每個欄位的的比重是 `0.3`, `0.4`, `0.4`，可以撰寫如下：
 
-```python= 
+```python
 r = sorted(grades, key=lambda x: x[0]*0.3+ x[1]*0.4+x[2]*0.4)
 ```
 
@@ -486,7 +486,7 @@ r = sorted(grades, key=lambda x: x[0]*0.3+ x[1]*0.4+x[2]*0.4)
 
 語法是這樣子，前面有一個 `try`，`try` 內的區塊是我們要執行的動作，這個動作無法正常運作的時候就會拋出一個例外，會在 `Except` 這個地方進行例外的處理；如果沒有發生例外的話，就跑到 `else` 子句。`finally` 是指不管你有沒有發生例外，最後都會執行。
 
-```python=
+```python
 try:
    # 可能會發生例外的程式碼
 except 例外的型態 as e:
@@ -497,7 +497,7 @@ else:
 
 其中 `e` 表示例外的該個物件。我們先看看一個沒有處理例外的程式碼：
 
-```python=
+```python
 def getAge(year):
    return 2018-year
 
@@ -508,7 +508,7 @@ print('Your age:', age)
 
 上面的例子計算年齡的程式，在輸入參數的地方要求輸入出生年，然後呼叫 `getAge()`，最後印出年齡。如果我們在出生年正確輸入一個數字，程式能夠正確的執行，但如果誤以為是姓名而輸入 `nick`，系統會產生一個例外 -- `valueError` -- 因為我們輸入的 `nick` 無法轉成 `int`。程式也因為這個例外而中斷執行了。
 
-```python= 
+```python
 while True:
    year = input('Your born year: ')
    if year.isdigit():
@@ -521,7 +521,7 @@ print('Your age:', age)
 
 這是在我們知道 `isdigit()` 的情況下的解決，如果我們不知道這個功能，只是預測可能會產出例外，可用 `try` 處理：
 
-```python= 
+```python
 while True:
    try:
       year = int(input('Your born year: '))
@@ -547,7 +547,7 @@ Your born year:
 
 我們也可以透過 raise 自己來產出一個例外。我們延伸一下剛剛的範例，如果 `year` 大於 2019 或是小於 1990 都是不被允許的，可視為例外的，我們拋出一個例外。`raise` 的用法如下例：
 
-```python=
+```python
 # v4: Raise exception
 def getAge(year):
     if year > 2019 or year < 1900 :
@@ -569,7 +569,7 @@ while True:
 
 檔案讀不到，不是你程式的錯誤，是執行此程式時環境配置的問題，用例外處理來解決。
 
-```python=
+```python
 import time
 
 # Handling error
@@ -602,7 +602,7 @@ All done
 
 再看看以下的程式碼，我們將 `except` 後的例外改了一個型態，`ZeroDivisionError`, 因為我們拋出的是一個 `FileNotFound` 的例外，並不是 `ZeroDivisionError`，所以此例外並沒有被處理。即便如此，`finally` 還是會執行，但程式會被中斷而無法印出 `All done`。
 
-```python=
+```python
 # Catch wrong error
 try:
     t1 = time.time()
@@ -678,7 +678,7 @@ my_package/
 
 我們先把1搬到B，接著把2搬到C，那這時候 B 的上面會有個 1，再把 1 搬到 C，這樣就解決了我們的問題。因為一次只能搬一個，我們可以忽略環的編號，用 move(X, Y) 表示從 X 柱搬最上面的環到 Y 柱。因此，從Ａ搬兩個到Ｃ的解法如下：
 
-```python= 
+```python
 move (A, B); 
 move (A, C); 
 move (B, C)
@@ -686,7 +686,7 @@ move (B, C)
 
 如果我們用 move(A, C, 2) 來表示從Ａ搬兩個到Ｃ似乎也可以理解，但因為搬超過一個需要有一個輔助柱，所以用 move(A, C, B, 2) 比較合適。如果要搬多個，可以說是 move(source, destination, auxiliary, n) 其中 n 表示要搬移的數量。
 
-```python= 
+```python
 move (A, C, B, 3) = 
   move (A, B, C, 2)  # 先搬兩個到輔助柱
   move (A, C, -, 1)  # 搬一個到目標柱
@@ -694,7 +694,7 @@ move (A, C, B, 3) =
 ```
 
 其中line2, line4 的動作都搬超過兩個環，所以得再分解：
-```python= 
+```python
 move (A, C, B, 3) = 
   move (A, B, C, 2)  # 先搬兩個到輔助柱
      move (A, C, -, 1) 
@@ -708,7 +708,7 @@ move (A, C, B, 3) =
 ```
 
 你會發現分解的規則都是類似的。歸納整理後，得到下面的通則：
-```python= 
+```python
 move (A, C, B, n) = 
   move (A, B, C, n-1)  # 先搬兩個到輔助柱
   move (A, C, -, 1)  # 搬一個到目標柱
@@ -722,7 +722,7 @@ move (A, C, B, n) =
 
 於是我們可以完成以下的程式：
 
-```python= 
+```python
 def move(source, dest, aux, n):
     ''' move n blocks from source to destination'''
     if n==1:
@@ -764,7 +764,7 @@ S3S3 A move top 1 to C
 move() 這個方法不斷的被自己所呼叫使用，這樣的模式我們稱為遞迴（recursive）。
 所有的遞回函式都需要有一個中止的條件，以這個例子來講，也就是 n = 1。因為n的值都會遞減到1, 而n==1 的時候不再呼叫 move() 所以最終會停止。
 
-```python= 
+```python
 def move(source, dest, aux, n, count):
     if n==1:
         print("{} move to {}".format(source, dest))
@@ -813,7 +813,7 @@ A move to C
 
 我們先來解決第一個問題，怎麼去儲存棋盤的狀態，這個用 list 來儲存是最好不過的，一開始這個棋盤，應該是空的，上面是沒有棋子的，所以我們就宣告一個 list，裡面都放 space 來代表一開始的狀態都是空的，list 這裡面有一個元素，乘與 10 以後，就會代表它有放 10 個元素，那裡面都是 space 的狀態。
 
-```python=
+```python
 import random
 import time
 
@@ -833,7 +833,7 @@ def show(board):
 接下來我們來看第二個問題怎麼去檢查，贏的狀態已經滿足了，因為棋盤都有給它一個 list 的位置，只要去檢查 1 2 3、 4 5 6、7 8 9、1 4 7、2 5 8、3 6 9 是否都一樣，如果是的話，就代表贏的狀態已經滿足了。所以我們宣告一個布林的函式叫做 `win`，比對 win 的條件是否滿足。注意 line15 後面有一個 `\` 表示字串的相連，因為這個判斷句太長了。
 
 
-```python=
+```python
 def move(bo, player, loc):
     ''' player 在棋盤上移動到 loc。回傳是否 Win
       * 會檢查位置上是否有棋子，若有會拋出例外
@@ -863,7 +863,7 @@ def move(bo, player, loc):
 
 我們宣告了一個叫 `randomMove` 的方法，一開始的時候這個 `list r` 是空的，那我們先跑一個迴圈，如果我這個棋盤裡面是空的話就代表它就還沒有被占領，這時候就把這個位置 `append` 到我的 r 裡面，所以 r 裡面放的都是空的可以下的位置，那如果這個迴圈跑完了以後，這個 r 還是保持空的 list 的話，就代表所有位置都已經被佔領了，到了一個平手的狀態，就 return 一個 `NO_FREE_SPACE`。這個地方是一個常數 -1，因為位置不可能等於 -1，所以我呼叫 `randomMove` 這個方法，只要看到回傳是 -1 的話就知道這個棋盤已經滿了。
 
-```python=
+```python
 def randomMove(bo):
     ''' 回傳一個隨機，有空位的位置
       * 把有空位的位置放到一個 list r
@@ -885,7 +885,7 @@ def randomMove(bo):
 
 
 
-```python= 
+```python
 hint = '0 1 2 3 4 5 6 7 8 9'
 print("Location:")
 show(hint.split()) # 畫出每個位置的編碼0-9
@@ -934,7 +934,7 @@ while True:
 
 [Colab](https://colab.research.google.com/drive/1JsYnezUoGCftmQWddnxrpaaFSoQXKeXH#scrollTo=UnkWBRuW2qqW&line=1&uniqifier=1)
 
-```python= 
+```python
 import random                 # method 1
 x = random.randint(1, 100)
 
@@ -952,13 +952,13 @@ z = randint(1, 100)
 這一章節要介紹一個小工具，叫做 pytube，它可以幫助我們自動下載 YouTube 的影片。由於預設並沒有這一個套件，所以我們必須先安裝：
 
 在終端機下執行pip install 來安裝套件：
-```python= 
+```python
 pip install pytube
 ```
 
 以下是一個範例：
 
-```python=
+```python
 from pytube import YouTube
 
 yt = YouTube('https://youtu.be/KOdfpbnWLVo')

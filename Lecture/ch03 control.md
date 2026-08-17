@@ -1,7 +1,7 @@
 Ch03 Logic and control
 ===
 
-我們常常說程式能力好的人具備邏輯的觀念，指的就是這個章節==邏輯運算==。此章節我們分為四個單元來做解說。首先是程式的執行流程，分為三個部分，循序的執行、分支以及迴圈。在上一個章節中，我們已經講解過所謂循序的執行，在這個章節我們會把重點放在分支跟迴圈。
+我們常常說程式能力好的人具備邏輯的觀念，指的就是這個章節**邏輯運算**。此章節我們分為四個單元來做解說。首先是程式的執行流程，分為三個部分，循序的執行、分支以及迴圈。在上一個章節中，我們已經講解過所謂循序的執行，在這個章節我們會把重點放在分支跟迴圈。
 
 ![](https://hackmd.io/_uploads/SJpW6t0gT.png)
 
@@ -26,7 +26,7 @@ Ch03 Logic and control
 ### 3.1.1 if
 
 if 判斷句
-```python=
+```python
 g = 20
 
 if g >= 60: 
@@ -55,7 +55,7 @@ print ("end") # 不論如何都會執行的程式
 
 :warning: 區塊的重要，如果程式碼沒有放進區塊內，其含義完全不同，下面的程式雖然編譯沒有問題，但語意產生錯誤。
 
-```python=
+```python
 if g >= 60:
     print ("pass")
 print ("good") # 應該放在區塊內
@@ -68,7 +68,7 @@ print ("end")
 
 表示沒有滿足 if 時會執行的程式區塊。
 
-```python=
+```python
 if g >= 60:
     print ("pass")
     print ("good")
@@ -88,7 +88,7 @@ print ("end")
 
 elif 表示 else if, 也就是在 else 之後還有更多的判斷。
 
-```python=
+```python
 g = 50
 if g >= 60:
     print ("pass")
@@ -121,7 +121,7 @@ print ("end")
 
 if 內還有 if
 
-```python=
+```python
 g = 70
 if g >= 60:
     print ("pass")
@@ -143,7 +143,7 @@ print ("end")
 :warning: 判斷句永遠無法成真的邏輯錯誤：
 以下程式碼雖然可以執行，但程式是有問題的
 
-```python=
+```python
 g = 70
 if g >= 60:
     print ("pass")
@@ -161,7 +161,7 @@ print ("end of report")
 
 ### 3.1.5 命名
 
-```python=
+```python
 # 變數命名：有意義的變數，避免複雜難懂的邏輯
 gender = 'F'; age = 20
 
@@ -190,7 +190,7 @@ if (young and male):
 
 一個小範例計算成績各等級的數量:
 
-```python=
+```python
 math = 67
 eng = 78
 phy = 90
@@ -232,7 +232,7 @@ print ('獲得 C 的數量：', C)
 ### 3.2.1 while 迴圈
 
 如果我們要累加 1..5:
-```python=
+```python
 # 第一種寫法
 sum = 1+2+3+4+5
 print (sum)
@@ -241,7 +241,7 @@ print (sum)
 
 來看第二種寫法
 
-```python=
+```python
 sum = 0
 x = 1
 
@@ -262,7 +262,7 @@ print (sum)
 
 第三種寫法：使用 loop：
 
-```python=
+```python
 sum = 0; x = 1
 while x <= 100:
     sum = sum + x
@@ -286,22 +286,21 @@ print (sum)
 
 若少了 x = x + 1, 則 x<=5 永遠成真，程式會再迴圈裡面一直執行，程式當掉。
 
-:::warning
-造成無窮迴圈的程式
-```python=
-sum = 0; x = 1
-while x <= 100:
-    sum = sum + x
-print (sum)    
-```
-:::
+> [!WARNING]
+> 造成無窮迴圈的程式
+> ```python
+> sum = 0; x = 1
+> while x <= 100:
+>     sum = sum + x
+> print (sum)    
+> ```
 
 #### 小範例
 
 * 輸入成績，一直到輸入為 -999
 * 輸出成績總和
 
-```python=
+```python
 sum = 0; grade = 0 # 設定初始值
 
 while (grade != -999):
@@ -322,7 +321,7 @@ print ("total is", sum)
 
 這段程式碼的邏輯錯誤在於它計算了使用者輸入的 -999 這個值，並將它加入到總和中。這意味著無論使用者輸入了多少個有效的成績，-999 都會被計入總和，從而導致計算出錯誤的總和。為了修正這個問題，應該在判斷 `grade` 是否等於 -999 之前，先檢查它是否等於 -999，如果是，就不應該將它加到總和中。這可以通過在迴圈內部的條件判斷之前添加一個額外的條件來實現。以下是修正後的程式碼：
 
-```python=
+```python
 sum = 0
 grade = 0
 
@@ -339,7 +338,7 @@ print("total is", sum)
 
 或是另一個做法:
 
-```python=
+```python
 sum = 0
 grade = 0
 
@@ -362,7 +361,7 @@ print("total is", sum)
 
 如果有一群資料記錄著一些分數，沒有用 list，會很麻煩，我們必須為每一筆資料取一個變數：
 
-```python=
+```python
 sum = 0
 x1=20; x2=30; x3=90; x4=90
 sum = x1 + x2 + x3 + x4
@@ -371,7 +370,7 @@ print ('總和為：', sum)
 
 用 list 方便多了
 
-```python=
+```python
 sum = i = 0
 x = [20, 30, 90, 90] 
 while i < len(x):
@@ -395,7 +394,7 @@ print ('使用 while 迴圈的總和為', sum)
 
 請注意，Python 中有更簡潔的方式來實現這一目標，例如使用 `for` 迴圈：
 
-```python=
+```python
 sum = 0
 x = [20, 30, 90, 90] 
 for g in x:
@@ -413,14 +412,13 @@ print (sum)
 
 這種使用 `for` 迴圈的方法更簡潔且易讀，Python 中的 `for` 迴圈可以直接遍歷容器（如列表）中的元素，不需要手動管理索引，因此更加方便。在這個例子中，程式碼一行就實現了對列表中所有元素的總和計算。
 
-:::success
-:football: Exercise
-有兩個變數 names, grades 分別紀錄一群人的姓名與成績，請分行列出每個的名字與成績，如下：
-> The grade of xxx is ooo
-:::
+> [!NOTE]
+> :football: Exercise
+> 有兩個變數 names, grades 分別紀錄一群人的姓名與成績，請分行列出每個的名字與成績，如下：
+> > The grade of xxx is ooo
 
 Solution: 
-```python= 
+```python
 names = ['John', 'Nick', 'Albert', 'Jie'] 
 i = 0
 grades = [20, 100, 98, 86]
@@ -442,7 +440,7 @@ The grade of Jie is 86
 
 for ... range 迴圈
 
-```python=
+```python
 # 注意 i 是從 0 開始
 for i in range(4):
     # 利用 end='' 來避免換行
@@ -462,7 +460,7 @@ for i in range(4):
 
 range (a, b, c) 三個參數
 
-```python=
+```python
 sum = 0
 for i in range(11):
     sum += i
@@ -482,7 +480,7 @@ print (sum)
 
 ### 3.2.4 迴圈的中斷
 
-```python=
+```python
 sum = 0
 for i in range(100):
     sum += i
@@ -495,7 +493,7 @@ print (sum, i)
 
 #### prime 範例
 
-```python=
+```python
 # 沒有用 break 的版本
 import time
 x = 2000000
@@ -521,7 +519,7 @@ isPrime=False 共執行了54次
 
 使用 break 少了許多不必要的計算：
 
-```python=
+```python
 # 用 break 的版本
 import time
 x = 2000000
@@ -551,7 +549,7 @@ isPrime=False 共執行了1次
 
 我們再來看 `for break else` 這樣的子句。下面的範例我們要印出所有小於 n 的質數。
 
-```python=
+```python
 n = 100
 # 印出所以小於 n 的質數
 print ('The prime numbers below {} are:'.format(n))
@@ -573,7 +571,7 @@ The prime numbers below 100 are:
 
 #### continue
 
-```python=
+```python
 for i in range(4):
     if i == 2:
         continue
@@ -599,7 +597,7 @@ Result:
 
 數學的解法請參考[這裡](http://episte.math.ntu.edu.tw/articles/sm/sm_29_09_1/index.html)。這裡我們用程式的解法：（更簡單容易了解）
 
-```python=
+```python
 n = 2
 
 while True:
@@ -624,7 +622,7 @@ while True:
 
 #### 利用 turtle 套件來畫圖
 
-```python=
+```python
 '''
 劃一個正方形
 '''
@@ -644,7 +642,7 @@ tina.right(90)
 
 #### 畫一個星星
 
-```python=
+```python
 import turtle as tu
 
 tu.color('red', 'yellow')
@@ -663,7 +661,7 @@ tu.done()
 
 ![](https://hackmd.io/_uploads/rJ_ebACgT.png)
 
-```python=
+```python
 import turtle
 myStamp = turtle.Turtle(visible=False)
 myStamp.shape("turtle")
@@ -689,7 +687,7 @@ myStamp.write('Done!', align='center', font=('Arial', 20, 'bold'))
 猜數字是一個很經典的遊戲，電腦會先亂數的取一個 1-100 的數字要我們猜，我們若猜高了，電腦會提示我們直到猜對。
 我們共做了三個版本，漸進式的講解，大家也可以看看哪裡錯了。
 
-```python=
+```python
 import random
 x = random.randint(1, 100) # 從 1 到 100 隨機產生一個整數
 
@@ -722,7 +720,7 @@ else:
 程式改為如下：
 
 '''
-```python=
+```python
 import random
 x = random.randint(1, 100)
 
@@ -747,7 +745,7 @@ while guess > 100 or guess < 1:
 
 #### 猜數字範例 v3
 
-```python=
+```python
 import random
 x = random.randint(1, 100)
 
@@ -774,215 +772,202 @@ while not correct:
 
 ## 自我測驗
 
-:::success
-```
- g = 98
- if g > 90:
-     print ("Class A", end=' ') 
- print ("Good job", end=' ')
- elif (g > 80):
-     print ("Class B", end=' ') 
-```
-以下何者正確（複選）
-- [ ] 因為內縮問題，程式錯誤 
-- [ ] 第 1 行若改為 g=70, 一樣會印出: Class A Good Job
-- [ ] 印出 Good job Class B
-- [ ] 印出 Class B
-- [ ] elif 錯誤，應該為 else if
-:::
+> [!NOTE]
+> ```
+>  g = 98
+>  if g > 90:
+>      print ("Class A", end=' ') 
+>  print ("Good job", end=' ')
+>  elif (g > 80):
+>      print ("Class B", end=' ') 
+> ```
+> 以下何者正確（複選）
+> - [ ] 因為內縮問題，程式錯誤 
+> - [ ] 第 1 行若改為 g=70, 一樣會印出: Class A Good Job
+> - [ ] 印出 Good job Class B
+> - [ ] 印出 Class B
+> - [ ] elif 錯誤，應該為 else if
 
-:::success
-針對以下程式 
-```python=
-if g >= 60:
-    print ("pass", end="; ")
-    print ("good", end="; ")
-elif g >=50:
-    print ("almost pass", end="; ")    
-    if (g >= 90):
-        print ("excellent", end="; ")    
-else:
-    print ("fail", end="; ")    
-    print ("not good", end="; ")    
-print ("end of report")
-```
+> [!NOTE]
+> 針對以下程式 
+> ```python
+> if g >= 60:
+>     print ("pass", end="; ")
+>     print ("good", end="; ")
+> elif g >=50:
+>     print ("almost pass", end="; ")    
+>     if (g >= 90):
+>         print ("excellent", end="; ")    
+> else:
+>     print ("fail", end="; ")    
+>     print ("not good", end="; ")    
+> print ("end of report")
+> ```
+>
+> 以下何者正確？（複選）
+> - [ ] 當 g 為 0 時，會印出 fail; not good; end of report
+> - [ ] 當 g 為 60 時，會印出 pass; good
+> - [ ] 當 g 為 90 時，會印出  excellent; end of report
+> - [ ] 當 g 為 51 時，會印出 almost pass; end of report
+> - [ ] 當 g 為 90 時，會印出  pass; good; excellent; end of report
 
-以下何者正確？（複選）
-- [ ] 當 g 為 0 時，會印出 fail; not good; end of report
-- [ ] 當 g 為 60 時，會印出 pass; good
-- [ ] 當 g 為 90 時，會印出  excellent; end of report
-- [ ] 當 g 為 51 時，會印出 almost pass; end of report
-- [ ] 當 g 為 90 時，會印出  pass; good; excellent; end of report
-:::
+> [!NOTE]
+> 針對以下程式 
+> ```python
+> sum=0
+> for i in range (1, 10):
+>     sum += i
+> print(sum)
+> ```
+>
+> 請問上述程式碼輸出結果為何?  
+> - [ ] 45
+> - [ ] 44
+> - [ ] 55
+> - [ ] 54
 
-:::success
-針對以下程式 
-```python=
-sum=0
-for i in range (1, 10):
-    sum += i
-print(sum)
-```
-    
-請問上述程式碼輸出結果為何?  
-- [ ] 45
-- [ ] 44
-- [ ] 55
-- [ ] 54
-:::
+> [!NOTE]
+> 針對以下的程式
+> ```
+> sum=0
+> for i in range (2, 10, 2):
+>     sum += i
+> print(sum)
+> ```
+>
+> 請問上述程式碼輸出結果為何?  
+> - [ ] 30
+> - [ ] 45
+> - [ ] 20
+> - [ ] 55
+> - [ ] 25
 
-:::success
-針對以下的程式
-```
-sum=0
-for i in range (2, 10, 2):
-    sum += i
-print(sum)
-```
-
-請問上述程式碼輸出結果為何?  
-- [ ] 30
-- [ ] 45
-- [ ] 20
-- [ ] 55
-- [ ] 25
-:::
-
-:::success
-針對以下的程式
-```
-for i in range(4):
-   for j in range(i):
-        print (str(i), end='')
-    print (end='-')    
-```
-
-會印出什麼？
-- [ ] -1-22-333-
-- [ ] -1-22-333-
-- [ ] 1-22-333-4444
-- [ ] 1-2-3-4
-- [ ] -1-2-3-
-:::
+> [!NOTE]
+> 針對以下的程式
+> ```
+> for i in range(4):
+>    for j in range(i):
+>         print (str(i), end='')
+>     print (end='-')    
+> ```
+>
+> 會印出什麼？
+> - [ ] -1-22-333-
+> - [ ] -1-22-333-
+> - [ ] 1-22-333-4444
+> - [ ] 1-2-3-4
+> - [ ] -1-2-3-
 
 
-:::success
-針對以下的程式
-```
-g = 98
-if g &gt; 90:
-   print ("Class A")
-print ("Good job")
-elif (g &gt; 80):
-   print ("Class B")
-```
-
-以下何者正確
-- [ ] 程式錯誤
-- [ ] 第一行若改為 g=70, 一樣會印出Class A Good job
-- [ ] 印出 Class B
-- [ ] 印出Good job Class B
-:::
-
-
-:::success
-針對以下的程式
-```
-for v in range(2, 11):
-	for i in range (2, v):
-		if v%i==0:
-			print (v, '不是質數')
-			break	
-	else:
-		print (v, '是質數')
-```
-何者正確（複選）
-   - [ ] 印出會包含 11是質數
-   - [ ] 編譯錯誤，else 應與 if 對齊
-   - [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
-   - [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
-   - [ ] 印出包含 7是質數
-   - [ ] 印出包含 6不是質數
-:::
-
-:::success
-執行後 sum 的值為何？
-```python=
-sum = 0
-for i in range(1,10,2):
-        if i == 5:
-             break
-	sum = sum + i
-print (sum)
-```
-:::
-
-:::success
-關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
-   - [ ] 通常用來幫助除錯
-   - [ ] 用來跳出迴圈
-   - [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
-   - [ ] 可以更有效率的提升程式執行的效率
-:::
-
-:::success
-以下程式會印出多少 *
-```python=
-n = 1
-while True:
-   print ('*')
-   n += 2
-   if n == 100:
-      break
-```
-   - [ ] 0
-   - [ ] 無窮迴圈
-   - [ ] 100
-   - [ ] 101
-   - [ ] 50
-:::
-
-:::success
-針對以下的程式
-
-```python=
-sum = 0; grade = 0
-while (grade != -999):
-    grade = int (input("input your grade: "))
-    sum += grade
-print (sum)     
-```
-上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出為 sum 的值為何？ 
-:::
-
-:::success
-針對以下的程式
-
-```python=
-x = [20, 30, 90, 90] 
-for i in x:
-    print (i, end = " ")
-```
-
-印出結果為？
-   - [ ] 20 30 90 90
-   - [ ] 0 1 2 3
-   - [ ] 1 2 3 4
-   - [ ] False False False False
-:::
+> [!NOTE]
+> 針對以下的程式
+> ```
+> g = 98
+> if g &gt; 90:
+>    print ("Class A")
+> print ("Good job")
+> elif (g &gt; 80):
+>    print ("Class B")
+> ```
+>
+> 以下何者正確
+> - [ ] 程式錯誤
+> - [ ] 第一行若改為 g=70, 一樣會印出Class A Good job
+> - [ ] 印出 Class B
+> - [ ] 印出Good job Class B
 
 
-:::success
-針對以下的程式
-```python=
-import random
-x = random.randint(4, 50)
-```
+> [!NOTE]
+> 針對以下的程式
+> ```
+> for v in range(2, 11):
+> 	for i in range (2, v):
+> 		if v%i==0:
+> 			print (v, '不是質數')
+> 			break	
+> 	else:
+> 		print (v, '是質數')
+> ```
+> 何者正確（複選）
+>    - [ ] 印出會包含 11是質數
+>    - [ ] 編譯錯誤，else 應與 if 對齊
+>    - [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
+>    - [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
+>    - [ ] 印出包含 7是質數
+>    - [ ] 印出包含 6不是質數
 
-x 的值可能為何？（複選）
-- [ ] 4
-- [ ] 10
-- [ ] 50
-- [ ] 100
-- [ ] 0
-:::
+> [!NOTE]
+> 執行後 sum 的值為何？
+> ```python
+> sum = 0
+> for i in range(1,10,2):
+>         if i == 5:
+>              break
+> 	sum = sum + i
+> print (sum)
+> ```
+
+> [!NOTE]
+> 關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
+>    - [ ] 通常用來幫助除錯
+>    - [ ] 用來跳出迴圈
+>    - [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
+>    - [ ] 可以更有效率的提升程式執行的效率
+
+> [!NOTE]
+> 以下程式會印出多少 *
+> ```python
+> n = 1
+> while True:
+>    print ('*')
+>    n += 2
+>    if n == 100:
+>       break
+> ```
+>    - [ ] 0
+>    - [ ] 無窮迴圈
+>    - [ ] 100
+>    - [ ] 101
+>    - [ ] 50
+
+> [!NOTE]
+> 針對以下的程式
+>
+> ```python
+> sum = 0; grade = 0
+> while (grade != -999):
+>     grade = int (input("input your grade: "))
+>     sum += grade
+> print (sum)     
+> ```
+> 上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出為 sum 的值為何？ 
+
+> [!NOTE]
+> 針對以下的程式
+>
+> ```python
+> x = [20, 30, 90, 90] 
+> for i in x:
+>     print (i, end = " ")
+> ```
+>
+> 印出結果為？
+>    - [ ] 20 30 90 90
+>    - [ ] 0 1 2 3
+>    - [ ] 1 2 3 4
+>    - [ ] False False False False
+
+
+> [!NOTE]
+> 針對以下的程式
+> ```python
+> import random
+> x = random.randint(4, 50)
+> ```
+>
+> x 的值可能為何？（複選）
+> - [ ] 4
+> - [ ] 10
+> - [ ] 50
+> - [ ] 100
+> - [ ] 0
