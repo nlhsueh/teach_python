@@ -102,140 +102,153 @@ Python 不僅是一門語言，也蘊含著一套優雅的設計哲學，由提�
 
 ## **1.3 開發環境的選擇與安裝**
 
-要開始撰寫程式，我們需要一個可以編輯並執行 Python 程式碼的環境。這就像寫作需要 Word 或 Pages 一樣。對於初學者來說，有兩種主要的路徑可以選擇：**使用線上開發環境**或**在自己的電腦上安裝**。
+要開始撰寫程式，我們需要一個可以編輯並執行 Python 程式碼的環境。這就像寫作需要 Word 或 Pages 一樣。在進入實作安裝前，我們先來了解 Python 的版本歷程與現今豐富的開發工具生態系。
+
+### **1.3.1 Python 版本演進與選擇**
+
+Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些演進有助於你在學習與撰寫程式碼時，選擇最合適且現代的語法標準：
+
+![Python 版本演進歷程](../img/ch01/python_version_timeline.png)
+
+* **Python 2.x 與 Python 3.0 的分水嶺 (2008 年)**：
+  * **不向下相容**：Python 3.0 是語言架構的重大重構，解決了歷史包袱（例如字串預設為 Unicode 解決編碼問題、`print` 成為函式需加括號等）。Python 2 已於 2020 年正式除役 (EOL)，現在所有專案皆採用 Python 3。
+* **Python 3.x 時代的關鍵里程碑**：
+  * **Python 3.6**：引入最廣受喜愛的 **f-string**（格式化字串字面值），寫法如 `f"Hello, {name}"`。
+  * **Python 3.10**：新增 **Structural Pattern Matching (match-case)** 結構化模式匹配，並大幅優化了語法錯誤提示（SyntaxError Traceback）。
+  * **Python 3.11**：官方大幅重構解譯器核心，帶來 10%～60% 的速度效能大躍進。
+  * **Python 3.12 / 3.13+ (現代主流)**：進一步精簡底層架構、強化型別系統、改進 REPL 互動終端環境，並朝向實驗性多執行緒效能優化邁進。
+
+> [!TIP]
+> **版本建議**：學習本教材時，建議使用 **Python 3.10 或以上** 版本（目前官方推薦主流為 **Python 3.12 或 3.13**），以確保支援所有現代 Python 的最新語法與效能優勢。
+
+---
+
+### **1.3.2 現代 Python 開發工具總覽（含 AI 時代工具）**
+
+工欲善其事，必先利其器。現代 Python 開發工具大致可分為三大類：
+
+![Python 開發工具生態總覽](../img/ch01/dev_tools_overview.png)
+
+1. **線上雲端環境 (Cloud / Web)**：
+   * **Google Colab**：Google 提供的免費雲端 Jupyter Notebook，具備「免安裝」、「開箱即用資料科學套件」、「免費 GPU 算力」及內建 Gemini AI 輔助功能，是初學者探索程式設計的最佳起點。
+   * **Jupyter Notebook**：以網頁為基礎的互動式運算環境，廣泛用於數據分析與視覺化呈現。
+2. **本機專業環境 (Local IDE / Editor)**：
+   * **Visual Studio Code (VS Code)**：微軟開發的免費、開源跨平台編輯器。擁有強大的套件生態系、輕量迅速且高度整合終端機與除錯工具，是目前全球業界最受歡迎的 Python 首選環境。
+   * **PyCharm**：JetBrains 出品的專業級 Python IDE，適合開發大型企業專案。
+   * **IDLE**：Python 官方安裝包內建的極簡環境，適合剛安裝完時做最基礎的單行指令測試。
+3. **AI 輔助開發工具 (AI-Powered Tools)**：
+   * **GitHub Copilot**：整合於 VS Code 中的 AI 結對工程師，能根據上下文即時預測並補全程式碼。
+   * **ChatGPT / Claude / Gemini**：強大的對話式 AI 助手，適合用來進行架構規劃、程式碼解釋與複雜 Bug 除錯。
+   * **Cursor**：以 VS Code 為核心打造的 AI 原生（AI-First）編輯器，深度整合大型語言模型，支援全專案智慧重構與生成。
+
+---
+
+### **1.3.3 初學者的兩條安裝路徑**
+
+對於初學者來說，有兩種主要的路徑可以選擇：**使用線上開發環境**或**在自己的電腦上安裝**。
 
 ![開發環境選擇流程](../img/ch01/env_choice_flow.png)
 
-### **1.3.1 路徑一：線上開發環境**
+#### **路徑一：線上開發環境 (Google Colab)**
 
 如果你是第一次接觸程式設計，可以從線上環境開始。這可以讓你跳過所有繁瑣的安裝步驟，直接專注在學習程式語言本身。
 
-  * **我們推薦的工具：Google Colab**
+* **我們推薦的工具：Google Colab**
+  * **零安裝**：完全不用在自己的電腦上安裝任何軟體，避免了把電腦搞亂的風險。
+  * **雲端存取**：你的程式碼儲存在 Google 雲端，可以從任何一台電腦登入並繼續工作。
+  * **功能強大**：內建了所有資料分析和機器學習常用的套件，並提供免費運算資源與 AI 助理。
 
-    Google Colaboratory (簡稱 Colab) 是一個由 Google 提供的免費雲端程式設計環境。你只需要一個瀏覽器和 Google 帳號，就能立刻開始寫 Python。
+* **如何開始使用 Google Colab**
+  1. 打開你的網頁瀏覽器 (例如 Chrome, Edge, Safari)。
+  2. 在網址列輸入：`colab.research.google.com`
+  3. 使用你的 Google 帳號登入。
+  4. 登入後，點擊左上角的「檔案」(`File`) -> 「新增筆記本」(`New notebook`)。
+  5. 現在，你就可以在出現的區塊（稱為儲存格, Cell）中輸入並執行你的第一行 Python 程式碼了！
 
-    **優點：**
+你也可以在 [Wei 學程式就那點事](https://youtu.be/eJCXFIoOwdw?si=QNtXjrYBPJvV6eER) 觀看關於 colab 的使用教學影片。
 
-      * **零安裝**：完全不用在自己的電腦上安裝任何軟體，避免了把電腦搞亂的風險。
-      * **雲端存取**：你的程式碼儲存在 Google 雲端，可以從任何一台電腦登入並繼續工作。
-      * **功能強大**：內建了所有資料分析和機器學習常用的套件，並提供免費的運算資源。
+---
 
-  * **如何開始使用 Google Colab**
-
-    1.  打開你的網頁瀏覽器 (例如 Chrome, Edge, Safari)。
-    2.  在網址列輸入：`colab.research.google.com`
-    3.  使用你的 Google 帳號登入。
-    4.  登入後，點擊左上角的「檔案」(`File`) -\> 「新增筆記本」(`New notebook`)。
-    5.  現在，你就可以在出現的區塊（稱為儲存格, Cell）中輸入並執行你的第一行 Python 程式碼了！
-
-你也可以在 [Wei 學程式就那點事](https://youtu.be/eJCXFIoOwdw?si=QNtXjrYBPJvV6eER) 觀看關於 colab 的使用教學影片。    
-
-### **1.3.2 路徑二：在本機電腦安裝 (專業開發的必經之路)**
+#### **路徑二：在本機電腦安裝 (專業開發的必經之路)**
 
 當你熟悉了基本語法後，建立本地開發環境是讓你成為更專業開發者的下一步。我們的推薦組合是 **Python 官方程式 + Visual Studio Code (VS Code) 編輯器**。
 
-![本機安裝完整流程](../img/ch01/local_install_flow.png)
+##### **安裝前的準備：檢查電腦是否已安裝 Python**
 
------
-
-#### **安裝前的準備：檢查電腦是否已安裝 Python**
-
-在我們開始安裝前，先花一分鐘檢查你的電腦是否已經安裝了 Python。許多電腦，特別是 Mac，可能已經內建了某个版本的 Python。
+在我們開始安裝前，先花一分鐘檢查你的電腦是否已經安裝了 Python。許多電腦（特別是 Mac）可能已經內建了某個版本的 Python。
 
 ![Python 安裝檢查流程](../img/ch01/python_check_flow.png)
 
-##### **Windows 系統檢查方法 🪟**
+* **Windows 系統檢查方法 🪟**
+  1. 點擊桌面左下角的「開始」按鈕，輸入 `cmd` 並打開「**命令提示字元**」。
+  2. 在彈出的黑色視窗中，輸入以下指令，然後按下 `Enter` 鍵：
+     ```bash
+     python --version
+     ```
+  3. **觀察結果：**
+     * 如果顯示 `Python 3.x.x` (例如 `Python 3.12.x` 或 `Python 3.13.x`)，恭喜你，你的電腦已有現代 Python。建議版本在 **3.10 以上**；若版本低於 3.10，建議依照後續步驟安裝最新版覆蓋。
+     * 如果畫面**跳出 Microsoft Store 應用程式商店**，請直接關閉它。這代表你的電腦沒有真正的 Python，你需要依照後續步驟進行安裝。
+     * 如果顯示 `'python' 不是內部或外部命令...` 的錯誤訊息，代表電腦中尚未安裝 Python，請依照後續步驟進行安裝。
 
-1.  點擊桌面左下角的「開始」按鈕，輸入 `cmd` 並打開「**命令提示字元**」。
-2.  在彈出的黑色視窗中，輸入以下指令，然後按下 `Enter` 鍵：
-    ```bash
-    python --version
-    ```
-3.  **觀察結果：**
-      * 如果顯示 `Python 3.x.x` (例如 `Python 3.12.4`)，恭喜你，你的電腦已有 Python。建議版本在 3.8 以上，如果版本過舊，仍可依照後續步驟安裝最新版來覆蓋。
-      * 如果畫面**跳出 Microsoft Store 應用程式商店**，請直接關閉它。這代表你的電腦沒有真正的 Python，而是 Windows 的一個捷徑。你需要依照後續步驟進行安裝。
-      * 如果顯示 `'python' 不是內部或外部命令...` 的錯誤訊息，代表電腦中沒有安裝 Python，你需要依照後續步驟進行安裝。
+* **macOS 系統檢查方法 🍎**
+  1. 打開「應用程式」檔案夾中的「工具程式」，點擊「**終端機**」(Terminal)。
+  2. 在彈出的黑色視窗中，輸入以下指令，然後按下 `Enter` 鍵：
+     ```bash
+     python3 --version
+     ```
+     *(註：在 Mac 上請優先使用 `python3` 指令，以避免呼叫到系統舊版環境)*
+  3. **觀察結果：**
+     * 如果顯示 `Python 3.x.x` (例如 `Python 3.12.x`)，代表你的電腦已安裝了 Python 3。若版本較舊（如系統預設的 `3.9.x` 或低於 3.10），推薦依照後續步驟安裝官方最新穩定版本。
+     * 如果顯示 `command not found` 的錯誤訊息，代表電腦中沒有安裝 Python 3，請依照後續步驟進行安裝。
 
-##### **macOS 系統檢查方法 🍎**
+---
 
-1.  打開「應用程式」檔案夾中的「工具程式」，點擊「**終端機**」(Terminal)。
-2.  在彈出的黑色視窗中，輸入以下指令，然後按下 `Enter` 鍵：
-    ```bash
-    python3 --version
-    ```
-    *(註：在 Mac 上請優先使用 `python3` 指令，因為系統可能內建一個較舊的 `python`)*
-3.  **觀察結果：**
-      * 如果顯示 `Python 3.x.x` (例如 `Python 3.9.6`)，代表你的電腦已安裝了 Python 3。若版本較舊（低於 3.8），或你想使用最新功能，仍推薦依照後續步驟安裝官方最新版本。
-      * 如果顯示 `command not found` 的錯誤訊息，代表電腦中沒有安裝 Python 3，你需要依照後續步驟進行安裝。
+##### **第一階段：安裝或更新 Python 核心程式**
 
------
+若檢查後發現需要安裝或更新，請依照以下步驟操作：
 
-#### **第一階段：安裝或更新 Python 核心程式**
+![第一階段：安裝 Python 核心流程](../img/ch01/python_install_flow.png)
 
-若檢查後發現需要安裝或更新，請依照以下步驟操作。
+1. **Windows 系統安裝指南**：
+   * **下載 Python**：前往 Python 官方網站 [https://www.python.org](https://www.python.org)，將滑鼠移到 `Downloads` 選單上，點擊 `Download for Windows` 下的 **Python [最新版本號]** 按鈕。
+   * **執行安裝程式**：到「下載」資料夾，雙擊執行剛下載的 `python-[...].exe` 安裝檔。
+   * **關鍵設定（極重要）**：在安裝程式的第一個畫面，**務必勾選左下角的「Add python.exe to PATH」選項！** 這個步驟能確保你在系統任何路徑下都能順利執行 Python 指令。勾選後點擊 `Install Now`。
+   * **完成安裝**：等待進度條跑完，看到 "Setup was successful" 畫面即表示安裝成功。
 
-##### **Windows 系統安裝指南**
+2. **macOS 系統安裝指南**：
+   * **下載 Python**：前往 Python 官方網站 [https://www.python.org](https://www.python.org)，將滑鼠移到 `Downloads` 選單上，點擊 `Download for macOS` 下的 **Python [最新版本號]** 按鈕。
+   * **執行安裝程式**：到「下載項目」資料夾，雙擊執行 `python-[...].pkg` 安裝套件。
+   * **依照指示安裝**：依序點擊「繼續」(`Continue`) 與「同意」(`Agree`) 許可協議，輸入電腦登入密碼後完成安裝。
 
-1.  **下載 Python**：
+---
 
-      * 前往 Python 官方網站：[https://www.python.org](https://www.python.org)
-      * 將滑鼠移到 `Downloads` 選單上，點擊 `Download for Windows` 下的 **Python [最新版本號]** 按鈕。
+##### **第二階段：安裝與設定 Visual Studio Code (VS Code)**
 
-2.  **執行安裝程式**：
+現在你的電腦已經擁有 Python 核心了，接下來我們要安裝一套現代強大的程式碼編輯器：
 
-      * 到你的「下載」資料夾，找到剛下載的 `python-[...].exe` 檔案並連按兩下滑鼠左鍵執行它。
+![第二階段：安裝 VS Code 與設定流程](../img/ch01/vscode_install_flow.png)
 
-3.  **關鍵設定**：
+1. **下載並安裝 VS Code**：
+   * 前往 VS Code 官方網站 [https://code.visualstudio.com](https://code.visualstudio.com)。
+   * 網站會自動偵測你的作業系統，直接點擊藍色的下載按鈕。下載完成後按照預設選項完成安裝。
 
-      * 在安裝程式的第一個畫面，**務必勾選左下角的「Add Python.exe to PATH」選項！**
-      * **這個步驟至關重要**，它能確保你可以在電腦的任何地方執行 Python 指令。勾選後，點擊 `Install Now`。
+2. **安裝 Python 擴充套件（關鍵步驟）**：
+   * 打開安裝好的 VS Code。
+   * 點擊左側活動列中的「**擴充功能 (Extensions)**」圖示（四個方塊圖示，或按快捷鍵 `Ctrl+Shift+X` / `Cmd+Shift+X`）。
+   * 在頂端搜尋框輸入 `Python`。
+   * 找到由 **Microsoft** 發行的官方套件，點擊 `Install` 安裝。
 
-4.  **完成安裝**：等待安裝進度條跑完，看到 "Setup was successful" 的畫面即表示安裝成功。
+3. **撰寫並執行你的第一支本地程式**：
+   * 在 VS Code 中點擊「檔案」(`File`) -> 「新增檔案」(`New File`)。
+   * 點擊「檔案」(`File`) -> 「儲存」(`Save`)，命名為 `hello.py`（**.py** 副檔名至關重要）。
+   * 在編輯區輸入：`print("Hello, World!")`。
+   * 點擊編輯器右上角的 **▶️ (執行)** 按鈕。
+   * 下方終端機即會跳出並印出 `Hello, World!` 的結果。
 
-##### **macOS 系統安裝指南**
+恭喜你！至此，你已經成功在自己的電腦上搭建了一套現代專業的 Python 開發環境。
 
-1.  **下載 Python**：
-
-      * 前往 Python 官方網站：[https://www.python.org](https://www.python.org)
-      * 將滑鼠移到 `Downloads` 選單上，點擊 `Download for macOS` 下的 **Python [最新版本號]** 按鈕。
-
-2.  **執行安裝程式**：
-
-      * 到你的「下載項目」檔案夾，找到剛下載的 `python-[...].pkg` 檔案並連按兩下滑鼠左鍵執行它。
-      * 這跟在 Mac 上安裝其他軟體非常類似。一直點擊「繼續」(`Continue`)，並「同意」(`Agree`) 許可協議，然後點擊「安裝」(`Install`)。過程中可能需要輸入你電腦的登入密碼。安裝成功後即可關閉視窗。
-
------
-
-#### **第二階段：安裝與設定 Visual Studio Code (VS Code)**
-
-現在你的電腦已經懂 Python 了，接下來我們要安裝一個強大的編輯器來寫程式。
-
-1.  **下載並安裝 VS Code**：
-
-      * 前往 VS Code 官方網站：[https://code.visualstudio.com](https://code.visualstudio.com)
-      * 網站會自動偵測你的作業系統，直接點擊大大的藍色下載按鈕。
-      * 下載後，執行安裝檔，按照預設選項完成安裝即可。
-
-2.  **安裝 Python 擴充套件（關鍵步驟）**：
-
-      * 打開你剛安裝好的 VS Code。
-      * 點擊左側活動列中第五個圖示，它看起來像幾個方塊疊在一起的「**擴充功能 (Extensions)**」。
-      * 在頂端的搜尋框中輸入 `Python`。
-      * 在搜尋結果清單中，找到由 **Microsoft** 發行的那一個（通常是第一個），然後點擊它旁邊的 `Install` 按鈕。
-
-3.  **撰寫並執行你的第一支本地程式**：
-
-      * 在 VS Code 中，點擊左上角「檔案」(`File`) -\> 「新增檔案」(`New File`)。
-      * 立刻儲存這個檔案：點擊「檔案」(`File`) -\> 「儲存」(`Save`)，並將檔案命名為 `hello.py`。（**.py** 副檔名非常重要，它告訴 VS Code 這是一個 Python 檔案）。
-      * 在編輯區輸入你的第一行程式碼： `print("Hello, World!")`
-      * 點擊編輯器右上角的 **▶️ (執行)** 按鈕。
-      * 你會看到 VS Code下方彈出一個「終端機」視窗，並印出 "Hello, World\!" 的結果。
-
-恭喜你！至此，你已經成功在自己的電腦上搭建了一套專業的 Python 開發環境。
-
-ps. 你也可以參考 [Python 簡介、安裝、與快速開始 By 彭彭](https://youtu.be/wqRlKVRUV_k?si=BipNvpuDLTCg7dp2) 的影片，裡面有詳細的介紹 VS code 的使用方法。
-
-好的，這是在您要求的架構下，將內容拆分為「通用學習建議」與「AI 世代學習建議」的全新版本。
+> [!NOTE]
+> 你也可以參考 [Python 簡介、安裝、與快速開始 By 彭彭](https://youtu.be/wqRlKVRUV_k?si=BipNvpuDLTCg7dp2) 的教學影片，觀看詳細的 VS Code 本機安裝與操作步驟示範。
 
 ---
 
