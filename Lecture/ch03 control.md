@@ -417,7 +417,9 @@ print (sum)
 > 有兩個變數 names, grades 分別紀錄一群人的姓名與成績，請分行列出每個的名字與成績，如下：
 > > The grade of xxx is ooo
 
-Solution: 
+<details>
+<summary>點擊查看解答 (Solution)</summary>
+
 ```python
 names = ['John', 'Nick', 'Albert', 'Jie'] 
 i = 0
@@ -427,14 +429,15 @@ for n in names:
     i += 1
 ```
 
-The output is
-
+**輸出結果：**
 ```
 The grade of John is 20
 The grade of Nick is 100
 The grade of Albert is 98
 The grade of Jie is 86
 ```
+
+</details>
 
 ### 3.2.3 for range 迴圈
 
@@ -773,7 +776,8 @@ while not correct:
 ## 自我測驗
 
 > [!NOTE]
-> ```
+> **第 1 題**
+> ```python
 >  g = 98
 >  if g > 90:
 >      print ("Class A", end=' ') 
@@ -788,13 +792,24 @@ while not correct:
 > - [ ] 印出 Class B
 > - [ ] elif 錯誤，應該為 else if
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`因為內縮問題，程式錯誤`
+* **詳細解析**：在 `if` 區塊與 `elif` 之間，插入了一行非內縮的 `print ("Good job", end=' ')`。這導致 Python 直譯器認為 `if` 區塊已經結束，後續的 `elif` 找不到對應的 `if`，因而引發語法錯誤（`SyntaxError: invalid syntax`）。
+
+</details>
+
+---
+
 > [!NOTE]
-> 針對以下程式 
+> **第 2 題**
+> 針對以下程式：
 > ```python
 > if g >= 60:
 >     print ("pass", end="; ")
 >     print ("good", end="; ")
-> elif g >=50:
+> elif g >= 50:
 >     print ("almost pass", end="; ")    
 >     if (g >= 90):
 >         print ("excellent", end="; ")    
@@ -803,38 +818,62 @@ while not correct:
 >     print ("not good", end="; ")    
 > print ("end of report")
 > ```
->
 > 以下何者正確？（複選）
 > - [ ] 當 g 為 0 時，會印出 fail; not good; end of report
 > - [ ] 當 g 為 60 時，會印出 pass; good
-> - [ ] 當 g 為 90 時，會印出  excellent; end of report
+> - [ ] 當 g 為 90 時，會印出 excellent; end of report
 > - [ ] 當 g 為 51 時，會印出 almost pass; end of report
-> - [ ] 當 g 為 90 時，會印出  pass; good; excellent; end of report
+> - [ ] 當 g 為 90 時，會印出 pass; good; excellent; end of report
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：
+  * `當 g 為 0 時，會印出 fail; not good; end of report`
+  * `當 g 為 51 時，會印出 almost pass; end of report`
+* **詳細解析**：
+  * 當 `g = 0` 時，不滿足 `g >= 60` 與 `g >= 50`，進入 `else` 印出 `fail; not good; `，最後執行外部的 `end of report`。
+  * 當 `g = 51` 時，進入 `elif g >= 50`，印出 `almost pass; `；內部巢狀 `if (g >= 90)` 不成立不執行，最後印出 `end of report`。
+  * 當 `g = 60` 或 `90` 時，都會進入第一個 `if`，並在最後印出 `end of report`。
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下程式 
+> **第 3 題**
+> 針對以下程式：
 > ```python
-> sum=0
+> sum = 0
 > for i in range (1, 10):
 >     sum += i
 > print(sum)
 > ```
->
 > 請問上述程式碼輸出結果為何?  
 > - [ ] 45
 > - [ ] 44
 > - [ ] 55
 > - [ ] 54
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`45`
+* **詳細解析**：`range(1, 10)` 產生的數列為 $1, 2, 3, 4, 5, 6, 7, 8, 9$（不包含結束值 10）。加總 $1 + 2 + \dots + 9 = 45$。
+
+</details>
+
+---
+
 > [!NOTE]
-> 針對以下的程式
-> ```
-> sum=0
+> **第 4 題**
+> 針對以下的程式：
+> ```python
+> sum = 0
 > for i in range (2, 10, 2):
 >     sum += i
 > print(sum)
 > ```
->
 > 請問上述程式碼輸出結果為何?  
 > - [ ] 30
 > - [ ] 45
@@ -842,97 +881,184 @@ while not correct:
 > - [ ] 55
 > - [ ] 25
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`20`
+* **詳細解析**：`range(2, 10, 2)` 從 2 開始，每次遞增 2，不包含 10，因此產生的數值為 $2, 4, 6, 8$。加總 $2 + 4 + 6 + 8 = 20$。
+
+</details>
+
+---
+
 > [!NOTE]
-> 針對以下的程式
-> ```
+> **第 5 題**
+> 針對以下的程式：
+> ```python
 > for i in range(4):
->    for j in range(i):
+>     for j in range(i):
 >         print (str(i), end='')
 >     print (end='-')    
 > ```
->
 > 會印出什麼？
-> - [ ] -1-22-333-
 > - [ ] -1-22-333-
 > - [ ] 1-22-333-4444
 > - [ ] 1-2-3-4
 > - [ ] -1-2-3-
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`-1-22-333-`
+* **詳細解析**：
+  * $i=0$：`range(0)` 內層不執行，印出 `-`
+  * $i=1$：`range(1)` 印出 `1`，接著印出 `-` $\rightarrow$ `-1-`
+  * $i=2$：`range(2)` 印出 `22`，接著印出 `-` $\rightarrow$ `-1-22-`
+  * $i=3$：`range(3)` 印出 `333`，接著印出 `-` $\rightarrow$ `-1-22-333-`
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下的程式
-> ```
+> **第 6 題**
+> 針對以下的程式：
+> ```python
 > g = 98
-> if g &gt; 90:
+> if g > 90:
 >    print ("Class A")
 > print ("Good job")
-> elif (g &gt; 80):
+> elif (g > 80):
 >    print ("Class B")
 > ```
->
-> 以下何者正確
+> 以下何者正確？
 > - [ ] 程式錯誤
 > - [ ] 第一行若改為 g=70, 一樣會印出Class A Good job
 > - [ ] 印出 Class B
 > - [ ] 印出Good job Class B
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`程式錯誤`
+* **詳細解析**：`if` 與 `elif` 之間不能插入與其同層級的其他敘述句（`print("Good job")`），這會中斷條件判斷結構，造成 `SyntaxError`。
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下的程式
-> ```
+> **第 7 題**
+> 針對以下的程式：
+> ```python
 > for v in range(2, 11):
-> 	for i in range (2, v):
-> 		if v%i==0:
-> 			print (v, '不是質數')
-> 			break	
-> 	else:
-> 		print (v, '是質數')
+>     for i in range (2, v):
+>         if v % i == 0:
+>             print (v, '不是質數')
+>             break	
+>     else:
+>         print (v, '是質數')
 > ```
 > 何者正確（複選）
->    - [ ] 印出會包含 11是質數
->    - [ ] 編譯錯誤，else 應與 if 對齊
->    - [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
->    - [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
->    - [ ] 印出包含 7是質數
->    - [ ] 印出包含 6不是質數
+> - [ ] 印出會包含 11是質數
+> - [ ] 編譯錯誤，else 應與 if 對齊
+> - [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
+> - [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
+> - [ ] 印出包含 7是質數
+> - [ ] 印出包含 6不是質數
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：
+  * `印出包含 7是質數`
+  * `印出包含 6不是質數`
+* **詳細解析**：
+  * `for ... else` 是 Python 特有的合法語法，當迴圈**正常結束（未被 break 中斷）**時會執行 `else` 區塊。
+  * `range(2, 11)` 範圍為 2 到 10，不包含 11。
+  * 當 $v=7$ 時，內層迴圈沒有任何數能整除 7，正常結束進入 `else`，印出 `7 是質數`。
+  * 當 $v=6$ 時，$6 \% 2 == 0$，印出 `6 不是質數` 並 `break` 跳出內層。
+
+</details>
+
+---
 
 > [!NOTE]
-> 執行後 sum 的值為何？
+> **第 8 題**
+> 執行後 `sum` 的值為何？
 > ```python
 > sum = 0
-> for i in range(1,10,2):
->         if i == 5:
->              break
-> 	sum = sum + i
+> for i in range(1, 10, 2):
+>     if i == 5:
+>         break
+>     sum = sum + i
 > print (sum)
 > ```
 
-> [!NOTE]
-> 關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
->    - [ ] 通常用來幫助除錯
->    - [ ] 用來跳出迴圈
->    - [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
->    - [ ] 可以更有效率的提升程式執行的效率
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`4`
+* **詳細解析**：`range(1, 10, 2)` 產生的序列為 $1, 3, 5, 7, 9$。
+  * $i=1$：$sum = 0 + 1 = 1$
+  * $i=3$：$sum = 1 + 3 = 4$
+  * $i=5$：觸發 `break` 跳出迴圈。
+  * 因此最後印出的 `sum` 值為 `4`。
+
+</details>
+
+---
 
 > [!NOTE]
-> 以下程式會印出多少 *
+> **第 9 題**
+> 關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
+> - [ ] 通常用來幫助除錯
+> - [ ] 用來跳出迴圈
+> - [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
+> - [ ] 可以更有效率的提升程式執行的效率
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：
+  * `通常用來幫助除錯`
+  * `可以暫時中斷程式的執行，便於觀察變數的變化`
+* **詳細解析**：中斷點是偵錯工具（Debugger）的功能，讓程式在指定行暫停執行，供開發者檢視當前變數的值與記憶體狀態，它並不能用來加速程式執行或替代迴圈控制指令。
+
+</details>
+
+---
+
+> [!NOTE]
+> **第 10 題**
+> 以下程式會印出多少個 `*`？
 > ```python
 > n = 1
 > while True:
->    print ('*')
->    n += 2
->    if n == 100:
->       break
+>     print ('*')
+>     n += 2
+>     if n == 100:
+>         break
 > ```
->    - [ ] 0
->    - [ ] 無窮迴圈
->    - [ ] 100
->    - [ ] 101
->    - [ ] 50
+> - [ ] 0
+> - [ ] 無窮迴圈
+> - [ ] 100
+> - [ ] 101
+> - [ ] 50
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`無窮迴圈`
+* **詳細解析**：$n$ 從 1 開始每次加 2，其值序列為 $1, 3, 5, \dots, 99, 101, \dots$，全為奇數，永遠不會等於 100。因此 `if n == 100` 條件永遠不會成立，形成無窮迴圈（Infinite Loop）。
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下的程式
->
+> **第 11 題**
+> 針對以下的程式：
 > ```python
 > sum = 0; grade = 0
 > while (grade != -999):
@@ -940,34 +1066,67 @@ while not correct:
 >     sum += grade
 > print (sum)     
 > ```
-> 上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出為 sum 的值為何？ 
+> 上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出 `sum` 的值為何？ 
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`-801`
+* **詳細解析**：
+  * 第 1 次輸入 100：$sum = 0 + 100 = 100$
+  * 第 2 次輸入 98：$sum = 100 + 98 = 198$
+  * 第 3 次輸入 -999：$sum = 198 + (-999) = -801$
+  * 迴圈回到開頭判斷 `grade != -999` 為 False 才跳出，因此旗標值 `-999` 已經被累加進 `sum` 了。
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下的程式
->
+> **第 12 題**
+> 針對以下的程式：
 > ```python
 > x = [20, 30, 90, 90] 
 > for i in x:
 >     print (i, end = " ")
 > ```
->
 > 印出結果為？
->    - [ ] 20 30 90 90
->    - [ ] 0 1 2 3
->    - [ ] 1 2 3 4
->    - [ ] False False False False
+> - [ ] 20 30 90 90
+> - [ ] 0 1 2 3
+> - [ ] 1 2 3 4
+> - [ ] False False False False
 
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：`20 30 90 90`
+* **詳細解析**：Python 的 `for i in x:` 會直接遍歷串列（list）中的每一個**元素值**，而非索引（index）。因此迴圈會依序取出 `20`, `30`, `90`, `90` 並印出。
+
+</details>
+
+---
 
 > [!NOTE]
-> 針對以下的程式
+> **第 13 題**
+> 針對以下的程式：
 > ```python
 > import random
 > x = random.randint(4, 50)
 > ```
->
-> x 的值可能為何？（複選）
+> `x` 的值可能為何？（複選）
 > - [ ] 4
 > - [ ] 10
 > - [ ] 50
 > - [ ] 100
 > - [ ] 0
+
+<details>
+<summary>點擊查看答案與解析</summary>
+
+* **正確答案**：
+  * `4`
+  * `10`
+  * `50`
+* **詳細解析**：Python 的 `random.randint(a, b)` 會回傳一個介於 $a$ 與 $b$ 之間的整數，且**包含兩端點**（即 $4 \le x \le 50$）。因此 4、10、50 都在可能產生的範圍內。
+
+</details>

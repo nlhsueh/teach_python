@@ -131,6 +131,9 @@ D) `pi`
 
 ---
 
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
 **答案與回饋**
 
 * **第一題：B) `my-var`**
@@ -141,6 +144,8 @@ D) `pi`
 
 * **第三題：B) `import`**
     * **回饋**：`import` 是 Python 的**保留字 (Reserved Keyword)** 或稱為關鍵字。這些字在語言中有特殊的語法功能（例如 `import` 用於匯入模組），因此不能被用作任何識別符（如變數名、函式名）的名稱。
+
+</details>
 
 ### 2.2.3 變數型態
 
@@ -395,6 +400,9 @@ print(f"'{current_char}' 的下一個字母是 '{next_char}'")
 > > The ASCII code of a is  97
 > > a b c d e f g h i j k l m n o p q r s t u v w x y z
 
+<details>
+<summary>點擊查看參考解答與說明</summary>
+
 ```python
 a_code = ord('a')
 print ('The ASCII code of a is ', str(a_code))
@@ -409,6 +417,8 @@ for i in range(a_code, a_code+26):
 4. `print(chr(i), end=' ')`：在迴圈內，這一行使用 `chr(i)` 將當前迴圈變數 `i` 轉換為相應的字符，並使用 `end=' '` 參數使所有字符在同一行上以空格分隔的方式輸出。這樣，迴圈將輸出小寫英文字母 `'a'` 到 `'z'`。
 
 最終的輸出將是一個消息，顯示 `'a'` 的ASCII編碼，然後是小寫英文字母 `'a'` 到 `'z'`，每個字母之間以空格分隔。
+
+</details>
 
 
 
@@ -1077,9 +1087,8 @@ for i in range(1, r+1):
 > ```
 
 <details>
-<summary>Solution</summary>
+<summary>點擊查看參考解答</summary>
 
-Solution
 ```python
 d = int(input('')) # 此行勿改。d 為直徑
 a =  round((d/2) **2 * 3.14, 2)  # 面積
@@ -1095,6 +1104,18 @@ print (p) # 此行勿改
 > OJ 星期幾
 > 已知某個月的一號是星期1, 輸入該月的日期，請回答是星期幾。注意若為星期日，則為星期 7，也就是答案落在1,2,... 7 其中一個值。
 
+<details>
+<summary>點擊查看參考解答</summary>
+
+```python
+day = int(input(''))
+# 1號是星期1，(day - 1) % 7 結果為 0~6，+1 即為 1~7
+ans = (day - 1) % 7 + 1
+print(ans)
+```
+
+</details>
+
 
 > [!NOTE]
 > OJ 溫度轉換
@@ -1102,8 +1123,7 @@ print (p) # 此行勿改
 > 設計攝氏溫度和華氏溫度的轉換。輸入攝氏輸出華氏。
 > 華氏溫度 = 攝氏溫度 * ( 9 / 5 ) + 32 (取小數點下兩位)
 >
->
-> ```
+> ```python
 > Code:
 > c = int(input('')) # 此行勿改。c 為攝氏
 >
@@ -1112,12 +1132,24 @@ print (p) # 此行勿改
 > print (f) # 此行勿改。f 為輸出之華氏
 > ```
 
+<details>
+<summary>點擊查看參考解答</summary>
+
+```python
+c = int(input('')) # 此行勿改。c 為攝氏
+
+f = round(c * (9 / 5) + 32, 2)
+
+print (f) # 此行勿改。f 為輸出之華氏
+```
+
+</details>
+
 
 > [!NOTE]
 > OJ 計算距離
 >
-> 兩個座標的距離，是各自 x, y 的座標差的平方和再開根號，如下圖：
->
+> 兩個座標的距離，是各自 x, y 的座標差的平方和再開根號：
 >
 > ```python
 > Hint：開根號，可使用 ** 0.5 來做
@@ -1130,3 +1162,17 @@ print (p) # 此行勿改
 >
 > print (d) # 此行勿改
 > ```
+
+<details>
+<summary>點擊查看參考解答</summary>
+
+```python
+x1, y1 = eval(input('')) # 此行勿改。x1, y1 是第一個座標
+x2, y2 = eval(input('')) # 此行勿改。x2, y2 是第二個座標
+
+d = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5  # d 為兩個座標的距離
+
+print (d) # 此行勿改
+```
+
+</details>
