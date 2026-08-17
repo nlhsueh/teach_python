@@ -9,11 +9,11 @@ fi
 
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 REPO_ROOT=$(dirname "$SCRIPT_DIR")
-PDF_DIR="$REPO_ROOT/PDF"
+PDF_DIR="$REPO_ROOT/Slide"
 HTML_DIR="$REPO_ROOT/Slide"
 THEME_CSS="$SCRIPT_DIR/nlh-theme.css"
 
-mkdir -p "$PDF_DIR" "$HTML_DIR"
+mkdir -p "$HTML_DIR"
 
 BASE_NAME=$(basename "${MD_FILE%.*}")
 HTML_OUT="$HTML_DIR/$BASE_NAME.html"

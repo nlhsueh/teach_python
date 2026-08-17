@@ -147,7 +147,7 @@ D) `pi`
 
 </details>
 
-### 2.2.3 變數型態
+### 2.2.4 變數型態
 
 變數型態是程式語言中用來**分類資料**的標籤。你可以把它想像成一個貼在儲存資料的盒子（變數）上的標籤，這個標籤明確地告訴電腦這個盒子裡裝的是什麼種類的東西。
 
@@ -256,13 +256,13 @@ print (a+b)   # 印出 3
 a = '1'
 b = '2'
 print (a+b)   # 印出 12
-print (a/b)   # 印出 0.5
+# print (a/b)   # TypeError: unsupported operand type(s) for /: 'str' and 'str' (字串無法進行除法)
 
 x = 'apple'
 y = 'banana'
 print (x+y)   # 印出 applebanana
 
-print (x/y)   # Error
+# print (x/y)   # Error (字串無法進行除法)
 ```
 
 #### 檢查型態
@@ -271,7 +271,7 @@ print (x/y)   # Error
 
 ```python
 grade = 89
-temperate = 32.5
+temperature = 32.5
 name = 'Nick'
 isTeacher = True
 
@@ -616,7 +616,7 @@ hello 的值並沒有變, 依然是： Hello, Nick
 
 | 運算子  | 說明                     | 舉例              |
 |---------|--------------------------|-------------------|
-| `**`    | 等於                     | `3 ** 3` -> `True`    |
+| `==`    | 等於                     | `3 == 3` -> `True`    |
 | `!=`    | 不等於                   | `4 != 3` -> `True`    |
 | `<`     | 小於                     | `2 < 5` -> `True`     |
 | `>`     | 大於                     | `5 > 3` -> `True`     |
@@ -886,20 +886,20 @@ first line\nsecond line
 
 ```python
 s = "I like Python"
-r1 = s.lower()
-r2 = s.upper()
-r3 = s.startswith('I')
-r4 = s.endswith('python')
-r5 = s.isdigit()
-r6 = s.find('like')
-r7 = s.find('hate')
-r8 = s.replace('like', 'love')
+r1 = s.lower()                 # 回傳 "i like python" (全轉小寫)
+r2 = s.upper()                 # 回傳 "I LIKE PYTHON" (全轉大寫)
+r3 = s.startswith('I')         # 回傳 True (檢查是否以 'I' 開頭)
+r4 = s.endswith('python')      # 回傳 False (檢查是否以 'python' 結尾，大小寫需相符)
+r5 = s.isdigit()               # 回傳 False (檢查字串是否只包含數字字元)
+r6 = s.find('like')            # 回傳 2 (回傳子字串 'like' 的起始索引)
+r7 = s.find('hate')            # 回傳 -1 (找不到子字串時回傳 -1)
+r8 = s.replace('like', 'love') # 回傳 "I love Python" (字串替換)
 
 s = "I like Python"
 
-x1 = s.split(' ')
-x2 = s.split()
-x3 = s.split(',')
+x1 = s.split(' ')              # 回傳 ['I', 'like', 'Python'] (以空格分割)
+x2 = s.split()                 # 回傳 ['I', 'like', 'Python'] (預設以空白字元如空格、換行、Tab 分割)
+x3 = s.split(',')              # 回傳 ['I like Python'] (字串中無 ','，回傳原字串為單一元素的串列)
 ```
 
 ### 2.4.5 讀寫文字檔
@@ -947,9 +947,9 @@ with open("grade.txt", "r") as f2:
 
    st2 = f2.readline().replace('\n', '')    # 李四  
    # 透過 eval() 來解析字串，轉換為數字  
-   st2a, st2b, st2c = eval(f2.readline()) # 100, 20, 40
+   st2a, st2b, st2c = eval(f2.readline()) # 90, 50, 100
    # 計算平均  
-   st1d = (st2a + st2b + st2c)/3
+   st2d = (st2a + st2b + st2c)/3
    print ("{} 的國英數成績是: {},{},{}, 平均為: {:5.1f}".format(st2, st2a, st2b, st2c, st2d))
 ```
 
