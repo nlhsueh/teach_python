@@ -127,8 +127,6 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
 
 工欲善其事，必先利其器。現代 Python 開發工具大致可分為三大類：
 
-![Python 開發工具生態總覽](../img/ch01/dev_tools_overview.png)
-
 1. **線上雲端環境 (Cloud / Web)**：
    * **Google Colab**：Google 提供的免費雲端 Jupyter Notebook，具備「免安裝」、「開箱即用資料科學套件」、「免費 GPU 算力」及內建 Gemini AI 輔助功能，是初學者探索程式設計的最佳起點。
    * **Jupyter Notebook**：以網頁為基礎的互動式運算環境，廣泛用於數據分析與視覺化呈現。
@@ -225,8 +223,6 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
 ##### **第二階段：安裝與設定 Visual Studio Code (VS Code)**
 
 現在你的電腦已經擁有 Python 核心了，接下來我們要安裝一套現代強大的程式碼編輯器：
-
-![第二階段：安裝 VS Code 與設定流程](../img/ch01/vscode_install_flow.png)
 
 1. **下載並安裝 VS Code**：
    * 前往 VS Code 官方網站 [https://code.visualstudio.com](https://code.visualstudio.com)。
