@@ -3,6 +3,8 @@ Ch09 Introduction to Machine Learning
 
 # Python 機器學習入門
 
+![機器學習工具包](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.001.jpeg)
+
 本章將引導你進入人工智慧中最核心的領域——**機器學習 (Machine Learning, ML)**。我們將學習機器學習的根本哲學、重要學術觀念，並使用 Python 的主流套件 `Scikit-Learn`（簡稱 `sklearn`）實作多種經典的監督式與非監督式學習任務。
 
 本章包含以下核心單元：
@@ -16,6 +18,8 @@ Ch09 Introduction to Machine Learning
 ---
 
 ## 9.1 機器學習基礎觀念
+
+![機器學習基本分類](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.002.jpeg)
 
 ### 9.1.1 人工智慧、機器學習與深度學習的關係
 
@@ -38,6 +42,8 @@ Ch09 Introduction to Machine Learning
 
 ### 9.1.3 偏差與變異的平衡 (Bias-Variance Tradeoff)
 
+![偏差與變異的平衡](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.003.jpeg)
+
 在評估機器學習模型時，我們通常會將預測誤差拆解為三個部分：**偏差 (Bias)**、**變異 (Variance)**，以及**不可避免的隨機噪聲 (Irreducible Error)**：
 * **偏差 (Bias)**：代表模型對真實關係的錯誤假設。高偏差意指模型過於簡單（欠擬合），無法學好訓練集中的結構（如：用直線強行擬合二次曲線）。
 * **變異 (Variance)**：代表模型對訓練資料細微波動的敏感度。高變異意指模型過於複雜（過擬合），背下了訓練集中的隨機噪聲。當輸入全新測試數據時，預測結果會大幅波動。
@@ -52,6 +58,8 @@ Ch09 Introduction to Machine Learning
 ---
 
 ## 9.2 監督式學習：分類任務與超參數調校
+
+![K近鄰分類器原理](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.004.jpeg)
 
 分類任務是工程中最常見的應用。本節我們將深入探討三種經典分類器：**K-近鄰演算法 (KNN)**、**決策樹 (Decision Tree)** 與 **隨機森林 (Random Forest)**，並示範如何優化模型。
 
@@ -68,6 +76,8 @@ $$d(\mathbf{p}, \mathbf{q}) = \sum_{i=1}^{n} |p_i - q_i|$$
 
 ### 9.2.2 決策樹 (Decision Tree) 原理
 
+![決策樹原理](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.005.jpeg)
+
 決策樹是透過一連串的「二分問答」將資料進行分割。它在每次分割時，會尋求讓子節點的**不純度 (Impurity)** 最低。常用的不純度指標為 **吉尼係數 (Gini Impurity)**：
 
 $$Gini(D) = 1 - \sum_{i=1}^{C} P_i^2$$
@@ -76,12 +86,16 @@ $$Gini(D) = 1 - \sum_{i=1}^{C} P_i^2$$
 
 ### 9.2.3 整合集成學習：隨機森林 (Random Forest)
 
+![隨機森林集成學習](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.006.jpeg)
+
 決策樹雖然直觀，但極易產生過擬合（高 Variance）。為了降低變異度，我們可以建構多個決策樹，並將它們的預測結果取平均（迴歸）或多數決（分類），這稱為 **集成學習 (Ensemble Learning)**。
 隨機森林的兩個「隨機」要素：
 1. **Bagging (Bootstrap Aggregating)**：隨機且有放回地抽取部分樣本訓練每棵樹。
 2. **特徵隨機子集**：在每個節點分裂時，隨機選取部分特徵進行最優分裂評估，防止單一強特徵主導整棵樹。
 
 ### 9.2.4 實踐程式碼：雙模型對比與網格搜尋調參 (Grid Search)
+
+![交叉驗證與網格搜尋](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.007.jpeg)
 
 在實務中，我們不能隨便猜測超參數（如 KNN 的 $K$ 值或決策樹的最大深度）。我們可以使用 `GridSearchCV` 自動嘗試各種超參數組合，並配合**交叉驗證 (Cross-Validation)** 找出最佳模型：
 
@@ -151,7 +165,7 @@ print(f"測試集準確度: {accuracy_score(y_test, rf_pred):.4f}")
 
 ---
 
-### **9.2.5 隨堂測驗 (CCQ 1)**
+### 9.2.5 隨堂測驗 (CCQ 1)
 
 **問題**
 
@@ -175,7 +189,7 @@ D) 將特徵維度進行降維以利於繪圖。
 
 ---
 
-### **9.2.6 隨堂測驗 (CCQ 2)**
+### 9.2.6 隨堂測驗 (CCQ 2)
 
 **問題**
 
@@ -201,6 +215,8 @@ D) 程式會因為死迴圈而當機。
 
 ## 9.3 監督式學習：迴歸任務與評估指標
 
+![多元線性迴歸](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.008.jpeg)
+
 當預測目標是連續數值時，我們會使用迴歸模型。
 
 ### 9.3.1 多元線性迴歸 (Multiple Linear Regression)
@@ -213,6 +229,8 @@ $$\hat{y} = w_1 x_1 + w_2 x_2 + w_3 x_3 + b$$
 
 ### 9.3.2 正規化方法防止過擬合 (Lasso & Ridge)
 
+![脊迴歸與套索迴歸](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.009.jpeg)
+
 當我們特徵非常多，或者特徵間高度相關時，線性迴歸容易對噪聲過擬合，導致權重 $w$ 的數值異常巨大。這時我們可以在損失函數中加入對權重大小的懲罰（正規化）：
 1. **脊迴歸 (Ridge Regression / L2 正規化)**：
    $$\text{Loss} = \sum (y_i - \hat{y}_i)^2 + \alpha \sum w_j^2$$
@@ -222,6 +240,8 @@ $$\hat{y} = w_1 x_1 + w_2 x_2 + w_3 x_3 + b$$
    * 它會強制讓一些不重要特徵的權重完全變為 0，具有特徵篩選 (Feature Selection) 的效果。
 
 ### 9.3.3 評估指標的數學定義
+
+![迴歸指標評估](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.010.jpeg)
 
 1. **平均絕對誤差 (Mean Absolute Error, MAE)**：
    $$MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
@@ -263,7 +283,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = LinearRegression()
 model.fit(X_train, y_train)
 
-ridge_model = Ridge(alpha=10.0) # 設定懲罰項強度
+ridge_model = Ridge(alpha=10.0)
 ridge_model.fit(X_train, y_train)
 
 # 4. 輸出模型學到的公式參數比較
@@ -289,7 +309,7 @@ print(f"決定係數 (R2 Score): {r2:.4f}")
 
 ---
 
-### **9.3.5 隨堂測驗 (CCQ 3)**
+### 9.3.5 隨堂測驗 (CCQ 3)
 
 **問題**
 
@@ -315,6 +335,8 @@ D) 模型有 85% 的機率會產生過擬合。
 
 ## 9.4 非監督式學習：K-Means 資料分群與肘部法
 
+![KMeans資料分群](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.011.jpeg)
+
 非監督式學習在無標籤資料（如客戶分群、異常檢測）中應用廣泛。
 
 ### 9.4.1 K-Means 分群原理與限制
@@ -327,6 +349,8 @@ K-Means 將資料點指派給最近的群心，並迭代更新群心。
 此外，K-Means 假設資料群是呈「圓形球狀」且大小相近的分佈。如果資料群呈彎曲的新月形或長條狀，K-Means 的效果會非常差。這種情況下需要採用基於密度的分群演算法，如 **DBSCAN**。
 
 ### 9.4.2 肘部法 (Elbow Method) 尋找最佳 $K$ 值
+
+![肘部法聚類評估](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.012.jpeg)
 
 為了找到最佳的群數 $K$，我們可以計算不同 $K$ 值下系統的**群內誤差平方和 (Within-Cluster Sum of Squares, WCSS)**，在 `sklearn` 中稱為 `inertia_`：
 
@@ -366,7 +390,7 @@ plt.show()
 
 ---
 
-### **9.4.3 隨堂測驗 (CCQ 4)**
+### 9.4.3 隨堂測驗 (CCQ 4)
 
 **問題**
 
@@ -392,6 +416,8 @@ D) 轉折點後的 $K$ 值代表模型開始欠擬合。
 
 ## 9.5 關鍵觀念與特徵工程 (Feature Engineering)
 
+![特徵標準化](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.013.jpeg)
+
 資料前處理往往決定了機器學習的成敗。
 
 ### 9.5.1 特徵標準化 (Standardization) 與最小最大縮放 (MinMax Scaling)
@@ -400,6 +426,8 @@ D) 轉折點後的 $K$ 值代表模型開始欠擬合。
 * **MinMaxScaler (離差標準化)**：將資料等比例壓縮至 $[0, 1]$ 之間。
 
 ### 9.5.2 獨熱編碼 (One-Hot Encoding) 處理類別特徵
+
+![類別獨熱編碼](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.014.jpeg)
 
 機器學習模型只認識數字。如果資料欄位包含「城市（台北、台中、高雄）」等非數值類別，我們不能直接將其編碼為 $1, 2, 3$，因為模型會誤以為存在順序關係。
 我們必須使用**獨熱編碼 (One-Hot Encoding)**，將其轉為二進位獨立欄位：
@@ -426,7 +454,7 @@ print(df_encoded)
 
 ---
 
-### **9.5.3 隨堂測驗 (CCQ 5)**
+### 9.5.3 隨堂測驗 (CCQ 5)
 
 **問題**
 
@@ -451,6 +479,8 @@ D) 整數編碼會佔用十倍以上的記憶體。
 ---
 
 ## 9.6 本章綜合實作專題
+
+![紅酒品質分類器專案](../img/ch09/gemini_nb/The_Machine_Learning_Toolkit.015.jpeg)
 
 ### 專題任務：紅酒品質多重分類器設計
 
