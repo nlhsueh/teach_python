@@ -818,6 +818,33 @@ D) `df["Department"].groupby("Salary").mean()`
 
 </details>
 
+### 現代 Pandas 重要觀念（Pandas 2.0+ 新特性）
+
+隨著 Pandas 2.0 及其後續版本的釋出，資料庫底層與運作機制有了重要的優化，以下介紹兩個現代開發必知的觀念：
+
+#### 1. 寫入時複製 (Copy-on-Write, CoW)
+在舊版 Pandas 中，當我們對 DataFrame 進行切片或篩選時，回傳的到底是原資料的**視圖 (View)** 還是**副本 (Copy)** 並不明確。若在切片上直接進行修改，常會引發著名的 `SettingWithCopyWarning` 警告，且容易無意中改動到原始資料。
+
+從 Pandas 2.0 開始引入、並在後續版本預設啟用的 **Copy-on-Write (CoW)** 機制，規定：
+* 所有的切片和篩選操作都**保證不改變原始 DataFrame**。
+* 只有當我們**真正嘗試寫入/修改**切片後的資料時，Pandas 才會在幕後複製一份實體資料出來供修改。
+* 這完全避免了 `SettingWithCopyWarning`，讓資料操作變得極為安全與直覺。
+
+#### 2. 支援缺失值的原生型態 (Nullable Data Types)
+傳統的 Pandas 在處理包含空值 (`NaN`/`None`) 的整數 (int) 或布林 (bool) 欄位時，會自動將整個欄位強制轉型為**浮點數 (float64)**，這在商務與科學運算中十分不便。
+
+現代 Pandas 支援了新型態：
+- 使用 **`Int64`** (大寫 I) 替代 `int64`：允許包含整數與空值而不失真。
+- 使用 **`boolean`** 替代 `bool`：允許包含 `True`、`False` 與空值。
+- 使用 **`string`** 替代 `object`：專門存放文字字串，存取與正則匹配效能更佳。
+
+我們可以直接呼叫 `convert_dtypes()` 讓 Pandas 自動幫我們將資料表升級為這些現代且安全的資料型態：
+```python
+# 自動將 Object 轉為 String，含空值的 float 轉為 Int64 等
+df_modern = df.convert_dtypes() 
+print(df_modern.dtypes)
+```
+
 ### 資料表合併
 
 #### append_merge

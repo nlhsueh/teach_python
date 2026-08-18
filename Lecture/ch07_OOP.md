@@ -131,6 +131,48 @@ nick.withdraw(5000)
 print ('{} 的帳戶有 {} 元'.format(nick.name, nick.get_balance()))
 ```
 
+### 現代 Python 類別優化：資料類別 (Data Classes) (Python 3.7+)
+
+在傳統類別設計中，如果我們宣告一個類別「單純是用來存放資料」的，我們必須手寫非常多樣板程式碼（Boilerplate Code），例如 `__init__()` 建構子、可以用於友善印出物件內容的 `__repr__()`，以及用來比較兩個物件是否相等的 `__eq__()` 等。
+
+自 Python 3.7 起，引入了 `@dataclass` 裝飾器，會自動幫我們生成這些方法，寫法極其簡潔：
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Student:
+    name: str
+    student_id: str
+    grades: list[int]
+
+# 自動生成 __init__(name, student_id, grades)
+s1 = Student('Nick', 'S9201201', [90, 72, 100])
+s2 = Student('Nick', 'S9201201', [90, 72, 100])
+
+# 自動生成友善的 __repr__ 字串表達
+print(s1)  # 輸出: Student(name='Nick', student_id='S9201201', grades=[90, 72, 100])
+
+# 自動生成 __eq__ 比較內容（而非比較記憶體地址）
+print(s1 == s2)  # 輸出: True
+```
+
+#### 補充：回傳自身的 `Self` 型態提示 (Python 3.11+)
+
+在現代 Python 的方法型態提示中，如果一個方法會回傳該類別本身的實例（例如鏈式呼叫），我們可以使用 `typing.Self` 來提示回傳型態：
+
+```python
+from typing import Self
+
+class Book:
+    def __init__(self, title: str):
+        self.title = title
+
+    def rename(self, new_title: str) -> Self:
+        self.title = new_title
+        return self  # 回傳物件本身，型態為 Self
+```
+
 ### 相關函式
 
 - `type(obj)`: 返回實現物件的類的名稱。
