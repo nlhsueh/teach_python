@@ -8,101 +8,19 @@
 
 ## 課程學習地圖（Chapter Guide）
 
-你可以依照以下章節順序進行學習：
+你可以依照以下章節對照表進行學習，表中提供了各章節的學習重點、詳細講義連結與編譯好的 PDF 簡報下載：
 
-### 1. [第一章：環境介紹與入門 (Intro)](Lecture/ch01_intro.md)
-* **學習重點**：
-  - 了解 Python 語言的歷史、優勢與應用領域
-  - 開發環境建置（如 Google Colab, VS Code）與第一個 Python 程式 (`hello.py`)
-
-### 2. [第二章：程式基本元素 (Basic Program)](Lecture/ch02_program.md)
-* **學習重點**：
-  - 變數的宣告、指派與命名規則
-  - 基礎資料型態（整數、浮點數、字串、布林值）
-  - 常用運算子（算術、比較、邏輯運算）
-
-### 3. [第三章：流程控制 (Control Flow)](Lecture/ch03_control.md)
-* **學習重點**：
-  - 條件判斷式 (`if-elif-else`)
-  - 迴圈結構（`for` 迴圈、`while` 迴圈）與流程中斷控制 (`break`, `continue`)
-
-### 4. [第四章：資料容器 (Collections)](Lecture/ch04_collection.md)
-* **學習重點**：
-  - 常用的資料容器：列表 (List)、字典 (Dictionary)、元組 (Tuple)、集合 (Set)
-  - 容器的增刪查改 (CRUD) 操作與進階應用（如 JSON 資料解析）
-
-### 5. [第五章：函式設計與模組化 (Function & Module)](Lecture/ch05_function.md)
-* **學習重點**：
-  - 自訂函式 (`def`)、參數傳遞（位置、關鍵字、預設參數與 `*args`, `**kwargs`）
-  - 例外處理 (`try-except`) 讓程式更健全
-  - 外部模組 (Module) 的引用方式
-
-### 6. [第六章：資料處理與分析 (Pandas Data Analysis)](Lecture/ch06_pandas.md)
-* **學習重點**：
-  - 使用 Pandas 套件處理表格式資料
-  - 一維 Series 與二維 DataFrame 基礎操作（索引、切片、過濾、排序與 Groupby 分群）
-  - 基礎 Matplotlib 繪圖與實際開放資料分析（新北 YouBike、大專院校學生統計）
-
-### 7. [第七章：物件導向程式設計 (Object-Oriented Programming)](Lecture/ch07_OOP.md)
-* **學習重點**：
-  - 物件與類別的觀念（藍圖與實例）
-  - 封裝機制與私有變數 (`__private`)、屬性管理 (`@property`)
-  - 類別繼承 (Inheritance) 與方法覆寫 (Override)
-  - 特殊方法 (Magic Methods) 與抽象類別 (`abc`) 的宣告與實作
-
-### 8. [第八章：工程與資電應用 (Engineering Applications)](Lecture/ch08_engineering.md)
-* **學習重點**：
-  - 線性代數與網目電流求解（NumPy）、二階 RLC 充電暫態常微分方程求解（SciPy）
-  - 快速傅立葉變換（FFT）時域與頻域分析
-  - PID 控制器閉迴路系統模擬與二軸關節機器人運動學（正向與逆向運動學解）
-  - 多執行緒硬體序列埠通訊模擬與數據解析（pySerial）
-  - 網路 TCP 多用戶聊天室伺服器與用戶端開發
-  - 實作數位低通濾波器專題
-
-### 9. [第九章：機器學習入門 (Machine Learning)](Lecture/ch09_machine_learning.md)
-* **學習重點**：
-  - 機器學習基本概念（AI/ML/DL 層級、監督式與非監督式學習差異）
-  - 經典 KNN 距離公式與決策樹吉尼係數（Gini Impurity）原理
-  - 分類器模型優化（交叉驗證 Cross-Validation 與網格搜尋 GridSearchCV）
-  - 多元線性迴歸建模與指標評估（MAE, MSE, RMSE, R2 Score）
-  - 非監督式 K-Means 分群與肘部法（Elbow Method）最佳群數尋找
-  - 特徵工程前處理（StandardScaler 特徵標準化、One-Hot Encoding 類別變數處理）
-  - 實作紅酒品質預測多重分類器專題
-
-### 10. [第十章：人工智慧與大型語言模型應用 (AI & LLM)](Lecture/ch10_AI_LLM.md)
-* **學習重點**：
-  - 生成式 AI 與大型語言模型架構原理（Transformer、Self-Attention、Next-token Prediction）
-  - 模型隨機性微調超參數（溫度 Temperature、Top-P、Top-K、Tokens 計費與 Context Window）
-  - Google Gemini API 安全憑證（環境變數管理）與基礎生成
-  - 串流輸出（Streaming Response）、多輪對話記憶（Chat Session）與多模態分析（Image Inputs）
-  - 進階開發技巧（強制輸出 JSON 模式、Function Calling 工具調用）與檢索增強生成（RAG）架構概念
-  - 實作終端機多功能 AI 助理代理人（Agent）專題
-
-### 11. [第十一章：視窗遊戲設計 (Game Development)](Lecture/ch11_game.md)
-* **學習重點**：
-  - Pygame 視窗初始化、顏色配置與螢幕座標系
-  - 遊戲迴圈（Game Loop）三大核心階段設計（事件、狀態更新、渲染）
-  - 鍵盤與滑鼠的單次事件處理（Event Queue）與連續控制輪詢（Key Polling）
-  - 雙重緩衝區（Double Buffering）原理與 `pygame.display.flip()`
-  - 繼承 `pygame.sprite.Sprite` 之物件導向精靈開發與 Sprite Group 管理
-  - AABB 矩形碰撞檢測與 Rect 定位屬性
-  - 音效與背景音樂（Mixer）載入播放
-  - 實作經典太空射擊（Space Shooter）與粒子爆炸特效專題
-
-### 12. [第十二章：Python Web 開發基礎 (Web Development)](Lecture/ch12_web.md)
-* **學習重點**：
-  - 用戶端-伺服器端（Client-Server）請求-回應（Request-Response）運作機制
-  - HTTP 通訊協定規範（URL 結構、GET/POST 方法差異、常見 HTTP 狀態碼）
-  - 微型網頁框架 Flask 的環境建置、基本伺服器運作與路由（Routing）系統
-  - 動態路由參數讀取與動態 URL 參數抓取
-  - 使用 Jinja2 模板引擎進行動態 HTML 網頁渲染（變數、條件、迴圈邏輯）
-  - 網頁表單（Form）資料接收（POST 請求資料擷取 `request.form`）
-  - 實作「學生學籍與成績查詢系統」與 RESTful JSON API 開發
-
----
-
-## 講義與投影片對照表
-
-每個章節皆提供「課程詳細講義」以及「簡報投影檔」，兩者互為搭配：
-* 課程詳細講義位於 [Lecture/](Lecture/) 資料夾下，檔名如 `ch0X_xxxx.md`。
-* 簡報的 PDF 與 HTML 輸出位於 [Slide/](Slide/) 資料夾下，檔名如 `ch0Xs_xxxx.pdf` 與 `ch0Xs_xxxx.html`。
+| 章節 (Chapter) | 主題 (Topic) | 學習重點 (Learning Highlights) | 課程講義 (Lecture Note) | 簡報投影片 (Slides PDF) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Ch01** | 環境介紹與入門 | • Python 歷史、優勢與應用領域<br>• 開發環境建置（Google Colab, VS Code）<br>• 第一個 Python 程式 (`hello.py`) | [ch01_intro.md](Lecture/ch01_intro.md) | [ch01s_intro.pdf](Slide/ch01s_intro.pdf) |
+| **Ch02** | 程式基本元素 | • 變數宣告、指派與命名規則<br>• 基礎資料型態（整數、浮點數、字串、布林值）<br>• 常用運算子（算術、比較、邏輯運算） | [ch02_program.md](Lecture/ch02_program.md) | [ch02s_program.pdf](Slide/ch02s_program.pdf) |
+| **Ch03** | 流程控制 | • 條件判斷式 (`if-elif-else`)<br>• 迴圈結構（`for` 迴圈、`while` 迴圈）與流程中斷控制 (`break`, `continue`) | [ch03_control.md](Lecture/ch03_control.md) | [ch03s_control.pdf](Slide/ch03s_control.pdf) |
+| **Ch04** | 資料容器 | • 常用容器：列表 (List)、字典 (Dictionary)、元組 (Tuple)、集合 (Set)<br>• 容器增刪查改 (CRUD) 操作與 JSON 資料解析 | [ch04_collection.md](Lecture/ch04_collection.md) | [ch04s_collection.pdf](Slide/ch04s_collection.pdf) |
+| **Ch05** | 函式設計與模組化 | • 自訂函式 (`def`)、參數傳遞（位置、關鍵字、預設參數與可變參數）<br>• 例外處理 (`try-except`) 讓程式更健全<br>• 外部模組 (Module) 的引用方式 | [ch05_function.md](Lecture/ch05_function.md) | [ch05s_function.pdf](Slide/ch05s_function.pdf) |
+| **Ch06** | 資料處理與分析 | • 使用 Pandas 處理 Series 與 DataFrame<br>• 基礎操作（索引、切片、過濾、排序與 Groupby 分群）<br>• Matplotlib 繪圖與開放資料分析 | [ch06_pandas.md](Lecture/ch06_pandas.md) | [ch06s_pandas.pdf](Slide/ch06s_pandas.pdf) |
+| **Ch07** | 物件導向程式設計 | • 物件與類別觀念、封裝機制與私有變數 (`__private`)<br>• 屬性管理 (`@property`)、類別繼承與方法覆寫 (Override)<br>• 特殊魔術方法 (Magic Methods) 與抽象類別 (`abc`) | [ch07_OOP.md](Lecture/ch07_OOP.md) | [ch07s_OOP.pdf](Slide/ch07s_OOP.pdf) |
+| **Ch08** | 工程與資電應用 | • 線性聯立方程式（NumPy）與二階 RLC 充電暫態 ODE 求解（SciPy）<br>• 快速傅立葉變換（FFT）頻域分析、自訂 PID 控制器<br>• 機械手臂正逆向運動學、多執行緒串口通訊模擬（pySerial）<br>• 網路 TCP 多用戶聊天室與數位低通濾波器專題 | [ch08_engineering.md](Lecture/ch08_engineering.md) | [ch08s_engineering.pdf](Slide/ch08s_engineering.pdf) |
+| **Ch09** | 機器學習入門 | • 機器學習基本概念（AI/ML/DL、監督與非監督差異、Bias-Variance 折衷）<br>• 經典 KNN 距離、決策樹吉尼不純度與隨機森林集成學習<br>• 交叉驗證與網格搜尋參數調優（GridSearchCV）<br>• 多元線性迴歸、L1/L2 正規化（Lasso/Ridge）與迴歸評估指標<br>• 非監督式 K-Means 分群、肘部法與特徵前處理 | [ch09_machine_learning.md](Lecture/ch09_machine_learning.md) | [ch09s_machine_learning.pdf](Slide/ch09s_machine_learning.pdf) |
+| **Ch10** | 人工智慧與 LLM 應用 | • Transformer、Self-Attention、Next-token prediction 概念與 Temperature 設定<br>• Gemini API 串接、打字機串流輸出與連貫對話記憶（Chat Session）<br>• 多模態影像分析、強格式 JSON 輸出控制與 Function Calling（工具調用）<br>• 檢索增強生成（RAG）概念與本地相似度檢索知識庫、CLI AI 代理人專題 | [ch10_AI_LLM.md](Lecture/ch10_AI_LLM.md) | [ch10s_AI_LLM.pdf](Slide/ch10s_AI_LLM.pdf) |
+| **Ch11** | 視窗遊戲設計 | • Pygame 視窗、座標與遊戲迴圈（事件、狀態更新、雙重緩衝渲染）<br>• 鍵盤滑鼠事件佇列（Event Queue）與按鍵狀態輪詢（Key Polling）<br>• 繼承 Sprite 類別與 Sprite Group 管理、AABB 碰撞檢測與 Rect 定位<br>• Mixer 音效與背景音樂、太空射擊（Space Shooter）專案 | [ch11_game.md](Lecture/ch11_game.md) | *製作中 (TBD)* |
+| **Ch12** | Python Web 開發基礎 | • 用戶端-伺服器端（Client-Server）請求-回應與 HTTP 協定（GET/POST, 狀態碼）<br>• Flask 微型框架、路由（Routing）系統與動態 URL 參數抓取<br>• Jinja2 模板渲染與表單 POST 資料接收處理（`request.form`）<br>• 「學生學籍與成績查詢系統」專案與 RESTful JSON API 開發 | [ch12_web.md](Lecture/ch12_web.md) | *製作中 (TBD)* |
