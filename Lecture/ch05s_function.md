@@ -242,9 +242,9 @@ Feng Chia University
   - 不可變物件 vs 可變物件傳遞、複製後傳 (Copy and pass)
 * **5.3 Lambda 匿名函式 (Lambda)**
   - Lambda 宣告、客製化排序應用
-* **5.5 例外處理 (Exception)**
+* **5.4 例外處理 (Exception)**
   - try-except-else-finally 結構、主動 raise 例外
-* **5.6 套件與應用 (Packages & Application)**
+* **5.5 套件與應用 (Packages & Application)**
   - 套件結構與 import，河內塔、井字棋、YouTube 下載範例
 
 ---
@@ -256,12 +256,20 @@ Feng Chia University
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
-  <img src="../img/ch05/01_function_intro.png" alt="什麼是函式" />
+  <img src="../img/ch05/gemini_nb/03_function.jpeg" alt="Modular Design - Function Intro" />
 </div>
 
 ---
 
-## 5.1.1 函式的定義與呼叫
+## 5.1.1 什麼是函式？
+
+* 函式是**組織好的、可重複使用的、用來實現單一或相關聯功能的代碼段**。
+* 函式能提高應用的模組性，和代碼的重複利用率。
+* Python 提供了許多內建函式（如 `print()`、`len()`），但也可以自己建立函式（自訂函式）。
+
+---
+
+## 5.1.2 函式的定義與呼叫
 
 * 透過 `def` 關鍵字來定義函式，定義後即可重複呼叫，增進程式重用性與可讀性：
 
@@ -276,8 +284,15 @@ hello2("Python")  # 輸出: Hello Python
 ```
 
 ---
+<!-- _class: full-image-slide -->
 
-## 5.1.2 帶參數的函式與回傳值
+<div class="centered-image">
+  <img src="../img/ch05/gemini_nb/05_nametag.jpeg" alt="Function Definition - Name and Parameters" />
+</div>
+
+---
+
+## 5.1.3 帶參數的函式與回傳值
 
 * 使用 `return` 可以將函式的運算結果回傳給呼叫端。可撰寫 `docstring` 提供說明：
 
@@ -301,7 +316,7 @@ help(find_max)           # 讀取註解 (docstring)
 
 ---
 
-## 5.1.3 綜合範例：計算 BMI
+## 5.1.4 綜合範例：計算 BMI
 
 * 基於定義好的公式 `weight / (tall^2)`，計算後回傳：
 
@@ -320,7 +335,7 @@ print(bmi) # 27.04
 
 ---
 
-## 5.1.4 關鍵字引數 (Keyword Arguments)
+## 5.1.5 關鍵字引數 (Keyword Arguments)
 
 * 呼叫函式時，預設是依據位置順序傳遞。但也可利用關鍵字指定，不受順序限制：
 
@@ -340,7 +355,7 @@ hello1('Good morning', 'Nick')
 
 ---
 
-## 5.1.5 預設參數 (Default Parameters)
+## 5.1.6 預設參數 (Default Parameters)
 
 * 定義時可給參數預設值。呼叫時若未傳該參數，則使用預設值。
 * **規則**：定義時「必要參數」必須放在「預設參數」之前。
@@ -358,7 +373,7 @@ hello2('Nick', 'Good morning') # 覆蓋預設值 -> Hi, Nick, Good morning
 
 ---
 
-## 5.1.6 現代參數限制語法 (Python 3.8+)
+## 5.1.7 位置專用與關鍵字專用參數 (Python 3.8+)
 
 * 透過 `/` 和 `*` 來精準控制引數的傳遞方式：
   - **`/` 之前的參數**：必須為**位置引數** (不能用 name=val 指定)。
@@ -376,7 +391,7 @@ example("pos", "standard", kw_only="kw") # 正確
 
 ---
 
-## 5.1.7 現代型態提示 (Type Hints) (Python 3.10+)
+## 5.1.8 現代型態提示 (Type Hints) (Python 3.10+)
 
 * 使用型態提示增加程式可讀性與靜態檢查支援。
 * 現代 Python 3.10+ 使用 `|` 運算子表達聯集型態（Union Type），不再需要額外匯入 Union。
@@ -393,7 +408,7 @@ print(greet("Nick", 20))
 
 ---
 
-## 5.1.8 可變動的參數個數
+## 5.1.9 可變動的參數個數
 
 * 當傳入的參數數量不確定時：
   - **`*args`** (變動位置參數)：以 **Tuple** 形式收集多個位置引數。
@@ -461,30 +476,54 @@ intro("Albert", age=20, city="Taichung") # kwargs 為 {'age': 20, 'city': 'Taich
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
-  <img src="../img/ch05/02_immutable_passing.png" alt="不可變物件傳遞" />
+  <img src="../img/ch05/gemini_nb/14_parameter.jpeg" alt="Parameter Passing Principles" />
 </div>
+
+---
+
+## 5.2.1 不可變物件傳遞 (Immutable Passing)
+
+* 整數、浮點數、字串、元組皆為不可變物件。
+* 當不可變物件傳入函式中，在函式內部的修改會重新綁定局部變數的記憶體位址，呼叫端的原變數**不會**受到任何影響。
+
+```python
+def plus1(aNumber):
+    aNumber += 1
+
+a = 1
+plus1(a)
+print(a) # 輸出: 1 (未受影響)
+```
+
+---
+
+## 5.2.2 可變物件傳遞 (Mutable Passing)
+
+* 列表、字典、集合皆為可變物件。
+* 當可變物件傳入函式，並在函式內部就地（in-place）修改內容時，會**直接變更**呼叫端傳入的原物件。
+
+```python
+def plus2(aList):
+    for i in range(len(aList)):
+        aList[i] += 1
+
+m = [1, 2]
+plus2(m)
+print(m) # 輸出: [2, 3] (原串列被修改)
+```
 
 ---
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
-  <img src="../img/ch05/03_mutable_passing.png" alt="可變物件傳遞" />
-</div>
-
----
-<!-- _class: full-image-slide -->
-
-<div class="centered-image">
-  <img src="../img/ch05/04_parameter_passing.png" alt="資料傳遞與修改原理" />
+  <img src="../img/ch05/gemini_nb/07_passing_memory.jpeg" alt="Parameter Passing Memory Details" />
 </div>
 
 ---
 
-## 5.2.1 引數傳遞機制與複製後傳
+## 5.2.3 複製後傳 (Copy and pass)
 
-* **不可變物件 (int, float, str, tuple)**：在函式中修改其值會重新分配記憶體空間，**不影響**外部原變數。
-* **可變物件 (list, dict, set)**：在函式內部就地修改元素會**直接變更**外部物件內容。
-* **複製後傳 (Copy and pass)**：如果不希望外部串列受影響，應傳入其副本：
+* 如果不希望傳入的串列受函式內部修改影響，應傳入其副本：
 
 ```python
 def plus2(aList):
@@ -569,11 +608,18 @@ print(squared) # [1, 4, 9, 16]
 ```
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/gemini_nb/08_lambda.jpeg" alt="Lambda Anonymous Function" />
+</div>
+
+---
 
 ## 5.3.2 Lambda 於排序的客製化應用
 
 * 透過 `key=lambda`，我們可以指定複雜容器的比較指標。
-* 範例：依據二維成績列表中「物理（最後一個欄位）」或「總分」進行排序。
+* 範例：依據二維成績列表中「物理（最後一個欄位）」或「加權分數」進行排序。
 
 ```python
 # [英文, 數學, 物理]
@@ -755,6 +801,13 @@ print(test_div(10, 2))
 # **5.5 套件與應用 (Packages & Application)**
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/gemini_nb/10_package.jpeg" alt="Python Package and Module Importing" />
+</div>
+
+---
 
 ## 5.5.1 Python 套件結構與導入
 
@@ -779,7 +832,7 @@ data = js.loads('{"value": 100}')
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
-  <img src="../img/ch05/05_hanoi_tower.png" alt="河內塔遞迴流程" />
+  <img src="../img/ch05/gemini_nb/12_recursive.jpeg" alt="Hanoi Tower Recursion Visual" />
 </div>
 
 ---
@@ -807,7 +860,14 @@ hanoi(3, 'A', 'B', 'C') # 搬移 3 個盤子需 7 步
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
-  <img src="../img/ch05/06_tictactoe.png" alt="井字棋遊戲畫面" />
+  <img src="../img/ch05/gemini_nb/13_tic_tac_toe.jpeg" alt="Tic Tac Toe UI Structure" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/gemini_nb/14_game_flow.jpeg" alt="Tic Tac Toe Game Loop Flow" />
 </div>
 
 ---
