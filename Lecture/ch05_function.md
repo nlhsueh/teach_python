@@ -155,8 +155,48 @@ def hello3(name = "Nick", msg = "Hello"):
   print ("Hi, {}, {}".format(name, msg))
 
 hello3()
-hello3('Nick', 'Hello')                     # 正確
-hello3(msg = 'Good night', name = 'John')   # 正確 
+輸出：
+```
+Hi, Nick, Hello
+Hi, Nick, Hello
+Hi, John, Good night
+```
+
+#### 補充：位置專用與關鍵字專用參數 (Python 3.8+)
+
+在設計函式時，有時我們想限制某些參數**只能用位置傳入（不能用 keyword 指定）**，或者**只能用 keyword 傳入（不能用位置傳入）**。Python 3.8+ 引入了 `/` 與 `*` 語法來進行限制：
+
+- **`/` 之前的參數**：為**位置專用（Positional-only）**，呼叫時**不能**寫出 `key=value` 的形式。
+- **`*` 之後的參數**：為**關鍵字專用（Keyword-only）**，呼叫時**必須**寫出 `key=value` 的形式。
+
+```python
+def example(pos_only, /, standard, *, kw_only):
+    print(pos_only, standard, kw_only)
+
+# 正確的呼叫方式：
+example("I am pos-only", "I am standard", kw_only="I am kw-only")
+example("I am pos-only", standard="I am standard", kw_only="I am kw-only")
+
+# 錯誤的呼叫方式 (會引發 TypeError)：
+# example(pos_only="error", standard="standard", kw_only="kw-only") # pos_only 不能指名
+# example("pos-only", "standard", "kw-only")                       # kw_only 必須指名
+```
+
+#### 補充：現代函式型態提示 (Type Hints) (Python 3.10+)
+
+為了解釋參數與回傳值的預期型態，Python 支援**型態提示 (Type Hints)**。在 Python 3.10+ 中，我們可以使用聯集運算子 `|` 來表示多重型態，寫法非常乾淨：
+
+```python
+# 表示 name 必須為字串 (str)，age 可以是整數 (int) 或 None，回傳值為字串 (str)
+def greet(name: str, age: int | None = None) -> str:
+    if age is not None:
+        return f"Hello {name}, you are {age} years old."
+    return f"Hello {name}."
+
+print(greet("Nick", 20))
+```
+> [!NOTE]
+> 型態提示僅供閱讀、IDE 檢查與 Linter 驗證使用，Python 運行時並不會進行強制的型態阻擋。
 
 ```
 
