@@ -7,6 +7,14 @@ description: Principles and workflows for creating/modifying educational lecture
 
 This skill guide provides the rules, principles, and template formats for creating or improving python educational handbooks and slide presentations in this repository.
 
+## Terminology / Command Shortcuts
+
+When the user gives the request:
+* **`enhance chXX and make slides`** (or similar terminology):
+  - **Step 1: Integrate Images**: Rebuild/enhance the existing lecture handbook `Lecture/chXX_xxxx.md` by integrating all conceptual illustration diagrams from the folder `img/chXX/gemini_nb/` into appropriate spots under header sections to aid visual learning.
+  - **Step 2: Create Slide Source**: Create the slide presentation Markdown source file `Lecture/chXXs_xxxx.md` using the Gaia theme, layout, and CCQ formatting rules specified below.
+  - **Step 3: Compile PDF Slides**: Compile the slide presentation to `.pdf` format only, saving it into the `Slide/` folder. **Do not generate or keep `.html` slide files.**
+
 ---
 
 ## 1. Educational Handbooks (Lecture Notes `.md`)
@@ -143,4 +151,5 @@ Use a standard two-slide sequence for every Concept Check Question in the slide 
   ```bash
   ./html-marp.sh <slide-file.md> < /dev/null
   ```
-- Verify that both the compiled HTML and PDF outputs are placed correctly in the `Slide` folder.
+- Verify that the compiled PDF output is placed correctly in the `Slide` folder.
+- **CRITICAL RULE**: When making slides, you only need to create the `.md` source and compile the `.pdf` output. **Do not create, compile, or keep `.html` slide files.**
