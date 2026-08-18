@@ -4,6 +4,8 @@ Ch02 程式結構
 
 ## 2.1 程式的基本架構：輸入、處理、輸出
 
+![程式的基本架構 (IPO)](../img/ch02/gemini_nb/02_IPO.jpeg)
+
 我們先來看一個典型的程式處理架構，包含輸入、處理、輸出：
 
 ```python
@@ -50,6 +52,8 @@ name, eng, math, phy = "Nick", 92, 88, 32
 第七行的效果相當於 `name="Nick"; eng=92; math=88;phy=32`。
 
 ### 2.2.2 命名規則
+
+![變數命名規則](../img/ch02/gemini_nb/03_naming.jpeg)
 
 主要由英文，數字，_ 所構成
 例如 employee_code, employee_code2, employeeCode 等
@@ -149,6 +153,8 @@ D) `pi`
 
 ### 2.2.4 變數型態
 
+![常見的變數型態](../img/ch02/gemini_nb/04_var_types.jpeg)
+
 變數型態是程式語言中用來**分類資料**的標籤。你可以把它想像成一個貼在儲存資料的盒子（變數）上的標籤，這個標籤明確地告訴電腦這個盒子裡裝的是什麼種類的東西。
 
 
@@ -210,6 +216,8 @@ Python 會根據你賦予的值**自動推斷**變數的型態，但背後的型
 
 * **布林值 (Boolean, `bool`)**
     只有兩種可能：**`True`** (真) 或 **`False`** (假)，主要用於邏輯判斷。
+
+    ![布林值](../img/ch02/gemini_nb/05_boolean.jpeg)
     ```python
     is_registered = True
     has_error = False
@@ -313,7 +321,34 @@ bool('two')   # 非空字串     => True
 bool([2])     # 非空串列     => True
 ```
 
+### **2.2.5 隨堂測驗 (CCQ 2)**
+
+**問題**
+
+下列程式碼執行後，螢幕上會印出什麼結果？
+```python
+print(bool(None), bool('False'))
+```
+
+A) `False False`
+B) `False True`
+C) `True False`
+D) `True True`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `False True`**
+
+* **解析**：
+  * `bool(None)`：`None` 物件代表無值或空值，轉換成布林值後一律為 `False`。
+  * `bool('False')`：`'False'` 是一個包含五個字元的**非空字串**。根據 Python 的布林轉換規則，任何非空容器/字串轉換成布林值後皆為 `True`。字串的內容是 `'False'` 還是 `'True'` 在轉型時並不影響結果。
+
+</details>
+
 ### 進階：電腦的秘密語言：深入理解 ASCII
+
+![ASCII 編碼系統](../img/ch02/gemini_nb/06_ASCII.jpeg)
 
 我們在程式中理所當然地使用 `'A'`, `'B'`, `'!'` 等字元，但你有沒有想過，電腦內部是如何儲存這些符號的？
 
@@ -462,6 +497,8 @@ math.ceil(10.1)
 
 #### round(): 四捨六入五成雙 
 
+![銀行家捨入法 round()](../img/ch02/gemini_nb/07_round.jpeg)
+
 在 Python 中，`round()` 是一個常用於四捨五入的內建函式，但它的運作規則與我們在小學學的「四捨五入」不完全相同。Python 採用的是一種在科學與金融計算上更為精確的標準，稱為 **「銀行家捨入法」** (Banker's Rounding)，也常被稱為 **「四捨六入五成雙」**。
 
 `round()` 函數的判斷邏輯可以清楚地分為以下三種情況：
@@ -530,7 +567,34 @@ print ('共需 {} 天 {} 小時 {} 分 {} 秒 '.format(days, h, m, s))
 共需 13.0 天 1 小時 47 分 45 秒 
 ```
 
+### **2.3.1.1 隨堂測驗 (CCQ 3)**
+
+**問題**
+
+下列程式碼執行後，其輸出結果為何？
+```python
+print(10 // 4, round(3.5))
+```
+
+A) `2.5 4`
+B) `2 3`
+C) `2 4`
+D) `2.5 3`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) `2 4`**
+
+* **解析**：
+  * `10 // 4`：雙斜線 `//` 代表**整數除法**（取整數商），10 除以 4 的商為 2，餘數為 2，故結果為 `2`。
+  * `round(3.5)`：當小數部分恰好為 `0.5` 時，Python 的 `round()` 函數會採用「銀行家捨入法」，捨入到最接近的**偶數**。離 3.5 最近的兩個整數是 3（奇數）與 4（偶數），故結果為 `4`。
+
+</details>
+
 ### 2.3.2 字串運算
+
+![字串運算與操作](../img/ch02/gemini_nb/08_string_manipulation.jpeg)
 
 以下是 Python 中用於字串操作的運算子：
 
@@ -611,6 +675,29 @@ hello 的值並沒有變, 依然是： Hello, Nick
 
 這些字串函式可用於對字串進行各種操作，如大小寫轉換、剪切、替換、拆分等。這些範例演示了每個函式的基本用法。
 
+### **2.3.2.1 隨堂測驗 (CCQ 4)**
+
+**問題**
+
+給定字串 `s = "Python"`，執行 `print(s[1:4])` 會印出什麼結果？
+
+A) `"yth"`
+B) `"pyth"`
+C) `"ytho"`
+D) `"y"`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：A) `"yth"`**
+
+* **解析**：
+  * Python 中的字串索引從 0 開始，`s = "Python"` 各字元索引為：`P:0, y:1, t:2, h:3, o:4, n:5`。
+  * 切片語法 `s[start:end]` 是**左閉右開**（包含 `start` 索引，但不包含 `end` 索引）。
+  * 因此 `s[1:4]` 會取出索引為 `1, 2, 3` 的字元，即 `'y'`, `'t'`, `'h'`，組合後為 `"yth"`。
+
+</details>
+
 ### 2.3.3 關係運算
 以下是Python中用於執行關係運算的運算子、說明以及舉例的Markdown表格：
 
@@ -636,6 +723,8 @@ a >= b            # False
 
 ```python
 ## 邏輯運算
+
+![邏輯運算子 (and, or, not)](../img/ch02/gemini_nb/09_logical_op.jpeg)
 a = 11 > 2        # True
 b = 1 > 9         # False
 X = a and b       # True and False => False
@@ -649,6 +738,36 @@ isKid = False
 print (isStudent and isKid)  # False
 print (isStudent or isKid)   # True
 ```
+
+### **2.3.3.1 隨堂測驗 (CCQ 5)**
+
+**問題**
+
+下列邏輯表達式運算後的結果為何？
+```python
+is_student = True
+is_kid = False
+print(is_student or is_kid and not is_student)
+```
+
+A) `False`
+B) `True`
+C) `None`
+D) `TypeError`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `True`**
+
+* **解析**：
+  * 運算子優先順序（Precedence）為：`not` > `and` > `or`。
+  * 步驟 1：先處理 `not is_student` -> `not True` -> `False`。
+  * 步驟 2：處理 `is_kid and False` -> `False and False` -> `False`。
+  * 步驟 3：最後處理 `is_student or False` -> `True or False` -> `True`。
+  * 因此，最終結果為 `True`。
+
+</details>
 
 ## 2.4 輸入與輸出
 
@@ -730,6 +849,8 @@ print ('你們相差', (age2-age1), '歲')
 
 #### eval() 
 
+![eval() 函式用途](../img/ch02/gemini_nb/10_eval.jpeg)
+
 `eval()` 是一個更方便解析輸入數字的方法。我們不需要透過 split() 與 int 兩道程序：
 
 ```python
@@ -745,6 +866,8 @@ print (age1, age2, type(age1))
 可見得 `eval` 已經幫我解析與轉換型態了。
 
 ### 2.4.2 輸出
+
+![字串格式化與排版](../img/ch02/gemini_nb/11_formating.jpeg)
 
 使用 print("輸出文字") 來輸出文字。如果提示字和變數要一起出現，可以用 `,` 來區隔。例如 `print('Your name is', name)`。但如果多個變數出現在一個句子中，單用 `,` 來連接會很麻煩。
 
@@ -906,6 +1029,8 @@ x3 = s.split(',')              # 回傳 ['I like Python'] (字串中無 ','，�
 
 #### with 的用法
 
+![with open 檔案處理](../img/ch02/gemini_nb/12_with_op.jpeg)
+
 > 透過 print to file 建立一個 grade.txt 來記錄成績。
 
 利用 with 區塊來做開檔，檔案建立後會自動關檔：
@@ -955,7 +1080,30 @@ with open("grade.txt", "r") as f2:
 
 
 
+### **2.4.5.1 隨堂測驗 (CCQ 6)**
+
+**問題**
+
+在 Python 中進行檔案讀寫時，使用 `with open(...)` 的主要優點是什麼？
+
+A) 檔案的寫入速度會比傳統 `open()` 快速很多。
+B) 能自動將寫入的資料進行壓縮，節省硬碟空間。
+C) 無論程式區塊是否正常執行完畢或發生異常，都會自動安全地關閉檔案。
+D) 能夠自動修正程式碼中的語法錯誤。
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) 無論程式區塊是否正常執行完畢或發生異常，都會自動安全地關閉檔案。**
+
+* **解析**：
+  * `with` 語句在 Python 中作為**上下文管理器 (Context Manager)**，能保證在離開 block 時（不論是正常執行結束，或是中途發生 exception 崩留），都會自動呼叫檔案物件的 `close()` 方法，避免佔用記憶體與系統資源。
+
+</details>
+
 ## 2.5 程式錯誤
+
+![程式錯誤類型 (Bugs)](../img/ch02/gemini_nb/13_bugs.jpeg)
 
 以下是使用Markdown表格方式呈現的程式碼錯誤類型的說明：
 
@@ -1020,6 +1168,8 @@ print (area)
 
 ## 2.6 程式的註解
 
+![程式註解 (Comments)](../img/ch02/gemini_nb/14_comment.jpeg)
+
 以下是已移除範例的Python註解方式的表格：
 
 | 註解方式            | 語法               | 說明                                                         |
@@ -1063,6 +1213,8 @@ for i in range(1, r+1):
 ```
 
 ## 2.7 程式練習
+
+![程式生命週期與實作](../img/ch02/gemini_nb/15_lifecycle.jpeg)
 
 > [!NOTE]
 > :basketball: Ex01 OJ 面積與周長
