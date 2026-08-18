@@ -9,6 +9,8 @@ Ch06 Pandas data analysis
 
 Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼此之間都有一些共同的欄位（column），或是說它的 feature， 它的特性。當它被儲存下來以後，我們就可以對它做一些加總、平均、標準差等等計算。這些在 Excel 非常容易就可以計算出來，同樣在 python 要去處理這些問題也相當簡單。那對應哪一個套件？就是 Pandas 這一個套件。我們會跟大家介紹，怎麼樣用 Pandas 快速算出這一些值。
 
+![Pandas 資料分析流程](../img/ch06/gemini_nb/02_pipeline.jpeg)
+
 #### row_column
 ![row_col](../img/ch06/01_row_col.png)
 
@@ -22,6 +24,8 @@ Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼�
 我相信透過這三個範例的講解，大家對於 python 或者是 Pandas 對資料處理方面的能力就會有更進一步的理解。這裡會跟大家介紹一個open data 的這個網站，事實上這三筆資料也都是從 open date 裡面取得的。各位可以找有興趣的資料，實際把這些資料讀進來然後做一些運算，做一些圖形的呈現，相信你在資料處理方面就能跨出了一大步了。
 
 ### Pandas 簡介
+
+![Series 概念](../img/ch06/gemini_nb/03_series.jpeg)
 
 此處介紹 Pandas 的資料分析，
 而如圖 [apple_example](#apple_example) 的 2D 資料表是經常被應用的一種資料處理的方式
@@ -38,6 +42,8 @@ Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼�
 
 
 ### Build a dataframe from a dict
+
+![DataFrame 概念](../img/ch06/gemini_nb/04_dataframe.jpeg)
 
 我們就來先介紹怎麼產生一個這樣的資料表。產生 Pandas 資料有很多種方式，第一個比較簡單的是透過一個 dict 來建立這個資料表。
 
@@ -93,6 +99,8 @@ Name: Apple, dtype: object
 我們可以透過 df.loc[index] 來取得某一筆索引為 index 的資料。因為蘋果這一筆資料的 index 是 'apple'，所以 df.loc['apple']就可以取出蘋果的資料。另外，我們如果想要去印出某一個欄位的資料的時候，我們就直接透過 df.price 可以把它印出來。
 
 #### 由位置取得資料
+
+![DataFrame 索引與資料選取 loc vs iloc](../img/ch06/gemini_nb/06_loc_iloc.jpeg)
 
 
 #### iloc
@@ -303,7 +311,9 @@ max    30.000000  90.000000
 台南是 10、台北是 45 等等。
 
 #### group_by
-<img src='../img/ch06/06_dataframe_indexing.png' width='400'>
+![GroupBy 運算 Split-Apply-Combine](../img/ch06/07_pandas_groupby.png)
+
+![GroupBy 分群統計運算](../img/ch06/gemini_nb/09_groupby.jpeg)
 
 ### Pandas 實作
 
@@ -680,6 +690,8 @@ a   Apple  10  90
 
 ### 遺失資料之處理
 
+![缺失值處理與資料清洗](../img/ch06/gemini_nb/07_missing_data.jpeg)
+
 這一小節介紹一些比較偏向資料前置處理的方法。我們的資料常常並不會一開始就太整齊，中間可能會穿插著一些 missing data，就是資料是有殘缺的。例如說像這一個水果的這個例子，我有 A B C D E 總共 5 個水果，但是 E 的這個水果它的價格目前是不明的，然後 D 它的數量也是不明的。所以這個資料集並不是一個完整的資料。那怎麼辦？我們有幾種處理的方式，第一個就是因為這一筆資料不完整就把它刪除，那當然也可以就把這筆資料用另外的資料來頂替。這個地方大家看到的是 None，這個是 python 用來代表一個空值的一個符號。
 
 ```python
@@ -823,6 +835,8 @@ D) `df["Department"].groupby("Salary").mean()`
 隨著 Pandas 2.0 及其後續版本的釋出，資料庫底層與運作機制有了重要的優化，以下介紹兩個現代開發必知的觀念：
 
 #### 1. 寫入時複製 (Copy-on-Write, CoW)
+![Copy-on-Write 記憶體保護機制](../img/ch06/gemini_nb/05_copy_on_write.jpeg)
+
 在舊版 Pandas 中，當我們對 DataFrame 進行切片或篩選時，回傳的到底是原資料的**視圖 (View)** 還是**副本 (Copy)** 並不明確。若在切片上直接進行修改，常會引發著名的 `SettingWithCopyWarning` 警告，且容易無意中改動到原始資料。
 
 從 Pandas 2.0 開始引入、並在後續版本預設啟用的 **Copy-on-Write (CoW)** 機制，規定：
@@ -831,6 +845,8 @@ D) `df["Department"].groupby("Salary").mean()`
 * 這完全避免了 `SettingWithCopyWarning`，讓資料操作變得極為安全與直覺。
 
 #### 2. 支援缺失值的原生型態 (Nullable Data Types)
+![Nullable Data Types 原生可空資料型態](../img/ch06/gemini_nb/08_nullable_types.jpeg)
+
 傳統的 Pandas 在處理包含空值 (`NaN`/`None`) 的整數 (int) 或布林 (bool) 欄位時，會自動將整個欄位強制轉型為**浮點數 (float64)**，這在商務與科學運算中十分不便。
 
 現代 Pandas 支援了新型態：
@@ -856,6 +872,8 @@ print(df_modern.dtypes)
 #### 橫向整併
 
 ![merge](../img/ch06/09_merge.png)
+
+![Merge 合併資料表運算](../img/ch06/gemini_nb/10_merge.jpeg)
 
 那另外一種方式是做一個橫向的整併，資料的欄位會變多。例如有份資料是 104 年度每一個人的收入跟他購買咖啡的數量和金額，這時候它的欄位名稱就會不一樣。那整併以後它欄位的數量就會變多，但是資料的本體，基本上是不會變多的。這時候我們用的方式就是 merge，所以有 append 跟 merge 這兩種模式。
 
@@ -973,6 +991,8 @@ r14_right
 ## 圖表繪製
 
 資料視覺在資料分析中也非常的重要，一個好的圖表可以幫我們非常容易的了解資料的含意。在 python 中比較常用 Matplotlib 裡面的 pyplot 這個套件來幫助我們畫圖。它的功能十分強大，但是 Matplotlib 也比較瑣碎一點。那既然我們現在已經學會了 dataframe，我們就直接用 dataframe 來畫圖。dataframe 在畫圖的過程中其實也是會呼叫 Matplotlib 來幫助我們畫圖。那我們就來看一下有哪一些常用的圖表。
+
+![Pandas 與 Matplotlib 資料視覺化](../img/ch06/gemini_nb/11_plot.jpeg)
 
 #### 折線圖 Plot
 
@@ -1251,6 +1271,8 @@ df = init_data()
 
 #### youbike_data
 ![youbike_data](../img/ch06/31_youbike_data.png)
+
+![YouBike 開放資料分析實例](../img/ch06/gemini_nb/13_youbike.jpeg)
 
 那我們來看一下這一筆資料，如 [youbike_data](#youbike_data)，就是這個 csv 檔的內容。會在第一行的部分會看到它會有許多這個欄位的名稱，就代表說它的表頭並不是一筆資料而是欄位名稱，所以在這個地方必須要把 header 設為零。那接下來這個 dtype 是 sno : str，我們再看一下這個 dataframe 的資料，這個 sno 是每一個站的一個序號，但是這一筆資料全部都是數字，如果不強迫跟 Pandas 講說它是一個字串的話就會誤認為它是一個整數，若是一個整數的話等一下就會被拿去做加減乘除等等的運算。這對我們來講這是沒什麼意義的，所以我們就在這個地方特別說明它是一個字串。
 
