@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="C"><head><title>Python 程式設計</title><meta property="og:title" content="Python 程式設計"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > section{font-family:'Arial', sans-serif;font-size:28px;color:#1f2937;background:white}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size: 28px;}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1), div#\:\$p > svg > foreignObject > section :is(h2, marp-h2), div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){color:#0f766e}div#\:\$p > svg > foreignObject > section code{font-family:'Menlo', monospace;background:#f3f4f6;padding:2px 4px;border-radius:4px}div#\:\$p > svg > foreignObject > section{font-family:'Helvetica Neue', Arial, sans-serif;padding:40px;font-size:24px}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size: 24px;}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){color:#0b3c5d}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){color:#328cc1}div#\:\$p > svg > foreignObject > section footer{position:absolute;left:40px;bottom:40px;text-align:left;font-size:0.5em;color:#777}div#\:\$p > svg > foreignObject > section header{font-size:0.5em;color:#aaa;text-align:right}div#\:\$p > svg > foreignObject > section blockquote{background:transparent;border-left:4px solid #328cc1;margin:1em 0;padding:5px 20px;font-style:italic;color:inherit;opacity:0.85}div#\:\$p > svg > foreignObject > section blockquote::before{content:none!important}div#\:\$p > svg > foreignObject > section table{font-size:20px}div#\:\$p > svg > foreignObject > section:has(div.ccq-columns), div#\:\$p > svg > foreignObject > section:has(div.discussion-columns), div#\:\$p > svg > foreignObject > section:has(div.fill-blank-columns){display:flex;flex-direction:column}div#\:\$p > svg > foreignObject > section div.ccq-columns{display:flex;align-items:center;gap:30px;margin-top:auto;margin-bottom:auto}div#\:\$p > svg > foreignObject > section div.ccq-text{flex:70%}div#\:\$p > svg > foreignObject > section div.ccq-logo{flex:30%;text-align:center}div#\:\$p > svg > foreignObject > section div.ccq-logo img{width:100%;max-width:180px}div#\:\$p > svg > foreignObject > section div.discussion-columns{display:flex;align-items:center;gap:30px;margin-top:auto;margin-bottom:auto}div#\:\$p > svg > foreignObject > section div.discussion-text{flex:75%;font-size:1.25em;line-height:1.4}div#\:\$p > svg > foreignObject > section div.discussion-logo{flex:25%;text-align:center}div#\:\$p > svg > foreignObject > section div.discussion-logo img{width:100%;max-width:150px}div#\:\$p > svg > foreignObject > section div.fill-blank-columns{display:flex;align-items:center;gap:30px;margin-top:auto;margin-bottom:auto}div#\:\$p > svg > foreignObject > section div.fill-blank-text{flex:75%}div#\:\$p > svg > foreignObject > section div.fill-blank-logo{flex:25%;text-align:center}div#\:\$p > svg > foreignObject > section div.fill-blank-logo img{width:100%;max-width:150px}div#\:\$p > svg > foreignObject > section div.split64, div#\:\$p > svg > foreignObject > section div.split46, div#\:\$p > svg > foreignObject > section div.split55{display:flex;align-items:center;gap:20px}div#\:\$p > svg > foreignObject > section div.split64 > div.left{flex:60%}div#\:\$p > svg > foreignObject > section div.split64 > div.right{flex:40%;text-align:center}div#\:\$p > svg > foreignObject > section div.split64 > div.right img{width:100%;max-width:320px}div#\:\$p > svg > foreignObject > section div.split46 > div.left{flex:40%}div#\:\$p > svg > foreignObject > section div.split46 > div.right{flex:60%;text-align:center}div#\:\$p > svg > foreignObject > section div.split46 > div.right img{width:100%;max-width:480px}div#\:\$p > svg > foreignObject > section div.split55 > div.left{flex:50%}div#\:\$p > svg > foreignObject > section div.split55 > div.right{flex:50%;text-align:center}div#\:\$p > svg > foreignObject > section div.split55 > div.right img{width:100%;max-width:400px}div#\:\$p > svg > foreignObject > section.full-image-slide{padding:0!important}div#\:\$p > svg > foreignObject > section.full-image-slide::after{display:none!important}div#\:\$p > svg > foreignObject > section.full-image-slide header, div#\:\$p > svg > foreignObject > section.full-image-slide footer{display:none!important}div#\:\$p > svg > foreignObject > section.full-image-slide div.centered-image{display:flex;justify-content:center;align-items:center;width:100%;height:720px}div#\:\$p > svg > foreignObject > section.full-image-slide div.centered-image img{width:100%;height:100%;object-fit:contain}div#\:\$p > svg > foreignObject > section.title-image-slide{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch}div#\:\$p > svg > foreignObject > section.title-image-slide :is(h2, marp-h2){margin-top:0;margin-bottom:10px}div#\:\$p > svg > foreignObject > section.title-image-slide div.image-wrapper{display:flex;justify-content:center;align-items:center;flex-grow:1;height:480px}div#\:\$p > svg > foreignObject > section.title-image-slide div.image-wrapper img{max-width:100%;max-height:100%;object-fit:contain}div#\:\$p > svg > foreignObject > section.lead{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}div#\:\$p > svg > foreignObject > section.lead :is(h1, marp-h1){margin:0 0 20px 0}div#\:\$p > svg > foreignObject > section.lead :is(h2, marp-h2){margin:0 0 20px 0}div#\:\$p > svg > foreignObject > section.lead p{margin:0;font-size:0.7em;line-height:1.5}div#\:\$p > svg > foreignObject > section.lead p strong{display:block;font-size:1.43em;margin-top:40px;margin-bottom:20px}div#\:\$p > svg > foreignObject > section.lead footer{display:block!important}div#\:\$p > svg > foreignObject > section.lead header{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
-</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -212,7 +212,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="1" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="1" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -425,7 +425,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="python-%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88">Python 程式設計</h1>
@@ -435,7 +435,7 @@ Department of Information Engineering<br />
 Feng Chia University</p>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-marpit-fragments="5" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-marpit-fragments="5" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -648,7 +648,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="2" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="2" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -861,7 +861,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="%E6%9C%AC%E7%AB%A0%E5%AD%B8%E7%BF%92%E9%87%8D%E9%BB%9E">本章學習重點</h2>
 <ul>
@@ -895,7 +895,7 @@ section.lead header {
 </ul>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -1108,7 +1108,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="3" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="3" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -1321,13 +1321,13 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="51-%E6%A8%A1%E7%B5%84%E5%8C%96%E8%A8%AD%E8%A8%88-modular-design"><strong>5.1 模組化設計 (Modular Design)</strong></h1>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -1540,7 +1540,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="4" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="4" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -1753,14 +1753,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/03_function.jpeg" alt="Modular Design - Function Intro" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -1973,7 +1973,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="5" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="5" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -2186,7 +2186,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="511-%E4%BB%80%E9%BA%BC%E6%98%AF%E5%87%BD%E5%BC%8F">5.1.1 什麼是函式？</h2>
 <ul>
@@ -2196,7 +2196,7 @@ section.lead header {
 </ul>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -2409,7 +2409,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="6" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="6" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -2622,7 +2622,440 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/01_function_intro.png" alt="Function Flow Concept" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" data-marpit-pagination="7" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="512-%E5%87%BD%E5%BC%8F%E7%9A%84%E5%AE%9A%E7%BE%A9%E8%88%87%E5%91%BC%E5%8F%AB">5.1.2 函式的定義與呼叫</h2>
 <ul>
@@ -2638,7 +3071,7 @@ hello2(<span class="hljs-string">&quot;Python&quot;</span>)  <span class="hljs-c
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -2851,7 +3284,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="7" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="8" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -3064,14 +3497,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/05_nametag.jpeg" alt="Function Definition - Name and Parameters" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -3284,7 +3717,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="8" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="9" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -3497,7 +3930,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="513-%E5%B8%B6%E5%8F%83%E6%95%B8%E7%9A%84%E5%87%BD%E5%BC%8F%E8%88%87%E5%9B%9E%E5%82%B3%E5%80%BC">5.1.3 帶參數的函式與回傳值</h2>
 <ul>
@@ -3521,7 +3954,7 @@ section.lead header {
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -3734,7 +4167,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="9" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="10" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -3947,7 +4380,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="514-%E7%B6%9C%E5%90%88%E7%AF%84%E4%BE%8B%E8%A8%88%E7%AE%97-bmi">5.1.4 綜合範例：計算 BMI</h2>
 <ul>
@@ -3966,7 +4399,7 @@ bmi = get_bmi(<span class="hljs-number">1.72</span>, <span class="hljs-number">8
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -4179,7 +4612,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="10" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="11" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -4392,7 +4825,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="515-%E9%97%9C%E9%8D%B5%E5%AD%97%E5%BC%95%E6%95%B8-keyword-arguments">5.1.5 關鍵字引數 (Keyword Arguments)</h2>
 <ul>
@@ -4412,7 +4845,7 @@ hello1(<span class="hljs-string">&#x27;Good morning&#x27;</span>, <span class="h
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -4625,7 +5058,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="11" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="12" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -4838,7 +5271,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="516-%E9%A0%90%E8%A8%AD%E5%8F%83%E6%95%B8-default-parameters">5.1.6 預設參數 (Default Parameters)</h2>
 <ul>
@@ -4856,7 +5289,7 @@ hello2(<span class="hljs-string">&#x27;Nick&#x27;</span>, <span class="hljs-stri
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -5069,7 +5502,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="12" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="13" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -5282,7 +5715,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="517-%E4%BD%8D%E7%BD%AE%E5%B0%88%E7%94%A8%E8%88%87%E9%97%9C%E9%8D%B5%E5%AD%97%E5%B0%88%E7%94%A8%E5%8F%83%E6%95%B8-python-38">5.1.7 位置專用與關鍵字專用參數 (Python 3.8+)</h2>
 <ul>
@@ -5303,7 +5736,7 @@ example(<span class="hljs-string">&quot;pos&quot;</span>, <span class="hljs-stri
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -5516,7 +5949,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="13" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="14" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -5729,7 +6162,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="518-%E7%8F%BE%E4%BB%A3%E5%9E%8B%E6%85%8B%E6%8F%90%E7%A4%BA-type-hints-python-310">5.1.8 現代型態提示 (Type Hints) (Python 3.10+)</h2>
 <ul>
@@ -5746,7 +6179,7 @@ section.lead header {
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -5959,7 +6392,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="14" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="15" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -6172,7 +6605,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="519-%E5%8F%AF%E8%AE%8A%E5%8B%95%E7%9A%84%E5%8F%83%E6%95%B8%E5%80%8B%E6%95%B8">5.1.9 可變動的參數個數</h2>
 <ul>
@@ -6196,7 +6629,7 @@ intro(<span class="hljs-string">&quot;Albert&quot;</span>, age=<span class="hljs
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -6409,7 +6842,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="15" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="16" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -6622,7 +7055,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="concept-check-question-ccq-1">Concept Check Question (CCQ 1)</h2>
 <div class="ccq-columns">
@@ -6649,7 +7082,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -6862,7 +7295,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="16" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="17" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -7075,7 +7508,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="ccq-1---%E7%AD%94%E6%A1%88%E8%88%87%E8%A7%A3%E6%9E%90">CCQ 1 - 答案與解析</h2>
 <div class="ccq-columns">
@@ -7098,7 +7531,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -7311,7 +7744,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="17" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="18" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -7524,13 +7957,13 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="52-%E9%80%B2%E9%9A%8E%E5%8F%83%E6%95%B8%E7%9A%84%E5%82%B3%E9%81%9E-parameter-passing"><strong>5.2 進階參數的傳遞 (Parameter Passing)</strong></h1>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -7743,7 +8176,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="18" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="19" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -7956,14 +8389,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/14_parameter.jpeg" alt="Parameter Passing Principles" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -8176,7 +8609,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="19" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="20" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -8389,7 +8822,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="521-%E4%B8%8D%E5%8F%AF%E8%AE%8A%E7%89%A9%E4%BB%B6%E5%82%B3%E9%81%9E-immutable-passing">5.2.1 不可變物件傳遞 (Immutable Passing)</h2>
 <ul>
@@ -8405,7 +8838,7 @@ plus1(a)
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -8618,7 +9051,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="20" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="21" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -8831,7 +9264,440 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/02_immutable_passing.png" alt="Immutable Parameter Passing Memory Detail" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" data-marpit-pagination="22" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="522-%E5%8F%AF%E8%AE%8A%E7%89%A9%E4%BB%B6%E5%82%B3%E9%81%9E-mutable-passing">5.2.2 可變物件傳遞 (Mutable Passing)</h2>
 <ul>
@@ -8848,7 +9714,7 @@ plus2(m)
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -9061,7 +9927,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="21" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="23" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -9274,14 +10140,447 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/03_mutable_passing.png" alt="Mutable Parameter Passing Memory Detail" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" class="full-image-slide" data-marpit-pagination="24" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/07_passing_memory.jpeg" alt="Parameter Passing Memory Details" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -9494,7 +10793,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="22" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="25" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -9707,7 +11006,440 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/04_parameter_passing.png" alt="Variables Memory Passing Architecture" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" data-marpit-pagination="26" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="523-%E8%A4%87%E8%A3%BD%E5%BE%8C%E5%82%B3-copy-and-pass">5.2.3 複製後傳 (Copy and pass)</h2>
 <ul>
@@ -9723,7 +11455,7 @@ plus2(m.copy()) <span class="hljs-comment"># 傳入 m 的副本，不傷害原 m
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -9936,7 +11668,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="23" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="27" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -10149,7 +11881,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="concept-check-question-ccq-2">Concept Check Question (CCQ 2)</h2>
 <div class="ccq-columns">
@@ -10185,7 +11917,7 @@ modify_values(x, y)
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -10398,7 +12130,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="24" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="28" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -10611,12 +12343,12 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="ccq-2---%E7%AD%94%E6%A1%88%E8%88%87%E8%A7%A3%E6%9E%90">CCQ 2 - 答案與解析</h2>
 <div class="ccq-columns">
   <div class="ccq-text">
-<h3 id="%E6%AD%A3%E7%A2%BA%E7%AD%94%E6%A1%88c-5-5-10"><strong>正確答案：C. <code>5 [5, 10]</code></strong></h3>
+<h3 id="%E5%BC%B7%E7%A2%BA%E7%AD%94%E6%A1%88c-5-5-10"><strong>強確答案：C. <code>5 [5, 10]</code></strong></h3>
 <ul>
 <li data-marpit-fragment="1">
 <p><strong>解析</strong>：</p>
@@ -10633,7 +12365,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -10846,7 +12578,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="25" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="29" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -11059,13 +12791,13 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="53-lambda-%E5%8C%BF%E5%90%8D%E5%87%BD%E5%BC%8F-lambda"><strong>5.3 Lambda 匿名函式 (Lambda)</strong></h1>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -11278,7 +13010,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="26" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="30" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -11491,7 +13223,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="531-lambda-%E5%8C%BF%E5%90%8D%E5%87%BD%E5%BC%8F%E5%9F%BA%E6%9C%AC%E8%AA%9E%E6%B3%95">5.3.1 Lambda 匿名函式基本語法</h2>
 <ul>
@@ -11509,7 +13241,7 @@ squared = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">ma
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -11722,7 +13454,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="27" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="31" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -11935,14 +13667,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/08_lambda.jpeg" alt="Lambda Anonymous Function" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -12155,7 +13887,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="28" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="32" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -12368,7 +14100,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="532-lambda-%E6%96%BC%E6%8E%92%E5%BA%8F%E7%9A%84%E5%AE%A2%E8%A3%BD%E5%8C%96%E6%87%89%E7%94%A8">5.3.2 Lambda 於排序的客製化應用</h2>
 <ul>
@@ -12387,7 +14119,7 @@ g2 = <span class="hljs-built_in">sorted</span>(grades, key=<span class="hljs-key
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -12600,7 +14332,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="29" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="33" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -12813,7 +14545,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="concept-check-question-ccq-3">Concept Check Question (CCQ 3)</h2>
 <div class="ccq-columns">
@@ -12847,7 +14579,7 @@ squared_evens = <span class="hljs-built_in">list</span>(<span class="hljs-built_
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -13060,7 +14792,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="30" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="34" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -13273,7 +15005,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="ccq-3---%E7%AD%94%E6%A1%88%E8%88%87%E8%A7%A3%E6%9E%90">CCQ 3 - 答案與解析</h2>
 <div class="ccq-columns">
@@ -13296,7 +15028,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -13509,7 +15241,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="31" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="35" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -13722,13 +15454,13 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="54-%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86-exception"><strong>5.4 例外處理 (Exception)</strong></h1>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-marpit-fragments="3" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -13941,7 +15673,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="32" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="36" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -14154,7 +15886,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="541-%E4%BB%80%E9%BA%BC%E6%98%AF%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86">5.4.1 什麼是例外處理？</h2>
 <ul>
@@ -14173,7 +15905,7 @@ section.lead header {
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -14386,7 +16118,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="33" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="37" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -14599,7 +16331,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="542-try-except-else-finally-%E5%AE%8C%E6%95%B4%E7%B5%90%E6%A7%8B">5.4.2 try-except-else-finally 完整結構</h2>
 <ul>
@@ -14619,7 +16351,7 @@ section.lead header {
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -14832,7 +16564,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="34" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="38" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -15045,7 +16777,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="543-%E4%B8%BB%E5%8B%95%E6%8B%8B%E5%87%BA%E4%BE%8B%E5%A4%96-raise">5.4.3 主動拋出例外 (raise)</h2>
 <ul>
@@ -15064,7 +16796,7 @@ section.lead header {
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -15277,7 +17009,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="35" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="39" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -15490,7 +17222,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="concept-check-question-ccq-4">Concept Check Question (CCQ 4)</h2>
 <div class="ccq-columns">
@@ -15527,7 +17259,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-marpit-fragments="4" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -15740,7 +17472,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="36" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="40" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -15953,7 +17685,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="ccq-4---%E7%AD%94%E6%A1%88%E8%88%87%E8%A7%A3%E6%9E%90">CCQ 4 - 答案與解析</h2>
 <div class="ccq-columns">
@@ -15976,7 +17708,7 @@ section.lead header {
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="lead" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -16189,7 +17921,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="lead" data-marpit-pagination="37" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="lead" data-marpit-pagination="41" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:lead;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -16402,13 +18134,13 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 
 <h1 id="55-%E5%A5%97%E4%BB%B6%E8%88%87%E6%87%89%E7%94%A8-packages--application"><strong>5.5 套件與應用 (Packages &amp; Application)</strong></h1>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -16621,7 +18353,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="38" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="42" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -16834,14 +18566,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/10_package.jpeg" alt="Python Package and Module Importing" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -17054,7 +18786,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="39" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="43" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -17267,7 +18999,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="551-python-%E5%A5%97%E4%BB%B6%E7%B5%90%E6%A7%8B%E8%88%87%E5%B0%8E%E5%85%A5">5.5.1 Python 套件結構與導入</h2>
 <ul>
@@ -17288,7 +19020,7 @@ data = js.loads(<span class="hljs-string">&#x27;{&quot;value&quot;: 100}&#x27;</
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -17501,7 +19233,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="40" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="44" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -17714,14 +19446,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/12_recursive.jpeg" alt="Hanoi Tower Recursion Visual" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -17934,7 +19666,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="41" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="45" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -18147,7 +19879,440 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/05_hanoi_tower.png" alt="Hanoi Tower Rules" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" data-marpit-pagination="46" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="552-%E9%81%9E%E8%BF%B4%E6%87%89%E7%94%A8%E6%B2%B3%E5%85%A7%E5%A1%94%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C">5.5.2 遞迴應用：河內塔程式實作</h2>
 <ul>
@@ -18168,7 +20333,7 @@ hanoi(<span class="hljs-number">3</span>, <span class="hljs-string">&#x27;A&#x27
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -18381,7 +20546,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="42" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="47" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -18594,14 +20759,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/13_tic_tac_toe.jpeg" alt="Tic Tac Toe UI Structure" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -18814,7 +20979,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" class="full-image-slide" data-marpit-pagination="43" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="48" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -19027,14 +21192,14 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/14_game_flow.jpeg" alt="Tic Tac Toe Game Loop Flow" />
 </div>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-class="full-image-slide" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -19247,7 +21412,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="44" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" class="full-image-slide" data-marpit-pagination="49" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--class:full-image-slide;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -19460,7 +21625,440 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
+<header>Python 程式設計 | 第五章：函式設計與模組化</header>
+<div class="centered-image">
+  <img src="../img/ch05/06_tictactoe.png" alt="Tic Tac Toe Game Board" />
+</div>
+<footer>Prof. Nien-Lin Hsueh</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-marpit-fragments="2" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+" lang="C" data-marpit-pagination="50" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  padding: 40px;
+  font-size: 24px;
+}
+h1 {
+  color: #0b3c5d;
+}
+h2 {
+  color: #328cc1;
+}
+footer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  text-align: left;
+  font-size: 0.5em;
+  color: #777;
+}
+header {
+  font-size: 0.5em;
+  color: #aaa;
+  text-align: right;
+}
+blockquote {
+  background: transparent;
+  border-left: 4px solid #328cc1;
+  margin: 1em 0;
+  padding: 5px 20px;
+  font-style: italic;
+  color: inherit;
+  opacity: 0.85;
+}
+blockquote::before {
+  content: none !important;
+}
+table {
+  font-size: 20px;
+}
+section:has(div.ccq-columns),
+section:has(div.discussion-columns),
+section:has(div.fill-blank-columns) {
+  display: flex;
+  flex-direction: column;
+}
+div.ccq-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.ccq-text {
+  flex: 70%;
+}
+div.ccq-logo {
+  flex: 30%;
+  text-align: center;
+}
+div.ccq-logo img {
+  width: 100%;
+  max-width: 180px;
+}
+div.discussion-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.discussion-text {
+  flex: 75%;
+  font-size: 1.25em;
+  line-height: 1.4;
+}
+div.discussion-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.discussion-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.fill-blank-columns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.fill-blank-text {
+  flex: 75%;
+}
+div.fill-blank-logo {
+  flex: 25%;
+  text-align: center;
+}
+div.fill-blank-logo img {
+  width: 100%;
+  max-width: 150px;
+}
+div.split64, div.split46, div.split55 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+div.split64 &gt; div.left {
+  flex: 60%;
+}
+div.split64 &gt; div.right {
+  flex: 40%;
+  text-align: center;
+}
+div.split64 &gt; div.right img {
+  width: 100%;
+  max-width: 320px;
+}
+div.split46 &gt; div.left {
+  flex: 40%;
+}
+div.split46 &gt; div.right {
+  flex: 60%;
+  text-align: center;
+}
+div.split46 &gt; div.right img {
+  width: 100%;
+  max-width: 480px;
+}
+div.split55 &gt; div.left {
+  flex: 50%;
+}
+div.split55 &gt; div.right {
+  flex: 50%;
+  text-align: center;
+}
+div.split55 &gt; div.right img {
+  width: 100%;
+  max-width: 400px;
+}
+section.full-image-slide {
+  padding: 0 !important;
+}
+section.full-image-slide::after {
+  display: none !important;
+}
+section.full-image-slide header,
+section.full-image-slide footer {
+  display: none !important;
+}
+section.full-image-slide div.centered-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 720px;
+}
+section.full-image-slide div.centered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+section.title-image-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+section.title-image-slide h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+section.title-image-slide div.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 480px;
+}
+section.title-image-slide div.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+section.lead h1 {
+  margin: 0 0 20px 0;
+}
+section.lead h2 {
+  margin: 0 0 20px 0;
+}
+section.lead p {
+  margin: 0;
+  font-size: 0.7em;
+  line-height: 1.5;
+}
+section.lead p strong {
+  display: block;
+  font-size: 1.43em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+section.lead footer {
+  display: block !important;
+}
+section.lead header {
+  display: none !important;
+}
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="553-%E6%87%89%E7%94%A8%E4%BA%95%E5%AD%97%E6%A3%8B%E7%8B%80%E6%85%8B%E8%88%87%E5%8B%9D%E8%B2%A0%E5%88%A4%E5%AE%9A">5.5.3 應用：井字棋狀態與勝負判定</h2>
 <ul>
@@ -19484,7 +22082,7 @@ board = [<span class="hljs-built_in">str</span>(i) <span class="hljs-keyword">fo
 </code></pre>
 <footer>Prof. Nien-Lin Hsueh</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-marpit-fragments="1" data-paginate="true" data-background-color="#f5f5f5" data-color="#333" data-header="Python 程式設計 | 第五章：函式設計與模組化" data-footer="Prof. Nien-Lin Hsueh" data-theme="ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v" data-style="section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -19697,7 +22295,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-" lang="C" data-marpit-pagination="45" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:1lg2bzuxh67jx3aovqosl83ihgo4jhm2x56wea6s0ka;--style:section {
+" lang="C" data-marpit-pagination="51" style="--paginate:true;--background-color:#f5f5f5;--color:#333;--header:Python 程式設計 | 第五章：函式設計與模組化;--footer:Prof. Nien-Lin Hsueh;--theme:ao56fxea6qilklsjmwt21i2ohzd1uepehffvx9m2v;--style:section {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   padding: 40px;
   font-size: 24px;
@@ -19910,7 +22508,7 @@ section.lead footer {
 section.lead header {
   display: none !important;
 }
-;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="45">
+;color:#333;background-color:#f5f5f5;background-image:none;" data-marpit-pagination-total="51">
 <header>Python 程式設計 | 第五章：函式設計與模組化</header>
 <h2 id="554-%E6%87%89%E7%94%A8youtube-%E6%AA%94%E6%A1%88%E4%B8%8B%E8%BC%89-pytubefix">5.5.4 應用：YouTube 檔案下載 (pytubefix)</h2>
 <ul>

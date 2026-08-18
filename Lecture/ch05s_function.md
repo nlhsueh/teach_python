@@ -268,6 +268,13 @@ Feng Chia University
 * Python 提供了許多內建函式（如 `print()`、`len()`），但也可以自己建立函式（自訂函式）。
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/01_function_intro.png" alt="Function Flow Concept" />
+</div>
+
+---
 
 ## 5.1.2 函式的定義與呼叫
 
@@ -496,6 +503,13 @@ print(a) # 輸出: 1 (未受影響)
 ```
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/02_immutable_passing.png" alt="Immutable Parameter Passing Memory Detail" />
+</div>
+
+---
 
 ## 5.2.2 可變物件傳遞 (Mutable Passing)
 
@@ -516,7 +530,21 @@ print(m) # 輸出: [2, 3] (原串列被修改)
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch05/03_mutable_passing.png" alt="Mutable Parameter Passing Memory Detail" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch05/gemini_nb/07_passing_memory.jpeg" alt="Parameter Passing Memory Details" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/04_parameter_passing.png" alt="Variables Memory Passing Architecture" />
 </div>
 
 ---
@@ -572,7 +600,7 @@ print(x, y)
 <div class="ccq-columns">
   <div class="ccq-text">
 
-### **正確答案：C. `5 [5, 10]`**
+### **強確答案：C. `5 [5, 10]`**
 
 * **解析**：
   * `x = 5` 為整數（不可變物件），傳入後 `a = a + 10` 在局部作用域建立新物件並重綁局部變數 `a`，**不影響**外部 `x` 的值。故 `x` 依然為 `5`。
@@ -836,6 +864,13 @@ data = js.loads('{"value": 100}')
 </div>
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/05_hanoi_tower.png" alt="Hanoi Tower Rules" />
+</div>
+
+---
 
 ## 5.5.2 遞迴應用：河內塔程式實作
 
@@ -868,6 +903,13 @@ hanoi(3, 'A', 'B', 'C') # 搬移 3 個盤子需 7 步
 
 <div class="centered-image">
   <img src="../img/ch05/gemini_nb/14_game_flow.jpeg" alt="Tic Tac Toe Game Loop Flow" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch05/06_tictactoe.png" alt="Tic Tac Toe Game Board" />
 </div>
 
 ---
