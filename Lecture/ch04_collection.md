@@ -21,6 +21,8 @@ Ch04 Collection Object
 
 ## List 集合物件
 
+![索引集合物件 List](../img/ch04/gemini_nb/02_indexed_collection.jpeg)
+
 List 是最常被使用的集合物件，其特色是
 - 有順序性; 
 - 資料也可以重複;
@@ -78,7 +80,7 @@ aList[1:]               # [2, 'b', 'd']
 
 在資料的新增方面，我們通常會用到的三個函式是 append、extend 和 insert。
 
-![list insert, extend and append](../img/ch04/gemini_nb/slide.005.png)
+![list insert, extend and append](../img/ch04/01_list_insert_extend_append.png)
 
 - `append(d)`: 把 d 加到 list 後面。
 - `extend(d)`: d 應該也是一個 list; 擴充 list 使之涵蓋 d 的元素。
@@ -207,7 +209,7 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 
 資料切片時也可以不寫第二個參數，代表從這個位置抓到資料的最後一筆，如果第一個參數沒有寫的話，就代表要從最前面開始抓取資料。也可以用 - 的方式來代表倒數的觀念，例如呢我們要從倒數第 2 個抓取到倒數第1個，我就可以寫 `[-2:-1]`，`-1` 代表的就是 59，也就是倒數第一個的資料，`-2`就是 35 的這筆資料。
 
-![list index](../img/ch04/gemini_nb/slide.009.png)
+![list index](../img/ch04/02_list_index.png)
 
 ```python
 grade = [11, 22, 99, 35, 59]
@@ -343,7 +345,9 @@ albert 在 資料 ['nick', 'albert', 'jie'] 中的位置是 1
 
 ### 二維的 List
 
-![two dimension list](../img/ch04/gemini_nb/slide.012.png)
+![two dimension list](../img/ch04/03_two_dim_list.png)
+
+![二維/巢狀 List 概念](../img/ch04/gemini_nb/04_nested.jpeg)
 
 二維的 list 指的就是 list 中的元素的資料本身也是一個 list。例如我們想要紀錄一群學生的一群成績，這時候我們就可能會使用到二維的 list。上圖資料中，`grade` 本身是 一個 list，但是這個 list裡面的元素又是一個 list，第一組資料就代表著 `學生0` 的三個成績，假設我們賦予它的意義是`英文`、`數學`及`自`然，那就代表這三科的成績。第 1 筆資料又是一個 list，代表的就是 `學生1` 這三科成績，以此類推。所以當我們今天想要獲取`學生2`的成績時，我們就可以用 `grade[2]`，這時候回傳的會是一個 list，`[77,88,99]` 這一筆資料。
 
@@ -513,7 +517,9 @@ Result:
 ### 資料的比較
 
 
-![== 與 is 的差別](../img/ch04/gemini_nb/slide.016.png)
+![== 與 is 的差別](../img/ch04/04_equality_vs_identity.png)
+
+![is vs == 記憶體與參考比較](../img/ch04/gemini_nb/03_compare.jpeg)
 
 `is` 和 `==` 的差別
 - 透過 is 比較兩個 list 是否 **參考** 相同。
@@ -555,7 +561,7 @@ grade is gc:  False
 
 ### 氣泡排序法
 
-![氣泡排序法](../img/ch04/gemini_nb/slide.018.png)
+![氣泡排序法](../img/ch04/05_bubble_sort.png)
 
 > `sort()` 會改變本身的資料; `sorted()` 不會，但會回傳一個已排序的。
 
@@ -678,6 +684,8 @@ D) `[1, 9, 9, 9, 5]`
 </details>
 
 ## Tuple集合物件
+
+![Tuple 集合物件](../img/ch04/gemini_nb/05_tuple.jpeg)
 
 這一節將介紹 `Tuple`。`Tuple` 跟上一節的 `List` 很像，只差在它的**資料是不能夠修改的**。它的優點是比起 List 更省空間，速度也比較快；因為不能修改，所以可以避免一些程式上面的失誤，也可以做 Dict 型態的的 key。至於 Dict ，會在後面的章節跟各位做介紹。
 
@@ -834,7 +842,7 @@ D) `(1, 2, [3, 4])`
 
 ## Set 集合物件
 
-![Set operation](../img/ch04/gemini_nb/slide.033.png)
+![Set 集合物件](../img/ch04/gemini_nb/08_set.jpeg)
 
 和數學上的集合相仿，Set 的特點：
 - 資料不能重複;
@@ -854,6 +862,10 @@ highGrade = ['Nick', 'Doris', 'Anna']
 - 聯集：|
 - 交集：&
 - 差集：-
+
+![Set 聯集交集差集](../img/ch04/06_set_operations.png)
+
+![Set 運算圖解](../img/ch04/gemini_nb/09_set_op.jpeg)
 
 ```python
 baseballSet = set(baseball)
@@ -920,6 +932,8 @@ D) `None`
 
 ## Dict集合物件
 
+![Dict 集合物件](../img/ch04/gemini_nb/10_dict.jpeg)
+
 這一節將跟各位介紹第四種群體的物件- 字典（Dictionary, 簡稱 dict)。
 
 - `dict` 的表達的方式跟 `set` 一樣，都是由大括號 (`{}`) 所構成的; 
@@ -948,6 +962,13 @@ book 的中文是：書籍
 std_grade = {1: 12, 2:100, 3:90}
 name_grade = {"Nick":90, "Jack":50}
 class_avg = {('A', 'Math'):23, ('B', 'eng'):89 }
+
+> [!IMPORTANT]
+> **可作為 Key 的型態限制**
+> 字典的鍵（Key）必須是**不可變且可雜湊的 (Hashable)**，例如整數、浮點數、字串、以及唯讀的 Tuple（前提是 Tuple 內部沒有包含可變物件）。
+> 串列（List）與字典（Dict）本身是**可變物件 (Mutable)**，其雜湊值會隨時改變，因此**絕對不能**作為字典的 Key。否則會引發 `TypeError: unhashable type: 'list'` 錯誤。
+
+![不合法的鍵型態](../img/ch04/gemini_nb/12_invalid_key.jpeg)
 ```
 
 ### dict 建立與設定
@@ -1142,6 +1163,8 @@ print(std_grade)
 
 #### 補充：安全壓縮 `zip(..., strict=True)` (Python 3.10+)
 
+![zip 壓縮與 strict=True](../img/ch04/gemini_nb/11_zip.jpeg)
+
 在 Python 3.10 之前，如果傳入 `zip()` 的兩個群集長度不同，它會**靜默地（Silent）以較短的群集長度為準**截斷資料，這常常導致程式邏輯錯誤而不易察覺。
 例如：
 ```python
@@ -1169,6 +1192,8 @@ std_grade = {k:v for (k,v) in list(zip(std, grade))}
 效果是一樣的。
 
 ### json.loads and dumps
+
+![json loads 與 dumps](../img/ch04/gemini_nb/13_json_load.jpeg)
 
 `json.loads()` 可以讀入一個 dict string，將之轉為 `dict` 來處理。
 
@@ -1221,7 +1246,9 @@ D) 串列 (如 `[1, 2]`)
 
 網路上有很多的開放資料，在這一小節當中，我們就到網路上找一些開放資料，透過我們所教的集合物件來做一些的分析，我們選用的這個例子是台中市政府的開放資料平臺 ([https://opendata.taichung.gov.tw/](https://opendata.taichung.gov.tw/))。進到系統後會看到關於資料集的描述，包含有交通、休閒的、公共的、出生的、婚姻的、老年的等等。
 
-![json file formatter](../img/ch04/gemini_nb/slide.043.png)
+![iBike 專案架構與 JSON 結構](../img/ch04/gemini_nb/14_dict_example.jpeg)
+
+![json file formatter](../img/ch04/07_json_formatter.png)
 
 其中我們比較有興趣的是 iBike，可以在搜尋框打上 ibike 就可以找到。進入後會看到下面有一些的說明，例如解釋它是提供哪一種格式：JSON、XML, CSV 等等。JSON 的格式它就跟我們本章所講的 dictionary (dict) 是完全吻合的，所以我們就選用這一筆資料來做分析。再點進來，它有一些更詳細的說明，其實最重要的就是主要欄位的說明，因為它這裡有包含了每個欄位、站點的代號還有它的中文的名稱、總停車格等等，這些資料我們來做交互比對，而下面還有一些它的meta data，點擊這個 json 的檔案可以一鍵下載。可以看到，它是一個一大筆資料，用一個大括號框起來，有一個 `key` 和一個 `value`，包含逢甲大學、秋紅谷等等的。
 
@@ -1254,6 +1281,8 @@ act: 場站是否暫停營運
 接下來我們來看看程式的處理：
 
 ### 資料的讀入
+
+![iBike 資料讀取與處理流程](../img/ch04/gemini_nb/15_process.jpeg)
 
 透過 `json.loads()` 把資料讀入。記得要先將下載的檔案放在程式碼目錄下的 `data` 下。我們透過 `pprint()` 印出資料來看看是否正確。
 

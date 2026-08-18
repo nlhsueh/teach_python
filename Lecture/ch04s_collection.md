@@ -235,14 +235,14 @@ Feng Chia University
 ## 本章學習重點
 
 * **4.1 List 集合物件 (List)**
-  - List 建立、新增刪改與排序、擷取與切片 (Slicing)
+  - List 建立與概念、新增刪改與排序、擷取與切片 (Slicing)
   - 列表推導式、多元排序、值比較 vs 參考比較 (== vs is)、氣泡排序法
 * **4.2 Tuple 集合物件 (Tuple)**
   - 定義、存取、效能優勢、打包與開箱 (Unpacking)、模式匹配 (Match-Case)
 * **4.3 Set 集合物件 (Set)**
   - 去重特性、集合數學運算（交集、聯集、差集）、Set 的 CRUD
 * **4.4 Dict 集合物件 (Dict)**
-  - Key-Value 對應、現代字典合併 (`|`, `|=`)、字典推導式、`zip(..., strict=True)`
+  - Key-Value 對應、鍵的唯讀限制、現代字典合併 (`|`, `|=`)、字典推導式、`zip(..., strict=True)`
 * **4.5 綜合應用 (iBike Analysis)**
   - 讀入台中市政府 iBike 開放資料 JSON 格式並進行統計分析
 
@@ -270,6 +270,13 @@ grades = [nick_grade, albert_grade]
 empty_list_1 = []
 empty_list_2 = list()
 ```
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/02_indexed_collection.jpeg" alt="List 記憶體索引架構" />
+</div>
 
 ---
 <!-- _class: full-image-slide -->
@@ -390,6 +397,13 @@ for i, g in enumerate(grade):
 </div>
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/04_nested.jpeg" alt="二維陣列位置指標" />
+</div>
+
+---
 
 ## 4.1.7 二維/巢狀 List 的加總計算
 
@@ -459,6 +473,13 @@ g_last = sorted(grade_data, key=lambda x: x[-1])
 </div>
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/03_compare.jpeg" alt="is vs == 記憶體與參考比較" />
+</div>
+
+---
 
 ## 4.1.10 == 與 is 的差別 (Equality vs Identity)
 
@@ -482,6 +503,13 @@ print(grade is gc) # False (不同位址)
 
 <div class="centered-image">
   <img src="../img/ch04/05_bubble_sort.png" alt="氣泡排序法" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/05_tuple.jpeg" alt="Tuple 與 List 的差別與效能" />
 </div>
 
 ---
@@ -578,7 +606,7 @@ print(list1, list2)
 **在 Python 列表中，`remove()` 方法與 `pop()` 方法最核心的區別是什麼？**
 
 * **A.** `remove()` 回傳被刪除的元素值，而 `pop()` 不回傳任何值。
-* **B.** `remove()` 依據索引位置刪除元素，而 `pop()` 依據元素值刪除元素。
+* **B.** `remove()` 依據索引位置刪除元素，而 `pop()` 依據元素值刪除元素.
 * **C.** `remove()` 依據元素值刪除元素，而 `pop()` 依據索引位置刪除元素並回傳該值。
 * **D.** `remove()` 可以清空整個列表，而 `pop()` 只能刪除最後一個元素。
 
@@ -737,7 +765,21 @@ print(tup)
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch04/gemini_nb/08_set.jpeg" alt="Set 集合基本概念" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch04/06_set_operations.png" alt="Set 數學運算" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/09_set_op.jpeg" alt="Set 交集/聯集/差集圖解" />
 </div>
 
 ---
@@ -832,11 +874,18 @@ print(set([1, 2, 2, 3]) == set([3, 2, 1]))
 # **4.4 Dict 集合物件 (Dict)**
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/10_dict.jpeg" alt="Dict 字典結構觀念" />
+</div>
+
+---
 
 ## 4.4.1 Dict 的建立與基本讀寫
 
-* 字典（Dict）由 **Key (鍵) - Value (值)** 對應組成。
-* 使用大括號 `{}` 或 `dict()` 宣告：
+* 字典（Dict）由 **Key (鍵) - Value (值)** 對編組。使用大括號 `{}` 或 `dict()` 宣告：
+* **重要限制**：鍵（Key）必須是不可變型態（如字串、數值、Tuple），**不可使用可變型態（如 List）做為 Key**！
 
 ```python
 family = {'dad': 'Jack', 'mom': 'LiLi', 'size': 2}
@@ -850,6 +899,13 @@ grade[2] = 95  # 修改鍵 2 的值
 del grade[1]
 popped_val = grade.pop(3) # 移除並回傳鍵 3 的值 (90)
 ```
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/12_invalid_key.jpeg" alt="不合法的鍵型態 (List 鍵錯誤)" />
+</div>
 
 ---
 
@@ -914,7 +970,21 @@ dict_comp = {k: v for k, v in zip(std, grades, strict=True)}
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch04/gemini_nb/11_zip.jpeg" alt="Zip 壓縮與 strict=True 圖解" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch04/07_json_formatter.png" alt="JSON 結構化資料格式" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/13_json_load.jpeg" alt="json loads 與 dumps 記憶體關係" />
 </div>
 
 ---
@@ -989,6 +1059,13 @@ print(info.get('score', 60), info.get('age', 60))
 # **4.5 應用：台中市 iBike 開放資料解析**
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/14_dict_example.jpeg" alt="iBike 實例結構架構" />
+</div>
+
+---
 
 ## 4.5.1 iBike 資料結構說明
 
@@ -1010,6 +1087,13 @@ print(info.get('score', 60), info.get('age', 60))
 
 * `retVal` 內含多個站點物件，鍵為站點編號。
 * `tot` 代表站點總車位格數，`sbi` 代表目前可借車輛數。
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch04/gemini_nb/15_process.jpeg" alt="iBike 資料處理讀取流程" />
+</div>
 
 ---
 
