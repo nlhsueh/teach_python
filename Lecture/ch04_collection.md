@@ -775,6 +775,34 @@ sex, age, name = person         # 同上，另一個寫法
 sex, age = person               # 錯誤！數量不同
 ```
 
+#### 現代結構化模式匹配 `match` - `case` (Python 3.10+)
+
+在 Python 3.10 之後，引入了 `match` 與 `case` 語法，類似其他語言的 `switch-case`，但功能更強大，特別適合用來**解構與匹配群集（如 List 或 Tuple）的結構與內容**。
+
+```python
+def process_command(cmd):
+    match cmd:
+        # 匹配剛好有兩個元素的 list/tuple，且第一個元素是 "move"
+        case ["move", direction]:
+            print(f"移動到方向：{direction}")
+        # 匹配有三個元素，第一個是 "jump"，並將後兩個值解構給 x, y
+        case ["jump", x, y]:
+            print(f"跳躍至座標：({x}, {y})")
+        # 匹配第一個元素是 "attack"，後面不限元素個數（用 *rest 收集）
+        case ["attack", *targets]:
+            print(f"發動攻擊，目標有：{targets}")
+        # 匹配任何其他不符合上述結構的輸入
+        case _:
+            print("無法識別的指令！")
+
+process_command(["move", "North"])   # 輸出: 移動到方向：North
+process_command(["jump", 10, 20])    # 輸出: 跳躍至座標：(10, 20)
+process_command(["attack", "orc1", "orc2"]) # 輸出: 發動攻擊，目標有：['orc1', 'orc2']
+process_command(["sleep"])            # 輸出: 無法識別的指令！
+```
+
+這項功能在處理結構複雜、長度不一的指令或 API 封包資料時非常方便，避免了大量繁雜的 `if-elif` 配合長度判斷。
+
 ### **4.2.1 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -988,6 +1016,32 @@ After modify: grade = {1: 12, 2: 100, 3: 100, 4: 50}
 grade[3] = 100
 ```
 
+#### 現代字典合併方法：`|` 與 `|=` 運算子 (Python 3.9+)
+
+在 Python 3.9 之前，如果要合併兩個字典，需要使用 `update()` 方法（會改變原字典）或者解構語法 `{**dict1, **dict2}`。
+從 Python 3.9 開始，引入了更簡潔直觀的**聯集運算子** `|` 與 `|=`：
+
+1. **合併運算子 `|` (產生新字典，不修改原字典)**：
+   ```python
+   dict1 = {'apple': 10, 'banana': 20}
+   dict2 = {'banana': 30, 'cherry': 40}
+   
+   # 合併兩個字典，若 key 重複，則以後者 (dict2) 的值為準
+   merged = dict1 | dict2
+   print("merged:", merged) # {'apple': 10, 'banana': 30, 'cherry': 40}
+   print("dict1:", dict1)   # {'apple': 10, 'banana': 20} (原字典未被修改)
+   ```
+
+2. **更新運算子 `|=` (就地更新原字典)**：
+   ```python
+   dict1 = {'apple': 10, 'banana': 20}
+   dict2 = {'banana': 30, 'cherry': 40}
+   
+   dict1 |= dict2
+   print("dict1:", dict1)   # {'apple': 10, 'banana': 30, 'cherry': 40} (dict1 被修改了)
+   ```
+
+
 
 ### dict 資料的查詢
 
@@ -1081,6 +1135,26 @@ print(std_grade)
 ```
 
 `zip` 後會產出的結構為 `('nick', 100) ('john', 90) ('mac', 80)`, 再透過 `dict` 後會以第一個元素作為索引。
+
+#### 補充：安全壓縮 `zip(..., strict=True)` (Python 3.10+)
+
+在 Python 3.10 之前，如果傳入 `zip()` 的兩個群集長度不同，它會**靜默地（Silent）以較短的群集長度為準**截斷資料，這常常導致程式邏輯錯誤而不易察覺。
+例如：
+```python
+std = ['nick', 'john', 'mac', 'alice'] # 4 個元素
+grade = [100, 90, 80]                  # 3 個元素
+std_grade = dict(zip(std, grade))      # 'alice' 會被無預警丟棄！
+```
+
+為了解決這個問題，現代 Python (3.10+) 引入了 `strict=True` 參數：
+```python
+std = ['nick', 'john', 'mac', 'alice']
+grade = [100, 90, 80]
+# 這會直接引發 ValueError: zip() argument 2 is shorter than argument 1
+std_grade = dict(zip(std, grade, strict=True)) 
+```
+> [!TIP]
+> 在處理重要數據（如成績、帳號比對）時，強烈建議加上 `strict=True`，能幫我們在開發階段立刻抓出資料長度不對等的 Bug。
 
 我們也可以先用 list 轉型，再透過解析式來組合：
 ```python
