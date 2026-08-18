@@ -3,22 +3,24 @@ Ch08 Python Engineering Applications
 
 # Python 工程與資電應用
 
-本章將帶領你探討 Python 在資電學群（資訊、電機、電子、自控、通訊等工程領域）的專業應用。當你掌握了基本語法、資料容器與物件導向觀念後，更重要的課題是：如何用程式碼解決電路求解、訊號處理、自動控制、機器人運動學學以及軟硬體通訊等實務工程問題。
+![Python與智慧系統工程](../img/ch08/gemini_nb/Python_Smart_System_Engineering.002.jpeg)
+
+本章將帶領你探討 Python 在資電學群（資訊、電機、電子、自控、通訊等工程領域）的專業應用。當你掌握了基本語法、資料容器與物件導向觀念後，更重要的課題是：如何用程式碼解決電路求解、訊號處理、自動控制、機器人運動學以及軟硬體通訊等實務工程問題。
 
 本章包含以下核心單元：
 * **8.1 科學運算與電路求解**：利用矩陣求解電路方程組，並使用微積分求解器對 RLC 二階系統進行動態模擬。
 * **8.2 訊號處理與頻域分析**：理解傅立葉變換與頻譜分析。
 * **8.3 自動控制與機械手臂運動學**：實作 PID 控制器與機器人二軸關節運動求解。
 * **8.4 虛擬序列埠與實體硬體互動**：模擬感測器串口數據流讀取。
-* **8.5 網路通訊通訊與 Socket 程式**：建構多用戶 TCP 聊天室。
+* **8.5 網路通訊與 Socket 程式**：建構多用戶 TCP 聊天室。
 
 ---
 
 ## 8.1 科學運算與電路求解 (NumPy / SciPy)
 
-在工程學中，矩陣運算與常微分方程是建構系統模型的最重要基礎。Python 的 `NumPy` 與 `SciPy` 提供了高效的底層 C 語言等級運算加速。
-
 ### 8.1.1 網目電流與節點電壓求解 (線性代數應用)
+
+![線性聯立方程式與電路網目電流法](../img/ch08/gemini_nb/Python_Smart_System_Engineering.003.jpeg)
 
 在電路分析中，解線性聯立方程式是最基礎的工作。我們透過基爾霍夫電壓定律 (KVL) 或電流定律 (KCL)，可以將電路表示成矩陣形式：
 
@@ -86,6 +88,8 @@ except np.linalg.LinAlgError as e:
 
 ### 8.1.2 二階 RLC 暫態響應模擬 (常微分方程求解)
 
+![常微分方程與 RLC 暫態響應模擬](../img/ch08/gemini_nb/Python_Smart_System_Engineering.004.jpeg)
+
 包含電容與電感的電路稱為二階電路（Second-Order Circuit）。以 RLC 串聯充電電路為例，其動態行為可以由基爾霍夫電壓定律列出：
 
 $$L \frac{d^2 q(t)}{d t^2} + R \frac{d q(t)}{d t} + \frac{1}{C} q(t) = V_s$$
@@ -144,14 +148,13 @@ plt.show()
 ```
 
 #### RLC 阻尼特性深入探討
-你可以藉由修改電阻值 $R$ 的數值來觀察二階系統的三種經典阻尼狀態：
 * **欠阻尼 (Underdamped, $R < 2 \sqrt{L/C}$)**：本例中 $R = 50 < 2\sqrt{0.1/0.0001} = 63.24$，因此波形會產生上下震盪，最後緩慢趨於穩態值 10V。
 * **過阻尼 (Overdamped, $R > 63.24$)**：電壓平滑上升，沒有震盪，但達到穩態的時間極長。
 * **臨界阻尼 (Critically Damped, $R \approx 63.24$)**：系統以最快的速度達到穩態且無震盪。
 
 ---
 
-### **8.1.3 隨堂測驗 (CCQ 1)**
+### 8.1.3 隨堂測驗 (CCQ 1)
 
 **問題**
 
@@ -183,7 +186,7 @@ D) 若 `R_matrix` 是一個行列式值 (Determinant) 為 0 的矩陣，此程�
 
 ---
 
-### **8.1.4 隨堂測驗 (CCQ 2)**
+### 8.1.4 隨堂測驗 (CCQ 2)
 
 **問題**
 
@@ -217,13 +220,15 @@ def rc_ode(y, t):
 
 * **解析**：
   * 在 `scipy.integrate.solve_ivp` 中，微分方程回呼函數的簽章格式預設為 `func(t, y)`，第一個參數為獨立變數時間 `t`，第二個參數為狀態變數 `y`（或是狀態變數陣列）。
-  * 物理公式中電壓隨時間變化為 $dV_c/dt = (V_s - V_c)/(RC)$。選項 B 的命名與公式邏輯完全正確。選項 A 和 D 參數順序顛倒（這是舊版 `scipy.integrate.odeint` 的舊用法，`solve_ivp` 會報錯）；選項 C 公式乘除法有誤。
+  * 物理公式中電壓隨時間變化為 $dV_c/dt = (V_s - V_c)/(RC)$。選項 B 的命名與公式邏輯完全正確。選項 A 和 D 參數順序顛倒，`solve_ivp` 會報錯；選項 C 公式乘除法有誤。
 
 </details>
 
 ---
 
 ## 8.2 訊號處理與頻域分析 (Signal Processing & FFT)
+
+![訊號處理與快速傅立葉變換](../img/ch08/gemini_nb/Python_Smart_System_Engineering.005.jpeg)
 
 通訊與電子工程的核心工作是訊號傳輸與濾波。由於物理世界中接收到的訊號通常混雜了環境噪聲，我們必須利用傅立葉變換將「時域（Time Domain）」訊號轉換為「頻域（Frequency Domain）」，以分析其頻率成分。
 
@@ -253,7 +258,7 @@ fft_freq = np.fft.fftfreq(n, 1 / sampling_rate)
 # 由於 FFT 的結果是對稱的，我們只取前半段正頻率部分，並計算振幅大小
 half_n = n // 2
 frequencies = fft_freq[:half_n]
-# 振幅標準化 (振幅大小為絕對值除以樣本數的兩倍，直流分量除外，這裡做簡易歸一化)
+# 振幅標準化
 amplitude = np.abs(fft_result[:half_n]) * 2 / n
 
 # 3. 繪製時域與頻域比較圖
@@ -288,9 +293,13 @@ plt.show()
 
 ## 8.3 自動控制與機械手臂運動學 (Control & Robotics)
 
+![自動控制與回授系統](../img/ch08/gemini_nb/Python_Smart_System_Engineering.006.jpeg)
+
 自動控制與機器人技術是機電工程的最核心支柱。本節探討如何用 Python 設計與模擬控制元件。
 
 ### 8.3.1 寫一個自己的 PID 控制器
+
+![PID 控制器原理與架構](../img/ch08/gemini_nb/Python_Smart_System_Engineering.007.jpeg)
 
 **比例-積分-微分控制器 (PID Controller)** 是自動化系統中最常見的回授控制演算法。我們設計一個物件導向的 `PID` 控制器類別，並用它來控制一個虛擬加熱系統的溫度：
 
@@ -385,6 +394,8 @@ plt.show()
 
 ### 8.3.2 機器人二軸機械手臂運動學 (Kinematics)
 
+![二軸機械手臂正向運動學與逆向運動學](../img/ch08/gemini_nb/Python_Smart_System_Engineering.008.jpeg)
+
 對於機器人工程師而言，必須計算手臂末端點在空間中的座標。
 * **正向運動學 (Forward Kinematics)**：給定各關節的旋轉角度 $\theta_1, \theta_2$，求機械手臂末端 (End-Effector) 的平面座標 $(x, y)$。
 * **逆向運動學 (Inverse Kinematics)**：給定末端座標 $(x, y)$，求解各關節角度。
@@ -442,7 +453,7 @@ print(f"解出關節角度：theta1={np.degrees(sol_t1):.2f}°, theta2={np.degre
 
 ---
 
-### **8.3.3 隨堂測驗 (CCQ 3)**
+### 8.3.3 隨堂測驗 (CCQ 3)
 
 **問題**
 
@@ -461,7 +472,7 @@ D) 加快系統在初始階段的響應速度。
 * **解析**：
   * **比例項 (Kp)**：主要提供基礎控制力，但若只有比例項，當誤差很小時控制力會不足以克服散熱或摩擦阻力，進而導致殘留的「穩態誤差」。
   * **積分項 (Ki)**：會隨著時間不斷累積殘留的微小誤差，使控制輸出持續放大，直到誤差完全歸零，用以消除靜態誤差。
-  * **微分項 (Kd)**：主要用於預測趨勢，對變化率產生反向阻力，藉此抑制波形震盪與減少過沖（選項 A 描述的是 D 項的特點，選項 D 為 P 項特點）。
+  * **微分項 (Kd)**：主要用於預測趨勢，對變化率產生反向阻力，藉此抑制波形震盪與減少過沖。
 
 </details>
 
@@ -469,9 +480,13 @@ D) 加快系統在初始階段的響應速度。
 
 ## 8.4 虛擬序列埠與實體硬體互動 (pySerial)
 
+![微控制器與硬體通訊](../img/ch08/gemini_nb/Python_Smart_System_Engineering.009.jpeg)
+
 工程師時常要將 Python 與微控制器（Arduino / Raspberry Pi）進行整合。如果我們手邊沒有實體硬體，我們可以在 Python 中利用多執行緒（Multi-threading）模擬一個持續發送數據的「虛擬硬體串流」，以測試讀取與除錯程式。
 
 ### 8.4.1 使用多執行緒模擬硬體並讀取序列數據
+
+![虛擬序列埠與多執行緒模擬](../img/ch08/gemini_nb/Python_Smart_System_Engineering.010.jpeg)
 
 ```python
 import threading
@@ -543,7 +558,7 @@ finally:
 
 ---
 
-### **8.4.2 隨堂測驗 (CCQ 4)**
+### 8.4.2 隨堂測驗 (CCQ 4)
 
 **問題**
 
@@ -570,6 +585,8 @@ D) 電壓訊號會在傳輸線上自動做均值濾波，變成平滑數值。
 
 ## 8.5 網路通訊與 Socket 程式 (TCP Networking)
 
+![網路通訊協定與 TCP/IP Socket 機制](../img/ch08/gemini_nb/Python_Smart_System_Engineering.011.jpeg)
+
 在通訊與資訊工程中，跨電腦進行連線通訊是極為重要的基本技術。Socket 是所有應用層網路協定（如 HTTP、MQTT）底層的傳輸介面。
 
 ### 8.5.1 多用戶 TCP 聊天室 (伺服器與用戶端)
@@ -577,6 +594,9 @@ D) 電壓訊號會在傳輸線上自動做均值濾波，變成平滑數值。
 我們將展示如何寫一個簡單的多執行緒 TCP 伺服器，能同時接受多個用戶端連線，並將任何用戶端傳送的訊息廣播 (Broadcast) 給其他所有在線用戶。
 
 #### 伺服器端 (Server) 程式碼
+
+![TCP 伺服器與用戶端連線生命週期](../img/ch08/gemini_nb/Python_Smart_System_Engineering.012.jpeg)
+
 ```python
 import socket
 import threading
@@ -626,7 +646,7 @@ def handle_client(client_socket, client_address):
 
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # 設置 Socket 重用選項，避免重新啟動時出現 Address already in use 錯誤
+    # 設置 Socket 重用選項
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     
     server_socket.bind((HOST, PORT))
@@ -647,9 +667,6 @@ def start_server():
         print("\n[關閉] 伺服器正在關閉...")
     finally:
         server_socket.close()
-
-# 若要測試伺服器，可在本機端直接執行此函式：
-# start_server()
 ```
 
 #### 用戶端 (Client) 程式碼
@@ -693,7 +710,7 @@ def start_client():
 
 ---
 
-### **8.5.2 隨堂測驗 (CCQ 5)**
+### 8.5.2 隨堂測驗 (CCQ 5)
 
 **問題**
 
@@ -707,7 +724,7 @@ D) 加密傳輸的 Socket 內容以防止駭客竊聽。
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
 
-**Correct Answer: C) 允許伺服器關閉重啟後，立即重新綁定 (bind) 相同的 Port，避免作業系統因處於 TIME_WAIT 狀態而拒絕綁定。**
+**正確答案：C) 允許伺服器關閉重啟後，立即重新綁定 (bind) 相同的 Port，避免作業系統因處於 TIME_WAIT 狀態而拒絕綁定。**
 
 * **解析**：
   * 當一個 TCP 伺服器正常關閉或異常終止時，作業系統的核心通常會將該連接埠保留在 TIME_WAIT 狀態幾分鐘，用以確保所有網路殘留包都已被丟棄。
@@ -720,13 +737,15 @@ D) 加密傳輸的 Socket 內容以防止駭客竊聽。
 
 ## 8.6 本章綜合工程實作專題
 
+![數位濾波器設計與低通濾波器模擬](../img/ch08/gemini_nb/Python_Smart_System_Engineering.013.jpeg)
+
 ### 專題任務：低通濾波器 (Low-Pass Filter) 模擬設計
 
 **背景說明**：在訊號與系統控制中，我們常常需要消除感測器的高頻噪聲，只保留低頻訊號。最簡單的數位濾波器是**一階一階低通濾波器（RC 數位濾波器）**，其差分方程式為：
 
 $$y[k] = \alpha \cdot x[k] + (1 - \alpha) \cdot y[k-1]$$
 
-其中 $x[k]$ 是第 $k$ 次量測到的原始感測器噪聲值，$y[k]$ 是濾波後的平滑輸出值，$\alpha$ 是濾波係數（$0 < \alpha < 1$）。當 $\alpha$ 越接近 0，濾波效果越強（對高頻噪聲抑制能力越好，但信號延遲越大）。
+其中 $x[k]$ 是第 $k$ 次量測到的原始感測器噪聲值，$y[k]$ 是濾波後的平滑輸出值，$\alpha$ 是濾波係數（$0 < \alpha < 1$）。
 
 我們使用 Python 實作此濾波器，並模擬其表現：
 
@@ -741,10 +760,8 @@ class LowPassFilter:
 
     def filter_value(self, x):
         if self.y_prev is None:
-            # 第一次讀取，初始化輸出為輸入值
             self.y_prev = x
             return x
-        # 依公式計算新輸出
         y_curr = self.alpha * x + (1 - self.alpha) * self.y_prev
         self.y_prev = y_curr
         return y_curr
@@ -779,3 +796,5 @@ plt.grid(True)
 plt.legend()
 plt.show()
 ```
+
+![本章工程專題與應用實作小結](../img/ch08/gemini_nb/Python_Smart_System_Engineering.014.jpeg)
