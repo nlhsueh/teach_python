@@ -10,7 +10,7 @@ Ch06 Pandas data analysis
 Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼此之間都有一些共同的欄位（column），或是說它的 feature， 它的特性。當它被儲存下來以後，我們就可以對它做一些加總、平均、標準差等等計算。這些在 Excel 非常容易就可以計算出來，同樣在 python 要去處理這些問題也相當簡單。那對應哪一個套件？就是 Pandas 這一個套件。我們會跟大家介紹，怎麼樣用 Pandas 快速算出這一些值。
 
 #### row_column
-![row_col](https://hackmd.io/_uploads/SkuR24TL6.png)
+![row_col](../img/ch06/01_row_col.png)
 
 
 第二個部分是一個進階 Pandas 的資料處理。當資料是跨表格的時候，怎麼樣去做合併；或者是說資料中有一些所謂的 missing data（資料遺漏），我怎麼樣去處理它？這個我們在第二個部分的時候會跟大家做介紹。
@@ -27,12 +27,12 @@ Pandas 的結構就是資料會被一筆一筆的儲存下來，這些資料彼�
 而如圖 [apple_example](#apple_example) 的 2D 資料表是經常被應用的一種資料處理的方式
 
 #### apple_example
-<img src='https://hackmd.io/_uploads/rk_NaVTLp.png' width='400'>
+<img src='../img/ch06/02_fruit_series.png' width='400'>
 
 比方說有一個表用來記錄水果的價格跟數量，蘋果的價格是十塊錢，數量是九十箱;香蕉的價格是 12，數量是 87 等等。這樣的一個資料表儲存起來以後可以做很多的應用。比方可以查詢蘋果目前的價格是多少錢，也可以去做一些彙總資料的計算，例如平均的價格是多少，標準差是多少，總產量是多少，最高的產量是多少。也可以對某一筆資料去做運算，如蘋果的總價格是多少。所以我們就可以在這個表上面，去做一些延伸的計算。
 
 #### price_quantity
-![price_quantity](https://hackmd.io/_uploads/SJGaTETLa.png)
+![price_quantity](../img/ch06/03_price_quantity.png)
 
 我們也會想要用一些圖表的方式來呈現這一筆資料，比方說用圓餅圖來呈現每一個水果產量的比例，圖 [price_quantity](#price_quantity) 是用長條圖來比較每一種水果價格跟數量的差異。關於 Pandas 更多的功能，相關的一些 API 應用會在這個網頁 [pandas.pydata.org](https://pandas.pydata.org) 都有相關的資料可以查看。
 
@@ -96,7 +96,7 @@ Name: Apple, dtype: object
 
 
 #### iloc
-<img src='https://hackmd.io/_uploads/HJVwRET8T.png' width='400'>
+<img src='../img/ch06/04_series_index.png' width='400'>
 
 
 如果今天要取的資料是兩筆以上的話那也沒有問題，我們剛看到這個 loc 後面是接一個 index 的值，那如果說是兩個以上的話就用一個 list 包起來，如 ['r1','r2'] 這樣子抓出來的資料就會是這兩個欄位的資料。
@@ -108,6 +108,58 @@ df = pd.DataFrame(f, index=f['name'])
 print(df.loc[ ['Apple', 'Banana'] ])
 print(df.iloc[ [0,1] ])
 ```
+### **6.1.1 隨堂測驗 (CCQ 1)**
+
+**問題**
+
+在 Pandas 中，若我們建立了 Series `s = pd.Series([10, 20, 30], index=['a', 'b', 'c'])`，下列哪一種存取方式會回傳 `20`？
+
+A) 只有 `s['b']` 與 `s.loc['b']`
+B) 只有 `s[1]` 與 `s.iloc[1]`
+C) 只有 `s['b']`、`s.loc['b']` 與 `s.iloc[1]`
+D) 四種方式 `s['b']`、`s[1]`、`s.loc['b']`、`s.iloc[1]` 皆會回傳 `20`。
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：D) 四種方式 `s['b']`、`s[1]`、`s.loc['b']`、`s.iloc[1]` 皆會回傳 `20`。**
+
+* **解析**：
+  * **標籤索引 (Label-based)**：`s['b']` 和 `s.loc['b']` 會依據我們自訂的標籤索引 `'b'` 來取得對應元素值 `20`。
+  * **位置索引 (Position-based)**：即使指定了自訂字串索引，Pandas 仍會保留預設的 0 開始整數位置索引。因此，第 2 個元素（索引位置 1）可透過 `s[1]` 或 `s.iloc[1]` 來存取，同樣會回傳 `20`。
+  * 故四者皆為有效存取方式。
+
+</details>
+
+### **6.1.2 隨堂測驗 (CCQ 2)**
+
+**問題**
+
+已知有一個 DataFrame `df` 內容如下：
+|    |  A  |  B  |
+|:---|:----|:----|
+|  x |  1  |  2  |
+|  y |  3  |  4  |
+
+請問執行 `df.loc['x', 'B']` 與 `df.iloc[0, 1]` 回傳的值分別為何？
+
+A) 兩者皆回傳 `1`。
+B) `df.loc` 回傳 `2`，`df.iloc` 回傳 `3`。
+C) 兩者皆回傳 `2`。
+D) `df.loc` 回傳 `1`，`df.iloc` 回傳 `4`。
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) 兩者皆回傳 `2`。**
+
+* **解析**：
+  * `df.loc['x', 'B']` 是**標籤型存取**（列標籤為 `'x'`，欄標籤為 `'B'`），對應到的值為 `2`。
+  * `df.iloc[0, 1]` 是**位置型存取**（列位置為 0 即第一列 `'x'`，欄位置為 1 即第二欄 `'B'`），對應到的值同樣為 `2`。
+  * 因此，兩個表達式都指向同一個儲存格，回傳的值都是 `2`。
+
+</details>
+
 [Code](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=LcKVoIeNFvum&line=1&uniqifier=1)
 
 ### 資料的頭尾與隨機
@@ -122,7 +174,7 @@ print(df.iloc[ [0,1] ])
 
 #### slice
 
-<img src='https://hackmd.io/_uploads/SyHsRE6I6.png' width='350'>
+<img src='../img/ch06/05_dataframe_sample.png' width='350'>
 
 
 如果要取得部分欄位的資料，就可以使用 data slicing 的技巧。例如某筆資料有 c1, c2, c3 三個欄位，可是我現在只要找 c1 跟 c2 這個欄位的時候，我們可以採用 df[['c1', 'c2']] 來取得。注意不可以寫 df['c1','c2'] 因為 [] 內必須是一個欄位或是一個欄位集的資料型態。如果我們只要取得 c1 的資料可以用 df['c1']或是 df.c1 即可。
@@ -140,6 +192,29 @@ df[df.c1>10]
 ```
 
 因為條件是對於一個欄位資料的布林判斷，所以得出來的結果一樣會是一個 table，那這個table裡面存放了就是 true false true 這樣的一個表。產生這個表了以後，接下來就可以透過 df.loc 的方式找出某一些資料。
+
+### **6.1.3 隨堂測驗 (CCQ 3)**
+
+**問題**
+
+若要從 DataFrame `df` 中過濾出欄位 `"Age"` 大於 `30` 的所有資料列（Rows），下列哪一個指令是正確的？
+
+A) `df[df["Age"] > 30]`
+B) `df.filter("Age > 30")`
+C) `df.where("Age" > 30)`
+D) `df[Age > 30]`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：A) `df[df["Age"] > 30]`**
+
+* **解析**：
+  * 在 Pandas 中，過濾資料最標準的方式是使用**布林索引 (Boolean Indexing)**。
+  * `df["Age"] > 30` 會先針對每一列進行條件判斷，產生一個由 `True` 和 `False` 組成的 Series。
+  * 將此布林 Series 作為索引傳入 `df[...]` 中，DataFrame 就會篩選出所有對應值為 `True` 的 Rows。
+
+</details>
 
 [code](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=nwDBntLdT6oN) 提供更多範例供參考。
 
@@ -228,7 +303,7 @@ max    30.000000  90.000000
 台南是 10、台北是 45 等等。
 
 #### group_by
-<img src='https://hackmd.io/_uploads/SkCYGL6Ip.png' width='400'>
+<img src='../img/ch06/06_dataframe_indexing.png' width='400'>
 
 ### Pandas 實作
 
@@ -634,7 +709,7 @@ E	    E	NaN	    20.0
 ### NaN and None
 
 #### NaN_None
-<img src='https://hackmd.io/_uploads/BkmloQaIa.png' width=350>
+<img src='../img/ch06/07_pandas_groupby.png' width=350>
 
 可是在 Pandas 它代表的空值是 NaN，所以這個大家要記一下。那我們來看第一個策略，就是把只要是含有 NaN 的資料刪除，這個就叫做 dropna，這個 na 代表就是空值的意思。那我們看一下，C 跟 E 的這一筆資料現在都被刪除了。
 
@@ -719,17 +794,41 @@ print (df.fillna(method = 'bfill'))
 ```
 
 
+### **6.2.1 隨堂測驗 (CCQ 4)**
+
+**問題**
+
+給定一個 DataFrame `df`，包含 `"Department"`（部門）與 `"Salary"`（薪水）兩個欄位。若要計算每個部門的平均薪水，下列哪一個指令是正確的？
+
+A) `df.groupby("Department")["Salary"].mean()`
+B) `df.groupby("Department").mean("Salary")`
+C) `df.groupby("Department").average("Salary")`
+D) `df["Department"].groupby("Salary").mean()`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：A) `df.groupby("Department")["Salary"].mean()`**
+
+* **解析**：
+  * `df.groupby("Department")`：先以 `"Department"` 欄位作為分組基準。
+  * `["Salary"]`：接著從分組後的資料中選取 `"Salary"` 欄位。
+  * `.mean()`：最後呼叫 `mean()` 函式計算每一組的平均值。
+  * 這是 Pandas 中進行分組聚合（Aggregation）的最標準寫法。其他選項如 `average()` 並非 Pandas 的內建聚合函式。
+
+</details>
+
 ### 資料表合併
 
 #### append_merge
-![Append and Merge](https://hackmd.io/_uploads/B1lmjQaLa.png)
+![Append and Merge](../img/ch06/08_append_merge.png)
 
 這個章節介紹資料的整併，在資料處理的過程中，它們來源可能是有很多不同的表格，那因為要整體性的去做分析，所以需要先把資料做整併。整併基礎上大概有兩種方式：一種是橫向一種是縱向。舉例子來說，現在有一個資料是 104 年度每一個人的收入狀況，還有另外一筆是 105 年度的收入狀況。
 這兩個資料的結構基本上一樣，就是它可能有這個人的名字、身分證字號、還有他每個月的薪水等等，所以它的欄位是一樣的。這時候就可以做一個縱向的整併，整併以後，它的欄位還是一樣的，只是說資料的量是變多的。
 
 #### 橫向整併
 
-![merge](https://hackmd.io/_uploads/Bkx3jmTLT.png)
+![merge](../img/ch06/09_merge.png)
 
 那另外一種方式是做一個橫向的整併，資料的欄位會變多。例如有份資料是 104 年度每一個人的收入跟他購買咖啡的數量和金額，這時候它的欄位名稱就會不一樣。那整併以後它欄位的數量就會變多，但是資料的本體，基本上是不會變多的。這時候我們用的方式就是 merge，所以有 append 跟 merge 這兩種模式。
 
@@ -850,44 +949,44 @@ r14_right
 
 #### 折線圖 Plot
 
-<img src='https://hackmd.io/_uploads/S1ERoXT8a.png' width='300'>
+<img src='../img/ch06/10_plot_sample.png' width='300'>
 
 第一個是 plot 折線圖，就像上圖大家所看到的，x 軸是代表某一筆資料，y 軸則是代表這筆資料的數據。那折線圖可以幫助我們。比較資料的大小，如果它的 x 軸代表著時間的話，它還可以用來呈現這個趨勢。
 
 #### 條狀圖 Bar chart
 
-![bar_chart](https://hackmd.io/_uploads/HyKbhQpUa.png)
+![bar_chart](../img/ch06/11_bar_chart.png)
 
 Bar chart 條狀圖，它可以用來比較資料的大小，我們可以用橫向的方式來呈現這個資料，
 也可以用縱向的方式來做資料的呈現。
 
 #### 圓餅圖 Pie chart
 
-<img src='https://hackmd.io/_uploads/SynGh7aLp.png' width='400'>
+<img src='../img/ch06/12_histogram_sample.png' width='400'>
 
 圓餅圖 Pie chart 也是常看到的，它可以幫助我們比較資料所佔比例的多寡，這整個圓加起來是 100%。
 
-![histograms](https://hackmd.io/_uploads/S1DEhXpLT.png)
+![histograms](../img/ch06/13_histograms.png)
 
 直方圖 histogram 可用來表示某一個資料或者是一個區段的資料密度，就是有多少資料是落在這個區間的。從這個圖裡面，各位可以看到大部分的資料是落在大概 100 左右的，那 140 或者是 60 的資料量就比較少一點。
 所以我們常看到 normal distribution 就是用直方圖來做呈現的。
 
 #### 散佈圖 Scatter plots
 
-(https://hackmd.io/_uploads/H15Sn7TUa.png)
+![box_plot_sample](../img/ch06/14_box_plot_sample.png)
 
 散佈圖 Scatter plots 可以用來呈現兩個數值大小之間的關係，比方說這個地方看到溫度跟銷售量，12 度的時候是 200，14 度的時候 200 多一點點，以此類推。我們可以從圖上看到，它大概有一個線性的關係，溫度越高的話銷量越好，所以可能是賣冰淇淋之類。
 
 #### 箱型圖 Boxplot
 
-![box_chart](https://hackmd.io/_uploads/SJcvhm68a.png)
+![box_chart](../img/ch06/15_box_chart.png)
 
 
 Boxplot 箱型圖，又叫做盒鬚圖。它也是用來比較資料的分佈，如上圖三筆資料的分佈，它有五個比較重要的點。我們看一下右邊這裡，分別是極小值、q1、中位數、q3跟極大值。如果資料落在極小值以下的話就是一個極小的離群值。如果在極大值以上也代表著一個離群值，例如呈現薪資狀況，那全台首富的值可能就會落在離群值了。中位數代表這群資料的中間，它是贏過百分之五十的人。q1 下四分位數則是在四分之一的位置，它贏過 25\% 的人，這個地方是百分之七十五。所以箱型圖的這個箱子就佔了百分之五十的資料。如果中位數越低的話，就代表中間的值是偏低。那箱型圖如果越短的話，代表百分之五十的值它是比較緊密一點，集中在這個箱子裡面。
 
 #### 常用名詞
 
-![legend](https://hackmd.io/_uploads/SyFc2XTUp.png)
+![legend](../img/ch06/16_legend.png)
 
 
 Pandas 在畫圖的時候，常常會用到一些觀念，裡面當然牽涉到一些英文命名的問題，
@@ -992,7 +1091,7 @@ sg 這張表是代表三個班級 C1 C2 C3 男生跟女生的數量，
 # 折線圖
 s.plot()
 ```
-![s_plot](https://hackmd.io/_uploads/ByT23QpLa.png)
+![s_plot](../img/ch06/17_s_plot.png)
 
 s 是一個 dataframe 的物件，使用 `s.plot()` 方法後如果 title 後面的參數沒有寫其實也沒關係，它就不會呈現 title，有寫 title 這個地方就會呈現出來，而且預設把圖例的說明放在右上角。如果不要用dataframe.plot 來做，想要用 matplotlib 來做也是可以。首先先 import matplotlib，然後設定它的 title，就直接用這個 plt ，plt 它等於是一個 pyplot 的物件去 .title 去設定這個 title，然後去設定它的 x 軸跟 y 軸，再透過 plot 把 s 這一筆資料印出來如 Code。
 
@@ -1004,30 +1103,30 @@ plt.xlabel('S ID')
 plt.plot(s)
 ```
 
-![s_plot_com](https://hackmd.io/_uploads/Syh16X6Up.png)
+![s_plot_com](../img/ch06/18_s_plot_com.png)
 
 左右這兩張圖，可以看到差別就是右邊使用 matplot 繪製的圖有 xlabel 跟 ylabel 。在 matplot 裡面，要去設定 xlabel 跟 ylabel 是相當容易的，但是在 dataframe 裡面並沒有一個直接的物件去設定，必須要先去獲得它另外一個物件才能去設定它。所以獲得另一個物件再去設定的部份今天就先跳過。
 
 那如果要去畫 histogram，一樣只需一個指令就完成了，`s.hist()` 它就會把三筆資料的分佈秀出來，如圖\ref{fig:s_hist}。
 
-![s_hist](https://hackmd.io/_uploads/rJefpma8T.png)
+![s_hist](../img/ch06/19_s_hist.png)
 
 
 從圖中可以看到，英文這一個科目好像大家都考得不是很好，在 0 分到十幾分的數量上是比較多的。數學方面就比較平均一點。Bar chart 的部分一樣是一行的指令，`s.plot.bar`。是先呼叫 plot 的指令，然後再去呼叫 bar。我們也可以指定一下大小，因為 x 軸其實非常多，所以我們設定 figsize 等於 10。10 代表它 X 軸寬的部分，然後 y 軸高的部分設為 5，整個呈現起來就如下圖：
 
-![s_bar](https://hackmd.io/_uploads/ByvQT7T8T.png)
+![s_bar](../img/ch06/20_s_bar.png)
 
 如果說想用橫向的 bar，就在 bar 右邊再加上 h，代表 horizon 水平的意思，如下圖：
 
-![s_bar_h](https://hackmd.io/_uploads/SJjFJ4aLT.png)
+![s_bar_h](../img/ch06/21_s_bar_h.png)
 
 再看另外一個例子會更清楚一點，這個資料量比較少，使用 bar chart 比較有意義。將 sg 這張表，也就是 3 班 c1 c2 c3 各班男生跟女生的人數繪製成 bar chart 如下圖就可以很清楚的看到了。
 
-![sg_bar](https://hackmd.io/_uploads/rJpc1EaUp.png)
+![sg_bar](../img/ch06/22_sg_bar.png)
 
 那如果不想把這兩筆資料放在同一張圖，我們可以下一個參數就是 `subplots=True`，這樣就會自動的將兩筆資料它分開呈現，如下圖。
 
-![sg_bar_sub](https://hackmd.io/_uploads/H17nyE6IT.png)
+![sg_bar_sub](../img/ch06/23_sg_bar_sub.png)
 
 接下來看 pie chart 如下圖，pie chart 一樣先呼叫 plot 再呼叫 pie，如 
 
@@ -1038,7 +1137,7 @@ sg.plot.pie(y='boy', autopct='\%.2f',figsize=(5,5))
 而後面的 y=boy 所代表的意思是因為這裡有兩筆資料，所以必須要去選定要呈現哪一筆資料。所以當 y=boy，代表說我是要去分析 y 的這筆資料。
 那 autopct 的 pct 則是代表 percent 百分比的意思。autopct= 後接一個字串，第一個 percent 就是代表要用百分制的方式來呈現，後面的 .2f 是代表小數點後兩位。figsize 一樣是圖形的大小。如果說今天是想要把兩個資料全部都呈現，就做一個 subplots=True，這樣兩筆資料都會呈現出來了。
 
-![sg_pie](https://hackmd.io/_uploads/SJF6JN68p.png)
+![sg_pie](../img/ch06/24_sg_pie.png)
 
 ## 應用
 
@@ -1048,22 +1147,22 @@ sg.plot.pie(y='boy', autopct='\%.2f',figsize=(5,5))
 此章節會介紹兩個資料分析範例，第一個是新北市 youbike 相關資訊的應用，第二個是大專院校學生分析。新北市 youbike 相關資訊在前面介紹 dictionary 的部分時也曾經用過這一筆資料。那時候使用的資料是用 dictionary 的方式來讀進台中市 youbike 的資訊，這筆資料的結構包含像每一個站點、代碼名稱、總共有多少個停車格與目前還有多少車子。在這個 station 裡面還有它所在的區域、座標等等。在學完 dataframe 以後，我們用這個方式再來對這筆資料做一遍處理，效果跟整個過程是完全不一樣的，變得更方便了。那取得這一筆資料的方式，就到 data.gov.tw 下的交通下載csv的檔案格式。csv 是一個像 table 結構的這個檔案，在使用 dataframe 的話就比較好處理。雖然下載下來以後，資料內容密密麻麻看起來非常的複雜，可是當轉換成 dataframe 讀取的時候，這筆資料其實還蠻清楚的。
 
 #### youbike_station_bar
-![youbike_station_bar](https://hackmd.io/_uploads/Sk6Gl4p8a.png)
+![youbike_station_bar](../img/ch06/25_youbike_station_bar.png)
 
 
 接下來畫幾張圖，用視覺化的方式來呈現這個 youbike 的一些狀況，例如每一個區域有多少個 youbike 的 station 等等。圖 [youbike_station_bar](#youbike_station_bar) 是我們先跑出來的結果，各位可以看到這個板橋區與三峽區大概是最多的，其他像萬里區或金山區數量就比較少。
 
-![Youbike_station_pie](https://hackmd.io/_uploads/HkxHrtVaIT.png)
+![Youbike_station_pie](../img/ch06/26_Youbike_station_pie.png)
 
 那我們也可以用圓餅圖的方式來去呈現，如圖 [youbike_station_pie](#youbike_station_pie)，一樣大家可以看到這個是百分比由小到大排序。
 
 我們還可以做分佈圖，因為這一筆資料裡面有經緯度的座標，所以我們就用這個資訊畫 scatter，如圖[youbike_station_scatter1](youbike_station_scatter1)，就可以畫出這整個 youbike station它分佈的這個狀況。
 
 #### youbike_station_scatter1
-![youbike_station_scatter1](https://hackmd.io/_uploads/ryuIKN6Ua.png)
+![youbike_station_scatter1](../img/ch06/27_youbike_station_scatter1.png)
 
 #### new_taipei_map
-![new_taipei_map](https://hackmd.io/_uploads/SJqDtVT86.png)
+![new_taipei_map](../img/ch06/28_new_taibei_map.png)
 
 [new_taipei_map](#new_taipei_map)是新北市的行政區域圖，中間這個地方是台北市所以我們這個資料裡是沒有台北市的站點資訊，所以這個地方空了一大堆。右邊的區域大概是貢寮區，北邊這個地方大概是金山區，所以我們也可以畫出這樣子的圖。
 
@@ -1071,12 +1170,12 @@ sg.plot.pie(y='boy', autopct='\%.2f',figsize=(5,5))
 畫這些圖都非常的簡單，透過 dataframe 只需要三到五行程式碼就可以畫出這樣子的圖了。我們也可以畫出借出率的箱型圖，如[youbike_station_box](#youbike_station_box)，借出率就是每一個 station 借出 youbike 的這個比例是多少。當然借出的比例越高的話，代表這一個 station 是越熱門，越多人來借用 youbike。由此圖可以看到，借出率的中位數有來到 60、70% 左右
 
 #### youbike_station_box
-![Youbike_station_box](https://hackmd.io/_uploads/rynntNaLa.png)
+![Youbike_station_box](../img/ch06/29_Youbike_station_box.png)
 
 我們也可以依照這個借出率的高低來繪製圈圈的大小，如下圖：
 
 #### Youbike_station_scatter2
-![Youbike_station_scatter2](https://hackmd.io/_uploads/Skgl54aL6.png)
+![Youbike_station_scatter2](../img/ch06/30_Youbike_station_scatter2.png)
 
 
 如各位看到，有些圈圈是比較小一點的代表這個站點的借出率是比較低的。因為平均來看借出率都還挺高，所以圈圈看起來其實都差不多。
@@ -1124,7 +1223,7 @@ df = init_data()
 先設定資料的目錄，此處是放在 data 下面的`youbike_newTPE.csv`，那設定好路徑了以後，就可以透過 `pd.read_csv` 將這個檔案的資料讀進來，`pd.read_csv()`括號裡放的是 `file_path`，`file_path` 就是`data/youbike_newTPE.csv`，然後 header 等於 0 的意思是這筆資料有表頭的欄位說明。
 
 #### youbike_data
-![youbike_data](https://hackmd.io/_uploads/B1KI546Ip.png)
+![youbike_data](../img/ch06/31_youbike_data.png)
 
 那我們來看一下這一筆資料，如 [youbike_data](#youbike_data)，就是這個 csv 檔的內容。會在第一行的部分會看到它會有許多這個欄位的名稱，就代表說它的表頭並不是一筆資料而是欄位名稱，所以在這個地方必須要把 header 設為零。那接下來這個 dtype 是 sno : str，我們再看一下這個 dataframe 的資料，這個 sno 是每一個站的一個序號，但是這一筆資料全部都是數字，如果不強迫跟 Pandas 講說它是一個字串的話就會誤認為它是一個整數，若是一個整數的話等一下就會被拿去做加減乘除等等的運算。這對我們來講這是沒什麼意義的，所以我們就在這個地方特別說明它是一個字串。
 

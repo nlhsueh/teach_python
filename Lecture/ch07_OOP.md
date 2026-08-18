@@ -245,6 +245,39 @@ c01 電動車
 c2 電動車
 ```
 
+### **7.1.1 隨堂測驗 (CCQ 1)**
+
+**問題**
+
+給定下列 Python 類別定義：
+```python
+class Counter:
+    count = 0  # 類別屬性 (Class Attribute)
+    def __init__(self):
+        self.count = 1  # 實例屬性 (Instance Attribute)
+
+c = Counter()
+print(Counter.count, c.count)
+```
+請問程式執行的輸出結果為何？
+
+A) `0 0`
+B) `0 1`
+C) `1 1`
+D) 引發 `AttributeError`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `0 1`**
+
+* **解析**：
+  * `Counter.count` 存取的是定義在類別層級的**類別屬性**，其值為 `0`。它被所有實例共用，但不能透過實例進行直接覆寫（除非特別指定）。
+  * `c.count` 存取的是實例 `c` 初始化時在 `__init__` 中建立的**實例屬性**，其值為 `1`。
+  * 實例屬性與類別屬性同名時，實例屬性會**遮蔽 (shadow)** 類別屬性，因此存取 `c.count` 會優先返回實例屬性的值 `1`。
+
+</details>
+
 ### 私有屬性
 
 如果一個屬性沒有設為私有，外面的程式可以任意的修改它，這是很危險的：
@@ -288,6 +321,37 @@ nick.withdraw(5000)
 print ('{} 的帳戶有 {} 元'.format(nick.name, nick.get_balance()))
 ```
 注意類別以外的程式我們不能用 `nick.__balance` 來直接讀取 `__balance`，我們透過 `get_balance()` 來取得值，透過 `set_balance()` 來設定他的值。
+
+### **7.1.2 隨堂測驗 (CCQ 2)**
+
+**問題**
+
+下列程式碼執行時會發生什麼事？
+```python
+class Secretive:
+    def __init__(self):
+        self.__code = 42
+
+s = Secretive()
+print(s.__code)
+```
+
+A) 正常執行，印出 `42`
+B) 正常執行，印出 `None`
+C) 引發 `AttributeError`
+D) 引發 `NameError`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) 引發 `AttributeError`**
+
+* **解析**：
+  * 在 Python 中，以兩個底線開頭但不用兩個底線結尾的屬性名稱（例如 `__code`），會觸發 **名稱修飾 (Name Mangling)** 機制。
+  * 翻譯器會自動將這個屬性重新命名為 `_ClassName__attributeName`（即 `_Secretive__code`），以避免在繼承關係中意外衝突。
+  * 因此，在外部直接透過 `s.__code` 存取該屬性時，會因為找不到此名稱而引發 `AttributeError: 'Secretive' object has no attribute '__code'`。
+
+</details>
 
 ### 特性
 
@@ -717,6 +781,42 @@ Mary.plan()
 ```
 
 上述例子中，`Engineer` 和 `Manager` 都是 `Person` 的延伸類別。
+
+### **7.2.1 隨堂測驗 (CCQ 3)**
+
+**問題**
+
+給定下列繼承關係程式碼：
+```python
+class Parent:
+    def __init__(self):
+        self.val = 10
+
+class Child(Parent):
+    def __init__(self):
+        self.val = 20
+
+c = Child()
+print(c.val)
+```
+請問程式執行的輸出結果為何？
+
+A) `10`
+B) `20`
+C) 引發 `AttributeError`
+D) `None`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `20`**
+
+* **解析**：
+  * 子類別 `Child` 定義了自己的建構子 `__init__`，這會直接**覆寫 (override)** 父類別 `Parent` 的建構子。
+  * 當我們實例化 `Child()` 時，只有子類別的建構子會被執行，其中 `self.val` 被設定為 `20`。
+  * 因為子類別建構子內沒有呼叫 `super().__init__()`，所以父類別建構子沒有被執行（但 `self.val` 已經在子類別中建立並賦值），故 `c.val` 回傳的值是 `20`。
+
+</details>
 
 ### GuessGame
 

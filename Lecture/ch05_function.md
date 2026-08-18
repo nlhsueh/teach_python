@@ -25,7 +25,7 @@ Ch05 Function
 函式有兩個重要的優點：第一個就是程式的可讀性會變高，第二個是簡化程式碼，並讓重用性變高。
 
 
-![函式](https://hackmd.io/_uploads/rkl8a4gWp.png)
+![函式](../img/ch05/01_function_intro.png)
 
 ### 函式的定義
 
@@ -215,6 +215,29 @@ prime3(pEnd=20, pStart=10)    # correct
 prime3(2, 10)                 # correct   
 ```
 
+### **5.1.1 隨堂測驗 (CCQ 1)**
+
+**問題**
+
+給定函式定義 `def func(a, b=5, c=10): print(a, b, c)`。下列哪一個呼叫方式在 Python 中是**無效的 (Invalid)**，會導致語法錯誤？
+
+A) `func(1)`
+B) `func(a=1, c=20)`
+C) `func(b=20, 30)`
+D) `func(1, c=20, b=30)`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) `func(b=20, 30)`**
+
+* **解析**：
+  * Python 的語法規定：**位置引數（Positional Arguments）必須排在關鍵字引數（Keyword Arguments）之前**。
+  * 在 `func(b=20, 30)` 中，第一個引數 `b=20` 是關鍵字引數，而第二個引數 `30` 是位置引數。這違反了引數順序規定，會引發 `SyntaxError: positional argument follows keyword argument`。
+  * 其他選項皆合法：選項 A 使用預設值；選項 B 僅指定 a 和 c，b 採預設值；選項 D 位置引數在前，後面關鍵字引數順序無礙。
+
+</details>
+
 ### 變動的參數個數
 
 有時候我們不確定會有多少個參數，就可以用 `變動` 參數來「收納」。在變數的前面加上 `*` 就形成了變動參數。
@@ -279,7 +302,7 @@ print (a, m)
 
 ### 不可變物件
 
-![不可變物件](https://hackmd.io/_uploads/BkAFTVlb6.png)
+![不可變物件](../img/ch05/02_immutable_passing.png)
 
 在探討這個問題之前，我們先來介紹 Python 裡面 immutable object (不可變物件)及 mutable object (可變物件)。在 Python 中所有的資料都是「物件」，包含我們常看到的整數 (int)，而且 int 還是一個 不可變的物件。
 
@@ -361,7 +384,7 @@ m 的位址： 140681763103552
 ```
 
 
-![可變物件](https://hackmd.io/_uploads/By026El-a.png)
+![可變物件](../img/ch05/03_mutable_passing.png)
 
 可以看到 `m` 的內容物有改變了，但 `m` 的位置仍然一樣。所謂的可變物件指的是其內容物可改變，如果我們將 m 指定到另一個 list, 當然他的位置也會改變，如下：
 
@@ -382,7 +405,7 @@ id2 = id(m)
 
 ### 資料傳遞
 
-![資料傳遞](https://hackmd.io/_uploads/B19JCExWp.png)
+![資料傳遞](../img/ch05/04_parameter_passing.png)
 
 我們回到一開始的例子： 
 
@@ -425,6 +448,38 @@ print (m)
 ```
 [1, 2]
 ```
+
+### **5.2.1 隨堂測驗 (CCQ 2)**
+
+**問題**
+
+下列程式碼執行後，螢幕上會印出什麼結果？
+```python
+def modify_values(a, b):
+    a = a + 10
+    b.append(10)
+
+x = 5
+y = [5]
+modify_values(x, y)
+print(x, y)
+```
+
+A) `5 [5]`
+B) `15 [5, 10]`
+C) `5 [5, 10]`
+D) `15 [5]`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) `5 [5, 10]`**
+
+* **解析**：
+  * **不可變物件 (Immutable)**：`x = 5` 是整數，傳入函式後，`a = a + 10` 會在函式內部建立一個新的局部變數 `a` 並指向新整數 `15`，這並不會影響外部全域變數 `x` 的值。故 `x` 仍為 `5`。
+  * **可變物件 (Mutable)**：`y = [5]` 是列表，傳入函式後，`b.append(10)` 是在原本列表的記憶體位址上直接進行就地修改（in-place modification）。由於 `b` 和 `y` 指向同一個列表，因此外部的 `y` 內容會同步被修改為 `[5, 10]`。
+
+</details>
 
 ## Lambda 函式
 
@@ -478,6 +533,34 @@ print (sortedGrade)
 ```python
 r = sorted(grades, key=lambda x: x[0]*0.3+ x[1]*0.4+x[2]*0.4)
 ```
+
+### **5.2.2 隨堂測驗 (CCQ 3)**
+
+**問題**
+
+下列程式碼執行後，其輸出結果為何？
+```python
+nums = [1, 2, 3, 4]
+squared_evens = list(map(lambda x: x**2, filter(lambda x: x % 2 == 0, nums)))
+print(squared_evens)
+```
+
+A) `[1, 4, 9, 16]`
+B) `[4, 16]`
+C) `[1, 9]`
+D) `[2, 4]`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `[4, 16]`**
+
+* **解析**：
+  * `filter(lambda x: x % 2 == 0, nums)` 負責篩選出偶數，此時只會保留 `[2, 4]`。
+  * `map(lambda x: x**2, ...)` 會將篩選後的每個元素進行平方運算：`2**2` 變為 `4`，`4**2` 變為 `16`。
+  * 最後用 `list()` 將 map 物件轉換回列表，得到 `[4, 16]`。
+
+</details>
 
 ## 例外
 
@@ -621,6 +704,40 @@ finally:
 print('All done') # Note: this will not run
 ```
 
+### **5.3.1 隨堂測驗 (CCQ 4)**
+
+**問題**
+
+下列程式碼執行後，最後在螢幕上會印出什麼結果？
+```python
+def test_div(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return "Cannot divide by zero"
+    finally:
+        return "Always executed"
+
+print(test_div(10, 2))
+```
+
+A) `5.0`
+B) `Cannot divide by zero`
+C) `Always executed`
+D) `5.0` 且換行印出 `Always executed`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) `Always executed`**
+
+* **解析**：
+  * `finally` 區塊在 Python 的例外處理機制中，**不論 try 與 except 內發生什麼事（即使包含 return 或拋出例外），都一定會被執行**。
+  * 如果 `finally` 區塊中包含 `return` 語句，它會直接**覆蓋 (override)** try 區塊或 except 區塊中已準備回傳的 return 值。
+  * 因此，當程式在 try 內計算出 `5.0` 並準備 return 時，隨後執行的 `finally` 區塊搶先執行了 `return "Always executed"`，覆蓋了原本的回傳值。
+
+</details>
+
 ## 套件
 
 在Python中，要設定一個package，你需要創建一個合適的目錄結構和一些特定的文件。以下是一個基本的步驟：
@@ -671,7 +788,7 @@ my_package/
 
 ### 函式應用：河內塔程式設計
 
-![河內塔](https://hackmd.io/_uploads/SynmCNxba.png)
+![河內塔](../img/ch05/05_hanoi_tower.png)
 
 今天要來介紹一個很古老但很有趣的益智遊戲，叫做河內塔，這個遊戲是這麼玩的，我們要把 A 柱上的 3 個方塊，搬移到 C 柱這個地方，但中間有些規則，就是一次只能搬一個，而且搬移的過程中不能大的去壓小的，例如我們一次要把 1、2 搬移到 B，這樣是不行的。又或者是把 1 搬到 B，接著又 2 搬到 B，這時候會造成大的壓小的-- 也是不行。一時間覺得好像不是那麼容易的一個問題，所以我們把這個問題做簡化。
 
@@ -796,7 +913,7 @@ A move to C
 
 ### 函式應用：井字遊戲設計
 
-![Tic Tac Toe 遊戲](https://hackmd.io/_uploads/By-wC4gbT.png)
+![Tic Tac Toe 遊戲](../img/ch05/06_tictactoe.png)
 
 我們來設計一個電腦互玩的井字遊戲（Tic Tac Toe） 的遊戲。這個規則很簡單，有兩位玩家一個是 0，一個是 X，誰能先連接成一條線就能贏得這遊戲，不管這條線是橫的直的還是斜的都可以。要設計這一款遊戲我們有幾點要來做一下思考:
 - 第一個就是如何表達井 (棋盤) 的狀態，每一格的狀態是一直在做變更的需要去如何表達一個井的狀態。
