@@ -78,7 +78,7 @@ aList[1:]               # [2, 'b', 'd']
 
 在資料的新增方面，我們通常會用到的三個函式是 append、extend 和 insert。
 
-![list insert, extend and append](https://hackmd.io/_uploads/r1XEt_k-6.png)
+![list insert, extend and append](../img/ch04/01_list_insert_extend_append.png)
 
 - `append(d)`: 把 d 加到 list 後面。
 - `extend(d)`: d 應該也是一個 list; 擴充 list 使之涵蓋 d 的元素。
@@ -207,7 +207,7 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 
 資料切片時也可以不寫第二個參數，代表從這個位置抓到資料的最後一筆，如果第一個參數沒有寫的話，就代表要從最前面開始抓取資料。也可以用 - 的方式來代表倒數的觀念，例如呢我們要從倒數第 2 個抓取到倒數第1個，我就可以寫 `[-2:-1]`，`-1` 代表的就是 59，也就是倒數第一個的資料，`-2`就是 35 的這筆資料。
 
-![list index](https://hackmd.io/_uploads/S1Zk9d1-a.png)
+![list index](../img/ch04/02_list_index.png)
 
 ```python
 grade = [11, 22, 99, 35, 59]
@@ -343,7 +343,7 @@ albert 在 資料 ['nick', 'albert', 'jie'] 中的位置是 1
 
 ### 二維的 List
 
-![two dimension list](https://hackmd.io/_uploads/SJx7cOkZp.png)
+![two dimension list](../img/ch04/03_two_dim_list.png)
 
 二維的 list 指的就是 list 中的元素的資料本身也是一個 list。例如我們想要紀錄一群學生的一群成績，這時候我們就可能會使用到二維的 list。上圖資料中，`grade` 本身是 一個 list，但是這個 list裡面的元素又是一個 list，第一組資料就代表著 `學生0` 的三個成績，假設我們賦予它的意義是`英文`、`數學`及`自`然，那就代表這三科的成績。第 1 筆資料又是一個 list，代表的就是 `學生1` 這三科成績，以此類推。所以當我們今天想要獲取`學生2`的成績時，我們就可以用 `grade[2]`，這時候回傳的會是一個 list，`[77,88,99]` 這一筆資料。
 
@@ -513,7 +513,7 @@ Result:
 ### 資料的比較
 
 
-![== 與 is 的差別](https://hackmd.io/_uploads/HytT5_JZT.png)
+![== 與 is 的差別](../img/ch04/04_equality_vs_identity.png)
 
 `is` 和 `==` 的差別
 - 透過 is 比較兩個 list 是否 **參考** 相同。
@@ -555,7 +555,7 @@ grade is gc:  False
 
 ### 氣泡排序法
 
-![氣泡排序法](https://hackmd.io/_uploads/BJPliOy-6.png)
+![氣泡排序法](../img/ch04/05_bubble_sort.png)
 
 > `sort()` 會改變本身的資料; `sorted()` 不會，但會回傳一個已排序的。
 
@@ -626,6 +626,56 @@ print (cityString2)
 Taichung-Taipei-Kaoshiung
 Taichung * Taipei * Kaoshiung
 ```
+
+### **4.1.1 隨堂測驗 (CCQ 1)**
+
+**問題**
+
+給定兩個串列 `a = [1, 2]` 與 `b = [3, 4]`。請問執行 `a.append(b)` 與 `a.extend(b)` 兩者運作的結果有何不同？
+
+A) 兩者結果皆為 `[1, 2, 3, 4]`。
+B) 兩者結果皆為 `[1, 2, [3, 4]]`。
+C) `a.append(b)` 結果為 `[1, 2, [3, 4]]`，而 `a.extend(b)` 結果為 `[1, 2, 3, 4]`。
+D) `a.append(b)` 結果為 `[1, 2, 3, 4]`，而 `a.extend(b)` 結果為 `[1, 2, [3, 4]]`。
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：C) `a.append(b)` 結果為 `[1, 2, [3, 4]]`，而 `a.extend(b)` 結果為 `[1, 2, 3, 4]`。**
+
+* **解析**：
+  * `append(x)` 會把傳入的物件 `x` **原封不動地當成單一元素**加到串列尾端。因為 `b` 是一個串列，所以 `a.append(b)` 會將整個 `[3, 4]` 當作一個元素塞進 `a`，得到二維/巢狀串列 `[1, 2, [3, 4]]`。
+  * `extend(iterable)` 會**迭代**傳入的容器，將其中的**所有元素拆開**、依序加到串列尾端。所以 `a.extend([3, 4])` 會分別將 `3` 與 `4` 加入，得到扁平串列 `[1, 2, 3, 4]`。
+
+</details>
+
+### **4.1.2 隨堂測驗 (CCQ 2)**
+
+**問題**
+
+下列程式碼執行後，螢幕上會印出什麼結果？
+```python
+x = [1, 2, 3, 4, 5]
+x[1:3] = [9, 9]
+print(x)
+```
+
+A) `[1, 9, 9, 4, 5]`
+B) `[1, 9, 9, 3, 4, 5]`
+C) `[1, 2, 9, 9, 5]`
+D) `[1, 9, 9, 9, 5]`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：A) `[1, 9, 9, 4, 5]`**
+
+* **解析**：
+  * 切片 `x[1:3]` 取出的是索引值為 1 和 2 的子串列（左閉右開，不包含索引 3），即 `[2, 3]`。
+  * 賦值操作 `x[1:3] = [9, 9]` 會將被切片選中的 `[2, 3]` 替換為新指定的元素 `[9, 9]`。
+  * 因此，原位置的 `2` 與 `3` 被替換成 `9` 與 `9`，結果為 `[1, 9, 9, 4, 5]`。
+
+</details>
 
 ## Tuple集合物件
 
@@ -725,9 +775,36 @@ sex, age, name = person         # 同上，另一個寫法
 sex, age = person               # 錯誤！數量不同
 ```
 
+### **4.2.1 隨堂測驗 (CCQ 3)**
+
+**問題**
+
+Tuple 內部的元素是否絕對不可變動？下列程式碼執行後的輸出結果為何？
+```python
+t = (1, 2, [3, 4])
+t[2].append(5)
+print(t)
+```
+
+A) `TypeError: 'tuple' object does not support item assignment`
+B) `(1, 2, [3, 4, 5])`
+C) `(1, 2, [3, 4], 5)`
+D) `(1, 2, [3, 4])`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：B) `(1, 2, [3, 4, 5])`**
+
+* **解析**：
+  * Tuple 唯讀/不可變的本質指的是：**Tuple 內部每個位置所存放的「參照位址」是不可改變的**。也就是說，不允許直接修改 Tuple 元素的值（如 `t[2] = [3, 4, 5]` 或 `t[0] = 9` 會報 `TypeError`）。
+  * 然而，在本題中，`t[2]` 指向的是一個可變的 **List 串列物件**。當我們呼叫 `t[2].append(5)` 時，只是修改了該串列的內部元素，並沒有改變該串列在 Tuple 中的參照位址。因此，此操作在 Python 中是完全合法的，輸出結果為 `(1, 2, [3, 4, 5])`。
+
+</details>
+
 ## Set 集合物件
 
-![Set operation](https://hackmd.io/_uploads/S1sUiOy-p.png)
+![Set operation](../img/ch04/06_set_operations.png)
 
 和數學上的集合相仿，Set 的特點：
 - 資料不能重複;
@@ -785,6 +862,31 @@ print('nick' in basketball)
 for player in basketball:
     print(player)
 ```
+
+### **4.3.1 隨堂測驗 (CCQ 4)**
+
+**問題**
+
+下列布林運算表達式執行後的結果為何？
+```python
+print(set([1, 2, 2, 3]) == set([3, 2, 1]))
+```
+
+A) `True`
+B) `False`
+C) `TypeError`
+D) `None`
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：A) `True`**
+
+* **解析**：
+  * 集合（Set）具備**元素不重複**的特性，因此 `set([1, 2, 2, 3])` 在建立時會自動去重，轉換成 `{1, 2, 3}`。
+  * 集合同時具備**無順序性**的特性，表示集合間的比較與元素排列順序無關。因此，集合 `{1, 2, 3}` 和 `{3, 2, 1}` 包含完全相同的成員，兩者相等比較為 `True`。
+
+</details>
 
 ## Dict集合物件
 
@@ -1014,11 +1116,34 @@ print (gStr)
 #  {"eng": 60, "math": 78, "phy": 100}
 ```
 
+### **4.4.1 隨堂測驗 (CCQ 5)**
+
+**問題**
+
+在 Python 的字典（Dict）物件中，下列哪一種資料型態**不能**被用來當作字典的鍵（Key）？
+
+A) 整數 (如 `123`)
+B) 字串 (如 `"name"`)
+C) 元組 (如 `(1, 2)`)
+D) 串列 (如 `[1, 2]`)
+
+<details>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
+
+**正確答案：D) 串列 (如 `[1, 2]`)**
+
+* **解析**：
+  * 字典的鍵（Key）必須是**可雜湊的 (Hashable)**，即該物件在其生命週期內其內容必須是不變（Immutable）的。
+  * 整數、字串以及元組（前提是元組內部沒有包含可變物件）都是不可變的，因此能安全作為字典的鍵。
+  * 串列（List）是**可變的 (Mutable)**，其內容隨時可以新增修改，其雜湊值會隨之變動，因此為非雜湊物件，若將其作為字典鍵會引發 `TypeError: unhashable type: 'list'`。
+
+</details>
+
 ## 應用 (台中 iBike)
 
 網路上有很多的開放資料，在這一小節當中，我們就到網路上找一些開放資料，透過我們所教的集合物件來做一些的分析，我們選用的這個例子是台中市政府的開放資料平臺 ([https://opendata.taichung.gov.tw/](https://opendata.taichung.gov.tw/))。進到系統後會看到關於資料集的描述，包含有交通、休閒的、公共的、出生的、婚姻的、老年的等等。
 
-![json file formatter](https://hackmd.io/_uploads/Bywqnukba.png)
+![json file formatter](../img/ch04/07_json_formatter.png)
 
 其中我們比較有興趣的是 iBike，可以在搜尋框打上 ibike 就可以找到。進入後會看到下面有一些的說明，例如解釋它是提供哪一種格式：JSON、XML, CSV 等等。JSON 的格式它就跟我們本章所講的 dictionary (dict) 是完全吻合的，所以我們就選用這一筆資料來做分析。再點進來，它有一些更詳細的說明，其實最重要的就是主要欄位的說明，因為它這裡有包含了每個欄位、站點的代號還有它的中文的名稱、總停車格等等，這些資料我們來做交互比對，而下面還有一些它的meta data，點擊這個 json 的檔案可以一鍵下載。可以看到，它是一個一大筆資料，用一個大括號框起來，有一個 `key` 和一個 `value`，包含逢甲大學、秋紅谷等等的。
 
