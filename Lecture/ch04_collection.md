@@ -785,8 +785,6 @@ sex, age = person               # 錯誤！數量不同
 
 #### 現代結構化模式匹配 `match` - `case` (Python 3.10+)
 
-![現代結構化模式匹配](../img/ch04/gemini_nb/slide.029.png)
-
 在 Python 3.10 之後，引入了 `match` 與 `case` 語法，類似其他語言的 `switch-case`，但功能更強大，特別適合用來**解構與匹配群集（如 List 或 Tuple）的結構與內容**。
 
 ```python
@@ -1040,8 +1038,6 @@ grade[3] = 100
 ```
 
 #### 現代字典合併方法：`|` 與 `|=` 運算子 (Python 3.9+)
-
-![現代字典合併方法](../img/ch04/gemini_nb/slide.040.png)
 
 在 Python 3.9 之前，如果要合併兩個字典，需要使用 `update()` 方法（會改變原字典）或者解構語法 `{**dict1, **dict2}`。
 從 Python 3.9 開始，引入了更簡潔直觀的**聯集運算子** `|` 與 `|=`：
