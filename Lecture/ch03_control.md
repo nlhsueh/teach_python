@@ -1,6 +1,8 @@
 Ch03 Logic and control
 ===
 
+![Ch03 邏輯與控制流](../img/ch03/gemini_nb/02_sequential.jpeg)
+
 我們常常說程式能力好的人具備邏輯的觀念，指的就是這個章節**邏輯運算**。此章節我們分為四個單元來做解說。首先是程式的執行流程，分為三個部分，循序的執行、分支以及迴圈。在上一個章節中，我們已經講解過所謂循序的執行，在這個章節我們會把重點放在分支跟迴圈。
 
 ![控制結構總覽](../img/ch03/01_flowchart_overview.png)
@@ -19,6 +21,8 @@ Ch03 Logic and control
 
 
 ## 3.1 分支
+
+![分支控制結構](../img/ch03/gemini_nb/03_branch.jpeg)
 
 ![if 分支流程圖](../img/ch03/03_branch_if.png)
 
@@ -191,6 +195,8 @@ if (young and male):
 
 良好的變數命名是程式碼可讀性和可維護性的關鍵因素之一，它使程式碼更容易理解，降低了出錯的風險，並促進了團隊合作。
 
+![乾淨的條件程式碼](../img/ch03/gemini_nb/05_clean_code.jpeg)
+
 ### 3.1.5 小範例
 
 一個小範例計算成績各等級的數量:
@@ -234,6 +240,8 @@ print ('獲得 C 的數量：', C)
 
 
 ## 3.2 迴圈
+
+![while 迴圈與 for 迴圈比較](../img/ch03/gemini_nb/09_while_for.jpeg)
 ### 3.2.1 while 迴圈
 
 如果我們要累加 1..5:
@@ -446,6 +454,8 @@ The grade of Jie is 86
 
 ### 3.2.3 for range 迴圈
 
+![range 函數的參數](../img/ch03/gemini_nb/08_range.jpeg)
+
 for ... range 迴圈
 
 ```python
@@ -487,6 +497,8 @@ print (sum)
 
 
 ### 3.2.4 迴圈的中斷
+
+![分支與迴圈控制控制流](../img/ch03/gemini_nb/14_branch_loop.jpeg)
 
 ```python
 sum = 0
@@ -623,6 +635,8 @@ while True:
 第一個滿足的數是 23, 是不是很方便呢？
 
 ### 3.3.2 用 turtle 套件繪圖
+
+![小烏龜幾何繪圖](../img/ch03/gemini_nb/13_geometric.jpeg)
 
 
 ![小烏龜繪圖幾何](../img/ch03/08_turtle_geom.png)
@@ -777,6 +791,8 @@ while not correct:
 ```
 
 這個版本我們把輸入、檢查是否是數字、是否介於 1-100 之間都放在 while 內; 如果不符合就會進行 continue -- 忽略下方的程式碼直接進入到下一個迴圈要求使用者重新輸入。
+
+![第三章總結與練習](../img/ch03/gemini_nb/15_conclusion.jpeg)
 
 ## 自我測驗
 

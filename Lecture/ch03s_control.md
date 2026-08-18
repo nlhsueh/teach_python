@@ -256,6 +256,13 @@ Feng Chia University
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch03/gemini_nb/02_sequential.jpeg" alt="循序結構" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch03/02_projects_overview.png" alt="範例專案總覽" />
 </div>
 
@@ -269,6 +276,13 @@ Feng Chia University
 
 <div class="centered-image">
   <img src="../img/ch03/03_branch_if.png" alt="if 分支流程圖" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/03_branch.jpeg" alt="分支控制結構" />
 </div>
 
 ---
@@ -396,9 +410,23 @@ if is_young_male:
 ```
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/05_clean_code.jpeg" alt="乾淨的條件程式碼" />
+</div>
+
+---
 <!-- _class: lead -->
 
 # **3.2 迴圈 (Loops)**
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/09_while_for.jpeg" alt="while 迴圈與 for 迴圈比較" />
+</div>
 
 ---
 
@@ -491,6 +519,13 @@ for i in range(10, 0, -2):
 ```
 
 ---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/08_range.jpeg" alt="range 函數的參數" />
+</div>
+
+---
 
 ## 3.2.4 巢狀迴圈 (Nested Loops)
 
@@ -531,6 +566,13 @@ for i in range(1, 10):
         continue # 跳過下方的累加，進入下一個 i
     sum += i
 ```
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/14_branch_loop.jpeg" alt="分支與迴圈控制控制流" />
+</div>
 
 ---
 
@@ -587,6 +629,13 @@ while True:
 
 <div class="centered-image">
   <img src="../img/ch03/08_turtle_geom.png" alt="小烏龜繪圖幾何" />
+</div>
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/13_geometric.jpeg" alt="小烏龜幾何繪圖" />
 </div>
 
 ---
@@ -666,6 +715,13 @@ while not correct:
     else:
         print("👉 太大了，請猜小一點")
 ```
+
+---
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch03/gemini_nb/15_conclusion.jpeg" alt="第三章總結與練習" />
+</div>
 
 ---
 <!-- _class: lead -->
