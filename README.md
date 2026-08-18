@@ -78,6 +78,27 @@
   - 進階開發技巧（強制輸出 JSON 模式、Function Calling 工具調用）與檢索增強生成（RAG）架構概念
   - 實作終端機多功能 AI 助理代理人（Agent）專題
 
+### 11. [第十一章：視窗遊戲設計 (Game Development)](Lecture/ch11_game.md)
+* **學習重點**：
+  - Pygame 視窗初始化、顏色配置與螢幕座標系
+  - 遊戲迴圈（Game Loop）三大核心階段設計（事件、狀態更新、渲染）
+  - 鍵盤與滑鼠的單次事件處理（Event Queue）與連續控制輪詢（Key Polling）
+  - 雙重緩衝區（Double Buffering）原理與 `pygame.display.flip()`
+  - 繼承 `pygame.sprite.Sprite` 之物件導向精靈開發與 Sprite Group 管理
+  - AABB 矩形碰撞檢測與 Rect 定位屬性
+  - 音效與背景音樂（Mixer）載入播放
+  - 實作經典太空射擊（Space Shooter）與粒子爆炸特效專題
+
+### 12. [第十二章：Python Web 開發基礎 (Web Development)](Lecture/ch12_web.md)
+* **學習重點**：
+  - 用戶端-伺服器端（Client-Server）請求-回應（Request-Response）運作機制
+  - HTTP 通訊協定規範（URL 結構、GET/POST 方法差異、常見 HTTP 狀態碼）
+  - 微型網頁框架 Flask 的環境建置、基本伺服器運作與路由（Routing）系統
+  - 動態路由參數讀取與動態 URL 參數抓取
+  - 使用 Jinja2 模板引擎進行動態 HTML 網頁渲染（變數、條件、迴圈邏輯）
+  - 網頁表單（Form）資料接收（POST 請求資料擷取 `request.form`）
+  - 實作「學生學籍與成績查詢系統」與 RESTful JSON API 開發
+
 ---
 
 ## 講義與投影片對照表
