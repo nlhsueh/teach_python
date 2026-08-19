@@ -3,6 +3,8 @@ Ch11 Game Development in Python
 
 # Python 視窗遊戲設計 (Pygame)
 
+![Python 視窗遊戲設計](../img/ch11/ch11_07_space_shooter_gameplay.png)
+
 本章將帶領你探討如何使用 Python 的主流遊戲開發套件 **Pygame** 設計視窗型 2D 遊戲。當你學會了物件導向設計 (OOP) 後，遊戲設計是最能發揮這些觀念的實務領域。在遊戲中，每一個玩家、敵人、子彈、障礙物，都可以表示成一個個獨立的物件，並且藉由**遊戲迴圈 (Game Loop)** 進行高頻的狀態更新與畫面繪製。
 
 本章包含以下核心單元：
@@ -86,23 +88,21 @@ pygame.quit()
 sys.exit()
 ```
 
+#### 程式執行成果畫面
+
+執行上述程式後，系統將彈出一個 800x600 像素的視窗，並精準繪製出指定座標的幾何圖形：
+
+![我的第一個 Pygame 遊戲視窗執行畫面](../img/ch11/ch11_01_basic_window.png)
+
 ---
 
 ### 11.1.2 螢幕座標系統
 
 在數學的笛卡爾座標系中，Y 軸向上為正數。然而在**電腦顯示器座標系統中，原點 $(0, 0)$ 位於螢幕的「左上角」**：
-* **X 軸**：向「右」為正數（與數學相同）。
-* **Y 軸**：向「下」為正數。如果你讓一個物體的 Y 座標增加，它會在畫面上「往下移動」。
+* **X 軸**：向「右」為正數（與數學相同，代表寬度 Width）。
+* **Y 軸**：向「下」為正數（代表高度 Height）。如果你讓一個物體的 Y 座標增加，它會在畫面上「往下移動」；Y 座標減少則「往上移動」。
 
-```
-(0,0) ---------------------> +X
-  |
-  |      (x, y)
-  |        o
-  |
-  v
- +Y
-```
+![Pygame 螢幕座標系統圖解](../img/ch11/ch11_02_coordinate_system.png)
 
 ---
 
@@ -110,12 +110,7 @@ sys.exit()
 
 一個視窗遊戲之所以能夠流暢播放動畫且即時回應你的操作，全靠每秒重複執行數十次的**遊戲迴圈 (Game Loop)**：
 
-```
-       +---------------------------------------------+
-       |                                             |
-       v                                             |
-[ 事件監聽 (Event) ] -> [ 狀態更新 (Update) ] -> [ 畫面渲染 (Render) ]
-```
+![經典遊戲迴圈三大階段流程圖](../img/ch11/ch11_03_game_loop.png)
 
 1. **事件監聽 (Event Phase)**：讀取作業系統傳遞的鍵盤、滑鼠、視窗關閉等硬體事件。
 2. **狀態更新 (Update Phase)**：計算角色移動、物理碰撞、分數增減、子彈飛行路徑等邏輯。
@@ -262,6 +257,12 @@ pygame.quit()
 sys.exit()
 ```
 
+#### 程式執行成果畫面
+
+長按鍵盤方向鍵可平滑操控青色方塊，滑鼠在畫面上任意點擊則可於即時座標處動態留下紅色標記：
+
+![鍵盤與滑鼠整合控制示範執行畫面](../img/ch11/ch11_04_input_control.png)
+
 ---
 
 ### **11.2.3 隨堂測驗 (CCQ 3)**
@@ -308,12 +309,25 @@ D) 自動執行物理碰撞演算法。
 * `rect.center`：代表中心點的 $(x, y)$ 元組。
 * `rect.centerx` / `rect.centery`：中心點的 X 與 Y 座標。
 
+![pygame.Rect 內建座標定位屬性詳解](../img/ch11/ch11_05_rect_properties.png)
+
 使用這些屬性可以非常輕易地定位物體，例如讓子彈發射在玩家的上方正中央：
 `bullet.rect.centerx = player.rect.centerx; bullet.rect.bottom = player.rect.top`。
 
 ---
 
-### **11.3.3 隨堂測驗 (CCQ 4)**
+### 11.3.3 碰撞偵測機制 (Collision Detection)
+
+在 2D 遊戲中，最常見的碰撞判定方式為 **AABB (Axis-Aligned Bounding Box)** 矩形邊界碰撞，以及由 Sprite Group 提供的高階多對多碰撞函式：
+
+![Pygame 碰撞檢測機制圖解](../img/ch11/ch11_06_collision_detection.png)
+
+1. **單一實體碰撞 (`pygame.sprite.spritecollide`)**：檢查單一 Sprite 是否與某個 Group 中的成員碰撞。
+2. **群組對群組碰撞 (`pygame.sprite.groupcollide`)**：高效檢測兩大群組（如子彈群組與隕石群組）之間的所有實體交會，並可設定自動刪除碰撞實體。
+
+---
+
+### **11.3.4 隨堂測驗 (CCQ 4)**
 
 **問題**
 
@@ -325,7 +339,7 @@ C) `self.speed` 與 `self.direction`
 D) `self.width` 與 `self.height`
 
 <details>
-<summary>點幕查看【隨堂測驗】答案與解析</summary>
+<summary>點擊查看【隨堂測驗】答案與解析</summary>
 
 **正確答案：B) `self.image`（外觀 Surface）與 `self.rect`（邊框位置 Rect）**
 
@@ -337,7 +351,7 @@ D) `self.width` 與 `self.height`
 
 ---
 
-### **11.3.4 隨堂測驗 (CCQ 5)**
+### **11.3.5 隨堂測驗 (CCQ 5)**
 
 **問題**
 
@@ -596,6 +610,14 @@ if __name__ == "__main__":
     run_game()
 ```
 
+#### 完整遊戲實際執行成果畫面
+
+遊戲運行時包含流暢的星空背景、隕石隨機降落、雷射連續射擊判定，以及玩家生命耗盡後的重開機制：
+
+| 戰鬥進行中 (Gameplay) | 遊戲結束畫面 (Game Over) |
+| :---: | :---: |
+| ![太空射擊大戰實際遊玩畫面](../img/ch11/ch11_07_space_shooter_gameplay.png) | ![太空射擊大戰遊戲結束畫面](../img/ch11/ch11_08_space_shooter_gameover.png) |
+
 ---
 
 ## 11.6 本章課後進階挑戰專題
@@ -611,6 +633,9 @@ if __name__ == "__main__":
 
 ### 挑戰 2：粒子爆炸效果 (Particle Effect)
 當子彈撞擊隕石時，不要只讓隕石瞬間消失，而是向四周產生數個隨機飄散的小圓形粒子：
+
+![挑戰專題：粒子爆炸特效展示](../img/ch11/ch11_09_particle_explosion.png)
+
 ```python
 class Particle(pygame.sprite.Sprite):
     def __init__(self, x, y):

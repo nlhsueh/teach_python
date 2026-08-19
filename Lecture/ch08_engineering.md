@@ -80,6 +80,10 @@ except np.linalg.LinAlgError as e:
     print(f"電路矩陣無解或為奇異矩陣：{e}")
 ```
 
+#### 程式執行成果畫面
+
+![網目電流聯立方程求解終端機執行成果](../img/ch08/ch08_01_mesh_current.png)
+
 #### 程式碼細部解析
 * `np.array`：用來建立二維或一維陣列。係數矩陣必須是方陣（即列數等於行數）。
 * `np.linalg.solve(A, B)`：其底層採用 LAPACK 函式庫中的 LU 分解法（LU Decomposition）求解，這比我們手動求逆矩陣 `np.linalg.inv(A) @ B` 更具數值穩定性且速度更快。
@@ -146,6 +150,10 @@ plt.grid(True)
 plt.legend()
 plt.show()
 ```
+
+#### 暫態響應模擬結果圖
+
+![二階 RLC 暫態響應與阻尼特性模擬圖](../img/ch08/ch08_02_rlc_simulation.png)
 
 #### RLC 阻尼特性深入探討
 * **欠阻尼 (Underdamped, $R < 2 \sqrt{L/C}$)**：本例中 $R = 50 < 2\sqrt{0.1/0.0001} = 63.24$，因此波形會產生上下震盪，最後緩慢趨於穩態值 10V。
@@ -285,6 +293,10 @@ plt.tight_layout()
 plt.show()
 ```
 
+#### 訊號時域與頻域 FFT 成果圖
+
+![時域雜訊訊號與快速傅立葉變換頻譜分析圖](../img/ch08/ch08_03_fft_analysis.png)
+
 #### 頻率分析與工程應用
 * 從時域圖中，受強力噪聲影響，我們幾乎無法肉眼辨識原始波形。
 * 但在下方的頻域圖中，FFT 演算法在 $50\,\text{Hz}$ 與 $120\,\text{Hz}$ 處產生了兩個清晰且尖銳的振幅峰值，這正是傅立葉變換在濾波器設計與頻譜偵測上的巨大威力。
@@ -390,6 +402,10 @@ plt.legend()
 plt.show()
 ```
 
+#### PID 控制階躍響應成果圖
+
+![PID 控制器閉迴路溫度回授控制階躍響應](../img/ch08/ch08_04_pid_temp_control.png)
+
 ---
 
 ### 8.3.2 機器人二軸機械手臂運動學 (Kinematics)
@@ -450,6 +466,10 @@ print("\n--- 逆向運動學計算結果 ---")
 print(f"給定目標座標：({x_end:.4f}, {y_end:.4f})")
 print(f"解出關節角度：theta1={np.degrees(sol_t1):.2f}°, theta2={np.degrees(sol_t2):.2f}°")
 ```
+
+#### 機械手臂運動學空間模擬圖
+
+![二維雙關節機械手臂運動學幾何模擬](../img/ch08/ch08_05_robot_arm_kinematics.png)
 
 ---
 
@@ -555,6 +575,10 @@ finally:
     hw_thread.join()
     print("程式結束。")
 ```
+
+#### 虛擬序列埠讀取執行成果
+
+![虛擬序列埠感測器數據流讀取執行畫面](../img/ch08/ch08_06_serial_sensor_stream.png)
 
 ---
 
@@ -708,6 +732,10 @@ def start_client():
         client_socket.close()
 ```
 
+#### 多用戶 TCP 聊天室連線執行成果
+
+![多用戶 TCP Socket 聊天室多視窗連線執行畫面](../img/ch08/ch08_07_tcp_chat_room.png)
+
 ---
 
 ### 8.5.2 隨堂測驗 (CCQ 5)
@@ -796,5 +824,9 @@ plt.grid(True)
 plt.legend()
 plt.show()
 ```
+
+#### 數位濾波器模擬輸出成果
+
+![數位一階 RC 低通濾波器模擬與噪聲抑制對比](../img/ch08/ch08_08_digital_lowpass_filter.png)
 
 ![本章工程專題與應用實作小結](../img/ch08/gemini_nb/Python_Smart_System_Engineering.014.jpeg)

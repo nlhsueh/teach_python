@@ -283,6 +283,14 @@ print(f"I1={I[0]:.3f}A, I2={I[1]:.3f}A, I3={I[2]:.3f}A")
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch08/gemini_nb/01_mesh_current.jpeg" alt="網目電流聯立方程求解終端機執行成果" />
+</div>
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch08/gemini_nb/Python_Smart_System_Engineering.004.jpeg" alt="常微分方程與 RLC 暫態響應模擬" />
 </div>
 
@@ -308,6 +316,14 @@ initial_state = [0.0, 0.0] # 初始狀態無電壓、無電流
 sol = solve_ivp(rlc_ode, t_span, initial_state, t_eval=np.linspace(0, 0.05, 500))
 # sol.t 包含時間序列，sol.y[0] 包含電容充電電壓軌跡
 ```
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/02_rlc_simulation.jpeg" alt="二階 RLC 暫態響應模擬成果" />
+</div>
 
 ---
 
@@ -438,6 +454,14 @@ amplitude = np.abs(fft_result[:half_n]) * 2 / n
 
 ---
 
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/03_fft_analysis.jpeg" alt="快速傅立葉變換 FFT 頻譜分析成果圖" />
+</div>
+
+---
+
 # 8.3 自動控制與機械手臂運動學 (Control & Robotics)
 
 * **自動控制與 PID 閉迴路系統**：
@@ -495,6 +519,14 @@ class PIDController:
 <!-- _class: full-image-slide -->
 
 <div class="centered-image">
+  <img src="../img/ch08/gemini_nb/04_pid_temp_control.jpeg" alt="PID 溫度回授控制階躍響應成果圖" />
+</div>
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
   <img src="../img/ch08/gemini_nb/Python_Smart_System_Engineering.008.jpeg" alt="二軸機械手臂正向運動學與逆向運動學" />
 </div>
 
@@ -521,6 +553,14 @@ class RoboticArm2R:
         
         return theta1, theta2
 ```
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/05_robot_arm_kinematics.jpeg" alt="二軸機械手臂幾何運動學成果圖" />
+</div>
 
 ---
 
@@ -586,6 +626,14 @@ class RoboticArm2R:
 
 <div class="centered-image">
   <img src="../img/ch08/gemini_nb/Python_Smart_System_Engineering.010.jpeg" alt="虛擬序列埠與多執行緒模擬" />
+</div>
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/06_serial_sensor_stream.jpeg" alt="虛擬序列埠數據流讀取執行畫面" />
 </div>
 
 ---
@@ -657,6 +705,14 @@ class RoboticArm2R:
 
 ---
 
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/07_tcp_chat_room.jpeg" alt="多用戶 TCP Socket 聊天室連線成果" />
+</div>
+
+---
+
 ## Concept Check Question (CCQ 5)
 
 <div class="ccq-columns">
@@ -717,6 +773,14 @@ server_socket.setsockopt(socket.SOL_SOCKET,
 
 <div class="centered-image">
   <img src="../img/ch08/gemini_nb/Python_Smart_System_Engineering.013.jpeg" alt="數位濾波器設計與低通濾波器模擬" />
+</div>
+
+---
+
+<!-- _class: full-image-slide -->
+
+<div class="centered-image">
+  <img src="../img/ch08/gemini_nb/08_digital_lowpass_filter.jpeg" alt="數位一階 RC 低通濾波器模擬成果" />
 </div>
 
 ---
