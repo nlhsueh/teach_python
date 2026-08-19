@@ -22,8 +22,6 @@
 
 程式碼無所不在，它構成了我們日常體驗的隱形架構。理解它，就是理解我們身處的這個現代世界。
 
-![The Code Beneath Reality](../img/ch01/gemini_nb/02_code_reality.jpeg)
-
 ---
 
 ### **1.1.2 程式語言在各大領域的應用**
@@ -40,13 +38,13 @@
 
 * **醫療保健**：程式在醫療領域扮演關鍵角色，從分析 X 光、MRI 等醫學影像以輔助醫生診斷，到管理龐大的電子病歷系統，甚至在藥物開發階段模擬分子交互作用，都離不開程式的應用。
 
-![程式語言在各大領域的應用](../img/ch01/gemini_nb/03_code_app.jpeg)
-
 ---
 
 ### **1.1.3 AI 時代，為何程式語言更加重要？**
 
 許多人認為，隨著 ChatGPT 這類強大 AI 的出現，似乎只要會「下指令 (Prompting)」，就不再需要寫程式了。這其實是一個誤解。在 AI 時代，程式語言的重要性不減反增，它將你從單純的 **AI 使用者**，提升為能夠駕馭 AI 的**創造者**。
+
+![The AI Paradox: AI User vs AI Creator](../img/ch01/gemini_nb/Modern_Code_Mastery.003.jpeg)
 
 > **「學習寫程式能拓展你的心智，幫助你更好地思考。它創造了一種我認為在所有領域都有幫助的思維模式。」**
 >
@@ -58,13 +56,13 @@
 
 * **提升工作價值與不可替代性**：當 AI 逐漸取代重複性高的基礎工作時，能夠**利用程式駕馭 AI 來解決複雜問題**的人才，其價值將越發凸顯。懂得程式，你才能設計出更高效的工作流程，成為那個「善用 AI 的人」，而不是「被 AI 取代的人」。
 
-![AI User vs AI Creator](../img/ch01/gemini_nb/04_ai_creator.jpeg)
-
 ---
 
 ### **1.1.4 運算思維 (Computational Thinking) 的四大基石**
 
 學習寫程式，最核心的收穫並不是背誦特定語法，而是培養**運算思維 (Computational Thinking)**。運算思維是一種結構化的思考方法，幫助我們在面對任何領域的複雜問題時，都能有條不紊地找出精準的解決方案。
+
+![Computational Thinking 跨領域賦能](../img/ch01/gemini_nb/Modern_Code_Mastery.006.jpeg)
 
 運算思維包含以下四大核心基石：
 
@@ -103,6 +101,8 @@
 
 Python 由吉多·范羅蘇姆 (Guido van Rossum) 於 1989 年聖誕節期間創造。他期望打造一個兼具 ABC 語言的優雅強大，又避免其封閉性的新語言。Python 的命名靈感則來自他喜愛的 BBC 喜劇《蒙提·派森的飛行馬戲團》(Monty Python's Flying Circus)。
 
+![The Universal Origin: Python 的起源與應用生態](../img/ch01/gemini_nb/Modern_Code_Mastery.004.jpeg)
+
 如今，Python 已連續多年在 TIOBE 與 Stack Overflow 開發者調查中蟬聯**全球最受歡迎的程式語言第一名**，其主要優勢如下：
 
 * **語法簡潔、接近自然語言**：Python 捨棄了傳統 C/Java 繁瑣的大括號 `{}` 與結尾分號 `;`，改以乾淨的縮排 (Indentation) 來界定程式區塊。名言 *"Life is short, you need Python"*（人生苦短，我用 Python）正是其精神寫照。
@@ -137,7 +137,7 @@ import this
 
 這套哲學時刻提醒開發者：**程式碼被閱讀的次數，遠多於被撰寫的次數。** 寫出結構清晰、易讀易懂的程式碼，是每一位 Python 工程師的終極追求。
 
-![The Zen of Python](../img/ch01/gemini_nb/06_zen.jpeg)
+![The Zen of Python](../img/ch01/gemini_nb/Modern_Code_Mastery.005.jpeg)
 
 ---
 
@@ -217,6 +217,8 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
 
 工欲善其事，必先利其器。現代 Python 開發工具大致可分為三大類：
 
+![The Modern Developer Toolkit](../img/ch01/gemini_nb/Modern_Code_Mastery.007.jpeg)
+
 1. **線上雲端環境 (Cloud / Web)**：
    * **Google Colab**：Google 提供的免費雲端 Jupyter Notebook，具備「免安裝」、「開箱即用資料科學套件」、「免費 GPU 算力」及內建 Gemini AI 輔助功能，是初學者探索程式設計的最佳起點。
    * **Jupyter Notebook**：以網頁為基礎的互動式運算環境，廣泛用於數據分析與視覺化呈現。
@@ -235,7 +237,8 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
 
 對於初學者來說，有兩種主要的路徑可以選擇：**使用線上開發環境**或**在自己的電腦上安裝**。
 
-![開發環境選擇流程](../img/ch01/env_choice_flow.png)
+![The Setup Decision Tree](../img/ch01/gemini_nb/Modern_Code_Mastery.008.jpeg)
+
 
 #### **路徑一：線上開發環境 (Google Colab)**
 
@@ -253,19 +256,17 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
   4. 登入後，點擊左上角的「檔案」(`File`) -> 「新增筆記本」(`New notebook`)。
   5. 現在，你就可以在出現的區塊（稱為儲存格, Cell）中輸入並執行你的第一行 Python 程式碼了！
 
-![Google Colab 零摩擦快速起步](../img/ch01/gemini_nb/09_colad.jpeg)
-
 ---
 
 #### **路徑二：在本機電腦安裝 (專業開發的必經之路)**
 
-當你熟悉了基本語法後，建立本地開發環境是讓你成為更專業開發者的下一步。我們的推薦組合是 **Python 官方程式 + Visual Studio Code (VS Code) 編輯器**。
+當你熟悉了基本語法後，建立本地開發環境是讓你成為更專業開發者的下一步。我們的推薦組合是 **Python 官方核心 + Visual Studio Code (VS Code) 編輯器 + Microsoft Python 擴充套件**。
+
+![Local Setup Architecture](../img/ch01/gemini_nb/Modern_Code_Mastery.009.jpeg)
 
 ##### **安裝前的準備：檢查電腦是否已安裝 Python**
 
 在我們開始安裝前，先花一分鐘檢查你的電腦是否已經安裝了 Python。許多電腦（特別是 Mac）可能已經內建了某個版本的 Python。
-
-![Python 安裝檢查流程](../img/ch01/python_check_flow.png)
 
 * **Windows 系統檢查方法 🪟**
   1. 點擊桌面左下角的「開始」按鈕，輸入 `cmd` 並打開「**命令提示字元**」。
@@ -295,7 +296,6 @@ Python 自 1989 年問世以來，經歷了數個重大里程碑。了解這些�
 
 若檢查後發現需要安裝或更新，請依照以下步驟操作：
 
-![第一階段：安裝 Python 核心流程](../img/ch01/python_install_flow.png)
 
 1. **Windows 系統安裝指南**：
    * **下載 Python**：前往 Python 官方網站 [https://www.python.org](https://www.python.org)，將滑鼠移到 `Downloads` 選單上，點擊 `Download for Windows` 下的 **Python [最新版本號]** 按鈕。
@@ -393,7 +393,7 @@ D) Python 程式碼中的字串會全部變成亂碼。
 
 這些是歷久不衰的學習原則，無論科技如何演進，它們都是建立扎實程式能力的基石。
 
-![The 4 Pillars of Mastery](../img/ch01/gemini_nb/11_master.jpeg)
+![The Timeless Learning Mindset](../img/ch01/gemini_nb/Modern_Code_Mastery.010.jpeg)
 
 **1. 動手實作，拒絕只讀不動**
 程式設計是一種技能，而非純粹的知識，如同游泳或騎自行車，無法光靠看書學會。你必須親身投入，讓肌肉和大腦形成記憶。
@@ -421,7 +421,7 @@ D) Python 程式碼中的字串會全部變成亂碼。
 
 在 AI 工具普及的今天，學習方式正在發生革命性的變化。聰明的學習者不再是從零開始，而是站在 AI 的肩膀上，將精力專注於更高層次的思考。
 
-![Learning With AI Paradigm Shift](../img/ch01/gemini_nb/12_AI_era.jpeg)
+![Learning in the AI Generation](../img/ch01/gemini_nb/Modern_Code_Mastery.011.jpeg)
 
 **1. 重新定義實作：從「被動接收」到「主動探究」**
 AI 工具可以瞬間生成程式碼，但真正的學習始於你對這份答案的「反思」與「探究」。
@@ -440,7 +440,7 @@ AI 徹底改變了除錯的體驗，它能針對你的程式碼提供極具上�
 > **優質的提問：「我正在學習 Python，我寫了一段函式希望能計算購物車的總金額。這是我目前的程式碼 (貼上程式碼)。我期望它輸出 500，但它卻輸出了 300，而且沒有任何錯誤訊息。請問我的邏輯可能錯在哪裡？」**
 一個好的提問應該包含：**背景、目標、已有的嘗試、期望與實際結果的差異**。
 
-![The Anatomy of a Perfect Prompt](../img/ch01/gemini_nb/13_prompt.jpeg)
+![Anatomy of a Perfect Prompt](../img/ch01/gemini_nb/Modern_Code_Mastery.012.jpeg)
 
 **4. 專注於高層次思維：問題拆解與系統設計**
 當 AI 能處理越來越多底層的語法實作時，人類開發者的價值便體現在更高層次的抽象思考能力上。
@@ -495,7 +495,7 @@ AI 徹底改變了除錯的體驗，它能針對你的程式碼提供極具上�
 
 我們理解，純粹的線上自學有時會讓人感到孤獨與挫折，尤其是在程式卡關、求助無門的時候。為了解決這個痛點，本課程提供了一個結合「線上解題系統 (Online Judge)」與「AI 輔助」的獨特學習環境—— **Smart Coding Tutor**。
 
-![Smart Coding Tutor](../img/ch01/gemini_nb/14_sct.jpeg)
+![Smart Coding Tutor Framework](../img/ch01/gemini_nb/Modern_Code_Mastery.013.jpeg)
 
 #### **什麼是「線上解題系統 (Online Judge, OJ)」？**
 
@@ -517,6 +517,8 @@ AI 徹底改變了除錯的體驗，它能針對你的程式碼提供極具上�
 * **引導式提示 (Scaffolding Hints)**：AI 不會直接給出標準程式碼剝奪你的思考機會，而是點出邏輯漏洞，例如：「*你的迴圈變數在每次迭代時都沒有增加，這會導致無窮迴圈喔！*」
 * **概念盲點自動推薦**：根據你的錯誤模式，動態推薦對應章節的觀念補充教材。
 * **智慧適應性路徑**：當你順利通關後，自動推薦難度適中的下一道挑戰題。
+
+![Personalizing the Path 個人化學習路徑](../img/ch01/gemini_nb/Modern_Code_Mastery.014.jpeg)
 
 ---
 
