@@ -3,7 +3,7 @@ Ch12 Web Development in Python
 
 # Python Web 開發基礎 (Flask)
 
-![Python Web 開發 (Flask)](../img/ch12/ch12_06_grade_system_home.png)
+![Python Web 開發 (Flask)](../img/ch12/gemini_nb/Modern_Flask_Web_Development.002.jpeg)
 
 本章將帶領你探討如何使用 Python 開發簡單且實用的 Web 應用程式。在資訊與網路時代，將程式邏輯部署在網路上，讓使用者能透過瀏覽器進行操作，是極其普遍的軟體應用模式。我們將先建立基礎的網頁通訊與網路協定知識，接著學習如何使用 Python 最輕量流暢的微型框架 **Flask** 架設網頁伺服器。
 
@@ -26,7 +26,9 @@ Ch12 Web Development in Python
 * **用戶端 (Client)**：通常是指玩家或使用者電腦上的瀏覽器（如 Chrome, Safari）。它負責發起連線請求，並將收到的 HTML 程式碼繪製成視覺畫面。
 * **伺服器端 (Server)**：一台持續在網路監聽連線的電腦。當它收到請求後，執行相對應的 Python 程式邏輯（如查詢資料庫），並將結果打包成網頁回傳給用戶端。
 
-![Web 請求-回應架構圖解](../img/ch12/ch12_01_client_server.png)
+![Web 請求-回應架構圖解](../img/ch12/gemini_nb/Modern_Flask_Web_Development.002.jpeg)
+
+![Web 請求-回應實務流程圖](../img/ch12/ch12_01_client_server.png)
 
 ---
 
@@ -39,11 +41,15 @@ Ch12 Web Development in Python
 * **404 Not Found**：伺服器上找不到用戶所請求的網頁路徑。
 * **500 Internal Server Error**：伺服器端的程式碼（例如 Python 邏輯）執行時拋出未捕獲的異常（當機）。
 
+![HTTP 狀態碼核心分類與意義](../img/ch12/gemini_nb/Modern_Flask_Web_Development.003.jpeg)
+
 ---
 
 ### 12.1.3 HTTP 請求方法：GET vs POST
 
 當用戶端向伺服器傳送資料時，最常使用以下兩種 HTTP 方法 (HTTP Methods)：
+
+![HTTP 請求方法 GET 與 POST 的特性與差異](../img/ch12/gemini_nb/Modern_Flask_Web_Development.004.jpeg)
 
 ![HTTP 狀態碼與 GET/POST 請求比較](../img/ch12/ch12_02_http_status.png)
 
@@ -106,9 +112,13 @@ D) 500 Internal Server Error
 
 ## 12.2 Flask 微型 Web 框架入門
 
+![Flask 微型 Web 框架架構與設計理念](../img/ch12/gemini_nb/Modern_Flask_Web_Development.006.jpeg)
+
 Python 有許多 Web 框架，其中以 **Django**（重量級、內建功能極多）與 **Flask**（輕量級、自由度極高）最著名。對於初學者，Flask 是學習 Web 原理的最佳起點。
 
 ### 12.2.1 建立最簡 Flask 伺服器
+
+![Flask 路由分派與裝飾器機制](../img/ch12/gemini_nb/Modern_Flask_Web_Development.007.jpeg)
 
 請在終端機安裝 Flask：
 ```bash
@@ -149,6 +159,8 @@ if __name__ == '__main__':
 ---
 
 ### 12.2.2 動態路由參數擷取
+
+![Flask 動態路由參數與轉換器類型](../img/ch12/gemini_nb/Modern_Flask_Web_Development.008.jpeg)
 
 有時候，網址中會包含變數（例如使用者的名稱或 ID）。Flask 允許我們直接在裝飾器中宣告變數欄位：
 
@@ -209,12 +221,16 @@ D) 限定只有名為 `username` 的使用者才能訪問該網址。
 
 ### 12.3.1 Jinja2 模板基礎語法
 
+![Jinja2 模板引擎與 HTML 渲染機制](../img/ch12/gemini_nb/Modern_Flask_Web_Development.009.jpeg)
+
 Jinja2 允許我們在 HTML 檔案中加入 Python 變數與控制結構：
 * `{{ variable }}`：印出變數的數值。
 * `{% if ... %}{% endif %}`：條件判斷。
 * `{% for item in list %}{% endfor %}`：迴圈輸出。
 
 ### 12.3.2 GET/POST 請求與表單處理
+
+![Flask Request 物件與表單資料接收](../img/ch12/gemini_nb/Modern_Flask_Web_Development.010.jpeg)
 
 我們可以使用 `request` 物件來讀取用戶傳送進來的表單數據：
 * **GET 參數**：使用 `request.args.get('key')` 讀取網址參數。
@@ -307,6 +323,8 @@ D) 這是一個錯誤宣告，HTML 表單不支援 GET 方法。
 ---
 
 ## 12.4 綜合實作專案：成績查詢與登記系統
+
+![成績查詢與登記系統全端架構](../img/ch12/gemini_nb/Modern_Flask_Web_Development.011.jpeg)
 
 現在我們將學到的 Web 開發技術融入實務，建立一個完整的「學期成績登記與查詢系統」。
 
@@ -458,6 +476,12 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+#### PRG 模式與搜尋過濾架構
+
+![Post-Redirect-Get (PRG) 模式機制](../img/ch12/gemini_nb/Modern_Flask_Web_Development.012.jpeg)
+
+![Query String 搜尋與即時過濾架構](../img/ch12/gemini_nb/Modern_Flask_Web_Development.013.jpeg)
+
 #### 完整成績系統實際執行成果畫面
 
 系統首頁提供直觀的學生資料表、GPA 自動評等與即時新增表單；搜尋頁面則展示 GET 參數過濾結果：
@@ -475,6 +499,8 @@ if __name__ == '__main__':
 ### 挑戰 1：提供 RESTful JSON API 端點
 在現代 Web 開發中，後端常常只負責回傳資料，讓前端網頁或手機 App 進行串接。請實作一個 `/api/students` 的 API 路由，能將目前記憶體中的所有學生成績以 JSON 格式回傳：
 
+![RESTful JSON API 設計理念與 jsonify](../img/ch12/gemini_nb/Modern_Flask_Web_Development.014.jpeg)
+
 ![RESTful JSON API 端點輸出畫面](../img/ch12/ch12_08_json_api.png)
 
 ```python
@@ -488,3 +514,7 @@ def get_students_json():
 
 ### 挑戰 2：防呆防空值驗證
 修改 `/add` 的邏輯，在寫入資料庫前加入檢查機制。如果學號已經重複，或者成績不合常規，返回 HTTP 400 錯誤訊息，以確保資料的正確性。
+
+---
+
+![本章 Web 開發實務與最佳實踐總結](../img/ch12/gemini_nb/Modern_Flask_Web_Development.015.jpeg)

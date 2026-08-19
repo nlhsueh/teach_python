@@ -3,7 +3,7 @@ Ch11 Game Development in Python
 
 # Python 視窗遊戲設計 (Pygame)
 
-![Python 視窗遊戲設計](../img/ch11/ch11_07_space_shooter_gameplay.png)
+![Python 視窗遊戲設計](../img/ch11/gemini_nb/Architecture_of_Play.002.jpeg)
 
 本章將帶領你探討如何使用 Python 的主流遊戲開發套件 **Pygame** 設計視窗型 2D 遊戲。當你學會了物件導向設計 (OOP) 後，遊戲設計是最能發揮這些觀念的實務領域。在遊戲中，每一個玩家、敵人、子彈、障礙物，都可以表示成一個個獨立的物件，並且藉由**遊戲迴圈 (Game Loop)** 進行高頻的狀態更新與畫面繪製。
 
@@ -49,7 +49,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
+BLUE = (0, 255, 0)
 
 # 4. 遊戲主要控制變數
 running = True
@@ -98,6 +98,8 @@ sys.exit()
 
 ### 11.1.2 螢幕座標系統
 
+![Pygame 螢幕座標空間與數學笛卡爾座標比較](../img/ch11/gemini_nb/Architecture_of_Play.003.jpeg)
+
 在數學的笛卡爾座標系中，Y 軸向上為正數。然而在**電腦顯示器座標系統中，原點 $(0, 0)$ 位於螢幕的「左上角」**：
 * **X 軸**：向「右」為正數（與數學相同，代表寬度 Width）。
 * **Y 軸**：向「下」為正數（代表高度 Height）。如果你讓一個物體的 Y 座標增加，它會在畫面上「往下移動」；Y 座標減少則「往上移動」。
@@ -107,6 +109,8 @@ sys.exit()
 ---
 
 ### 11.1.3 經典遊戲迴圈的三大階段
+
+![遊戲迴圈的脈動：輸入、更新、渲染與 FPS 控制](../img/ch11/gemini_nb/Architecture_of_Play.004.jpeg)
 
 一個視窗遊戲之所以能夠流暢播放動畫且即時回應你的操作，全靠每秒重複執行數十次的**遊戲迴圈 (Game Loop)**：
 
@@ -156,7 +160,7 @@ D) 設定遊戲中計時器的初始倒數時間為 60 秒。
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
 
-**正確答案：C) 控制遊戲迴圈的每秒幀數 (FPS)最高為 60，確保遊戲邏輯的更新速度在不同性能的電腦上保持一致。**
+**正確答案：C) 控制遊戲迴圈的每秒幀數 (FPS) 最高為 60，確保遊戲邏輯的更新速度在不同性能的電腦上保持一致。**
 
 * **解析**：
   * 如果沒有使用 `clock.tick(60)`，遊戲迴圈會以電腦 CPU 所能跑的最快速度（例如每秒幾千次）高頻循環。
@@ -172,6 +176,8 @@ D) 設定遊戲中計時器的初始倒數時間為 60 秒。
 遊戲需要能接收玩家的鍵盤或滑鼠控制。在 Pygame 中，有兩種讀取按鍵輸入的方式，其適合的應用情境截然不同。
 
 ### 11.2.1 事件佇列 vs 按鍵狀態輪詢
+
+![事件佇列與按鍵狀態輪詢機制比較](../img/ch11/gemini_nb/Architecture_of_Play.005.jpeg)
 
 1. **事件佇列 (Event Queue - `pygame.event.get()`)**：
    * 原理：當你按下一瞬間或放開一瞬間，作業系統會產生一個「單次事件」放入隊列中。
@@ -197,7 +203,6 @@ import sys
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("鍵盤與滑鼠整合控制示範")
-
 clock = pygame.time.Clock()
 
 # 方塊的初始屬性
@@ -296,11 +301,17 @@ D) 自動執行物理碰撞演算法。
 
 ### 11.3.1 精靈類別 (`pygame.sprite.Sprite`)
 
+![精靈類別的解剖：Surface 與 Rect 邊框](../img/ch11/gemini_nb/Architecture_of_Play.006.jpeg)
+
 `Sprite` 是 2D 遊戲中所有活動實體的基類。一個自訂的精靈子類別，內部必須包含兩個最核心的屬性：
 1. `self.image`：代表該精靈的畫布或外觀（可以是一張圖片，或是一個自定義形狀畫布）。
 2. `self.rect`：一個 `pygame.Rect` 物件，代表該精靈在螢幕上的位置、寬度與高度。
 
+![精靈群組與批次渲染管理](../img/ch11/gemini_nb/Architecture_of_Play.007.jpeg)
+
 ### 11.3.2 深入認識 Rect 物件定位屬性
+
+![Rect 物件座標錨點定位系統](../img/ch11/gemini_nb/Architecture_of_Play.009.jpeg)
 
 `pygame.Rect` 不僅包含 $X, Y$、寬與高，它還內建了極為方便的定位屬性，當你修改其中一個，其他屬性會自動關聯更新：
 * `rect.x` / `rect.y`：左上角座標。
@@ -317,6 +328,8 @@ D) 自動執行物理碰撞演算法。
 ---
 
 ### 11.3.3 碰撞偵測機制 (Collision Detection)
+
+![AABB 邊界碰撞檢測原理](../img/ch11/gemini_nb/Architecture_of_Play.008.jpeg)
 
 在 2D 遊戲中，最常見的碰撞判定方式為 **AABB (Axis-Aligned Bounding Box)** 矩形邊界碰撞，以及由 Sprite Group 提供的高階多對多碰撞函式：
 
@@ -378,6 +391,8 @@ D) 寫雙重 `for` 迴圈手動計算每一個子彈與隕石的幾何距離。
 
 ## 11.4 聲音與背景音樂整合 (Sound & Mixer)
 
+![Pygame 音訊管線與背景音樂/音效控制](../img/ch11/gemini_nb/Architecture_of_Play.010.jpeg)
+
 一個沒有聲音的遊戲是不完整的。Pygame 的 `pygame.mixer` 模組可以讓我們輕鬆載入並控制音效：
 
 ### 11.4.1 背景音樂與音效的區別
@@ -407,6 +422,8 @@ pygame.mixer.init()
 ---
 
 ## 11.5 太空射擊遊戲專案開發 (Space Shooter)
+
+![太空射擊遊戲架構與實體關聯圖](../img/ch11/gemini_nb/Architecture_of_Play.011.jpeg)
 
 現在，我們將前面學到的所有觀念：**遊戲迴圈、事件處理、狀態更新、Sprite群組、AABB 碰撞以及字型繪製**，融會貫通成一個完整的經典太空射擊遊戲。
 
@@ -512,7 +529,6 @@ class Bullet(pygame.sprite.Sprite):
 
 def draw_text(surf, text, size, x, y):
     """ 繪製文字與計分板 """
-    # 使用系統預設字型
     font = pygame.font.SysFont("arial", size, bold=True)
     text_surface = font.render(text, True, WHITE)
     text_rect = text_surface.get_rect()
@@ -568,7 +584,6 @@ def run_game():
             all_sprites.update()
 
             # 檢測：子彈與隕石的碰撞
-            # groupcollide(g1, g2, kill1, kill2)
             hits = pygame.sprite.groupcollide(bullets, meteors, True, True)
             for hit in hits:
                 score += 10
@@ -577,7 +592,7 @@ def run_game():
                 all_sprites.add(new_m)
                 meteors.add(new_m)
 
-            # 檢測：玩家與隕石的碰撞 (使用圓形半徑碰撞提高精準度)
+            # 檢測：玩家與隕石的碰撞
             player_hits = pygame.sprite.spritecollide(player, meteors, True)
             for hit in player_hits:
                 lives -= 1
@@ -610,6 +625,10 @@ if __name__ == "__main__":
     run_game()
 ```
 
+#### 遊戲狀態機與生命週期
+
+![遊戲狀態機切換機制](../img/ch11/gemini_nb/Architecture_of_Play.012.jpeg)
+
 #### 完整遊戲實際執行成果畫面
 
 遊戲運行時包含流暢的星空背景、隕石隨機降落、雷射連續射擊判定，以及玩家生命耗盡後的重開機制：
@@ -632,6 +651,9 @@ if __name__ == "__main__":
 ```
 
 ### 挑戰 2：粒子爆炸效果 (Particle Effect)
+
+![粒子系統與爆炸視覺特效](../img/ch11/gemini_nb/Architecture_of_Play.013.jpeg)
+
 當子彈撞擊隕石時，不要只讓隕石瞬間消失，而是向四周產生數個隨機飄散的小圓形粒子：
 
 ![挑戰專題：粒子爆炸特效展示](../img/ch11/ch11_09_particle_explosion.png)
