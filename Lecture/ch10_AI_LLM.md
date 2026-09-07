@@ -47,6 +47,7 @@ Ch10 Artificial Intelligence & LLM Application
 
 ---
 
+<!-- id: python-ch10-ccq1 -->
 ### **10.1.4 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -57,6 +58,8 @@ A) 調高溫度至 1.0 或以上，以激發 AI 的無限創造力。
 B) 調低溫度至 0.0 或接近 0，使模型生成最確定、最符合標準語法的答案。
 C) 關閉 Top-P 與 Top-K，只使用 Temperature=1.5。
 D) 將溫度設為 -1.0。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch10-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -238,6 +241,7 @@ LLM 的最大硬傷在於無法獲取最新即時資料，也無法執行真實�
 
 ---
 
+<!-- id: python-ch10-ccq2 -->
 ### **10.3.4 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -248,6 +252,8 @@ A) 該機制允許 LLM 直接繞過作業系統權限，在你的電腦硬碟中
 B) LLM 不會直接執行該函數；它僅負責閱讀函數的簽章與說明文檔，並根據使用者意圖輸出一個包含「欲調用之函數名稱與引數數值」的結構化指令，由開發者的本地程式碼負責實際執行。
 C) Function Calling 是一種用來對 LLM 進行深度微調 (Fine-Tuning) 的演算法。
 D) 這會將模型的運算速度提升 100 倍。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch10-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -327,6 +333,7 @@ print(rag_prompt)
 
 ---
 
+<!-- id: python-ch10-ccq3 -->
 ### **10.4.2 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -337,6 +344,8 @@ A) 網路頻寬太慢的問題。
 B) 解決模型因為訓練資料截止或缺乏私人知識而產生的幻覺 (Hallucination) 問題，並提供有憑有據的回答。
 C) 提高模型的推理硬體算力。
 D) 自動將輸入的程式碼進行最佳化編譯。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch10-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

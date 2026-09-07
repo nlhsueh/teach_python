@@ -122,6 +122,7 @@ sys.exit()
 
 ---
 
+<!-- id: python-ch11-ccq1 -->
 ### **11.1.4 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -132,6 +133,8 @@ A) 原點 $(0, 0)$ 位於螢幕的中心點，向右與向上為正數。
 B) 原點 $(0, 0)$ 位於螢幕的左上角，向右為 X 軸正方向，向下為 Y 軸正方向。
 C) 原點 $(0, 0)$ 位於螢幕的左下角，符合傳統數學笛卡爾座標系。
 D) X 座標增加物體會往左移動，Y 座標增加物體會往上移動。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -146,6 +149,7 @@ D) X 座標增加物體會往左移動，Y 座標增加物體會往上移動。
 
 ---
 
+<!-- id: python-ch11-ccq2 -->
 ### **11.1.5 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -156,6 +160,8 @@ A) 限制顯示卡每秒的運算功率，維持電腦處於低溫狀態。
 B) 阻塞程式執行，直到系統精準經過 60 毫秒。
 C) 控制遊戲迴圈的每秒幀數 (FPS) 最高為 60，確保遊戲邏輯的更新速度在不同性能的電腦上保持一致。
 D) 設定遊戲中計時器的初始倒數時間為 60 秒。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -270,6 +276,7 @@ sys.exit()
 
 ---
 
+<!-- id: python-ch11-ccq3 -->
 ### **11.2.3 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -280,6 +287,8 @@ A) 減少系統記憶體佔用。
 B) 防止螢幕更新時畫面閃爍與撕裂，讓玩家看不到圖畫繪製的過程。
 C) 將 2D 座標轉換為 3D 渲染。
 D) 自動執行物理碰撞演算法。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -299,15 +308,14 @@ D) 自動執行物理碰撞演算法。
 
 當遊戲中有數十個敵人和數百顆子彈時，如果用獨立的變數（如 `enemy1_x`, `enemy2_x`）去管理，程式碼會迅速失控。我們必須使用 Pygame 的 `Sprite`（精靈）系統進行物件導向開發。
 
+<!-- id: python-ch11-game1 -->
 ### 11.3.1 精靈類別 (`pygame.sprite.Sprite`)
-
-![精靈類別的解剖：Surface 與 Rect 邊框](../img/ch11/gemini_nb/Architecture_of_Play.006.jpeg)
 
 `Sprite` 是 2D 遊戲中所有活動實體的基類。一個自訂的精靈子類別，內部必須包含兩個最核心的屬性：
 1. `self.image`：代表該精靈的畫布或外觀（可以是一張圖片，或是一個自定義形狀畫布）。
 2. `self.rect`：一個 `pygame.Rect` 物件，代表該精靈在螢幕上的位置、寬度與高度。
 
-![精靈群組與批次渲染管理](../img/ch11/gemini_nb/Architecture_of_Play.007.jpeg)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-game1)
 
 ### 11.3.2 深入認識 Rect 物件定位屬性
 
@@ -340,6 +348,7 @@ D) 自動執行物理碰撞演算法。
 
 ---
 
+<!-- id: python-ch11-ccq4 -->
 ### **11.3.4 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -350,6 +359,8 @@ A) `self.x` 與 `self.y`
 B) `self.image`（外觀 Surface）與 `self.rect`（邊框位置 Rect）
 C) `self.speed` 與 `self.direction`
 D) `self.width` 與 `self.height`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -364,6 +375,7 @@ D) `self.width` 與 `self.height`
 
 ---
 
+<!-- id: python-ch11-ccq4 -->
 ### **11.3.5 隨堂測驗 (CCQ 5)**
 
 **問題**
@@ -374,6 +386,8 @@ A) `pygame.Rect.colliderect()`
 B) `pygame.sprite.spritecollide()`
 C) `pygame.sprite.groupcollide(bullets, meteors, True, True)`
 D) 寫雙重 `for` 迴圈手動計算每一個子彈與隕石的幾何距離。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

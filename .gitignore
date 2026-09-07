@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 .DS_Store
 .agents/
+.agent
+.agent/
+Agents.md
+AGENTS.md
+Lecture/pdf/
+Slide/

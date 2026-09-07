@@ -165,6 +165,7 @@ Python 採用「位元組碼 (Bytecode) + 虛擬機 (PVM)」的混合架構，�
 
 ---
 
+<!-- id: python-ch01-ccq1 -->
 ### **1.2.4 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -175,6 +176,8 @@ A) 直譯語言在執行前必須先花費數分鐘編譯產生 `.exe` 二進位
 B) 編譯語言通常執行效能極高，但修改程式碼後必須重新編譯；Python 則支援逐行直譯，具備隨改隨測與極佳的跨平台開發彈性。
 C) Python 直譯器可以直接讓硬體 CPU 執行純英文字串，完全不需經過任何轉譯過程。
 D) 編譯語言天生不具備型別檢查機制，直譯語言則在編譯期即鎖死型別。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch01-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -359,6 +362,7 @@ deactivate
 
 ---
 
+<!-- id: python-ch01-ccq2 -->
 ### **1.3.5 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -369,6 +373,8 @@ A) 電腦螢幕解析度會被自動調降。
 B) 系統會顯示「'python' 不是內部或外部命令、可執行的程式或批次檔」，因為作業系統不知道去哪個資料夾路徑尋找 `python.exe`。
 C) 安裝程式會自動格式化硬碟。
 D) Python 程式碼中的字串會全部變成亂碼。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch01-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -551,6 +557,7 @@ AI 徹底改變了除錯的體驗，它能針對你的程式碼提供極具上�
 
 ---
 
+<!-- id: python-ch01-ccq3 -->
 ### **1.5.3 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -561,6 +568,8 @@ A) 電腦尚未連接網際網路，無法下載字型檔。
 B) Python 的函式名稱對英文大小寫極度敏感，內建的輸出函式是全小寫的 `print`，大寫開頭的 `Print` 會被視為未宣告的變數。
 C) 字串必須用三個雙引號包覆才合法。
 D) Python 不支援在字串中印出繁體中文字元。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch01-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

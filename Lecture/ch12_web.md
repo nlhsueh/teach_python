@@ -62,6 +62,7 @@ Ch12 Web Development in Python
 
 ---
 
+<!-- id: python-ch12-ccq1 -->
 ### **12.1.4 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -72,6 +73,8 @@ A) GET 請求，因為 GET 能將密碼直接保存在網址中以便於書籤�
 B) POST 請求，因為 POST 將資料封裝在 HTTP Body 中傳輸，密碼不會外洩在瀏覽器網址列與歷史紀錄中。
 C) HEAD 請求，因為 HEAD 請求不需要回傳網頁內容。
 D) DELETE 請求，因為登入後需要將密碼從網頁中銷毀。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch12-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -86,6 +89,7 @@ D) DELETE 請求，因為登入後需要將密碼從網頁中銷毀。
 
 ---
 
+<!-- id: python-ch12-ccq2 -->
 ### **12.1.5 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -96,6 +100,8 @@ A) 200 OK
 B) 302 Redirect
 C) 404 Not Found
 D) 500 Internal Server Error
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch12-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -192,6 +198,7 @@ if __name__ == '__main__':
 
 ---
 
+<!-- id: python-ch12-ccq3 -->
 ### **12.2.3 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -202,6 +209,8 @@ A) 將使用者自動導向到特定的資料庫查詢頁面。
 B) 定義一個路由路徑，並將網址中 `/user/` 後方的文字動態擷取出來，作為引數傳遞給下方對應的視圖處理函式。
 C) 用來下載特定使用者的所有個人相片檔案。
 D) 限定只有名為 `username` 的使用者才能訪問該網址。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch12-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -298,6 +307,7 @@ if __name__ == '__main__':
 
 ---
 
+<!-- id: python-ch12-ccq4 -->
 ### **12.3.3 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -308,6 +318,8 @@ A) 當使用者提交表單時，瀏覽器會使用 POST 協定將資料隱密�
 B) 表單欄位中的資料會被編碼並附加在網址列（URL）後端，並跳轉至伺服器的 `/query` 路徑進行 GET 請求。
 C) 這會強行關閉後端的 Python 伺服器以進行資料庫防護。
 D) 這是一個錯誤宣告，HTML 表單不支援 GET 方法。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch12-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

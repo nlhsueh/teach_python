@@ -116,6 +116,7 @@ df = pd.DataFrame(f, index=f['name'])
 print(df.loc[ ['Apple', 'Banana'] ])
 print(df.iloc[ [0,1] ])
 ```
+<!-- id: python-ch06-ccq1 -->
 ### **6.1.1 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -126,6 +127,8 @@ A) 只有 `s['b']` 與 `s.loc['b']`
 B) 只有 `s[1]` 與 `s.iloc[1]`
 C) 只有 `s['b']`、`s.loc['b']` 與 `s.iloc[1]`
 D) 四種方式 `s['b']`、`s[1]`、`s.loc['b']`、`s.iloc[1]` 皆會回傳 `20`。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -139,6 +142,7 @@ D) 四種方式 `s['b']`、`s[1]`、`s.loc['b']`、`s.iloc[1]` 皆會回傳 `20`
 
 </details>
 
+<!-- id: python-ch06-ccq2 -->
 ### **6.1.2 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -155,6 +159,8 @@ A) 兩者皆回傳 `1`。
 B) `df.loc` 回傳 `2`，`df.iloc` 回傳 `3`。
 C) 兩者皆回傳 `2`。
 D) `df.loc` 回傳 `1`，`df.iloc` 回傳 `4`。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -201,6 +207,7 @@ df[df.c1>10]
 
 因為條件是對於一個欄位資料的布林判斷，所以得出來的結果一樣會是一個 table，那這個table裡面存放了就是 true false true 這樣的一個表。產生這個表了以後，接下來就可以透過 df.loc 的方式找出某一些資料。
 
+<!-- id: python-ch06-ccq3 -->
 ### **6.1.3 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -211,6 +218,8 @@ A) `df[df["Age"] > 30]`
 B) `df.filter("Age > 30")`
 C) `df.where("Age" > 30)`
 D) `df[Age > 30]`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -226,6 +235,7 @@ D) `df[Age > 30]`
 
 [code](https://colab.research.google.com/drive/1sL4w_DWy6jOMQUDn6uTU9X2-4HFCYxHd#scrollTo=nwDBntLdT6oN) 提供更多範例供參考。
 
+<!-- id: python-ch06-ordering1 -->
 ### 資料排序
 
 資料排序也是經常使用的處理方法，我們可以使用 `df.sort_values(by=c1)` 的方式，也就是依據 c1 欄位排序。
@@ -252,6 +262,9 @@ print(df2)
 3  Z   8   4  D
 4  D   7   2  e
 5  C   4   3  F
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ordering1)
+
 ---
   c1  c2  c3 c4
 1  A   1   1  B
@@ -806,6 +819,7 @@ print (df.fillna(method = 'bfill'))
 ```
 
 
+<!-- id: python-ch06-ccq4 -->
 ### **6.2.1 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -816,6 +830,8 @@ A) `df.groupby("Department")["Salary"].mean()`
 B) `df.groupby("Department").mean("Salary")`
 C) `df.groupby("Department").average("Salary")`
 D) `df["Department"].groupby("Salary").mean()`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

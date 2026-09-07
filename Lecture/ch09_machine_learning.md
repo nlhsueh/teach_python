@@ -165,6 +165,7 @@ print(f"測試集準確度: {accuracy_score(y_test, rf_pred):.4f}")
 
 ---
 
+<!-- id: python-ch09-ccq1 -->
 ### 9.2.5 隨堂測驗 (CCQ 1)
 
 **問題**
@@ -175,6 +176,8 @@ A) 為了加速模型訓練的速度，避免使用 CPU。
 B) 自動在各種參數組合中，透過交叉驗證找出最能防止過擬合且泛化能力最佳的參數設定。
 C) 為了將無標籤的資料集進行自動分群。
 D) 將特徵維度進行降維以利於繪圖。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch09-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -189,6 +192,7 @@ D) 將特徵維度進行降維以利於繪圖。
 
 ---
 
+<!-- id: python-ch09-ccq2 -->
 ### 9.2.6 隨堂測驗 (CCQ 2)
 
 **問題**
@@ -199,6 +203,8 @@ A) 模型會因為結構過於簡單而產生欠擬合 (Underfitting)。
 B) 決策樹會無法進行多類別分類。
 C) 決策樹會不斷分裂直到葉節點完全純淨，極易產生過擬合 (Overfitting) 並喪失對新測試資料的預測能力。
 D) 程式會因為死迴圈而當機。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch09-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -309,6 +315,7 @@ print(f"決定係數 (R2 Score): {r2:.4f}")
 
 ---
 
+<!-- id: python-ch09-ccq3 -->
 ### 9.3.5 隨堂測驗 (CCQ 3)
 
 **問題**
@@ -319,6 +326,8 @@ A) 該模型只預測對了 85% 的資料，剩下的 15% 資料全部預測錯�
 B) 該模型所預測的房價比真實房價平均貴了 85 萬元。
 C) 模型中的自變數（坪數、屋齡等特徵）能夠解釋因變數（房價）中 85% 的變異量。
 D) 模型有 85% 的機率會產生過擬合。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch09-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -390,6 +399,7 @@ plt.show()
 
 ---
 
+<!-- id: python-ch09-ccq4 -->
 ### 9.4.3 隨堂測驗 (CCQ 4)
 
 **問題**
@@ -400,6 +410,8 @@ A) 轉折點代表 Inertia (WCSS) 開始變為負值的地方。
 B) 轉折點代表在此群數之後，增加群數所能降低的群內誤差和幅度明顯變小，是邊際效應的轉折點。
 C) 轉折點代表分群準確度達到 100% 的臨界點。
 D) 轉折點後的 $K$ 值代表模型開始欠擬合。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch09-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -454,6 +466,7 @@ print(df_encoded)
 
 ---
 
+<!-- id: python-ch09-ccq5 -->
 ### 9.5.3 隨堂測驗 (CCQ 5)
 
 **問題**
@@ -464,6 +477,8 @@ A) 因為 Scikit-Learn 的模型只支援輸入 0 或 1。
 B) 為了避免模型錯誤地假設這些類別特徵之間存在大小順序或倍數關係。
 C) One-Hot Encoding 可以自動刪除重複的特徵。
 D) 整數編碼會佔用十倍以上的記憶體。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch09-ccq5)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

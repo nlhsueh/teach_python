@@ -167,6 +167,7 @@ after pop 0, the result and list are:  nick , ['albert', 'jie']
 
 `pop`: 如果我們沒有給它一個參數的話，它就會把最後一筆資料抓出來回傳給我們，來做一些後續的應用，我們可以在 `pop` 後面加上一個索引值，意思就是要把那個索引值的元素移除並且回傳，那後面的資料就會往前遞補。
 
+<!-- id: python-ch04-ordering1 -->
 ### 資料的排序
 
 ```python
@@ -200,6 +201,8 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 排序是我們經常會使用到的一種資料修改，語法很簡單，我們只要用 `data.sort` 就可以把資料作由小到大的做排序。如果今天是想要由大到小的排序的話們可以加上一個參數，`reverse=True`。
 
 另一個函式 `sorted(d)` 並**不會**改變 `d` 的內部資料排序，它會產生另一個 list 來儲存排序後的結果。如上述程式中的 r。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering1)
 
 ### 資料的擷取
 
@@ -468,6 +471,7 @@ print (c)
 [0, 2, 4, 6, 8]
 ```
 
+<!-- id: python-ch04-ordering2 -->
 ### 多元排序
 
 當我們對一個二維陣列做排序，會依據每一個的`第一個元素`來做排序。例如在下列的程式中，會依據 `11, 90, 77, 44` 來排序。
@@ -514,6 +518,8 @@ Result:
 [[11, 22, 33], [44, 55, 66], [90, 91, 92], [77, 88, 99]]
 ```
 
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering2)
+
 ### 資料的比較
 
 
@@ -559,9 +565,8 @@ grade == gc:  False
 grade is gc:  False    
 ```
 
+<!-- id: python-ch04-ordering3 -->
 ### 氣泡排序法
-
-![氣泡排序法](../img/ch04/05_bubble_sort.png)
 
 > `sort()` 會改變本身的資料; `sorted()` 不會，但會回傳一個已排序的。
 
@@ -592,6 +597,8 @@ for i in range(1, r+1):
             a[j+1] = temp
     print(a)
 ```
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering3)
 
 ### json.loads()
 
@@ -633,6 +640,7 @@ Taichung-Taipei-Kaoshiung
 Taichung * Taipei * Kaoshiung
 ```
 
+<!-- id: python-ch04-ccq1 -->
 ### **4.1.1 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -643,6 +651,8 @@ A) 兩者結果皆為 `[1, 2, 3, 4]`。
 B) 兩者結果皆為 `[1, 2, [3, 4]]`。
 C) `a.append(b)` 結果為 `[1, 2, [3, 4]]`，而 `a.extend(b)` 結果為 `[1, 2, 3, 4]`。
 D) `a.append(b)` 結果為 `[1, 2, 3, 4]`，而 `a.extend(b)` 結果為 `[1, 2, [3, 4]]`。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -655,6 +665,7 @@ D) `a.append(b)` 結果為 `[1, 2, 3, 4]`，而 `a.extend(b)` 結果為 `[1, 2, 
 
 </details>
 
+<!-- id: python-ch04-ccq2 -->
 ### **4.1.2 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -670,6 +681,8 @@ A) `[1, 9, 9, 4, 5]`
 B) `[1, 9, 9, 3, 4, 5]`
 C) `[1, 2, 9, 9, 5]`
 D) `[1, 9, 9, 9, 5]`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -811,6 +824,7 @@ process_command(["sleep"])            # 輸出: 無法識別的指令！
 
 這項功能在處理結構複雜、長度不一的指令或 API 封包資料時非常方便，避免了大量繁雜的 `if-elif` 配合長度判斷。
 
+<!-- id: python-ch04-ccq3 -->
 ### **4.2.1 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -826,6 +840,8 @@ A) `TypeError: 'tuple' object does not support item assignment`
 B) `(1, 2, [3, 4, 5])`
 C) `(1, 2, [3, 4], 5)`
 D) `(1, 2, [3, 4])`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -903,6 +919,7 @@ for player in basketball:
     print(player)
 ```
 
+<!-- id: python-ch04-ccq1 -->
 ### **4.3.1 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -916,6 +933,8 @@ A) `True`
 B) `False`
 C) `TypeError`
 D) `None`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -1215,6 +1234,7 @@ print (gStr)
 #  {"eng": 60, "math": 78, "phy": 100}
 ```
 
+<!-- id: python-ch04-ccq2 -->
 ### **4.4.1 隨堂測驗 (CCQ 5)**
 
 **問題**
@@ -1225,6 +1245,8 @@ A) 整數 (如 `123`)
 B) 字串 (如 `"name"`)
 C) 元組 (如 `(1, 2)`)
 D) 串列 (如 `[1, 2]`)
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -1298,7 +1320,8 @@ pprint(jdata)
 
 ps. `pprint` 是一個 pretty print; 印出格式會比較好看; 使用前要記得 import。
 
-### 選擇欄位與排序 
+<!-- id: python-ch04-ordering4 -->
+### 選擇欄位與排序
 
 因為欄位很多，我們挑選站名，位址，緯度就好。之後進行排序，排序的依據是第三個欄位，也就是 `line11` 的 `x[2]`。
 
@@ -1319,6 +1342,8 @@ with open('data/ibikeSorted.txt', 'w') as f:
     for i in station:
         f.write(str(i)+'\n')
 ```
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering4)
 
 #### 計算每個區域的數量 
 

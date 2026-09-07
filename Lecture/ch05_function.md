@@ -259,6 +259,7 @@ prime3(pEnd=20, pStart=10)    # correct
 prime3(2, 10)                 # correct   
 ```
 
+<!-- id: python-ch05-ccq1 -->
 ### **5.1.1 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -269,6 +270,8 @@ A) `func(1)`
 B) `func(a=1, c=20)`
 C) `func(b=20, 30)`
 D) `func(1, c=20, b=30)`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch05-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -497,6 +500,7 @@ print (m)
 [1, 2]
 ```
 
+<!-- id: python-ch05-ccq2 -->
 ### **5.2.1 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -517,6 +521,8 @@ A) `5 [5]`
 B) `15 [5, 10]`
 C) `5 [5, 10]`
 D) `15 [5]`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch05-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -584,6 +590,7 @@ r = sorted(grades, key=lambda x: x[0]*0.3+ x[1]*0.4+x[2]*0.4)
 ![Lambda 匿名函式](../img/ch05/gemini_nb/08_lambda.jpeg)
 ```
 
+<!-- id: python-ch05-ccq3 -->
 ### **5.2.2 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -599,6 +606,8 @@ A) `[1, 4, 9, 16]`
 B) `[4, 16]`
 C) `[1, 9]`
 D) `[2, 4]`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch05-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -754,6 +763,7 @@ finally:
 print('All done') # Note: this will not run
 ```
 
+<!-- id: python-ch05-ccq4 -->
 ### **5.3.1 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -775,6 +785,8 @@ A) `5.0`
 B) `Cannot divide by zero`
 C) `Always executed`
 D) `5.0` 且換行印出 `Always executed`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch05-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

@@ -295,6 +295,7 @@ c01 電動車
 c2 電動車
 ```
 
+<!-- id: python-ch07-ccq1 -->
 ### **7.1.1 隨堂測驗 (CCQ 1)**
 
 **問題**
@@ -315,6 +316,8 @@ A) `0 0`
 B) `0 1`
 C) `1 1`
 D) 引發 `AttributeError`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch07-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -377,6 +380,7 @@ print ('{} 的帳戶有 {} 元'.format(nick.name, nick.get_balance()))
 ```
 注意類別以外的程式我們不能用 `nick.__balance` 來直接讀取 `__balance`，我們透過 `get_balance()` 來取得值，透過 `set_balance()` 來設定他的值。
 
+<!-- id: python-ch07-ccq2 -->
 ### **7.1.2 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -395,6 +399,8 @@ A) 正常執行，印出 `42`
 B) 正常執行，印出 `None`
 C) 引發 `AttributeError`
 D) 引發 `NameError`
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch07-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -843,6 +849,7 @@ Mary.plan()
 
 上述例子中，`Engineer` 和 `Manager` 都是 `Person` 的延伸類別。
 
+<!-- id: python-ch07-ccq3 -->
 ### **7.2.1 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -867,6 +874,8 @@ B) `20`
 C) 引發 `AttributeError`
 D) `None`
 
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch07-ccq3)
+
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
 
@@ -879,11 +888,10 @@ D) `None`
 
 </details>
 
+<!-- id: python-ch07-game1 -->
 ### GuessGame
 
 下面的例子中，`GuessGame` 宣告為抽象類別，裡面有抽象方法。透過 `metaclass=ABCMeta` 來宣告為抽象類別。`guess` 上面的 `@abstractmethod` 表示這個方法是一個抽象的。
-
-![抽象類別與多型](../img/ch07/gemini_nb/11_abstract.jpeg)
 
 ```plantuml
 abstract class GuessGame {
@@ -952,3 +960,5 @@ game.go()
 ```
 
 上述最後的程式碼表明了抽象類別不能生成物件。
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch07-game1)
