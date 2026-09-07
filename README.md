@@ -3,17 +3,23 @@
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Slides](https://img.shields.io/badge/Marp-Gaia%20Theme-orange.svg)](https://marp.app/)
-[![Course](https://img.shields.io/badge/Course-12%20Chapters-purple.svg)](Lecture/)
+[![Course](https://img.shields.io/badge/Course-7%20Core%20%2B%205%20Advanced-purple.svg)](Lecture/)
 
 歡迎來到 **Python 程式設計與實務應用** 課程開源儲存庫！本課程專為資訊科技、理工資電與跨領域初學者量身打造，內容涵蓋由淺入深的 Python 基礎語法、運算思維、控制結構、資料分析、物件導向，並延伸至工程模擬、機器學習、現代生成式 AI (LLM / Agent)、Pygame 視窗遊戲設計與 Flask 全端 Web 應用。
 
-本儲存庫包含完整的 **12 章詳細講義 (Lecture Handbooks)** 以及可直接於本機執行的 **範例程式碼 (Code)**。
+本儲存庫包含完整的 **7 章正課核心講義 (Lecture Handbooks)**、**5 章進階自修補充教材 (Lecture+)**，以及可直接於本機執行的 **範例程式碼 (Code)**。
 
 ---
 
 ## 🗺️ 課程學習地圖（Chapter Guide）
 
-本課程劃分為 12 個核心單元，你可以依據需求點擊對應講義閱讀與自學：
+本課程內容劃分為 **正課核心講義 (Lecture)** 與 **進階自修補充教材 (Lecture+)**：
+
+> [!NOTE]
+> **💡 補充教材說明**：
+> `Lecture+/` 目錄下的單元（Ch08～Ch12）為**進階補充教材**，**不在考試範圍內**，專供同學依個人興趣進行延伸自修、實務專案與跨領域應用探索。
+
+### 📚 正課核心單元 (Ch01 ~ Ch07)
 
 | 章節 (Chapter) | 單元主題 (Topic) | 核心學習重點 (Highlights) | 講義 (Handbook) | 範例程式 (Code) |
 | :--- | :--- | :--- | :---: | :---: |
@@ -24,11 +30,16 @@
 | **Ch05** | **函式設計與模組化** | • 自訂函式 (`def`)、位置參數、關鍵字與預設參數<br>• 可變參數 (`*args`, `**kwargs`) 與 Lambda 匿名函式<br>• 變數作用域 (LEGB)、例外處理 (`try-except`) 與自建模組 | [ch05_function.md](Lecture/ch05_function.md) | [code/ch05/](code/ch05/) |
 | **Ch06** | **資料處理與分析 (Pandas)** | • Pandas Series 與 DataFrame 核心結構<br>• 資料切片篩選 (`loc`, `iloc`)、缺失值處理、Groupby 分群<br>• 表格合併 (`merge`/`concat`)、Matplotlib 視覺化與開放資料實戰 | [ch06_pandas.md](Lecture/ch06_pandas.md) | [code/ch06/](code/ch06/) |
 | **Ch07** | **物件導向設計 (OOP)** | • 物件與類別本質、屬性與方法 (`__init__`)<br>• 封裝與存取控制 (`__private`)、屬性裝飾器 (`@property`)<br>• 繼承 (`super()`)、多型、魔術方法與抽象基底類別 (`abc`) | [ch07_OOP.md](Lecture/ch07_OOP.md) | [code/ch07/](code/ch07/) |
-| **Ch08** | **工程與資電應用實務** | • 線性聯立方程 (NumPy) 與二階 RLC 電路 ODE 求解 (SciPy)<br>• 快速傅立葉變換 (FFT)、自製 PID 溫控模擬器<br>• 機械手臂正逆向運動學、虛擬序列埠 (pySerial) 與 TCP 聊天室 | [ch08_engineering.md](Lecture/ch08_engineering.md) | [code/ch08/](code/ch08/) |
-| **Ch09** | **機器學習入門實踐** | • 機器學習流程 (AI/ML/DL、監督 vs 非監督、偏差-方差折衷)<br>• 分類演算法：KNN 距離、決策樹吉尼不純度、隨機森林集成<br>• 迴歸演算法：多元線性迴歸、L1/L2 正規化 (Lasso/Ridge)<br>• 非監督分群：K-Means、肘部法與特徵前處理 | [ch09_machine_learning.md](Lecture/ch09_machine_learning.md) | [code/ch09/](code/ch09/) |
-| **Ch10** | **生成式 AI 與 LLM 應用** | • 大型語言模型本質、Transformer、Self-Attention、溫度參數<br>• Gemini API 串接、打字機串流輸出與多輪對話 Session<br>• 多模態影像辨識、強制結構化 JSON 輸出與 Function Calling<br>• 檢索增強生成 (RAG) 本地知識庫檢索與 CLI AI 代理人專題 | [ch10_AI_LLM.md](Lecture/ch10_AI_LLM.md) | [code/ch10/](code/ch10/) |
-| **Ch11** | **Pygame 視窗遊戲設計** | • 2D 遊戲引擎基礎、螢幕座標系、經典遊戲迴圈三階段<br>• 事件佇列 (`event.get`) vs 按鍵長按輪詢 (`key.get_pressed`)<br>• Sprite 精靈系統、AABB 碰撞檢測、Rect 錨點定位、音效混音器<br>• 經典「太空射擊大戰 (Space Shooter)」與粒子爆炸特效實作 | [ch11_game.md](Lecture/ch11_game.md) | [code/ch11/](code/ch11/) |
-| **Ch12** | **Python Web 開發 (Flask)** | • Client-Server 架構、HTTP 狀態碼、GET vs POST 語意<br>• Flask 微型框架、路由分派 (`@app.route`)、動態 URL 參數<br>• Jinja2 模板渲染、表單處理與 Post-Redirect-Get (PRG) 模式<br>• 「學生學籍與成績登記系統」專案與 RESTful JSON API 實踐 | [ch12_web.md](Lecture/ch12_web.md) | [code/ch12/](code/ch12/) |
+
+### 🚀 進階補充教材（非考試範圍，供自修使用）(Ch08 ~ Ch12)
+
+| 章節 (Chapter) | 單元主題 (Topic) | 核心學習重點 (Highlights) | 講義 (Handbook) | 範例程式 (Code) |
+| :--- | :--- | :--- | :---: | :---: |
+| **Ch08** | **工程與資電應用實務** | • 線性聯立方程 (NumPy) 與二階 RLC 電路 ODE 求解 (SciPy)<br>• 快速傅立葉變換 (FFT)、自製 PID 溫控模擬器<br>• 機械手臂正逆向運動學、虛擬序列埠 (pySerial) 與 TCP 聊天室 | [ch08_engineering.md](Lecture+/ch08_engineering.md) | [code/ch08/](code/ch08/) |
+| **Ch09** | **機器學習入門實踐** | • 機器學習流程 (AI/ML/DL、監督 vs 非監督、偏差-方差折衷)<br>• 分類演算法：KNN 距離、決策樹吉尼不純度、隨機森林集成<br>• 迴歸演算法：多元線性迴歸、L1/L2 正規化 (Lasso/Ridge)<br>• 非監督分群：K-Means、肘部法與特徵前處理 | [ch09_machine_learning.md](Lecture+/ch09_machine_learning.md) | [code/ch09/](code/ch09/) |
+| **Ch10** | **生成式 AI 與 LLM 應用** | • 大型語言模型本質、Transformer、Self-Attention、溫度參數<br>• Gemini API 串接、打字機串流輸出與多輪對話 Session<br>• 多模態影像辨識、強制結構化 JSON 輸出與 Function Calling<br>• 檢索增強生成 (RAG) 本地知識庫檢索與 CLI AI 代理人專題 | [ch10_AI_LLM.md](Lecture+/ch10_AI_LLM.md) | [code/ch10/](code/ch10/) |
+| **Ch11** | **Pygame 視窗遊戲設計** | • 2D 遊戲引擎基礎、螢幕座標系、經典遊戲迴圈三階段<br>• 事件佇列 (`event.get`) vs 按鍵長按輪詢 (`key.get_pressed`)<br>• Sprite 精靈系統、AABB 碰撞檢測、Rect 錨點定位、音效混音器<br>• 經典「太空射擊大戰 (Space Shooter)」與粒子爆炸特效實作 | [ch11_game.md](Lecture+/ch11_game.md) | [code/ch11/](code/ch11/) |
+| **Ch12** | **Python Web 開發 (Flask)** | • Client-Server 架構、HTTP 狀態碼、GET vs POST 語意<br>• Flask 微型框架、路由分派 (`@app.route`)、動態 URL 參數<br>• Jinja2 模板渲染、表單處理與 Post-Redirect-Get (PRG) 模式<br>• 「學生學籍與成績登記系統」專案與 RESTful JSON API 實踐 | [ch12_web.md](Lecture+/ch12_web.md) | [code/ch12/](code/ch12/) |
 
 ---
 
@@ -36,8 +47,10 @@
 
 ```text
 teach_python/
-├── Lecture/              # 12 章 Markdown 詳細講義 (含生活實例與 CCQ 互動題解析)
-│   └── ch01_intro.md ~ ch12_web.md
+├── Lecture/              # 7 章正課核心詳細講義 (含生活實例與 CCQ 互動題解析)
+│   └── ch01_intro.md ~ ch07_OOP.md
+├── Lecture+/             # 5 章進階補充教材 (非考試範圍，供學生自修與專案參考)
+│   └── ch08_engineering.md ~ ch12_web.md
 ├── code/                 # 各章節完整可執行的 Python 範例程式碼
 │   ├── ch02/ ~ ch12/
 ├── img/                  # 講義插圖、架構圖解與程式執行成果截圖
