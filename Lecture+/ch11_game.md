@@ -134,7 +134,7 @@ B) 原點 $(0, 0)$ 位於螢幕的左上角，向右為 X 軸正方向，向下�
 C) 原點 $(0, 0)$ 位於螢幕的左下角，符合傳統數學笛卡爾座標系。
 D) X 座標增加物體會往左移動，Y 座標增加物體會往上移動。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq1)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -161,7 +161,7 @@ B) 阻塞程式執行，直到系統精準經過 60 毫秒。
 C) 控制遊戲迴圈的每秒幀數 (FPS) 最高為 60，確保遊戲邏輯的更新速度在不同性能的電腦上保持一致。
 D) 設定遊戲中計時器的初始倒數時間為 60 秒。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq2)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -288,7 +288,7 @@ B) 防止螢幕更新時畫面閃爍與撕裂，讓玩家看不到圖畫繪製�
 C) 將 2D 座標轉換為 3D 渲染。
 D) 自動執行物理碰撞演算法。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq3)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -314,9 +314,6 @@ D) 自動執行物理碰撞演算法。
 `Sprite` 是 2D 遊戲中所有活動實體的基類。一個自訂的精靈子類別，內部必須包含兩個最核心的屬性：
 1. `self.image`：代表該精靈的畫布或外觀（可以是一張圖片，或是一個自定義形狀畫布）。
 2. `self.rect`：一個 `pygame.Rect` 物件，代表該精靈在螢幕上的位置、寬度與高度。
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-game1)
-
 ### 11.3.2 深入認識 Rect 物件定位屬性
 
 ![Rect 物件座標錨點定位系統](../img/ch11/gemini_nb/Architecture_of_Play.009.jpeg)
@@ -360,7 +357,7 @@ B) `self.image`（外觀 Surface）與 `self.rect`（邊框位置 Rect）
 C) `self.speed` 與 `self.direction`
 D) `self.width` 與 `self.height`
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq4)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -375,7 +372,7 @@ D) `self.width` 與 `self.height`
 
 ---
 
-<!-- id: python-ch11-ccq4 -->
+<!-- id: python-ch11-ccq1 -->
 ### **11.3.5 隨堂測驗 (CCQ 5)**
 
 **問題**
@@ -387,7 +384,7 @@ B) `pygame.sprite.spritecollide()`
 C) `pygame.sprite.groupcollide(bullets, meteors, True, True)`
 D) 寫雙重 `for` 迴圈手動計算每一個子彈與隕石的幾何距離。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq4)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch11-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

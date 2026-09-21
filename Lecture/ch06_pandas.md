@@ -262,9 +262,6 @@ print(df2)
 3  Z   8   4  D
 4  D   7   2  e
 5  C   4   3  F
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch06-ordering1)
-
 ---
   c1  c2  c3 c4
 1  A   1   1  B

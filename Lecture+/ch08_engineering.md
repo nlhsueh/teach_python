@@ -181,7 +181,7 @@ B) `I` 是一個含有兩個浮點數元素的一維 NumPy 陣列，儲存求解
 C) `I` 包含了 `R_matrix` 的特徵值與特徵向量。
 D) 若 `R_matrix` 是一個行列式值 (Determinant) 為 0 的矩陣，此程式仍可順利執行並回傳全 0 的電流。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq1)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -225,7 +225,7 @@ def rc_ode(y, t):
     return (y - Vs) / (R * C)
 ```
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq2)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -491,7 +491,7 @@ B) 預測系統誤差的未來趨勢。
 C) 消除系統因摩擦力或熱損失所導致的「穩態誤差/靜態誤差 (Steady-State Error)」。
 D) 加快系統在初始階段的響應速度。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq3)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -603,7 +603,7 @@ B) 序列埠通訊晶片的硬體或軟體接收緩衝區 (Buffer) 會溢位 (Ov
 C) 由於 Python 的直譯特性，程式會主動要求微控制器降低傳送頻率。
 D) 電壓訊號會在傳輸線上自動做均值濾波，變成平滑數值。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq4)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -762,7 +762,7 @@ B) 將 TCP 連線自動升級為更高傳輸頻寬的 UDP 模式。
 C) 允許伺服器關閉重啟後，立即重新綁定 (bind) 相同的 Port，避免作業系統因處於 TIME_WAIT 狀態而拒絕綁定。
 D) 加密傳輸的 Socket 內容以防止駭客竊聽。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq5)
+[Interactive Activity (線上作答)](https://nlhsueh.github.io/nickedupocket/#/student/python-ch08-ccq5)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

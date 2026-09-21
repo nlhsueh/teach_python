@@ -796,22 +796,25 @@ while not correct:
 
 ## 自我測驗
 
-> [!NOTE]
-> **第 1 題**
-> ```python
->  g = 98
->  if g > 90:
->      print ("Class A", end=' ') 
->  print ("Good job", end=' ')
->  elif (g > 80):
->      print ("Class B", end=' ') 
-> ```
-> 以下何者正確（複選）
-> - [ ] 因為內縮問題，程式錯誤 
-> - [ ] 第 1 行若改為 g=70, 一樣會印出: Class A Good Job
-> - [ ] 印出 Good job Class B
-> - [ ] 印出 Class B
-> - [ ] elif 錯誤，應該為 else if
+<!-- id: python-ch03-ccq1 -->
+### **3.4.1 隨堂測驗 (CCQ 1)**
+
+```python
+ g = 98
+ if g > 90:
+     print ("Class A", end=' ') 
+ print ("Good job", end=' ')
+ elif (g > 80):
+     print ("Class B", end=' ') 
+```
+以下何者正確（複選）
+- [ ] 因為內縮問題，程式錯誤 
+- [ ] 第 1 行若改為 g=70, 一樣會印出: Class A Good Job
+- [ ] 印出 Good job Class B
+- [ ] 印出 Class B
+- [ ] elif 錯誤，應該為 else if
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq1)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -823,28 +826,31 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 2 題**
-> 針對以下程式：
-> ```python
-> if g >= 60:
->     print ("pass", end="; ")
->     print ("good", end="; ")
-> elif g >= 50:
->     print ("almost pass", end="; ")    
->     if (g >= 90):
->         print ("excellent", end="; ")    
-> else:
->     print ("fail", end="; ")    
->     print ("not good", end="; ")    
-> print ("end of report")
-> ```
-> 以下何者正確？（複選）
-> - [ ] 當 g 為 0 時，會印出 fail; not good; end of report
-> - [ ] 當 g 為 60 時，會印出 pass; good
-> - [ ] 當 g 為 90 時，會印出 excellent; end of report
-> - [ ] 當 g 為 51 時，會印出 almost pass; end of report
-> - [ ] 當 g 為 90 時，會印出 pass; good; excellent; end of report
+<!-- id: python-ch03-ccq2 -->
+### **3.4.2 隨堂測驗 (CCQ 2)**
+
+針對以下程式：
+```python
+if g >= 60:
+    print ("pass", end="; ")
+    print ("good", end="; ")
+elif g >= 50:
+    print ("almost pass", end="; ")    
+    if (g >= 90):
+        print ("excellent", end="; ")    
+else:
+    print ("fail", end="; ")    
+    print ("not good", end="; ")    
+print ("end of report")
+```
+以下何者正確？（複選）
+- [ ] 當 g 為 0 時，會印出 fail; not good; end of report
+- [ ] 當 g 為 60 時，會印出 pass; good
+- [ ] 當 g 為 90 時，會印出 excellent; end of report
+- [ ] 當 g 為 51 時，會印出 almost pass; end of report
+- [ ] 當 g 為 90 時，會印出 pass; good; excellent; end of report
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq2)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -861,20 +867,23 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 3 題**
-> 針對以下程式：
-> ```python
-> sum = 0
-> for i in range (1, 10):
->     sum += i
-> print(sum)
-> ```
-> 請問上述程式碼輸出結果為何?  
-> - [ ] 45
-> - [ ] 44
-> - [ ] 55
-> - [ ] 54
+<!-- id: python-ch03-ccq3 -->
+### **3.4.3 隨堂測驗 (CCQ 3)**
+
+針對以下程式：
+```python
+sum = 0
+for i in range (1, 10):
+    sum += i
+print(sum)
+```
+請問上述程式碼輸出結果為何?  
+- [ ] 45
+- [ ] 44
+- [ ] 55
+- [ ] 54
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq3)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -886,21 +895,24 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 4 題**
-> 針對以下的程式：
-> ```python
-> sum = 0
-> for i in range (2, 10, 2):
->     sum += i
-> print(sum)
-> ```
-> 請問上述程式碼輸出結果為何?  
-> - [ ] 30
-> - [ ] 45
-> - [ ] 20
-> - [ ] 55
-> - [ ] 25
+<!-- id: python-ch03-ccq4 -->
+### **3.4.4 隨堂測驗 (CCQ 4)**
+
+針對以下的程式：
+```python
+sum = 0
+for i in range (2, 10, 2):
+    sum += i
+print(sum)
+```
+請問上述程式碼輸出結果為何?  
+- [ ] 30
+- [ ] 45
+- [ ] 20
+- [ ] 55
+- [ ] 25
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq4)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -912,20 +924,23 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 5 題**
-> 針對以下的程式：
-> ```python
-> for i in range(4):
->     for j in range(i):
->         print (str(i), end='')
->     print (end='-')    
-> ```
-> 會印出什麼？
-> - [ ] -1-22-333-
-> - [ ] 1-22-333-4444
-> - [ ] 1-2-3-4
-> - [ ] -1-2-3-
+<!-- id: python-ch03-ccq5 -->
+### **3.4.5 隨堂測驗 (CCQ 5)**
+
+針對以下的程式：
+```python
+for i in range(4):
+    for j in range(i):
+        print (str(i), end='')
+    print (end='-')    
+```
+會印出什麼？
+- [ ] -1-22-333-
+- [ ] 1-22-333-4444
+- [ ] 1-2-3-4
+- [ ] -1-2-3-
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq5)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -941,22 +956,25 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 6 題**
-> 針對以下的程式：
-> ```python
-> g = 98
-> if g > 90:
->    print ("Class A")
-> print ("Good job")
-> elif (g > 80):
->    print ("Class B")
-> ```
-> 以下何者正確？
-> - [ ] 程式錯誤
-> - [ ] 第一行若改為 g=70, 一樣會印出Class A Good job
-> - [ ] 印出 Class B
-> - [ ] 印出Good job Class B
+<!-- id: python-ch03-ccq6 -->
+### **3.4.6 隨堂測驗 (CCQ 6)**
+
+針對以下的程式：
+```python
+g = 98
+if g > 90:
+   print ("Class A")
+print ("Good job")
+elif (g > 80):
+   print ("Class B")
+```
+以下何者正確？
+- [ ] 程式錯誤
+- [ ] 第一行若改為 g=70, 一樣會印出Class A Good job
+- [ ] 印出 Class B
+- [ ] 印出Good job Class B
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq6)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -968,25 +986,28 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 7 題**
-> 針對以下的程式：
-> ```python
-> for v in range(2, 11):
->     for i in range (2, v):
->         if v % i == 0:
->             print (v, '不是質數')
->             break	
->     else:
->         print (v, '是質數')
-> ```
-> 何者正確（複選）
-> - [ ] 印出會包含 11是質數
-> - [ ] 編譯錯誤，else 應與 if 對齊
-> - [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
-> - [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
-> - [ ] 印出包含 7是質數
-> - [ ] 印出包含 6不是質數
+<!-- id: python-ch03-ccq7 -->
+### **3.4.7 隨堂測驗 (CCQ 7)**
+
+針對以下的程式：
+```python
+for v in range(2, 11):
+    for i in range (2, v):
+        if v % i == 0:
+            print (v, '不是質數')
+            break	
+    else:
+        print (v, '是質數')
+```
+何者正確（複選）
+- [ ] 印出會包含 11是質數
+- [ ] 編譯錯誤，else 應與 if 對齊
+- [ ] break 會跳出迴圈，所以程式只會印出 2不是質數
+- [ ] break 會跳出迴圈，所以程式只會印出 4不是質數
+- [ ] 印出包含 7是質數
+- [ ] 印出包含 6不是質數
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq7)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1004,17 +1025,20 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 8 題**
-> 執行後 `sum` 的值為何？
-> ```python
-> sum = 0
-> for i in range(1, 10, 2):
->     if i == 5:
->         break
->     sum = sum + i
-> print (sum)
-> ```
+<!-- id: python-ch03-ccq8 -->
+### **3.4.8 隨堂測驗 (CCQ 8)**
+
+執行後 `sum` 的值為何？
+```python
+sum = 0
+for i in range(1, 10, 2):
+    if i == 5:
+        break
+    sum = sum + i
+print (sum)
+```
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq8)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1030,13 +1054,16 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 9 題**
-> 關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
-> - [ ] 通常用來幫助除錯
-> - [ ] 用來跳出迴圈
-> - [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
-> - [ ] 可以更有效率的提升程式執行的效率
+<!-- id: python-ch03-ccq9 -->
+### **3.4.9 隨堂測驗 (CCQ 9)**
+
+關於執行時設定中斷點 (breakpoint)，以下何者正確（複選）
+- [ ] 通常用來幫助除錯
+- [ ] 用來跳出迴圈
+- [ ] 可以暫時中斷程式的執行，便於觀察變數的變化
+- [ ] 可以更有效率的提升程式執行的效率
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq9)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1050,22 +1077,25 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 10 題**
-> 以下程式會印出多少個 `*`？
-> ```python
-> n = 1
-> while True:
->     print ('*')
->     n += 2
->     if n == 100:
->         break
-> ```
-> - [ ] 0
-> - [ ] 無窮迴圈
-> - [ ] 100
-> - [ ] 101
-> - [ ] 50
+<!-- id: python-ch03-ccq10 -->
+### **3.4.10 隨堂測驗 (CCQ 10)**
+
+以下程式會印出多少個 `*`？
+```python
+n = 1
+while True:
+    print ('*')
+    n += 2
+    if n == 100:
+        break
+```
+- [ ] 0
+- [ ] 無窮迴圈
+- [ ] 100
+- [ ] 101
+- [ ] 50
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq10)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1077,17 +1107,20 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 11 題**
-> 針對以下的程式：
-> ```python
-> sum = 0; grade = 0
-> while (grade != -999):
->     grade = int (input("input your grade: "))
->     sum += grade
-> print (sum)     
-> ```
-> 上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出 `sum` 的值為何？ 
+<!-- id: python-ch03-ccq11 -->
+### **3.4.11 隨堂測驗 (CCQ 11)**
+
+針對以下的程式：
+```python
+sum = 0; grade = 0
+while (grade != -999):
+    grade = int (input("input your grade: "))
+    sum += grade
+print (sum)     
+```
+上述的程式執行中，我們依序輸入 100, 98, -999，請問最後印出 `sum` 的值為何？
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq11)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1103,19 +1136,22 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 12 題**
-> 針對以下的程式：
-> ```python
-> x = [20, 30, 90, 90] 
-> for i in x:
->     print (i, end = " ")
-> ```
-> 印出結果為？
-> - [ ] 20 30 90 90
-> - [ ] 0 1 2 3
-> - [ ] 1 2 3 4
-> - [ ] False False False False
+<!-- id: python-ch03-ccq12 -->
+### **3.4.12 隨堂測驗 (CCQ 12)**
+
+針對以下的程式：
+```python
+x = [20, 30, 90, 90] 
+for i in x:
+    print (i, end = " ")
+```
+印出結果為？
+- [ ] 20 30 90 90
+- [ ] 0 1 2 3
+- [ ] 1 2 3 4
+- [ ] False False False False
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq12)
 
 <details>
 <summary>點擊查看答案與解析</summary>
@@ -1127,19 +1163,22 @@ while not correct:
 
 ---
 
-> [!NOTE]
-> **第 13 題**
-> 針對以下的程式：
-> ```python
-> import random
-> x = random.randint(4, 50)
-> ```
-> `x` 的值可能為何？（複選）
-> - [ ] 4
-> - [ ] 10
-> - [ ] 50
-> - [ ] 100
-> - [ ] 0
+<!-- id: python-ch03-ccq13 -->
+### **3.4.13 隨堂測驗 (CCQ 13)**
+
+針對以下的程式：
+```python
+import random
+x = random.randint(4, 50)
+```
+`x` 的值可能為何？（複選）
+- [ ] 4
+- [ ] 10
+- [ ] 50
+- [ ] 100
+- [ ] 0
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch03-ccq13)
 
 <details>
 <summary>點擊查看答案與解析</summary>

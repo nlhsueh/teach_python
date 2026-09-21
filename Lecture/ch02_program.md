@@ -100,6 +100,7 @@ assert     else       import     pass
 break      except     in         raise
 ```
 
+<!-- id: python-ch02-ccq1 -->
 ### **2.2.3 隨堂測驗**
 
 **第一題**
@@ -134,6 +135,8 @@ C) `address`
 D) `pi`
 
 ---
+
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq1)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -321,7 +324,7 @@ bool('two')   # 非空字串     => True
 bool([2])     # 非空串列     => True
 ```
 
-<!-- id: python-ch02-ccq1 -->
+<!-- id: python-ch02-ccq2 -->
 ### **2.2.5 隨堂測驗 (CCQ 2)**
 
 **問題**
@@ -336,7 +339,7 @@ B) `False True`
 C) `True False`
 D) `True True`
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq1)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq2)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -570,7 +573,7 @@ print ('共需 {} 天 {} 小時 {} 分 {} 秒 '.format(days, h, m, s))
 共需 13.0 天 1 小時 47 分 45 秒 
 ```
 
-<!-- id: python-ch02-ccq2 -->
+<!-- id: python-ch02-ccq3 -->
 ### **2.3.1.1 隨堂測驗 (CCQ 3)**
 
 **問題**
@@ -585,7 +588,7 @@ B) `2 3`
 C) `2 4`
 D) `2.5 3`
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq2)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq3)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -681,7 +684,7 @@ hello 的值並沒有變, 依然是： Hello, Nick
 
 這些字串函式可用於對字串進行各種操作，如大小寫轉換、剪切、替換、拆分等。這些範例演示了每個函式的基本用法。
 
-<!-- id: python-ch02-ccq3 -->
+<!-- id: python-ch02-ccq4 -->
 ### **2.3.2.1 隨堂測驗 (CCQ 4)**
 
 **問題**
@@ -693,7 +696,7 @@ B) `"pyth"`
 C) `"ytho"`
 D) `"y"`
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq3)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq4)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -748,7 +751,7 @@ print (isStudent and isKid)  # False
 print (isStudent or isKid)   # True
 ```
 
-<!-- id: python-ch02-ccq4 -->
+<!-- id: python-ch02-ccq5 -->
 ### **2.3.3.1 隨堂測驗 (CCQ 5)**
 
 **問題**
@@ -765,7 +768,7 @@ B) `True`
 C) `None`
 D) `TypeError`
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq4)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq5)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>
@@ -1092,7 +1095,7 @@ with open("grade.txt", "r") as f2:
 
 
 
-<!-- id: python-ch02-ccq5 -->
+<!-- id: python-ch02-ccq6 -->
 ### **2.4.5.1 隨堂測驗 (CCQ 6)**
 
 **問題**
@@ -1104,7 +1107,7 @@ B) 能自動將寫入的資料進行壓縮，節省硬碟空間。
 C) 無論程式區塊是否正常執行完畢或發生異常，都會自動安全地關閉檔案。
 D) 能夠自動修正程式碼中的語法錯誤。
 
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq5)
+[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch02-ccq6)
 
 <details>
 <summary>點擊查看【隨堂測驗】答案與解析</summary>

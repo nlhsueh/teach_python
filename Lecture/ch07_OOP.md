@@ -960,5 +960,3 @@ game.go()
 ```
 
 上述最後的程式碼表明了抽象類別不能生成物件。
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch07-game1)

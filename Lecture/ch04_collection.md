@@ -201,9 +201,6 @@ after sorted, r=	 [1, 2, 2, 4, 5, 6, 7, 7, 8, 9]
 排序是我們經常會使用到的一種資料修改，語法很簡單，我們只要用 `data.sort` 就可以把資料作由小到大的做排序。如果今天是想要由大到小的排序的話們可以加上一個參數，`reverse=True`。
 
 另一個函式 `sorted(d)` 並**不會**改變 `d` 的內部資料排序，它會產生另一個 list 來儲存排序後的結果。如上述程式中的 r。
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering1)
-
 ### 資料的擷取
 
 這一節我們來介紹 list 的查詢和資料的擷取。List 的擷取相當的直覺，我們可以用 `[i]` 來取得位置 i 的值。請注意要從 `0` 開始數起。如下圖，一筆成績資料 `11,22,99,35,59`; 11 的資料是在 `grade[0]`, 而非 `grade[1]`。
@@ -517,9 +514,6 @@ Result:
 ```
 [[11, 22, 33], [44, 55, 66], [90, 91, 92], [77, 88, 99]]
 ```
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering2)
-
 ### 資料的比較
 
 
@@ -597,9 +591,6 @@ for i in range(1, r+1):
             a[j+1] = temp
     print(a)
 ```
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering3)
-
 ### json.loads()
 
 `json.loads()` 可以讀入一個「list 字串」，將之轉為 list 來處理。
@@ -1342,9 +1333,6 @@ with open('data/ibikeSorted.txt', 'w') as f:
     for i in station:
         f.write(str(i)+'\n')
 ```
-
-[課堂互動](https://nlhsueh.github.io/nickedupocket/#/student/python-ch04-ordering4)
-
 #### 計算每個區域的數量 
 
 我們來計算一下每個區域的 iBike 數量，並且排序。我們宣告一個 `area` 的 `dict` 型態，其中 `key` 是區域的代碼 (sareaen)，我們透過 `if` 判斷新讀出來的資料是否已經有在 `dict` 中，如果有就 `+1`, 否則就設定一個初始值 `1`。程式碼如下：
